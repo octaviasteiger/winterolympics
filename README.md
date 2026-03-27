@@ -5,7 +5,7 @@ How have Winter Olympic medal distributions evolved across countries over time, 
 
 ## How to replicate
 1. Clone this repository
-2. Install: pip install pandas requests
+2. Install: pip install pandas requests BeautifulSoup
 
 ## Data Sources
 - Medal data scrapped from 
