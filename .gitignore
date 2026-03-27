@@ -1,12 +1,13 @@
 # Python
-_pycache_/
+__pycache__/
 *.pyc
 .ipynb_checkpoints/
 venv/
+.env
 
-# Large Data Files
+# Raw scraped data — gitignored because it can be regenerated with scrape.py
 data/raw/*.csv
 data/raw/*.xlsx
 
-# Mac System Files
-.DS_store
+# Mac system files
+.DS_Store

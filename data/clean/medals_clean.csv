@@ -1,0 +1,1164 @@
+year,sport,event,gold_name,gold_noc,tie_gold,silver_name,silver_noc,tie_silver,bronze_name,bronze_noc,tie_bronze
+1924,Alpinism,"Alpinism, Open",Mixed team,MIX,False,—,—,False,—,—,False
+1924,Bobsleigh,"Four, Men",Switzerland 1,SUI,False,Great Britain 1,GBR,False,Belgium 1,BEL,False
+1924,Cross Country Skiing,"18 kilometres, Men",Thorleif Haug,NOR,False,Johan Grøttumsbraaten,NOR,False,Tapani Niku,FIN,False
+1924,Cross Country Skiing,"50 kilometres, Men",Thorleif Haug,NOR,False,Thoralf Strømstad,NOR,False,Johan Grøttumsbraaten,NOR,False
+1924,Curling,"Team, Men",Great Britain,GBR,False,Sweden,SWE,False,France,FRA,False
+1924,Figure Skating,"Singles, Men",Gillis Grafström,SWE,False,Willy Böckl,AUT,False,Georges Gautschi,SUI,False
+1924,Figure Skating,"Singles, Women",Herma Planck-Szabo,AUT,False,Beatrix Loughran,USA,False,Ethel Muckelt,GBR,False
+1924,Figure Skating,"Pairs, Mixed",Austria,AUT,False,Finland,FIN,False,France 1,FRA,False
+1924,Ice Hockey,"Ice Hockey, Men",Canada,CAN,False,United States,USA,False,Great Britain,GBR,False
+1924,Military Ski Patrol,"Military Ski Patrol, Men",Switzerland,SUI,False,Finland,FIN,False,France,FRA,False
+1924,Nordic Combined,"Individual, Men",Thorleif Haug,NOR,False,Thoralf Strømstad,NOR,False,Johan Grøttumsbraaten,NOR,False
+1924,Ski Jumping,"Large Hill, Individual, Men",Jacob Tullin Thams,NOR,False,Narve Bonna,NOR,False,Anders Haugen,USA,False
+1924,Speed Skating,"500 metres, Men",Charley Jewtraw,USA,False,Oskar Olsen,NOR,False,Roald LarsenClas Thunberg,NORFIN,True
+1924,Speed Skating,"1,500 metres, Men",Clas Thunberg,FIN,False,Roald Larsen,NOR,False,Sigurd Moen,NOR,False
+1924,Speed Skating,"5,000 metres, Men",Clas Thunberg,FIN,False,Julius Skutnabb,FIN,False,Roald Larsen,NOR,False
+1924,Speed Skating,"10,000 metres, Men",Julius Skutnabb,FIN,False,Clas Thunberg,FIN,False,Roald Larsen,NOR,False
+1924,Speed Skating,"Allround, Men",Clas Thunberg,FIN,False,Roald Larsen,NOR,False,Julius Skutnabb,FIN,False
+1928,Bobsleigh,"Four, Men",United States 2,USA,False,United States 1,USA,False,Germany 2,GER,False
+1928,Cross Country Skiing,"18 kilometres, Men",Johan Grøttumsbraaten,NOR,False,Ole Hegge,NOR,False,Reidar Ødegård,NOR,False
+1928,Cross Country Skiing,"50 kilometres, Men",Per Erik Hedlund,SWE,False,Gustaf Jonsson,SWE,False,Volger Andersson,SWE,False
+1928,Figure Skating,"Singles, Men",Gillis Grafström,SWE,False,Willy Böckl,AUT,False,Robert Van Zeebroeck,BEL,False
+1928,Figure Skating,"Singles, Women",Sonja Henie,NOR,False,Fritzi Burger,AUT,False,Beatrix Loughran,USA,False
+1928,Figure Skating,"Pairs, Mixed",France,FRA,False,Austria 1,AUT,False,Austria 2,AUT,False
+1928,Ice Hockey,"Ice Hockey, Men",Canada,CAN,False,Sweden,SWE,False,Switzerland,SUI,False
+1928,Nordic Combined,"Individual, Men",Johan Grøttumsbraaten,NOR,False,Hans Vinjarengen,NOR,False,John Snersrud,NOR,False
+1928,Skeleton,"Skeleton, Men",Jennison Heaton,USA,False,Jack Heaton,USA,False,"David, Earl of Northesk",GBR,False
+1928,Ski Jumping,"Large Hill, Individual, Men",Alf Andersen,NOR,False,Sigmund Ruud,NOR,False,Rudolf Burkert,TCH,False
+1928,Speed Skating,"500 metres, Men",Bernt EvensenClas Thunberg,NORFIN,True,—,—,False,John O'Neil FarrellJaakko FrimanRoald Larsen,USAFINNOR,False
+1928,Speed Skating,"1,500 metres, Men",Clas Thunberg,FIN,False,Bernt Evensen,NOR,False,Ivar Ballangrud,NOR,False
+1928,Speed Skating,"5,000 metres, Men",Ivar Ballangrud,NOR,False,Julius Skutnabb,FIN,False,Bernt Evensen,NOR,False
+1932,Bobsleigh,"Two, Men",United States 1,USA,False,Switzerland 2,SUI,False,United States 2,USA,False
+1932,Bobsleigh,"Four, Men",United States 1,USA,False,United States 2,USA,False,Germany 1,GER,False
+1932,Cross Country Skiing,"18 kilometres, Men",Sven Utterström,SWE,False,Axel Wikström,SWE,False,Veli Saarinen,FIN,False
+1932,Cross Country Skiing,"50 kilometres, Men",Veli Saarinen,FIN,False,Väinö Liikkanen,FIN,False,Arne Rustadstuen,NOR,False
+1932,Figure Skating,"Singles, Men",Karl Schäfer,AUT,False,Gillis Grafström,SWE,False,Bud Wilson,CAN,False
+1932,Figure Skating,"Singles, Women",Sonja Henie,NOR,False,Fritzi Burger,AUT,False,Maribel Vinson,USA,False
+1932,Figure Skating,"Pairs, Mixed",France,FRA,False,United States 1,USA,False,Hungary 1,HUN,False
+1932,Ice Hockey,"Ice Hockey, Men",Canada,CAN,False,United States,USA,False,Germany,GER,False
+1932,Nordic Combined,"Individual, Men",Johan Grøttumsbraaten,NOR,False,Ole Stenen,NOR,False,Hans Vinjarengen,NOR,False
+1932,Ski Jumping,"Large Hill, Individual, Men",Birger Ruud,NOR,False,Hans Beck,NOR,False,Kåre Walberg,NOR,False
+1932,Speed Skating,"500 metres, Men",Jack Shea,USA,False,Bernt Evensen,NOR,False,Alex Hurd,CAN,False
+1932,Speed Skating,"1,500 metres, Men",Jack Shea,USA,False,Alex Hurd,CAN,False,Willy Logan,CAN,False
+1932,Speed Skating,"5,000 metres, Men",Irving Jaffee,USA,False,Eddie Murphy,USA,False,Willy Logan,CAN,False
+1932,Speed Skating,"10,000 metres, Men",Irving Jaffee,USA,False,Ivar Ballangrud,NOR,False,Frank Stack,CAN,False
+1936,Alpine Skiing,"Combined, Men",Franz Pfnür,GER,False,Gustav Lantschner,GER,False,Émile Allais,FRA,False
+1936,Alpine Skiing,"Combined, Women",Christl Cranz,GER,False,Käthe Grasegger,GER,False,Laila Schou Nilsen,NOR,False
+1936,Bobsleigh,"Two, Men",United States 1,USA,False,Switzerland 2,SUI,False,United States 2,USA,False
+1936,Bobsleigh,"Four, Men",Switzerland 2,SUI,False,Switzerland 1,SUI,False,Great Britain,GBR,False
+1936,Cross Country Skiing,"18 kilometres, Men",Erik Larsson,SWE,False,Oddbjørn Hagen,NOR,False,Pekka Niemi,FIN,False
+1936,Cross Country Skiing,"50 kilometres, Men",Elis Wiklund,SWE,False,Axel Wikström,SWE,False,Nils Englund,SWE,False
+1936,Cross Country Skiing,"Relay, Men",Finland,FIN,False,Norway,NOR,False,Sweden,SWE,False
+1936,Figure Skating,"Singles, Men",Karl Schäfer,AUT,False,Ernst Baier,GER,False,Felix Kaspar,AUT,False
+1936,Figure Skating,"Singles, Women",Sonja Henie,NOR,False,Cecilia Colledge,GBR,False,Vivi-Anne Hultén,SWE,False
+1936,Figure Skating,"Pairs, Mixed",Germany 1,GER,False,Austria 1,AUT,False,Hungary 1,HUN,False
+1936,Ice Hockey,"Ice Hockey, Men",Great Britain,GBR,False,Canada,CAN,False,United States,USA,False
+1936,Nordic Combined,"Individual, Men",Oddbjørn Hagen,NOR,False,Olaf Hoffsbakken,NOR,False,Sverre Brodahl,NOR,False
+1936,Ski Jumping,"Large Hill, Individual, Men",Birger Ruud,NOR,False,Sven Eriksson,SWE,False,Reidar Andersen,NOR,False
+1936,Speed Skating,"500 metres, Men",Ivar Ballangrud,NOR,False,Georg Krog,NOR,False,Leo Freisinger,USA,False
+1936,Speed Skating,"1,500 metres, Men",Charles Mathiesen,NOR,False,Ivar Ballangrud,NOR,False,Birger Wasenius,FIN,False
+1936,Speed Skating,"5,000 metres, Men",Ivar Ballangrud,NOR,False,Birger Wasenius,FIN,False,Antero Ojala,FIN,False
+1936,Speed Skating,"10,000 metres, Men",Ivar Ballangrud,NOR,False,Birger Wasenius,FIN,False,Max Stiepl,AUT,False
+1948,Alpine Skiing,"Downhill, Men",Henri Oreiller,FRA,False,Franz Gabl,AUT,False,Karl MolitorRalph Olinger,SUISUI,True
+1948,Alpine Skiing,"Slalom, Men",Edy Reinalter,SUI,False,James Couttet,FRA,False,Henri Oreiller,FRA,False
+1948,Alpine Skiing,"Combined, Men",Henri Oreiller,FRA,False,Karl Molitor,SUI,False,James Couttet,FRA,False
+1948,Alpine Skiing,"Downhill, Women",Hedy Schlunegger,SUI,False,Trude Beiser,AUT,False,Resi Hammerer,AUT,False
+1948,Alpine Skiing,"Slalom, Women",Gretchen Fraser,USA,False,Antoinette Meyer,SUI,False,Erika Mahringer,AUT,False
+1948,Alpine Skiing,"Combined, Women",Trude Beiser,AUT,False,Gretchen Fraser,USA,False,Erika Mahringer,AUT,False
+1948,Bobsleigh,"Two, Men",Switzerland 2,SUI,False,Switzerland 1,SUI,False,United States 2,USA,False
+1948,Bobsleigh,"Four, Men",United States 2,USA,False,Belgium,BEL,False,United States 1,USA,False
+1948,Cross Country Skiing,"18 kilometres, Men",Martin Lundström,SWE,False,Nils Östensson,SWE,False,Gunnar Eriksson,SWE,False
+1948,Cross Country Skiing,"50 kilometres, Men",Nils Karlsson,SWE,False,Harald Ericson,SWE,False,Benjam Vanninen,FIN,False
+1948,Cross Country Skiing,"Relay, Men",Sweden,SWE,False,Finland,FIN,False,Norway,NOR,False
+1948,Figure Skating,"Singles, Men",Dick Button,USA,False,Hans Gerschwiler,SUI,False,Edi Rada,AUT,False
+1948,Figure Skating,"Singles, Women",Barbara Ann Scott,CAN,False,Eva Pawlik,AUT,False,Jeannette Altwegg,GBR,False
+1948,Figure Skating,"Pairs, Mixed",Belgium,BEL,False,Hungary 1,HUN,False,Canada,CAN,False
+1948,Ice Hockey,"Ice Hockey, Men",Canada,CAN,False,Czechoslovakia,TCH,False,Switzerland,SUI,False
+1948,Nordic Combined,"Individual, Men",Heikki Hasu,FIN,False,Martti Huhtala,FIN,False,Sven Israelsson,SWE,False
+1948,Skeleton,"Skeleton, Men",Nino Bibbia,ITA,False,Jack Heaton,USA,False,John Crammond,GBR,False
+1948,Ski Jumping,"Large Hill, Individual, Men",Petter Hugsted,NOR,False,Birger Ruud,NOR,False,Thorleif Schjelderup,NOR,False
+1948,Speed Skating,"500 metres, Men",Finn Helgesen,NOR,False,Ken BartholomewThomas BybergBobby Fitzgerald,USANORUSA,False,—,—,False
+1948,Speed Skating,"1,500 metres, Men",Sverre Farstad,NOR,False,Åke Seyffarth,SWE,False,Odd Lundberg,NOR,False
+1948,Speed Skating,"5,000 metres, Men",Reidar Liaklev,NOR,False,Odd Lundberg,NOR,False,Göthe Hedlund,SWE,False
+1948,Speed Skating,"10,000 metres, Men",Åke Seyffarth,SWE,False,Lassi Parkkinen,FIN,False,Pentti Lammio,FIN,False
+1952,Alpine Skiing,"Downhill, Men",Zeno Colò,ITA,False,Othmar Schneider,AUT,False,Christian Pravda,AUT,False
+1952,Alpine Skiing,"Giant Slalom, Men",Stein Eriksen,NOR,False,Christian Pravda,AUT,False,Toni Spiß,AUT,False
+1952,Alpine Skiing,"Slalom, Men",Othmar Schneider,AUT,False,Stein Eriksen,NOR,False,Guttorm Berge,NOR,False
+1952,Alpine Skiing,"Downhill, Women",Trude Jochum-Beiser,AUT,False,Mirl Buchner,GER,False,Giuliana Minuzzo,ITA,False
+1952,Alpine Skiing,"Giant Slalom, Women",Andrea Mead-Lawrence,USA,False,Dagmar Rom,AUT,False,Mirl Buchner,GER,False
+1952,Alpine Skiing,"Slalom, Women",Andrea Mead-Lawrence,USA,False,Ossi Reichert,GER,False,Mirl Buchner,GER,False
+1952,Bobsleigh,"Two, Men",Unified Team of Germany 1,GER,False,United States 1,USA,False,Switzerland 1,SUI,False
+1952,Bobsleigh,"Four, Men",Unified Team of Germany,GER,False,United States 1,USA,False,Switzerland 1,SUI,False
+1952,Cross Country Skiing,"18 kilometres, Men",Hallgeir Brenden,NOR,False,Tapio Mäkelä,FIN,False,Paavo Lonkila,FIN,False
+1952,Cross Country Skiing,"50 kilometres, Men",Veikko Hakulinen,FIN,False,Eero Kolehmainen,FIN,False,Magnar Estenstad,NOR,False
+1952,Cross Country Skiing,"Relay, Men",Finland,FIN,False,Norway,NOR,False,Sweden,SWE,False
+1952,Cross Country Skiing,"10 kilometres, Women",Lydia Wideman,FIN,False,Mirja Hietamies,FIN,False,Siiri Rantanen,FIN,False
+1952,Figure Skating,"Singles, Men",Dick Button,USA,False,Helmut Seibt,AUT,False,Jim Grogan,USA,False
+1952,Figure Skating,"Singles, Women",Jeannette Altwegg,GBR,False,Tenley Albright,USA,False,Jacqueline du Bief,FRA,False
+1952,Figure Skating,"Pairs, Mixed",Unified Team of Germany 1,GER,False,United States 1,USA,False,Hungary 1,HUN,False
+1952,Ice Hockey,"Ice Hockey, Men",Canada,CAN,False,United States,USA,False,Sweden,SWE,False
+1952,Nordic Combined,"Individual, Men",Simon Slåttvik,NOR,False,Heikki Hasu,FIN,False,Sverre Stenersen,NOR,False
+1952,Ski Jumping,"Large Hill, Individual, Men",Arnfinn Bergmann,NOR,False,Torbjørn Falkanger,NOR,False,Karl Holmström,SWE,False
+1952,Speed Skating,"500 metres, Men",Ken Henry,USA,False,Don McDermott,USA,False,Gordon AudleyArne Johansen,CANNOR,True
+1952,Speed Skating,"1,500 metres, Men",Hjalmar Andersen,NOR,False,Wim van der Voort,NED,False,Roald Aas,NOR,False
+1952,Speed Skating,"5,000 metres, Men",Hjalmar Andersen,NOR,False,Kees Broekman,NED,False,Sverre Haugli,NOR,False
+1952,Speed Skating,"10,000 metres, Men",Hjalmar Andersen,NOR,False,Kees Broekman,NED,False,Carl-Erik Asplund,SWE,False
+1956,Alpine Skiing,"Downhill, Men",Toni Sailer,AUT,False,Raymond Fellay,SUI,False,Anderl Molterer,AUT,False
+1956,Alpine Skiing,"Giant Slalom, Men",Toni Sailer,AUT,False,Anderl Molterer,AUT,False,Walter Schuster,AUT,False
+1956,Alpine Skiing,"Slalom, Men",Toni Sailer,AUT,False,Chiharu Igaya,JPN,False,Stig Sollander,SWE,False
+1956,Alpine Skiing,"Downhill, Women",Madeleine Berthod,SUI,False,Frieda Dänzer,SUI,False,Lucile Wheeler,CAN,False
+1956,Alpine Skiing,"Giant Slalom, Women",Ossi Reichert,GER,False,Putzi Frandl,AUT,False,Thea Hochleitner,AUT,False
+1956,Alpine Skiing,"Slalom, Women",Renée Colliard,SUI,False,Regina Schöpf,AUT,False,Yevgeniya Sidorova,URS,False
+1956,Bobsleigh,"Two, Men",Italy 1,ITA,False,Italy 2,ITA,False,Switzerland 1,SUI,False
+1956,Bobsleigh,"Four, Men",Switzerland 1,SUI,False,Italy 2,ITA,False,United States 1,USA,False
+1956,Cross Country Skiing,"15 kilometres, Men",Hallgeir Brenden,NOR,False,Sixten Jernberg,SWE,False,Pavel Kolchin,URS,False
+1956,Cross Country Skiing,"30 kilometres, Men",Veikko Hakulinen,FIN,False,Sixten Jernberg,SWE,False,Pavel Kolchin,URS,False
+1956,Cross Country Skiing,"50 kilometres, Men",Sixten Jernberg,SWE,False,Veikko Hakulinen,FIN,False,Fyodor Terentyev,URS,False
+1956,Cross Country Skiing,"Relay, Men",Soviet Union,URS,False,Finland,FIN,False,Sweden,SWE,False
+1956,Cross Country Skiing,"10 kilometres, Women",Lyubov Kozyreva,URS,False,Radya Yeroshina,URS,False,Sonja Edström,SWE,False
+1956,Cross Country Skiing,"Relay, Women",Finland,FIN,False,Soviet Union,URS,False,Sweden,SWE,False
+1956,Figure Skating,"Singles, Men",Hayes Jenkins,USA,False,Ronnie Robertson,USA,False,David Jenkins,USA,False
+1956,Figure Skating,"Singles, Women",Tenley Albright,USA,False,Carol Heiss,USA,False,Ingrid Wendl,AUT,False
+1956,Figure Skating,"Pairs, Mixed",Austria 1,AUT,False,Canada 1,CAN,False,Hungary,HUN,False
+1956,Ice Hockey,"Ice Hockey, Men",Soviet Union,URS,False,United States,USA,False,Canada,CAN,False
+1956,Nordic Combined,"Individual, Men",Sverre Stenersen,NOR,False,Bengt Eriksson,SWE,False,Franciszek Gąsienica Groń,POL,False
+1956,Ski Jumping,"Large Hill, Individual, Men",Antti Hyvärinen,FIN,False,Aulis Kallakorpi,FIN,False,Harry Glaß,GER,False
+1956,Speed Skating,"500 metres, Men",Yevgeny Grishin,URS,False,Rafael Grach,URS,False,Alv Gjestvang,NOR,False
+1956,Speed Skating,"1,500 metres, Men",Yevgeny GrishinYury Mikhaylov,URSURS,True,—,—,False,Toivo Salonen,FIN,False
+1956,Speed Skating,"5,000 metres, Men",Boris Shilkov,URS,False,Sigvard Ericsson,SWE,False,Oleg Goncharenko,URS,False
+1956,Speed Skating,"10,000 metres, Men",Sigvard Ericsson,SWE,False,Knut Johannesen,NOR,False,Oleg Goncharenko,URS,False
+1960,Alpine Skiing,"Downhill, Men",Jean Vuarnet,FRA,False,Hanspeter Lanig,GER,False,Guy Périllat,FRA,False
+1960,Alpine Skiing,"Giant Slalom, Men",Roger Staub,SUI,False,Pepi Stiegler,AUT,False,Ernst Hinterseer,AUT,False
+1960,Alpine Skiing,"Slalom, Men",Ernst Hinterseer,AUT,False,Hias Leitner,AUT,False,Charles Bozon,FRA,False
+1960,Alpine Skiing,"Downhill, Women",Heidi Biebl,GER,False,Penny Pitou,USA,False,Traudl Hecher,AUT,False
+1960,Alpine Skiing,"Giant Slalom, Women",Yvonne Rüegg,SUI,False,Penny Pitou,USA,False,Giuliana Chenal-Minuzzo,ITA,False
+1960,Alpine Skiing,"Slalom, Women",Anne Heggtveit,CAN,False,Betsy Snite,USA,False,Barbi Henneberger,GER,False
+1960,Biathlon,"Individual, Men",Klas Lestander,SWE,False,Antti Tyrväinen,FIN,False,Aleksandr Privalov,URS,False
+1960,Cross Country Skiing,"15 kilometres, Men",Håkon Brusveen,NOR,False,Sixten Jernberg,SWE,False,Veikko Hakulinen,FIN,False
+1960,Cross Country Skiing,"30 kilometres, Men",Sixten Jernberg,SWE,False,Rolf Rämgård,SWE,False,Nikolay Anikin,URS,False
+1960,Cross Country Skiing,"50 kilometres, Men",Kalevi Hämäläinen,FIN,False,Veikko Hakulinen,FIN,False,Rolf Rämgård,SWE,False
+1960,Cross Country Skiing,"Relay, Men",Finland,FIN,False,Norway,NOR,False,Soviet Union,URS,False
+1960,Cross Country Skiing,"10 kilometres, Women",Mariya Gusakova,URS,False,Lyubov Baranova,URS,False,Radya Yeroshina,URS,False
+1960,Cross Country Skiing,"Relay, Women",Sweden,SWE,False,Soviet Union,URS,False,Finland,FIN,False
+1960,Figure Skating,"Singles, Men",David Jenkins,USA,False,Karol Divín,TCH,False,Don Jackson,CAN,False
+1960,Figure Skating,"Singles, Women",Carol Heiss,USA,False,Sjoukje Dijkstra,NED,False,Barbara Ann Roles,USA,False
+1960,Figure Skating,"Pairs, Mixed",Canada 1,CAN,False,Unified Team of Germany 1,GER,False,United States 1,USA,False
+1960,Ice Hockey,"Ice Hockey, Men",United States,USA,False,Canada,CAN,False,Soviet Union,URS,False
+1960,Nordic Combined,"Individual, Men",Georg Thoma,GER,False,Tormod Knutsen,NOR,False,Nikolay Gusakov,URS,False
+1960,Ski Jumping,"Large Hill, Individual, Men",Helmut Recknagel,GER,False,Niilo Halonen,FIN,False,Otto Leodolter,AUT,False
+1960,Speed Skating,"500 metres, Men",Yevgeny Grishin,URS,False,Bill Disney,USA,False,Rafael Grach,URS,False
+1960,Speed Skating,"1,500 metres, Men",Roald AasYevgeny Grishin,NORURS,True,—,—,False,Boris Stenin,URS,False
+1960,Speed Skating,"5,000 metres, Men",Viktor Kosichkin,URS,False,Knut Johannesen,NOR,False,Jan Pesman,NED,False
+1960,Speed Skating,"10,000 metres, Men",Knut Johannesen,NOR,False,Viktor Kosichkin,URS,False,Kjell Bäckman,SWE,False
+1960,Speed Skating,"500 metres, Women",Helga Haase,GER,False,Nataliya Donchenko,URS,False,Jeanne Ashworth,USA,False
+1960,Speed Skating,"1,000 metres, Women",Klara Guseva,URS,False,Helga Haase,GER,False,Tamara Rylova,URS,False
+1960,Speed Skating,"1,500 metres, Women",Lidiya Skoblikova,URS,False,Elwira Seroczyńska,POL,False,Helena Pilejczyk,POL,False
+1960,Speed Skating,"3,000 metres, Women",Lidiya Skoblikova,URS,False,Valentina Stenina,URS,False,Eevi Huttunen,FIN,False
+1964,Alpine Skiing,"Downhill, Men",Egon Zimmermann,AUT,False,Léo Lacroix,FRA,False,Wolfgang Bartels,GER,False
+1964,Alpine Skiing,"Giant Slalom, Men",François Bonlieu,FRA,False,Karl Schranz,AUT,False,Pepi Stiegler,AUT,False
+1964,Alpine Skiing,"Slalom, Men",Pepi Stiegler,AUT,False,Billy Kidd,USA,False,Jimmy Heuga,USA,False
+1964,Alpine Skiing,"Downhill, Women",Christl Haas,AUT,False,Edith Zimmermann,AUT,False,Traudl Hecher,AUT,False
+1964,Alpine Skiing,"Giant Slalom, Women",Marielle Goitschel,FRA,False,Christine GoitschelJean Saubert,FRAUSA,True,—,—,False
+1964,Alpine Skiing,"Slalom, Women",Christine Goitschel,FRA,False,Marielle Goitschel,FRA,False,Jean Saubert,USA,False
+1964,Biathlon,"Individual, Men",Vladimir Melanin,URS,False,Aleksandr Privalov,URS,False,Olav Jordet,NOR,False
+1964,Bobsleigh,"Two, Men",Great Britain 1,GBR,False,Italy 2,ITA,False,Italy 1,ITA,False
+1964,Bobsleigh,"Four, Men",Canada 1,CAN,False,Austria 1,AUT,False,Italy 2,ITA,False
+1964,Cross Country Skiing,"15 kilometres, Men",Eero Mäntyranta,FIN,False,Harald Grønningen,NOR,False,Sixten Jernberg,SWE,False
+1964,Cross Country Skiing,"30 kilometres, Men",Eero Mäntyranta,FIN,False,Harald Grønningen,NOR,False,Igor Voronchikhin,URS,False
+1964,Cross Country Skiing,"50 kilometres, Men",Sixten Jernberg,SWE,False,Assar Rönnlund,SWE,False,Arto Tiainen,FIN,False
+1964,Cross Country Skiing,"Relay, Men",Sweden,SWE,False,Finland,FIN,False,Soviet Union,URS,False
+1964,Cross Country Skiing,"5 kilometres, Women",Klavdiya Boyarskikh,URS,False,Mirja Lehtonen,FIN,False,Alevtina Kolchina,URS,False
+1964,Cross Country Skiing,"10 kilometres, Women",Klavdiya Boyarskikh,URS,False,Yevdokiya Mekshilo,URS,False,Mariya Gusakova,URS,False
+1964,Cross Country Skiing,"Relay, Women",Soviet Union,URS,False,Sweden,SWE,False,Finland,FIN,False
+1964,Figure Skating,"Singles, Men",Manfred Schnelldorfer,GER,False,Alain Calmat,FRA,False,Scotty Allen,USA,False
+1964,Figure Skating,"Singles, Women",Sjoukje Dijkstra,NED,False,Regine Heitzer,AUT,False,Petra Burka,CAN,False
+1964,Figure Skating,"Pairs, Mixed",Soviet Union 1,URS,False,Unified Team of Germany 1Canada 1,GERCAN,True,United States 1,USA,False
+1964,Ice Hockey,"Ice Hockey, Men",Soviet Union,URS,False,Sweden,SWE,False,Czechoslovakia,TCH,False
+1964,Luge,"Singles, Men",Thomas Köhler,GER,False,Klaus-Michael Bonsack,GER,False,Hans Plenk,GER,False
+1964,Luge,"Doubles, Men",Austria 1,AUT,False,Austria 2,AUT,False,Italy 1,ITA,False
+1964,Luge,"Singles, Women",Ortrun Enderlein,GER,False,Ilse Geisler,GER,False,Leni Thurner,AUT,False
+1964,Nordic Combined,"Individual, Men",Tormod Knutsen,NOR,False,Nikolay Kiselyov,URS,False,Georg Thoma,GER,False
+1964,Ski Jumping,"Normal Hill, Individual, Men",Veikko Kankkonen,FIN,False,Toralf Engan,NOR,False,Torgeir Brandtzæg,NOR,False
+1964,Ski Jumping,"Large Hill, Individual, Men",Toralf Engan,NOR,False,Veikko Kankkonen,FIN,False,Torgeir Brandtzæg,NOR,False
+1964,Speed Skating,"500 metres, Men",Terry McDermott,USA,False,Alv GjestvangYevgeny GrishinVladimir Orlov,NORURSURS,False,—,—,False
+1964,Speed Skating,"1,500 metres, Men",Ants Antson,URS,False,Kees Verkerk,NED,False,Villy Haugen,NOR,False
+1964,Speed Skating,"5,000 metres, Men",Knut Johannesen,NOR,False,Per Ivar Moe,NOR,False,Fred Anton Maier,NOR,False
+1964,Speed Skating,"10,000 metres, Men",Jonny Nilsson,SWE,False,Fred Anton Maier,NOR,False,Knut Johannesen,NOR,False
+1964,Speed Skating,"500 metres, Women",Lidiya Skoblikova,URS,False,Irina Yegorova,URS,False,Tatyana Sidorova,URS,False
+1964,Speed Skating,"1,000 metres, Women",Lidiya Skoblikova,URS,False,Irina Yegorova,URS,False,Kaija Mustonen,FIN,False
+1964,Speed Skating,"1,500 metres, Women",Lidiya Skoblikova,URS,False,Kaija Mustonen,FIN,False,Berta Kolokoltseva,URS,False
+1964,Speed Skating,"3,000 metres, Women",Lidiya Skoblikova,URS,False,Han Pil-HwaValentina Stenina,PRKURS,True,—,—,False
+1968,Alpine Skiing,"Downhill, Men",Jean-Claude Killy,FRA,False,Guy Périllat,FRA,False,Jean-Daniel Dätwyler,SUI,False
+1968,Alpine Skiing,"Giant Slalom, Men",Jean-Claude Killy,FRA,False,Willy Favre,SUI,False,Heini Messner,AUT,False
+1968,Alpine Skiing,"Slalom, Men",Jean-Claude Killy,FRA,False,Herbert Huber,AUT,False,Alfred Matt,AUT,False
+1968,Alpine Skiing,"Downhill, Women",Olga Pall,AUT,False,Isabelle Mir,FRA,False,Christl Haas,AUT,False
+1968,Alpine Skiing,"Giant Slalom, Women",Nancy Greene,CAN,False,Annie Famose,FRA,False,Fernande Bochatay,SUI,False
+1968,Alpine Skiing,"Slalom, Women",Marielle Goitschel,FRA,False,Nancy Greene,CAN,False,Annie Famose,FRA,False
+1968,Biathlon,"Individual, Men",Magnar Solberg,NOR,False,Aleksandr Tikhonov,URS,False,Vladimir Gundartsev,URS,False
+1968,Biathlon,"Relay, Men",Soviet Union,URS,False,Norway,NOR,False,Sweden,SWE,False
+1968,Bobsleigh,"Two, Men",Italy 1,ITA,False,West Germany 1,FRG,False,Romania 1,ROU,False
+1968,Bobsleigh,"Four, Men",Italy 1,ITA,False,Austria 1,AUT,False,Switzerland 1,SUI,False
+1968,Cross Country Skiing,"15 kilometres, Men",Harald Grønningen,NOR,False,Eero Mäntyranta,FIN,False,Gunnar Larsson,SWE,False
+1968,Cross Country Skiing,"30 kilometres, Men",Franco Nones,ITA,False,Odd Martinsen,NOR,False,Eero Mäntyranta,FIN,False
+1968,Cross Country Skiing,"50 kilometres, Men",Ole Ellefsæter,NOR,False,Vyacheslav Vedenin,URS,False,Sepp Haas,SUI,False
+1968,Cross Country Skiing,"Relay, Men",Norway,NOR,False,Sweden,SWE,False,Finland,FIN,False
+1968,Cross Country Skiing,"5 kilometres, Women",Toini Gustafsson,SWE,False,Galina Kulakova,URS,False,Alevtina Kolchina,URS,False
+1968,Cross Country Skiing,"10 kilometres, Women",Toini Gustafsson,SWE,False,Berit Mørdre,NOR,False,Inger Aufles,NOR,False
+1968,Cross Country Skiing,"Relay, Women",Norway,NOR,False,Sweden,SWE,False,Soviet Union,URS,False
+1968,Figure Skating,"Singles, Men",Wolfgang Schwarz,AUT,False,Tim Wood,USA,False,Patrick Péra,FRA,False
+1968,Figure Skating,"Singles, Women",Peggy Fleming,USA,False,Gabriele Seyfert,GDR,False,Hana Mašková,TCH,False
+1968,Figure Skating,"Pairs, Mixed",Soviet Union 1,URS,False,Soviet Union 2,URS,False,West Germany 1,FRG,False
+1968,Ice Hockey,"Ice Hockey, Men",Soviet Union,URS,False,Czechoslovakia,TCH,False,Canada,CAN,False
+1968,Luge,"Singles, Men",Manfred Schmid,AUT,False,Thomas Köhler,GDR,False,Klaus-Michael Bonsack,GDR,False
+1968,Luge,"Doubles, Men",East Germany 1,GDR,False,Austria 1,AUT,False,West Germany 1,FRG,False
+1968,Luge,"Singles, Women",Erika Lechner,ITA,False,Christa Schmuck,FRG,False,Angelika Dünhaupt,FRG,False
+1968,Nordic Combined,"Individual, Men",Franz Keller,FRG,False,Alois Kälin,SUI,False,Andreas Kunz,GDR,False
+1968,Ski Jumping,"Normal Hill, Individual, Men",Jiří Raška,TCH,False,Reinhold Bachler,AUT,False,Baldur Preiml,AUT,False
+1968,Ski Jumping,"Large Hill, Individual, Men",Vladimir Belousov,URS,False,Jiří Raška,TCH,False,Lars Grini,NOR,False
+1968,Speed Skating,"500 metres, Men",Erhard Keller,FRG,False,Terry McDermottMagne Thomassen,USANOR,True,—,—,False
+1968,Speed Skating,"1,500 metres, Men",Kees Verkerk,NED,False,Ivar EriksenArd Schenk,NORNED,True,—,—,False
+1968,Speed Skating,"5,000 metres, Men",Fred Anton Maier,NOR,False,Kees Verkerk,NED,False,Peter Nottet,NED,False
+1968,Speed Skating,"10,000 metres, Men",Johnny Höglin,SWE,False,Fred Anton Maier,NOR,False,Örjan Sandler,SWE,False
+1968,Speed Skating,"500 metres, Women",Lyudmila Titova,URS,False,Jenny FishDianne HolumMary Meyers,USAUSAUSA,False,—,—,False
+1968,Speed Skating,"1,000 metres, Women",Carry Geijssen,NED,False,Lyudmila Titova,URS,False,Dianne Holum,USA,False
+1968,Speed Skating,"1,500 metres, Women",Kaija Mustonen,FIN,False,Carry Geijssen,NED,False,Stien Kaiser,NED,False
+1968,Speed Skating,"3,000 metres, Women",Ans Schut,NED,False,Kaija Mustonen,FIN,False,Stien Kaiser,NED,False
+1972,Alpine Skiing,"Downhill, Men",Bernhard Russi,SUI,False,Roland Collombin,SUI,False,Heini Messner,AUT,False
+1972,Alpine Skiing,"Giant Slalom, Men",Gustavo Thoeni,ITA,False,Edy Bruggmann,SUI,False,Werner Mattle,SUI,False
+1972,Alpine Skiing,"Slalom, Men",Francisco Fernández Ochoa,ESP,False,Gustavo Thoeni,ITA,False,Rolando Thoeni,ITA,False
+1972,Alpine Skiing,"Downhill, Women",Marie-Theres Nadig,SUI,False,Annemarie Pröll,AUT,False,Susie Corrock,USA,False
+1972,Alpine Skiing,"Giant Slalom, Women",Marie-Theres Nadig,SUI,False,Annemarie Pröll,AUT,False,Wiltrud Drexel,AUT,False
+1972,Alpine Skiing,"Slalom, Women",Barbara Cochran,USA,False,Danièle Debernard,FRA,False,Florence Steurer,FRA,False
+1972,Biathlon,"Individual, Men",Magnar Solberg,NOR,False,Hansjörg Knauthe,GDR,False,Lars-Göran Arwidson,SWE,False
+1972,Biathlon,"Relay, Men",Soviet Union,URS,False,Finland,FIN,False,East Germany,GDR,False
+1972,Bobsleigh,"Two, Men",West Germany 2,FRG,False,West Germany 1,FRG,False,Switzerland 1,SUI,False
+1972,Bobsleigh,"Four, Men",Switzerland 1,SUI,False,Italy 1,ITA,False,West Germany 1,FRG,False
+1972,Cross Country Skiing,"15 kilometres, Men",Sven-Åke Lundbäck,SWE,False,Fyodor Simashov,URS,False,Ivar Formo,NOR,False
+1972,Cross Country Skiing,"30 kilometres, Men",Vyacheslav Vedenin,URS,False,Pål Tyldum,NOR,False,Johs Harviken,NOR,False
+1972,Cross Country Skiing,"50 kilometres, Men",Pål Tyldum,NOR,False,Magne Myrmo,NOR,False,Vyacheslav Vedenin,URS,False
+1972,Cross Country Skiing,"Relay, Men",Soviet Union,URS,False,Norway,NOR,False,Switzerland,SUI,False
+1972,Cross Country Skiing,"5 kilometres, Women",Galina Kulakova,URS,False,Marjatta Kajosmaa,FIN,False,Helena Šikolová,TCH,False
+1972,Cross Country Skiing,"10 kilometres, Women",Galina Kulakova,URS,False,Alevtina Olyunina,URS,False,Marjatta Kajosmaa,FIN,False
+1972,Cross Country Skiing,"Relay, Women",Soviet Union,URS,False,Finland,FIN,False,Norway,NOR,False
+1972,Figure Skating,"Singles, Men",Ondrej Nepela,TCH,False,Sergey Chetverukhin,URS,False,Patrick Péra,FRA,False
+1972,Figure Skating,"Singles, Women",Trixi Schuba,AUT,False,Karen Magnussen,CAN,False,Janet Lynn,USA,False
+1972,Figure Skating,"Pairs, Mixed",Soviet Union 1,URS,False,Soviet Union 2,URS,False,East Germany 1,GDR,False
+1972,Ice Hockey,"Ice Hockey, Men",Soviet Union,URS,False,United States,USA,False,Czechoslovakia,TCH,False
+1972,Luge,"Singles, Men",Wolfgang Scheidel,GDR,False,Harald Ehrig,GDR,False,Wolfram Fiedler,GDR,False
+1972,Luge,"Doubles, Men",Italy 1East Germany 1,ITAGDR,True,—,—,False,East Germany 2,GDR,False
+1972,Luge,"Singles, Women",Anna-Maria Müller,GDR,False,Ute Rührold,GDR,False,Margit Schumann,GDR,False
+1972,Nordic Combined,"Individual, Men",Ulrich Wehling,GDR,False,Rauno Miettinen,FIN,False,Karl-Heinz Luck,GDR,False
+1972,Ski Jumping,"Normal Hill, Individual, Men",Yukio Kasaya,JPN,False,Akitsugu Konno,JPN,False,Seiji Aochi,JPN,False
+1972,Ski Jumping,"Large Hill, Individual, Men",Wojciech Fortuna,POL,False,Walter Steiner,SUI,False,Rainer Schmidt,GDR,False
+1972,Speed Skating,"500 metres, Men",Erhard Keller,FRG,False,Hasse Börjes,SWE,False,Valery Muratov,URS,False
+1972,Speed Skating,"1,500 metres, Men",Ard Schenk,NED,False,Roar Grønvold,NOR,False,Göran Claeson,SWE,False
+1972,Speed Skating,"5,000 metres, Men",Ard Schenk,NED,False,Roar Grønvold,NOR,False,Sten Stensen,NOR,False
+1972,Speed Skating,"10,000 metres, Men",Ard Schenk,NED,False,Kees Verkerk,NED,False,Sten Stensen,NOR,False
+1972,Speed Skating,"500 metres, Women",Anne Henning,USA,False,Vera Krasnova,URS,False,Lyudmila Titova,URS,False
+1972,Speed Skating,"1,000 metres, Women",Monika Pflug,FRG,False,Atje Keulen-Deelstra,NED,False,Anne Henning,USA,False
+1972,Speed Skating,"1,500 metres, Women",Dianne Holum,USA,False,Stien Baas-Kaiser,NED,False,Atje Keulen-Deelstra,NED,False
+1972,Speed Skating,"3,000 metres, Women",Stien Baas-Kaiser,NED,False,Dianne Holum,USA,False,Atje Keulen-Deelstra,NED,False
+1976,Alpine Skiing,"Downhill, Men",Franz Klammer,AUT,False,Bernhard Russi,SUI,False,Herbert Plank,ITA,False
+1976,Alpine Skiing,"Giant Slalom, Men",Heini Hemmi,SUI,False,Ernst Good,SUI,False,Ingemar Stenmark,SWE,False
+1976,Alpine Skiing,"Slalom, Men",Piero Gros,ITA,False,Gustavo Thoeni,ITA,False,Willi Frommelt,LIE,False
+1976,Alpine Skiing,"Downhill, Women",Rosi Mittermaier,FRG,False,Brigitte Totschnig,AUT,False,Cindy Nelson,USA,False
+1976,Alpine Skiing,"Giant Slalom, Women",Kathy Kreiner,CAN,False,Rosi Mittermaier,FRG,False,Danièle Debernard,FRA,False
+1976,Alpine Skiing,"Slalom, Women",Rosi Mittermaier,FRG,False,Claudia Giordani,ITA,False,Hanni Wenzel,LIE,False
+1976,Biathlon,"Individual, Men",Nikolay Kruglov,URS,False,Heikki Ikola,FIN,False,Aleksandr Yelizarov,URS,False
+1976,Biathlon,"Relay, Men",Soviet Union,URS,False,Finland,FIN,False,East Germany,GDR,False
+1976,Bobsleigh,"Two, Men",East Germany 2,GDR,False,West Germany 1,FRG,False,Switzerland 1,SUI,False
+1976,Bobsleigh,"Four, Men",East Germany 1,GDR,False,Switzerland 2,SUI,False,West Germany 1,FRG,False
+1976,Cross Country Skiing,"15 kilometres, Men",Nikolay Bazhukov,URS,False,Yevgeny Belyayev,URS,False,Arto Koivisto,FIN,False
+1976,Cross Country Skiing,"30 kilometres, Men",Sergey Savelyev,URS,False,Bill Koch,USA,False,Ivan Garanin,URS,False
+1976,Cross Country Skiing,"50 kilometres, Men",Ivar Formo,NOR,False,Gert-Dietmar Klause,GDR,False,Benny Södergren,SWE,False
+1976,Cross Country Skiing,"Relay, Men",Finland,FIN,False,Norway,NOR,False,Soviet Union,URS,False
+1976,Cross Country Skiing,"5 kilometres, Women",Helena Takalo,FIN,False,Raisa Smetanina,URS,False,Nina Baldycheva,URS,False
+1976,Cross Country Skiing,"10 kilometres, Women",Raisa Smetanina,URS,False,Helena Takalo,FIN,False,Galina Kulakova,URS,False
+1976,Cross Country Skiing,"Relay, Women",Soviet Union,URS,False,Finland,FIN,False,East Germany,GDR,False
+1976,Figure Skating,"Singles, Men",John Curry,GBR,False,Vladimir Kovalyov,URS,False,Toller Cranston,CAN,False
+1976,Figure Skating,"Singles, Women",Dorothy Hamill,USA,False,Dianne de Leeuw,NED,False,Christine Errath,GDR,False
+1976,Figure Skating,"Pairs, Mixed",Soviet Union 1,URS,False,East Germany 1,GDR,False,East Germany 2,GDR,False
+1976,Figure Skating,"Ice Dance, Mixed",Soviet Union 1,URS,False,Soviet Union 2,URS,False,United States 1,USA,False
+1976,Ice Hockey,"Ice Hockey, Men",Soviet Union,URS,False,Czechoslovakia,TCH,False,West Germany,FRG,False
+1976,Luge,"Singles, Men",Dettlef Günther,GDR,False,Josef Fendt,FRG,False,Hans Rinn,GDR,False
+1976,Luge,"Doubles, Men",East Germany 1,GDR,False,West Germany 1,FRG,False,Austria 1,AUT,False
+1976,Luge,"Singles, Women",Margit Schumann,GDR,False,Ute Rührold,GDR,False,Elisabeth Demleitner,FRG,False
+1976,Nordic Combined,"Individual, Men",Ulrich Wehling,GDR,False,Urban Hettich,FRG,False,Konrad Winkler,GDR,False
+1976,Ski Jumping,"Normal Hill, Individual, Men",Hans-Georg Aschenbach,GDR,False,Jochen Danneberg,GDR,False,Karl Schnabl,AUT,False
+1976,Ski Jumping,"Large Hill, Individual, Men",Karl Schnabl,AUT,False,Toni Innauer,AUT,False,Henry Glaß,GDR,False
+1976,Speed Skating,"500 metres, Men",Yevgeny Kulikov,URS,False,Valery Muratov,URS,False,Dan Immerfall,USA,False
+1976,Speed Skating,"1,000 metres, Men",Peter Mueller,USA,False,Jørn Didriksen,NOR,False,Valery Muratov,URS,False
+1976,Speed Skating,"1,500 metres, Men",Jan Egil Storholt,NOR,False,Yury Kondakov,URS,False,Hans van Helden,NED,False
+1976,Speed Skating,"5,000 metres, Men",Sten Stensen,NOR,False,Piet Kleine,NED,False,Hans van Helden,NED,False
+1976,Speed Skating,"10,000 metres, Men",Piet Kleine,NED,False,Sten Stensen,NOR,False,Hans van Helden,NED,False
+1976,Speed Skating,"500 metres, Women",Sheila Young,USA,False,Cathy Priestner,CAN,False,Tatyana Averina,URS,False
+1976,Speed Skating,"1,000 metres, Women",Tatyana Averina,URS,False,Leah Poulos,USA,False,Sheila Young,USA,False
+1976,Speed Skating,"1,500 metres, Women",Galina Stepanskaya,URS,False,Sheila Young,USA,False,Tatyana Averina,URS,False
+1976,Speed Skating,"3,000 metres, Women",Tatyana Averina,URS,False,Andrea Mitscherlich,GDR,False,Lisbeth Korsmo,NOR,False
+1980,Alpine Skiing,"Downhill, Men",Leonhard Stock,AUT,False,Peter Wirnsberger,AUT,False,Steve Podborski,CAN,False
+1980,Alpine Skiing,"Giant Slalom, Men",Ingemar Stenmark,SWE,False,Andi Wenzel,LIE,False,Hans Enn,AUT,False
+1980,Alpine Skiing,"Slalom, Men",Ingemar Stenmark,SWE,False,Phil Mahre,USA,False,Jacques Lüthy,SUI,False
+1980,Alpine Skiing,"Downhill, Women",Annemarie Moser-Pröll,AUT,False,Hanni Wenzel,LIE,False,Marie-Theres Nadig,SUI,False
+1980,Alpine Skiing,"Giant Slalom, Women",Hanni Wenzel,LIE,False,Irene Epple,FRG,False,Perrine Pelen,FRA,False
+1980,Alpine Skiing,"Slalom, Women",Hanni Wenzel,LIE,False,Christa Kinshofer,FRG,False,Erika Hess,SUI,False
+1980,Biathlon,"Sprint, Men",Frank Ullrich,GDR,False,Vladimir Alikin,URS,False,Anatoly Alyabyev,URS,False
+1980,Biathlon,"Individual, Men",Anatoly Alyabyev,URS,False,Frank Ullrich,GDR,False,Eberhard Rösch,GDR,False
+1980,Biathlon,"Relay, Men",Soviet Union,URS,False,East Germany,GDR,False,West Germany,FRG,False
+1980,Bobsleigh,"Two, Men",Switzerland 2,SUI,False,East Germany 2,GDR,False,East Germany 1,GDR,False
+1980,Bobsleigh,"Four, Men",East Germany 1,GDR,False,Switzerland 1,SUI,False,East Germany 2,GDR,False
+1980,Cross Country Skiing,"15 kilometres, Men",Thomas Wassberg,SWE,False,Juha Mieto,FIN,False,Ove Aunli,NOR,False
+1980,Cross Country Skiing,"30 kilometres, Men",Nikolay Zimyatov,URS,False,Vasily Rochev,URS,False,Ivan Lebanov,BUL,False
+1980,Cross Country Skiing,"50 kilometres, Men",Nikolay Zimyatov,URS,False,Juha Mieto,FIN,False,Aleksandr Zavyalov,URS,False
+1980,Cross Country Skiing,"Relay, Men",Soviet Union,URS,False,Norway,NOR,False,Finland,FIN,False
+1980,Cross Country Skiing,"5 kilometres, Women",Raisa Smetanina,URS,False,Hilkka Riihivuori,FIN,False,Květa Jeriová,TCH,False
+1980,Cross Country Skiing,"10 kilometres, Women",Barbara Petzold,GDR,False,Hilkka Riihivuori,FIN,False,Helena Takalo,FIN,False
+1980,Cross Country Skiing,"Relay, Women",East Germany,GDR,False,Soviet Union,URS,False,Norway,NOR,False
+1980,Figure Skating,"Singles, Men",Robin Cousins,GBR,False,Jan Hoffmann,GDR,False,Charlie Tickner,USA,False
+1980,Figure Skating,"Singles, Women",Anett Pötzsch,GDR,False,Linda Fratianne,USA,False,Dagmar Lurz,FRG,False
+1980,Figure Skating,"Pairs, Mixed",Soviet Union 1,URS,False,Soviet Union 2,URS,False,East Germany 1,GDR,False
+1980,Figure Skating,"Ice Dance, Mixed",Soviet Union 1,URS,False,Hungary,HUN,False,Soviet Union 2,URS,False
+1980,Ice Hockey,"Ice Hockey, Men",United States,USA,False,Soviet Union,URS,False,Sweden,SWE,False
+1980,Luge,"Singles, Men",Bernhard Glass,GDR,False,Paul Hildgartner,ITA,False,Anton Winkler,FRG,False
+1980,Luge,"Doubles, Men",East Germany 1,GDR,False,Italy 1,ITA,False,Austria 1,AUT,False
+1980,Luge,"Singles, Women",Vera Zozuļa,URS,False,Melitta Sollmann,GDR,False,Ingrīda Amantova,URS,False
+1980,Nordic Combined,"Individual, Men",Ulrich Wehling,GDR,False,Jouko Karjalainen,FIN,False,Konrad Winkler,GDR,False
+1980,Ski Jumping,"Normal Hill, Individual, Men",Toni Innauer,AUT,False,Manfred DeckertHirokazu Yagi,GDRJPN,True,—,—,False
+1980,Ski Jumping,"Large Hill, Individual, Men",Jouko Törmänen,FIN,False,Hubert Neuper,AUT,False,Jari Puikkonen,FIN,False
+1980,Speed Skating,"500 metres, Men",Eric Heiden,USA,False,Yevgeny Kulikov,URS,False,Lieuwe de Boer,NED,False
+1980,Speed Skating,"1,000 metres, Men",Eric Heiden,USA,False,Gaétan Boucher,CAN,False,Vladimir LobanovFrode Rønning,URSNOR,True
+1980,Speed Skating,"1,500 metres, Men",Eric Heiden,USA,False,Kay Arne Stenshjemmet,NOR,False,Terje Andersen,NOR,False
+1980,Speed Skating,"5,000 metres, Men",Eric Heiden,USA,False,Kay Arne Stenshjemmet,NOR,False,Tom Erik Oxholm,NOR,False
+1980,Speed Skating,"10,000 metres, Men",Eric Heiden,USA,False,Piet Kleine,NED,False,Tom Erik Oxholm,NOR,False
+1980,Speed Skating,"500 metres, Women",Karin Enke,GDR,False,Leah Poulos-Mueller,USA,False,Nataliya Petrusyova,URS,False
+1980,Speed Skating,"1,000 metres, Women",Nataliya Petrusyova,URS,False,Leah Poulos-Mueller,USA,False,Sylvia Albrecht,GDR,False
+1980,Speed Skating,"1,500 metres, Women",Annie Borckink,NED,False,Ria Visser,NED,False,Sabine Becker,GDR,False
+1980,Speed Skating,"3,000 metres, Women",Bjørg Eva Jensen,NOR,False,Sabine Becker,GDR,False,Beth Heiden,USA,False
+1984,Alpine Skiing,"Downhill, Men",Bill Johnson,USA,False,Peter Müller,SUI,False,Anton Steiner,AUT,False
+1984,Alpine Skiing,"Giant Slalom, Men",Max Julen,SUI,False,Jure Franko,YUG,False,Andi Wenzel,LIE,False
+1984,Alpine Skiing,"Slalom, Men",Phil Mahre,USA,False,Steve Mahre,USA,False,Didier Bouvet,FRA,False
+1984,Alpine Skiing,"Downhill, Women",Michela Figini,SUI,False,Maria Walliser,SUI,False,Olga Charvátová,TCH,False
+1984,Alpine Skiing,"Giant Slalom, Women",Debbie Armstrong,USA,False,Christin Cooper,USA,False,Perrine Pelen,FRA,False
+1984,Alpine Skiing,"Slalom, Women",Paola Magoni,ITA,False,Perrine Pelen,FRA,False,Ursula Konzett,LIE,False
+1984,Biathlon,"Sprint, Men",Eirik Kvalfoss,NOR,False,Peter Angerer,FRG,False,Matthias Jacob,GDR,False
+1984,Biathlon,"Individual, Men",Peter Angerer,FRG,False,Frank-Peter Roetsch,GDR,False,Eirik Kvalfoss,NOR,False
+1984,Biathlon,"Relay, Men",Soviet Union,URS,False,Norway,NOR,False,West Germany,FRG,False
+1984,Bobsleigh,"Two, Men",East Germany 2,GDR,False,East Germany 1,GDR,False,Soviet Union 2,URS,False
+1984,Bobsleigh,"Four, Men",East Germany 1,GDR,False,East Germany 2,GDR,False,Switzerland 1,SUI,False
+1984,Cross Country Skiing,"15 kilometres, Men",Gunde Svan,SWE,False,Aki Karvonen,FIN,False,Harri Kirvesniemi,FIN,False
+1984,Cross Country Skiing,"30 kilometres, Men",Nikolay Zimyatov,URS,False,Aleksandr Zavyalov,URS,False,Gunde Svan,SWE,False
+1984,Cross Country Skiing,"50 kilometres, Men",Thomas Wassberg,SWE,False,Gunde Svan,SWE,False,Aki Karvonen,FIN,False
+1984,Cross Country Skiing,"Relay, Men",Sweden,SWE,False,Soviet Union,URS,False,Finland,FIN,False
+1984,Cross Country Skiing,"5 kilometres, Women",Marja-Liisa Hämäläinen,FIN,False,Berit Aunli,NOR,False,Květa Jeriová,TCH,False
+1984,Cross Country Skiing,"10 kilometres, Women",Marja-Liisa Hämäläinen,FIN,False,Raisa Smetanina,URS,False,Brit Pettersen,NOR,False
+1984,Cross Country Skiing,"20 kilometres, Women",Marja-Liisa Hämäläinen,FIN,False,Raisa Smetanina,URS,False,Anne Jahren,NOR,False
+1984,Cross Country Skiing,"Relay, Women",Norway,NOR,False,Czechoslovakia,TCH,False,Finland,FIN,False
+1984,Figure Skating,"Singles, Men",Scott Hamilton,USA,False,Brian Orser,CAN,False,Jozef Sabovčík,TCH,False
+1984,Figure Skating,"Singles, Women",Katarina Witt,GDR,False,Rosalynn Sumners,USA,False,Kira Ivanova,URS,False
+1984,Figure Skating,"Pairs, Mixed",Soviet Union 1,URS,False,United States 1,USA,False,Soviet Union 2,URS,False
+1984,Figure Skating,"Ice Dance, Mixed",Great Britain 1,GBR,False,Soviet Union 1,URS,False,Soviet Union 2,URS,False
+1984,Ice Hockey,"Ice Hockey, Men",Soviet Union,URS,False,Czechoslovakia,TCH,False,Sweden,SWE,False
+1984,Luge,"Singles, Men",Paul Hildgartner,ITA,False,Sergey Danilin,URS,False,Valery Dudin,URS,False
+1984,Luge,"Doubles, Men",West Germany 1,FRG,False,Soviet Union 1,URS,False,East Germany 1,GDR,False
+1984,Luge,"Singles, Women",Steffi Martin,GDR,False,Bettina Schmidt,GDR,False,Ute Weiß,GDR,False
+1984,Nordic Combined,"Individual, Men",Tom Sandberg,NOR,False,Jouko Karjalainen,FIN,False,Jukka Ylipulli,FIN,False
+1984,Ski Jumping,"Normal Hill, Individual, Men",Jens Weißflog,GDR,False,Matti Nykänen,FIN,False,Jari Puikkonen,FIN,False
+1984,Ski Jumping,"Large Hill, Individual, Men",Matti Nykänen,FIN,False,Jens Weißflog,GDR,False,Pavel Ploc,TCH,False
+1984,Speed Skating,"500 metres, Men",Sergey Fokichev,URS,False,Yoshihiro Kitazawa,JPN,False,Gaétan Boucher,CAN,False
+1984,Speed Skating,"1,000 metres, Men",Gaétan Boucher,CAN,False,Sergey Khlebnikov,URS,False,Kai Arne Engelstad,NOR,False
+1984,Speed Skating,"1,500 metres, Men",Gaétan Boucher,CAN,False,Sergey Khlebnikov,URS,False,Oleg Bozhev,URS,False
+1984,Speed Skating,"5,000 metres, Men",Tomas Gustafson,SWE,False,Igor Malkov,URS,False,René Schöfisch,GDR,False
+1984,Speed Skating,"10,000 metres, Men",Igor Malkov,URS,False,Tomas Gustafson,SWE,False,René Schöfisch,GDR,False
+1984,Speed Skating,"500 metres, Women",Christa Rothenburger,GDR,False,Karin Enke,GDR,False,Nataliya Glebova,URS,False
+1984,Speed Skating,"1,000 metres, Women",Karin Enke,GDR,False,Andrea Schöne,GDR,False,Nataliya Petrusyova,URS,False
+1984,Speed Skating,"1,500 metres, Women",Karin Enke,GDR,False,Andrea Schöne,GDR,False,Nataliya Petrusyova,URS,False
+1984,Speed Skating,"3,000 metres, Women",Andrea Schöne,GDR,False,Karin Enke,GDR,False,Gabi Schönbrunn,GDR,False
+1988,Alpine Skiing,"Downhill, Men",Pirmin Zurbriggen,SUI,False,Peter Müller,SUI,False,Franck Piccard,FRA,False
+1988,Alpine Skiing,"Super G, Men",Franck Piccard,FRA,False,Helmut Mayer,AUT,False,Lars-Börje Eriksson,SWE,False
+1988,Alpine Skiing,"Giant Slalom, Men",Alberto Tomba,ITA,False,Hubert Strolz,AUT,False,Pirmin Zurbriggen,SUI,False
+1988,Alpine Skiing,"Slalom, Men",Alberto Tomba,ITA,False,Frank Wörndl,FRG,False,Paul Frommelt,LIE,False
+1988,Alpine Skiing,"Combined, Men",Hubert Strolz,AUT,False,Bernhard Gstrein,AUT,False,Paul Accola,SUI,False
+1988,Alpine Skiing,"Downhill, Women",Marina Kiehl,FRG,False,Brigitte Oertli,SUI,False,Karen Percy,CAN,False
+1988,Alpine Skiing,"Super G, Women",Sigrid Wolf,AUT,False,Michela Figini,SUI,False,Karen Percy,CAN,False
+1988,Alpine Skiing,"Giant Slalom, Women",Vreni Schneider,SUI,False,Christa Kinshofer-Güthlein,FRG,False,Maria Walliser,SUI,False
+1988,Alpine Skiing,"Slalom, Women",Vreni Schneider,SUI,False,Mateja Svet,YUG,False,Christa Kinshofer-Güthlein,FRG,False
+1988,Alpine Skiing,"Combined, Women",Anita Wachter,AUT,False,Brigitte Oertli,SUI,False,Maria Walliser,SUI,False
+1988,Biathlon,"Sprint, Men",Frank-Peter Roetsch,GDR,False,Valery Medvedtsev,URS,False,Sergey Chepikov,URS,False
+1988,Biathlon,"Individual, Men",Frank-Peter Roetsch,GDR,False,Valery Medvedtsev,URS,False,Johann Passler,ITA,False
+1988,Biathlon,"Relay, Men",Soviet Union,URS,False,West Germany,FRG,False,Italy,ITA,False
+1988,Bobsleigh,"Two, Men",Soviet Union 1,URS,False,East Germany 1,GDR,False,East Germany 2,GDR,False
+1988,Bobsleigh,"Four, Men",Switzerland 1,SUI,False,East Germany 1,GDR,False,Soviet Union 2,URS,False
+1988,Cross Country Skiing,"15 kilometres, Men",Mikhail Devyatyarov,URS,False,Pål Gunnar Mikkelsplass,NOR,False,Vladimir Smirnov,URS,False
+1988,Cross Country Skiing,"30 kilometres, Men",Aleksey Prokurorov,URS,False,Vladimir Smirnov,URS,False,Vegard Ulvang,NOR,False
+1988,Cross Country Skiing,"50 kilometres, Men",Gunde Svan,SWE,False,Maurilio De Zolt,ITA,False,Andi Grünenfelder,SUI,False
+1988,Cross Country Skiing,"Relay, Men",Sweden,SWE,False,Soviet Union,URS,False,Czechoslovakia,TCH,False
+1988,Cross Country Skiing,"5 kilometres, Women",Marjo Matikainen,FIN,False,Tamara Tikhonova,URS,False,Vida Vencienė,URS,False
+1988,Cross Country Skiing,"10 kilometres, Women",Vida Vencienė,URS,False,Raisa Smetanina,URS,False,Marjo Matikainen,FIN,False
+1988,Cross Country Skiing,"20 kilometres, Women",Tamara Tikhonova,URS,False,Anfisa Reztsova,URS,False,Raisa Smetanina,URS,False
+1988,Cross Country Skiing,"Relay, Women",Soviet Union,URS,False,Norway,NOR,False,Finland,FIN,False
+1988,Figure Skating,"Singles, Men",Brian Boitano,USA,False,Brian Orser,CAN,False,Viktor Petrenko,URS,False
+1988,Figure Skating,"Singles, Women",Katarina Witt,GDR,False,Elizabeth Manley,CAN,False,Debi Thomas,USA,False
+1988,Figure Skating,"Pairs, Mixed",Soviet Union 1,URS,False,Soviet Union 2,URS,False,United States 1,USA,False
+1988,Figure Skating,"Ice Dance, Mixed",Soviet Union 1,URS,False,Soviet Union 2,URS,False,Canada 1,CAN,False
+1988,Ice Hockey,"Ice Hockey, Men",Soviet Union,URS,False,Finland,FIN,False,Sweden,SWE,False
+1988,Luge,"Singles, Men",Jens Müller,GDR,False,Georg Hackl,FRG,False,Yury Kharchenko,URS,False
+1988,Luge,"Doubles, Men",East Germany 1,GDR,False,East Germany 2,GDR,False,West Germany 1,FRG,False
+1988,Luge,"Singles, Women",Steffi Walter,GDR,False,Ute Oberhoffner,GDR,False,Cerstin Schmidt,GDR,False
+1988,Nordic Combined,"Team, Men",West Germany,FRG,False,Switzerland,SUI,False,Austria,AUT,False
+1988,Nordic Combined,"Individual, Men",Hippolyt Kempf,SUI,False,Klaus Sulzenbacher,AUT,False,Allar Levandi,URS,False
+1988,Ski Jumping,"Normal Hill, Individual, Men",Matti Nykänen,FIN,False,Pavel Ploc,TCH,False,Jiří Malec,TCH,False
+1988,Ski Jumping,"Large Hill, Individual, Men",Matti Nykänen,FIN,False,Erik Johnsen,NOR,False,Matjaž Debelak,YUG,False
+1988,Ski Jumping,"Large Hill, Team, Men",Finland,FIN,False,Yugoslavia,YUG,False,Norway,NOR,False
+1988,Speed Skating,"500 metres, Men",Uwe-Jens Mey,GDR,False,Jan Ykema,NED,False,Akira Kuroiwa,JPN,False
+1988,Speed Skating,"1,000 metres, Men",Nikolay Gulyayev,URS,False,Uwe-Jens Mey,GDR,False,Ihar Zhaliasouski,URS,False
+1988,Speed Skating,"1,500 metres, Men",André Hoffmann,GDR,False,Eric Flaim,USA,False,Michael Hadschieff,AUT,False
+1988,Speed Skating,"5,000 metres, Men",Tomas Gustafson,SWE,False,Leo Visser,NED,False,Gerard Kemkers,NED,False
+1988,Speed Skating,"10,000 metres, Men",Tomas Gustafson,SWE,False,Michael Hadschieff,AUT,False,Leo Visser,NED,False
+1988,Speed Skating,"500 metres, Women",Bonnie Blair,USA,False,Christa Rothenburger,GDR,False,Karin Kania,GDR,False
+1988,Speed Skating,"1,000 metres, Women",Christa Rothenburger,GDR,False,Karin Kania,GDR,False,Bonnie Blair,USA,False
+1988,Speed Skating,"1,500 metres, Women",Yvonne van Gennip,NED,False,Karin Kania,GDR,False,Andrea Ehrig,GDR,False
+1988,Speed Skating,"3,000 metres, Women",Yvonne van Gennip,NED,False,Andrea Ehrig,GDR,False,Gabi Zange,GDR,False
+1988,Speed Skating,"5,000 metres, Women",Yvonne van Gennip,NED,False,Andrea Ehrig,GDR,False,Gabi Zange,GDR,False
+1992,Alpine Skiing,"Downhill, Men",Patrick Ortlieb,AUT,False,Franck Piccard,FRA,False,Günther Mader,AUT,False
+1992,Alpine Skiing,"Super G, Men",Kjetil André Aamodt,NOR,False,Marc Girardelli,LUX,False,Jan Einar Thorsen,NOR,False
+1992,Alpine Skiing,"Giant Slalom, Men",Alberto Tomba,ITA,False,Marc Girardelli,LUX,False,Kjetil André Aamodt,NOR,False
+1992,Alpine Skiing,"Slalom, Men",Finn Christian Jagge,NOR,False,Alberto Tomba,ITA,False,Michael Tritscher,AUT,False
+1992,Alpine Skiing,"Combined, Men",Josef Polig,ITA,False,Gianfranco Martin,ITA,False,Steve Locher,SUI,False
+1992,Alpine Skiing,"Downhill, Women",Kerrin Lee-Gartner,CAN,False,Hilary Lindh,USA,False,Veronika Wallinger,AUT,False
+1992,Alpine Skiing,"Super G, Women",Deborah Compagnoni,ITA,False,Carole Merle,FRA,False,Katja Seizinger,GER,False
+1992,Alpine Skiing,"Giant Slalom, Women",Pernilla Wiberg,SWE,False,Diann Roffe-SteinrotterAnita Wachter,USAAUT,True,—,—,False
+1992,Alpine Skiing,"Slalom, Women",Petra Kronberger,AUT,False,Annelise Coberger,NZL,False,Blanca Fernández Ochoa,ESP,False
+1992,Alpine Skiing,"Combined, Women",Petra Kronberger,AUT,False,Anita Wachter,AUT,False,Florence Masnada,FRA,False
+1992,Biathlon,"Sprint, Men",Mark Kirchner,GER,False,Ricco Groß,GER,False,Harri Eloranta,FIN,False
+1992,Biathlon,"Individual, Men",Yauhen Redzkin,EUN,False,Mark Kirchner,GER,False,Mikael Löfgren,SWE,False
+1992,Biathlon,"Relay, Men",Germany,GER,False,Unified Team,EUN,False,Sweden,SWE,False
+1992,Biathlon,"Sprint, Women",Anfisa Reztsova,EUN,False,Antje Misersky,GER,False,Yelena Belova,EUN,False
+1992,Biathlon,"Individual, Women",Antje Misersky,GER,False,Svetlana Pechorskaya,EUN,False,Myriam Bédard,CAN,False
+1992,Biathlon,"Relay, Women",France,FRA,False,Germany,GER,False,Unified Team,EUN,False
+1992,Bobsleigh,"Two, Men",Switzerland 1,SUI,False,Germany 1,GER,False,Germany 2,GER,False
+1992,Bobsleigh,"Four, Men",Austria 1,AUT,False,Germany 1,GER,False,Switzerland 1,SUI,False
+1992,Cross Country Skiing,"10 kilometres, Men",Vegard Ulvang,NOR,False,Marco Albarello,ITA,False,Christer Majbäck,SWE,False
+1992,Cross Country Skiing,"30 kilometres, Men",Vegard Ulvang,NOR,False,Bjørn Dæhlie,NOR,False,Terje Langli,NOR,False
+1992,Cross Country Skiing,"50 kilometres, Men",Bjørn Dæhlie,NOR,False,Maurilio De Zolt,ITA,False,Giorgio Vanzetta,ITA,False
+1992,Cross Country Skiing,"Skiathlon, Men",Bjørn Dæhlie,NOR,False,Vegard Ulvang,NOR,False,Giorgio Vanzetta,ITA,False
+1992,Cross Country Skiing,"Relay, Men",Norway,NOR,False,Italy,ITA,False,Finland,FIN,False
+1992,Cross Country Skiing,"5 kilometres, Women",Marjut Lukkarinen,FIN,False,Lyubov Yegorova,EUN,False,Yelena Välbe,EUN,False
+1992,Cross Country Skiing,"15 kilometres, Women",Lyubov Yegorova,EUN,False,Marjut Lukkarinen,FIN,False,Yelena Välbe,EUN,False
+1992,Cross Country Skiing,"30 kilometres, Women",Stefania Belmondo,ITA,False,Lyubov Yegorova,EUN,False,Yelena Välbe,EUN,False
+1992,Cross Country Skiing,"Skiathlon, Women",Lyubov Yegorova,EUN,False,Stefania Belmondo,ITA,False,Yelena Välbe,EUN,False
+1992,Cross Country Skiing,"Relay, Women",Unified Team,EUN,False,Norway,NOR,False,Italy,ITA,False
+1992,Figure Skating,"Singles, Men",Viktor Petrenko,EUN,False,Paul Wylie,USA,False,Petr Barna,TCH,False
+1992,Figure Skating,"Singles, Women",Kristi Yamaguchi,USA,False,Midori Ito,JPN,False,Nancy Kerrigan,USA,False
+1992,Figure Skating,"Pairs, Mixed",Unified Team 1,EUN,False,Unified Team 2,EUN,False,Canada 1,CAN,False
+1992,Figure Skating,"Ice Dance, Mixed",Unified Team 1,EUN,False,France 1,FRA,False,Unified Team 2,EUN,False
+1992,Freestyle Skiing,"Moguls, Men",Edgar Grospiron,FRA,False,Olivier Allamand,FRA,False,Nelson Carmichael,USA,False
+1992,Freestyle Skiing,"Moguls, Women",Donna Weinbrecht,USA,False,Yelizaveta Kozhevnikova,EUN,False,Stine Lise Hattestad,NOR,False
+1992,Ice Hockey,"Ice Hockey, Men",Unified Team,EUN,False,Canada,CAN,False,Czechoslovakia,TCH,False
+1992,Luge,"Singles, Men",Georg Hackl,GER,False,Markus Prock,AUT,False,Markus Schmidt,AUT,False
+1992,Luge,"Doubles, Men",Germany 1,GER,False,Germany 2,GER,False,Italy 1,ITA,False
+1992,Luge,"Singles, Women",Doris Neuner,AUT,False,Angelika Neuner,AUT,False,Susi Erdmann,GER,False
+1992,Nordic Combined,"Team, Men",Japan,JPN,False,Norway,NOR,False,Austria,AUT,False
+1992,Nordic Combined,"Individual, Men",Fabrice Guy,FRA,False,Sylvain Guillaume,FRA,False,Klaus Sulzenbacher,AUT,False
+1992,Short Track Speed Skating,"1,000 metres, Men",Kim Gi-Hun,KOR,False,Frédéric Blackburn,CAN,False,Lee Jun-Ho,KOR,False
+1992,Short Track Speed Skating,"Relay, Men",Republic of Korea,KOR,False,Canada,CAN,False,Japan,JPN,False
+1992,Short Track Speed Skating,"500 metres, Women",Cathy Turner,USA,False,Li Yan,CHN,False,Hwang Ok-Sil,PRK,False
+1992,Short Track Speed Skating,"Relay, Women",Canada,CAN,False,United States,USA,False,Unified Team,EUN,False
+1992,Ski Jumping,"Normal Hill, Individual, Men",Ernst Vettori,AUT,False,Martin Höllwarth,AUT,False,Toni Nieminen,FIN,False
+1992,Ski Jumping,"Large Hill, Individual, Men",Toni Nieminen,FIN,False,Martin Höllwarth,AUT,False,Heinz Kuttin,AUT,False
+1992,Ski Jumping,"Large Hill, Team, Men",Finland,FIN,False,Austria,AUT,False,Czechoslovakia,TCH,False
+1992,Speed Skating,"500 metres, Men",Uwe-Jens Mey,GER,False,Toshiyuki Kuroiwa,JPN,False,Junichi Inoue,JPN,False
+1992,Speed Skating,"1,000 metres, Men",Olaf Zinke,GER,False,Kim Yun-Man,KOR,False,Yukinori Miyabe,JPN,False
+1992,Speed Skating,"1,500 metres, Men",Johann Olav Koss,NOR,False,Ådne Søndrål,NOR,False,Leo Visser,NED,False
+1992,Speed Skating,"5,000 metres, Men",Geir Karlstad,NOR,False,Falko Zandstra,NED,False,Leo Visser,NED,False
+1992,Speed Skating,"10,000 metres, Men",Bart Veldkamp,NED,False,Johann Olav Koss,NOR,False,Geir Karlstad,NOR,False
+1992,Speed Skating,"500 metres, Women",Bonnie Blair,USA,False,Ye Qiaobo,CHN,False,Christa Luding,GER,False
+1992,Speed Skating,"1,000 metres, Women",Bonnie Blair,USA,False,Ye Qiaobo,CHN,False,Monique Garbrecht,GER,False
+1992,Speed Skating,"1,500 metres, Women",Jacqueline Börner,GER,False,Gunda Niemann,GER,False,Seiko Hashimoto,JPN,False
+1992,Speed Skating,"3,000 metres, Women",Gunda Niemann,GER,False,Heike Warnicke,GER,False,Emese Hunyady,AUT,False
+1992,Speed Skating,"5,000 metres, Women",Gunda Niemann,GER,False,Heike Warnicke,GER,False,Claudia Pechstein,GER,False
+1994,Alpine Skiing,"Downhill, Men",Tommy Moe,USA,False,Kjetil André Aamodt,NOR,False,Ed Podivinsky,CAN,False
+1994,Alpine Skiing,"Super G, Men",Markus Wasmeier,GER,False,Tommy Moe,USA,False,Kjetil André Aamodt,NOR,False
+1994,Alpine Skiing,"Giant Slalom, Men",Markus Wasmeier,GER,False,Urs Kälin,SUI,False,Christian Mayer,AUT,False
+1994,Alpine Skiing,"Slalom, Men",Thomas Stangassinger,AUT,False,Alberto Tomba,ITA,False,Jure Košir,SLO,False
+1994,Alpine Skiing,"Combined, Men",Lasse Kjus,NOR,False,Kjetil André Aamodt,NOR,False,Harald Christian Strand Nilsen,NOR,False
+1994,Alpine Skiing,"Downhill, Women",Katja Seizinger,GER,False,Picabo Street,USA,False,Isolde Kostner,ITA,False
+1994,Alpine Skiing,"Super G, Women",Diann Roffe-Steinrotter,USA,False,Svetlana Gladysheva,RUS,False,Isolde Kostner,ITA,False
+1994,Alpine Skiing,"Giant Slalom, Women",Deborah Compagnoni,ITA,False,Martina Ertl,GER,False,Vreni Schneider,SUI,False
+1994,Alpine Skiing,"Slalom, Women",Vreni Schneider,SUI,False,Elfi Eder,AUT,False,Katja Koren,SLO,False
+1994,Alpine Skiing,"Combined, Women",Pernilla Wiberg,SWE,False,Vreni Schneider,SUI,False,Alenka Dovžan,SLO,False
+1994,Biathlon,"Sprint, Men",Sergey Chepikov,RUS,False,Ricco Groß,GER,False,Sergey Tarasov,RUS,False
+1994,Biathlon,"Individual, Men",Sergey Tarasov,RUS,False,Frank Luck,GER,False,Sven Fischer,GER,False
+1994,Biathlon,"Relay, Men",Germany,GER,False,Russian Federation,RUS,False,France,FRA,False
+1994,Biathlon,"Sprint, Women",Myriam Bédard,CAN,False,Sviatlana Paramihina,BLR,False,Valentyna Tserbe,UKR,False
+1994,Biathlon,"Individual, Women",Myriam Bédard,CAN,False,Anne Briand-Bouthiaux,FRA,False,Uschi Disl,GER,False
+1994,Biathlon,"Relay, Women",Russian Federation,RUS,False,Germany,GER,False,France,FRA,False
+1994,Bobsleigh,"Two, Men",Switzerland 1,SUI,False,Switzerland 2,SUI,False,Italy 1,ITA,False
+1994,Bobsleigh,"Four, Men",Germany 2,GER,False,Switzerland 1,SUI,False,Germany 1,GER,False
+1994,Cross Country Skiing,"10 kilometres, Men",Bjørn Dæhlie,NOR,False,Vladimir Smirnov,KAZ,False,Marco Albarello,ITA,False
+1994,Cross Country Skiing,"30 kilometres, Men",Thomas Alsgaard,NOR,False,Bjørn Dæhlie,NOR,False,Mika Myllylä,FIN,False
+1994,Cross Country Skiing,"50 kilometres, Men",Vladimir Smirnov,KAZ,False,Mika Myllylä,FIN,False,Sture Sivertsen,NOR,False
+1994,Cross Country Skiing,"Skiathlon, Men",Bjørn Dæhlie,NOR,False,Vladimir Smirnov,KAZ,False,Silvio Fauner,ITA,False
+1994,Cross Country Skiing,"Relay, Men",Italy,ITA,False,Norway,NOR,False,Finland,FIN,False
+1994,Cross Country Skiing,"5 kilometres, Women",Lyubov Yegorova,RUS,False,Manuela Di Centa,ITA,False,Marja-Liisa Kirvesniemi,FIN,False
+1994,Cross Country Skiing,"15 kilometres, Women",Manuela Di Centa,ITA,False,Lyubov Yegorova,RUS,False,Nina Gavrylyuk,RUS,False
+1994,Cross Country Skiing,"30 kilometres, Women",Manuela Di Centa,ITA,False,Marit Wold,NOR,False,Marja-Liisa Kirvesniemi,FIN,False
+1994,Cross Country Skiing,"Skiathlon, Women",Lyubov Yegorova,RUS,False,Manuela Di Centa,ITA,False,Stefania Belmondo,ITA,False
+1994,Cross Country Skiing,"Relay, Women",Russian Federation,RUS,False,Norway,NOR,False,Italy,ITA,False
+1994,Figure Skating,"Singles, Men",Aleksey Urmanov,RUS,False,Elvis Stojko,CAN,False,Philippe Candeloro,FRA,False
+1994,Figure Skating,"Singles, Women",Oksana Baiul,UKR,False,Nancy Kerrigan,USA,False,Chen Lu,CHN,False
+1994,Figure Skating,"Pairs, Mixed",Russian Federation 1,RUS,False,Russian Federation 2,RUS,False,Canada 1,CAN,False
+1994,Figure Skating,"Ice Dance, Mixed",Russian Federation 1,RUS,False,Russian Federation 2,RUS,False,Great Britain,GBR,False
+1994,Freestyle Skiing,"Moguls, Men",Jean-Luc Brassard,CAN,False,Sergey Shupletsov,RUS,False,Edgar Grospiron,FRA,False
+1994,Freestyle Skiing,"Aerials, Men",Sonny Schönbächler,SUI,False,Philippe LaRoche,CAN,False,Lloyd Langlois,CAN,False
+1994,Freestyle Skiing,"Moguls, Women",Stine Lise Hattestad,NOR,False,Liz McIntyre,USA,False,Yelizaveta Kozhevnikova,RUS,False
+1994,Freestyle Skiing,"Aerials, Women",Lina Cheryazova,UZB,False,Marie Lindgren,SWE,False,Hilde Synnøve Lid,NOR,False
+1994,Ice Hockey,"Ice Hockey, Men",Sweden,SWE,False,Canada,CAN,False,Finland,FIN,False
+1994,Luge,"Singles, Men",Georg Hackl,GER,False,Markus Prock,AUT,False,Armin Zöggeler,ITA,False
+1994,Luge,"Doubles, Men",Italy 1,ITA,False,Italy 2,ITA,False,Germany 1,GER,False
+1994,Luge,"Singles, Women",Gerda Weissensteiner,ITA,False,Susi Erdmann,GER,False,Andrea Tagwerker,AUT,False
+1994,Nordic Combined,"Team, Men",Japan,JPN,False,Norway,NOR,False,Switzerland,SUI,False
+1994,Nordic Combined,"Individual, Men",Fred Børre Lundberg,NOR,False,Takanori Kono,JPN,False,Bjarte Engen Vik,NOR,False
+1994,Short Track Speed Skating,"500 metres, Men",Chae Ji-Hun,KOR,False,Mirko Vuillermin,ITA,False,Nicky Gooch,GBR,False
+1994,Short Track Speed Skating,"1,000 metres, Men",Kim Gi-Hun,KOR,False,Chae Ji-Hun,KOR,False,Marc Gagnon,CAN,False
+1994,Short Track Speed Skating,"Relay, Men",Italy,ITA,False,United States,USA,False,Australia,AUS,False
+1994,Short Track Speed Skating,"500 metres, Women",Cathy Turner,USA,False,Zhang Yanmei,CHN,False,Amy Peterson,USA,False
+1994,Short Track Speed Skating,"1,000 metres, Women",Jeon Lee-Gyeong,KOR,False,Nathalie Lambert,CAN,False,Kim So-Hui,KOR,False
+1994,Short Track Speed Skating,"Relay, Women",Republic of Korea,KOR,False,Canada,CAN,False,United States,USA,False
+1994,Ski Jumping,"Normal Hill, Individual, Men",Espen Bredesen,NOR,False,Lasse Ottesen,NOR,False,Dieter Thoma,GER,False
+1994,Ski Jumping,"Large Hill, Individual, Men",Jens Weißflog,GER,False,Espen Bredesen,NOR,False,Andi Goldberger,AUT,False
+1994,Ski Jumping,"Large Hill, Team, Men",Germany,GER,False,Japan,JPN,False,Austria,AUT,False
+1994,Speed Skating,"500 metres, Men",Aleksandr Golubev,RUS,False,Sergey Klevchenya,RUS,False,Manabu Horii,JPN,False
+1994,Speed Skating,"1,000 metres, Men",Dan Jansen,USA,False,Ihar Zhaliasouski,BLR,False,Sergey Klevchenya,RUS,False
+1994,Speed Skating,"1,500 metres, Men",Johann Olav Koss,NOR,False,Rintje Ritsma,NED,False,Falko Zandstra,NED,False
+1994,Speed Skating,"5,000 metres, Men",Johann Olav Koss,NOR,False,Kjell Storelid,NOR,False,Rintje Ritsma,NED,False
+1994,Speed Skating,"10,000 metres, Men",Johann Olav Koss,NOR,False,Kjell Storelid,NOR,False,Bart Veldkamp,NED,False
+1994,Speed Skating,"500 metres, Women",Bonnie Blair,USA,False,Susan Auch,CAN,False,Franziska Schenk,GER,False
+1994,Speed Skating,"1,000 metres, Women",Bonnie Blair,USA,False,Anke Baier,GER,False,Ye Qiaobo,CHN,False
+1994,Speed Skating,"1,500 metres, Women",Emese Hunyady,AUT,False,Svetlana Fedotkina,RUS,False,Gunda Niemann,GER,False
+1994,Speed Skating,"3,000 metres, Women",Svetlana Bazhanova,RUS,False,Emese Hunyady,AUT,False,Claudia Pechstein,GER,False
+1994,Speed Skating,"5,000 metres, Women",Claudia Pechstein,GER,False,Gunda Niemann,GER,False,Hiromi Yamamoto,JPN,False
+1998,Alpine Skiing,"Downhill, Men",Jean-Luc Crétier,FRA,False,Lasse Kjus,NOR,False,Hannes Trinkl,AUT,False
+1998,Alpine Skiing,"Super G, Men",Hermann Maier,AUT,False,Didier CucheHans Knauß,SUIAUT,True,—,—,False
+1998,Alpine Skiing,"Giant Slalom, Men",Hermann Maier,AUT,False,Stephan Eberharter,AUT,False,Michael von Grünigen,SUI,False
+1998,Alpine Skiing,"Slalom, Men",Hans Petter Buraas,NOR,False,Ole Kristian Furuseth,NOR,False,Thomas Sykora,AUT,False
+1998,Alpine Skiing,"Combined, Men",Mario Reiter,AUT,False,Lasse Kjus,NOR,False,Christian Mayer,AUT,False
+1998,Alpine Skiing,"Downhill, Women",Katja Seizinger,GER,False,Pernilla Wiberg,SWE,False,Florence Masnada,FRA,False
+1998,Alpine Skiing,"Super G, Women",Picabo Street,USA,False,Michaela Dorfmeister,AUT,False,Alexandra Meissnitzer,AUT,False
+1998,Alpine Skiing,"Giant Slalom, Women",Deborah Compagnoni,ITA,False,Alexandra Meissnitzer,AUT,False,Katja Seizinger,GER,False
+1998,Alpine Skiing,"Slalom, Women",Hilde Gerg,GER,False,Deborah Compagnoni,ITA,False,Zali Steggall,AUS,False
+1998,Alpine Skiing,"Combined, Women",Katja Seizinger,GER,False,Martina Ertl,GER,False,Hilde Gerg,GER,False
+1998,Biathlon,"Sprint, Men",Ole Einar Bjørndalen,NOR,False,Frode Andresen,NOR,False,Ville Räikkönen,FIN,False
+1998,Biathlon,"Individual, Men",Halvard Hanevold,NOR,False,Pieralberto Carrara,ITA,False,Aliaksei Aydarau,BLR,False
+1998,Biathlon,"Relay, Men",Germany,GER,False,Norway,NOR,False,Russian Federation,RUS,False
+1998,Biathlon,"Sprint, Women",Galina Kukleva,RUS,False,Uschi Disl,GER,False,Katrin Apel,GER,False
+1998,Biathlon,"Individual, Women",Ekaterina Dafovska,BUL,False,Olena Petrova,UKR,False,Uschi Disl,GER,False
+1998,Biathlon,"Relay, Women",Germany,GER,False,Russian Federation,RUS,False,Norway,NOR,False
+1998,Bobsleigh,"Two, Men",Italy 1Canada 1,ITACAN,True,—,—,False,Germany 1,GER,False
+1998,Bobsleigh,"Four, Men",Germany 2,GER,False,Switzerland 1,SUI,False,Great BritainFrance,GBRFRA,True
+1998,Cross Country Skiing,"10 kilometres, Men",Bjørn Dæhlie,NOR,False,Markus Gandler,AUT,False,Mika Myllylä,FIN,False
+1998,Cross Country Skiing,"30 kilometres, Men",Mika Myllylä,FIN,False,Erling Jevne,NOR,False,Silvio Fauner,ITA,False
+1998,Cross Country Skiing,"50 kilometres, Men",Bjørn Dæhlie,NOR,False,Niklas Jonsson,SWE,False,Christian Hoffmann,AUT,False
+1998,Cross Country Skiing,"Skiathlon, Men",Thomas Alsgaard,NOR,False,Bjørn Dæhlie,NOR,False,Vladimir Smirnov,KAZ,False
+1998,Cross Country Skiing,"Relay, Men",Norway,NOR,False,Italy,ITA,False,Finland,FIN,False
+1998,Cross Country Skiing,"5 kilometres, Women",Larisa Lazutina,RUS,False,Kateřina Neumannová,CZE,False,Bente Martinsen,NOR,False
+1998,Cross Country Skiing,"15 kilometres, Women",Olga Danilova,RUS,False,Larisa Lazutina,RUS,False,Anita Moen-Guidon,NOR,False
+1998,Cross Country Skiing,"30 kilometres, Women",Yuliya Chepalova,RUS,False,Stefania Belmondo,ITA,False,Larisa Lazutina,RUS,False
+1998,Cross Country Skiing,"Skiathlon, Women",Larisa Lazutina,RUS,False,Olga Danilova,RUS,False,Kateřina Neumannová,CZE,False
+1998,Cross Country Skiing,"Relay, Women",Russian Federation,RUS,False,Norway,NOR,False,Italy,ITA,False
+1998,Curling,"Team, Men",Switzerland,SUI,False,Canada,CAN,False,Norway,NOR,False
+1998,Curling,"Team, Women",Canada,CAN,False,Denmark,DEN,False,Sweden,SWE,False
+1998,Figure Skating,"Singles, Men",Ilya Kulik,RUS,False,Elvis Stojko,CAN,False,Philippe Candeloro,FRA,False
+1998,Figure Skating,"Singles, Women",Tara Lipinski,USA,False,Michelle Kwan,USA,False,Chen Lu,CHN,False
+1998,Figure Skating,"Pairs, Mixed",Russian Federation 1,RUS,False,Russian Federation 2,RUS,False,Germany 1,GER,False
+1998,Figure Skating,"Ice Dance, Mixed",Russian Federation 1,RUS,False,Russian Federation 2,RUS,False,France 1,FRA,False
+1998,Freestyle Skiing,"Moguls, Men",Jonny Moseley,USA,False,Janne Lahtela,FIN,False,Sami Mustonen,FIN,False
+1998,Freestyle Skiing,"Aerials, Men",Eric Bergoust,USA,False,Sébastien Foucras,FRA,False,Dzmitry Dashchynski,BLR,False
+1998,Freestyle Skiing,"Moguls, Women",Tae Satoya,JPN,False,Tatjana Mittermayer,GER,False,Kari Traa,NOR,False
+1998,Freestyle Skiing,"Aerials, Women",Nikki Stone,USA,False,Xu Nannan,CHN,False,Colette Brand,SUI,False
+1998,Ice Hockey,"Ice Hockey, Men",Czech Republic,CZE,False,Russian Federation,RUS,False,Finland,FIN,False
+1998,Ice Hockey,"Ice Hockey, Women",United States,USA,False,Canada,CAN,False,Finland,FIN,False
+1998,Luge,"Singles, Men",Georg Hackl,GER,False,Armin Zöggeler,ITA,False,Jens Müller,GER,False
+1998,Luge,"Doubles, Men",Germany 1,GER,False,United States 1,USA,False,United States 2,USA,False
+1998,Luge,"Singles, Women",Silke Kraushaar,GER,False,Barbara Niedernhuber,GER,False,Angelika Neuner,AUT,False
+1998,Nordic Combined,"Team, Men",Norway,NOR,False,Finland,FIN,False,France,FRA,False
+1998,Nordic Combined,"Individual, Men",Bjarte Engen Vik,NOR,False,Samppa Lajunen,FIN,False,Valery Stolyarov,RUS,False
+1998,Short Track Speed Skating,"500 metres, Men",Takafumi Nishitani,JPN,False,An Yulong,CHN,False,Hitoshi Uematsu,JPN,False
+1998,Short Track Speed Skating,"1,000 metres, Men",Kim Dong-Seong,KOR,False,Li Jiajun,CHN,False,Éric Bédard,CAN,False
+1998,Short Track Speed Skating,"Relay, Men",Canada,CAN,False,Republic of Korea,KOR,False,People's Republic of China,CHN,False
+1998,Short Track Speed Skating,"500 metres, Women",Annie Perreault,CAN,False,Yang Yang (S),CHN,False,Jeon Lee-Gyeong,KOR,False
+1998,Short Track Speed Skating,"1,000 metres, Women",Jeon Lee-Gyeong,KOR,False,Yang Yang (S),CHN,False,Won Hye-Gyeong,KOR,False
+1998,Short Track Speed Skating,"Relay, Women",Republic of Korea,KOR,False,People's Republic of China,CHN,False,Canada,CAN,False
+1998,Ski Jumping,"Normal Hill, Individual, Men",Jani Soininen,FIN,False,Kazuyoshi Funaki,JPN,False,Andreas Widhölzl,AUT,False
+1998,Ski Jumping,"Large Hill, Individual, Men",Kazuyoshi Funaki,JPN,False,Jani Soininen,FIN,False,Masahiko Harada,JPN,False
+1998,Ski Jumping,"Large Hill, Team, Men",Japan,JPN,False,Germany,GER,False,Austria,AUT,False
+1998,Snowboarding,"Giant Slalom, Men",Ross Rebagliati,CAN,False,Thomas Prugger,ITA,False,Ueli Kestenholz,SUI,False
+1998,Snowboarding,"Halfpipe, Men",Gian Simmen,SUI,False,Daniel Franck,NOR,False,Ross Powers,USA,False
+1998,Snowboarding,"Giant Slalom, Women",Karine Ruby,FRA,False,Heidi Renoth,GER,False,Brigitte Köck,AUT,False
+1998,Snowboarding,"Halfpipe, Women",Nicola Thost,GER,False,Stine Brun Kjeldaas,NOR,False,Shannon Dunn,USA,False
+1998,Speed Skating,"500 metres, Men",Hiroyasu Shimizu,JPN,False,Jeremy Wotherspoon,CAN,False,Kevin Overland,CAN,False
+1998,Speed Skating,"1,000 metres, Men",Ids Postma,NED,False,Jan Bos,NED,False,Hiroyasu Shimizu,JPN,False
+1998,Speed Skating,"1,500 metres, Men",Ådne Søndrål,NOR,False,Ids Postma,NED,False,Rintje Ritsma,NED,False
+1998,Speed Skating,"5,000 metres, Men",Gianni Romme,NED,False,Rintje Ritsma,NED,False,Bart Veldkamp,BEL,False
+1998,Speed Skating,"10,000 metres, Men",Gianni Romme,NED,False,Bob de Jong,NED,False,Rintje Ritsma,NED,False
+1998,Speed Skating,"500 metres, Women",Catriona Le May Doan,CAN,False,Susan Auch,CAN,False,Tomomi Okazaki,JPN,False
+1998,Speed Skating,"1,000 metres, Women",Marianne Timmer,NED,False,Chris Witty,USA,False,Catriona Le May Doan,CAN,False
+1998,Speed Skating,"1,500 metres, Women",Marianne Timmer,NED,False,Gunda Niemann-Stirnemann,GER,False,Chris Witty,USA,False
+1998,Speed Skating,"3,000 metres, Women",Gunda Niemann-Stirnemann,GER,False,Claudia Pechstein,GER,False,Anni Friesinger,GER,False
+1998,Speed Skating,"5,000 metres, Women",Claudia Pechstein,GER,False,Gunda Niemann-Stirnemann,GER,False,Lyudmila Prokashova,KAZ,False
+2002,Alpine Skiing,"Downhill, Men",Fritz Strobl,AUT,False,Lasse Kjus,NOR,False,Stephan Eberharter,AUT,False
+2002,Alpine Skiing,"Super G, Men",Kjetil André Aamodt,NOR,False,Stephan Eberharter,AUT,False,Andreas Schifferer,AUT,False
+2002,Alpine Skiing,"Giant Slalom, Men",Stephan Eberharter,AUT,False,Bode Miller,USA,False,Lasse Kjus,NOR,False
+2002,Alpine Skiing,"Slalom, Men",Jean-Pierre Vidal,FRA,False,Sébastien Amiez,FRA,False,Benjamin Raich,AUT,False
+2002,Alpine Skiing,"Combined, Men",Kjetil André Aamodt,NOR,False,Bode Miller,USA,False,Benjamin Raich,AUT,False
+2002,Alpine Skiing,"Downhill, Women",Carole Montillet,FRA,False,Isolde Kostner,ITA,False,Renate Götschl,AUT,False
+2002,Alpine Skiing,"Super G, Women",Daniela Ceccarelli,ITA,False,Janica Kostelić,CRO,False,Karen Putzer,ITA,False
+2002,Alpine Skiing,"Giant Slalom, Women",Janica Kostelić,CRO,False,Anja Pärson,SWE,False,Sonja Nef,SUI,False
+2002,Alpine Skiing,"Slalom, Women",Janica Kostelić,CRO,False,Laure Pequegnot,FRA,False,Anja Pärson,SWE,False
+2002,Alpine Skiing,"Combined, Women",Janica Kostelić,CRO,False,Renate Götschl,AUT,False,Martina Ertl,GER,False
+2002,Biathlon,"Sprint, Men",Ole Einar Bjørndalen,NOR,False,Sven Fischer,GER,False,Wolfgang Perner,AUT,False
+2002,Biathlon,"Pursuit, Men",Ole Einar Bjørndalen,NOR,False,Raphaël Poirée,FRA,False,Ricco Groß,GER,False
+2002,Biathlon,"Individual, Men",Ole Einar Bjørndalen,NOR,False,Frank Luck,GER,False,Viktor Maygurov,RUS,False
+2002,Biathlon,"Relay, Men",Norway,NOR,False,Germany,GER,False,France,FRA,False
+2002,Biathlon,"Sprint, Women",Kati Wilhelm,GER,False,Uschi Disl,GER,False,Magdalena Forsberg,SWE,False
+2002,Biathlon,"Pursuit, Women",Olga Pylyova,RUS,False,Kati Wilhelm,GER,False,Irina Nikulchina,BUL,False
+2002,Biathlon,"Individual, Women",Andrea Henkel,GER,False,Liv Grete Skjelbreid-Poirée,NOR,False,Magdalena Forsberg,SWE,False
+2002,Biathlon,"Relay, Women",Germany,GER,False,Norway,NOR,False,Russian Federation,RUS,False
+2002,Bobsleigh,"Two, Men",Germany 1,GER,False,Switzerland 1,SUI,False,Switzerland 2,SUI,False
+2002,Bobsleigh,"Four, Men",Germany 2,GER,False,United States 1,USA,False,United States 2,USA,False
+2002,Bobsleigh,"Two, Women",United States 2,USA,False,Germany 1,GER,False,Germany 2,GER,False
+2002,Cross Country Skiing,"Sprint, Men",Tor-Arne Hetland,NOR,False,Peter Schlickenrieder,GER,False,Cristian Zorzi,ITA,False
+2002,Cross Country Skiing,"15 kilometres, Men",Andrus Veerpalu,EST,False,Frode Estil,NOR,False,Jaak Mae,EST,False
+2002,Cross Country Skiing,"30 kilometres, Men",Christian Hoffmann,AUT,False,Mikhail Botvinov,AUT,False,Kristen Skjeldal,NOR,False
+2002,Cross Country Skiing,"50 kilometres, Men",Mikhail Ivanov,RUS,False,Andrus Veerpalu,EST,False,Odd-Bjørn Hjelmeset,NOR,False
+2002,Cross Country Skiing,"Skiathlon, Men",Frode EstilThomas Alsgaard,NORNOR,True,—,—,False,Per Elofsson,SWE,False
+2002,Cross Country Skiing,"Relay, Men",Norway,NOR,False,Italy,ITA,False,Germany,GER,False
+2002,Cross Country Skiing,"Sprint, Women",Yuliya Chepalova,RUS,False,Evi Sachenbacher,GER,False,Anita Moen,NOR,False
+2002,Cross Country Skiing,"10 kilometres, Women",Bente Skari,NOR,False,Yuliya Chepalova,RUS,False,Stefania Belmondo,ITA,False
+2002,Cross Country Skiing,"15 kilometres, Women",Stefania Belmondo,ITA,False,Kateřina Neumannová,CZE,False,Yuliya Chepalova,RUS,False
+2002,Cross Country Skiing,"30 kilometres, Women",Gabriella Paruzzi,ITA,False,Stefania Belmondo,ITA,False,Bente Skari,NOR,False
+2002,Cross Country Skiing,"Skiathlon, Women",Beckie Scott,CAN,False,Kateřina Neumannová,CZE,False,Viola Bauer,GER,False
+2002,Cross Country Skiing,"Relay, Women",Germany,GER,False,Norway,NOR,False,Switzerland,SUI,False
+2002,Curling,"Team, Men",Norway,NOR,False,Canada,CAN,False,Switzerland,SUI,False
+2002,Curling,"Team, Women",Great Britain,GBR,False,Switzerland,SUI,False,Canada,CAN,False
+2002,Figure Skating,"Singles, Men",Aleksey Yagudin,RUS,False,Yevgeny Plyushchenko,RUS,False,Timothy Goebel,USA,False
+2002,Figure Skating,"Singles, Women",Sarah Hughes,USA,False,Irina Slutskaya,RUS,False,Michelle Kwan,USA,False
+2002,Figure Skating,"Pairs, Mixed",Russian Federation 1Canada 1,RUSCAN,True,—,—,False,People's Republic of China 1,CHN,False
+2002,Figure Skating,"Ice Dance, Mixed",France 1,FRA,False,Russian Federation 1,RUS,False,Italy 1,ITA,False
+2002,Freestyle Skiing,"Moguls, Men",Janne Lahtela,FIN,False,Travis Mayer,USA,False,Richard Gay,FRA,False
+2002,Freestyle Skiing,"Aerials, Men",Aleš Valenta,CZE,False,Joe Pack,USA,False,Aliaksei Hryshyn,BLR,False
+2002,Freestyle Skiing,"Moguls, Women",Kari Traa,NOR,False,Shannon Bahrke,USA,False,Tae Satoya,JPN,False
+2002,Freestyle Skiing,"Aerials, Women",Alisa Camplin,AUS,False,Veronica Brenner,CAN,False,Deidra Dionne,CAN,False
+2002,Ice Hockey,"Ice Hockey, Men",Canada,CAN,False,United States,USA,False,Russian Federation,RUS,False
+2002,Ice Hockey,"Ice Hockey, Women",Canada,CAN,False,United States,USA,False,Sweden,SWE,False
+2002,Luge,"Singles, Men",Armin Zöggeler,ITA,False,Georg Hackl,GER,False,Markus Prock,AUT,False
+2002,Luge,"Doubles, Men",Germany 2,GER,False,United States 2,USA,False,United States 1,USA,False
+2002,Luge,"Singles, Women",Sylke Otto,GER,False,Barbara Niedernhuber,GER,False,Silke Kraushaar,GER,False
+2002,Nordic Combined,"Team, Men",Finland,FIN,False,Germany,GER,False,Austria,AUT,False
+2002,Nordic Combined,"Individual, Men",Samppa Lajunen,FIN,False,Jaakko Tallus,FIN,False,Felix Gottwald,AUT,False
+2002,Nordic Combined,"Sprint, Men",Samppa Lajunen,FIN,False,Ronny Ackermann,GER,False,Felix Gottwald,AUT,False
+2002,Short Track Speed Skating,"500 metres, Men",Marc Gagnon,CAN,False,Jonathan Guilmette,CAN,False,Rusty Smith,USA,False
+2002,Short Track Speed Skating,"1,000 metres, Men",Steven Bradbury,AUS,False,Apolo Anton Ohno,USA,False,Mathieu Turcotte,CAN,False
+2002,Short Track Speed Skating,"1,500 metres, Men",Apolo Anton Ohno,USA,False,Li Jiajun,CHN,False,Marc Gagnon,CAN,False
+2002,Short Track Speed Skating,"Relay, Men",Canada,CAN,False,Italy,ITA,False,People's Republic of China,CHN,False
+2002,Short Track Speed Skating,"500 metres, Women",Yang Yang (A),CHN,False,Evgeniya Radanova,BUL,False,Wang Chunlu,CHN,False
+2002,Short Track Speed Skating,"1,000 metres, Women",Yang Yang (A),CHN,False,Go Gi-Hyeon,KOR,False,Yang Yang (S),CHN,False
+2002,Short Track Speed Skating,"1,500 metres, Women",Go Gi-Hyeon,KOR,False,Choi Eun-Gyeong,KOR,False,Evgeniya Radanova,BUL,False
+2002,Short Track Speed Skating,"Relay, Women",Republic of Korea,KOR,False,People's Republic of China,CHN,False,Canada,CAN,False
+2002,Skeleton,"Skeleton, Men","Jim Shea, Jr.",USA,False,Martin Rettl,AUT,False,Gregor Stähli,SUI,False
+2002,Skeleton,"Skeleton, Women",Tristan Gale,USA,False,Lea Ann Parsley,USA,False,Alex Coomber,GBR,False
+2002,Ski Jumping,"Normal Hill, Individual, Men",Simon Ammann,SUI,False,Sven Hannawald,GER,False,Adam Małysz,POL,False
+2002,Ski Jumping,"Large Hill, Individual, Men",Simon Ammann,SUI,False,Adam Małysz,POL,False,Matti Hautamäki,FIN,False
+2002,Ski Jumping,"Large Hill, Team, Men",Germany,GER,False,Finland,FIN,False,Slovenia,SLO,False
+2002,Snowboarding,"Parallel Giant Slalom, Men",Philipp Schoch,SUI,False,Richard Richardsson,SWE,False,Chris Klug,USA,False
+2002,Snowboarding,"Halfpipe, Men",Ross Powers,USA,False,Danny Kass,USA,False,JJ Thomas,USA,False
+2002,Snowboarding,"Parallel Giant Slalom, Women",Isabelle Blanc,FRA,False,Karine Ruby,FRA,False,Lidia Trettel,ITA,False
+2002,Snowboarding,"Halfpipe, Women",Kelly Clark,USA,False,Doriane Vidal,FRA,False,Fabienne Reuteler,SUI,False
+2002,Speed Skating,"500 metres, Men",Casey FitzRandolph,USA,False,Hiroyasu Shimizu,JPN,False,Kip Carpenter,USA,False
+2002,Speed Skating,"1,000 metres, Men",Gerard van Velde,NED,False,Jan Bos,NED,False,Joey Cheek,USA,False
+2002,Speed Skating,"1,500 metres, Men",Derek Parra,USA,False,Jochem Uytdehaage,NED,False,Ådne Søndrål,NOR,False
+2002,Speed Skating,"5,000 metres, Men",Jochem Uytdehaage,NED,False,Derek Parra,USA,False,Jens Boden,GER,False
+2002,Speed Skating,"10,000 metres, Men",Jochem Uytdehaage,NED,False,Gianni Romme,NED,False,Lasse Sætre,NOR,False
+2002,Speed Skating,"500 metres, Women",Catriona Le May Doan,CAN,False,Monique Garbrecht-Enfeldt,GER,False,Sabine Völker,GER,False
+2002,Speed Skating,"1,000 metres, Women",Chris Witty,USA,False,Sabine Völker,GER,False,Jennifer Rodriguez,USA,False
+2002,Speed Skating,"1,500 metres, Women",Anni Friesinger,GER,False,Sabine Völker,GER,False,Jennifer Rodriguez,USA,False
+2002,Speed Skating,"3,000 metres, Women",Claudia Pechstein,GER,False,Renate Groenewold,NED,False,Cindy Klassen,CAN,False
+2002,Speed Skating,"5,000 metres, Women",Claudia Pechstein,GER,False,Gretha Smit,NED,False,Clara Hughes,CAN,False
+2006,Alpine Skiing,"Downhill, Men",Antoine Dénériaz,FRA,False,Michael Walchhofer,AUT,False,Bruno Kernen,SUI,False
+2006,Alpine Skiing,"Super G, Men",Kjetil André Aamodt,NOR,False,Hermann Maier,AUT,False,Ambrosi Hoffmann,SUI,False
+2006,Alpine Skiing,"Giant Slalom, Men",Benjamin Raich,AUT,False,Joël Chenal,FRA,False,Hermann Maier,AUT,False
+2006,Alpine Skiing,"Slalom, Men",Benjamin Raich,AUT,False,Reinfried Herbst,AUT,False,Rainer Schönfelder,AUT,False
+2006,Alpine Skiing,"Combined, Men",Ted Ligety,USA,False,Ivica Kostelić,CRO,False,Rainer Schönfelder,AUT,False
+2006,Alpine Skiing,"Downhill, Women",Michaela Dorfmeister,AUT,False,Martina Schild,SUI,False,Anja Pärson,SWE,False
+2006,Alpine Skiing,"Super G, Women",Michaela Dorfmeister,AUT,False,Janica Kostelić,CRO,False,Alexandra Meissnitzer,AUT,False
+2006,Alpine Skiing,"Giant Slalom, Women",Julia Mancuso,USA,False,Tanja Poutiainen,FIN,False,Anna Ottosson,SWE,False
+2006,Alpine Skiing,"Slalom, Women",Anja Pärson,SWE,False,Nicole Hosp,AUT,False,Marlies Schild,AUT,False
+2006,Alpine Skiing,"Combined, Women",Janica Kostelić,CRO,False,Marlies Schild,AUT,False,Anja Pärson,SWE,False
+2006,Biathlon,"Sprint, Men",Sven Fischer,GER,False,Halvard Hanevold,NOR,False,Frode Andresen,NOR,False
+2006,Biathlon,"Pursuit, Men",Vincent Defrasne,FRA,False,Ole Einar Bjørndalen,NOR,False,Sven Fischer,GER,False
+2006,Biathlon,"Mass Start, Men",Michael Greis,GER,False,Tomasz Sikora,POL,False,Ole Einar Bjørndalen,NOR,False
+2006,Biathlon,"Individual, Men",Michael Greis,GER,False,Ole Einar Bjørndalen,NOR,False,Halvard Hanevold,NOR,False
+2006,Biathlon,"Relay, Men",Germany,GER,False,Russian Federation,RUS,False,France,FRA,False
+2006,Biathlon,"Sprint, Women",Florence Baverel-Robert,FRA,False,Anna-Carin Olofsson,SWE,False,Liliya Yefremova,UKR,False
+2006,Biathlon,"Pursuit, Women",Kati Wilhelm,GER,False,Martina Glagow,GER,False,Albina Akhatova,RUS,False
+2006,Biathlon,"Mass Start, Women",Anna-Carin Olofsson,SWE,False,Kati Wilhelm,GER,False,Uschi Disl,GER,False
+2006,Biathlon,"Individual, Women",Svetlana Ishmuratova,RUS,False,Martina Glagow,GER,False,Albina Akhatova,RUS,False
+2006,Biathlon,"Relay, Women",Russian Federation,RUS,False,Germany,GER,False,France,FRA,False
+2006,Bobsleigh,"Two, Men",Germany 1,GER,False,Canada 1,CAN,False,Switzerland 1,SUI,False
+2006,Bobsleigh,"Four, Men",Germany 1,GER,False,Russian Federation 1,RUS,False,Switzerland 1,SUI,False
+2006,Bobsleigh,"Two, Women",Germany 1,GER,False,United States 1,USA,False,Italy 1,ITA,False
+2006,Cross Country Skiing,"Sprint, Men",Björn Lind,SWE,False,Roddy Darragon,FRA,False,Thobias Fredriksson,SWE,False
+2006,Cross Country Skiing,"15 kilometres, Men",Andrus Veerpalu,EST,False,Lukáš Bauer,CZE,False,Tobias Angerer,GER,False
+2006,Cross Country Skiing,"50 kilometres, Men",Giorgio Di Centa,ITA,False,Yevgeny Dementyev,RUS,False,Mikhail Botvinov,AUT,False
+2006,Cross Country Skiing,"Skiathlon, Men",Yevgeny Dementyev,RUS,False,Frode Estil,NOR,False,Pietro Piller Cottrer,ITA,False
+2006,Cross Country Skiing,"Relay, Men",Italy,ITA,False,Germany,GER,False,Sweden,SWE,False
+2006,Cross Country Skiing,"Team Sprint, Men",Sweden,SWE,False,Norway,NOR,False,Russian Federation,RUS,False
+2006,Cross Country Skiing,"Sprint, Women",Chandra Crawford,CAN,False,Claudia Nystad,GER,False,Alyona Sidko,RUS,False
+2006,Cross Country Skiing,"10 kilometres, Women",Kristina Šmigun,EST,False,Marit Bjørgen,NOR,False,Hilde Gjermundshaug Pedersen,NOR,False
+2006,Cross Country Skiing,"30 kilometres, Women",Kateřina Neumannová,CZE,False,Yuliya Chepalova,RUS,False,Justyna Kowalczyk,POL,False
+2006,Cross Country Skiing,"Skiathlon, Women",Kristina Šmigun,EST,False,Kateřina Neumannová,CZE,False,Yevgeniya Medvedeva,RUS,False
+2006,Cross Country Skiing,"Relay, Women",Russian Federation,RUS,False,Germany,GER,False,Italy,ITA,False
+2006,Cross Country Skiing,"Team Sprint, Women",Sweden,SWE,False,Canada,CAN,False,Finland,FIN,False
+2006,Curling,"Team, Men",Canada,CAN,False,Finland,FIN,False,United States,USA,False
+2006,Curling,"Team, Women",Sweden,SWE,False,Switzerland,SUI,False,Canada,CAN,False
+2006,Figure Skating,"Singles, Men",Yevgeny Plyushchenko,RUS,False,Stéphane Lambiel,SUI,False,Jeff Buttle,CAN,False
+2006,Figure Skating,"Singles, Women",Shizuka Arakawa,JPN,False,Sasha Cohen,USA,False,Irina Slutskaya,RUS,False
+2006,Figure Skating,"Pairs, Mixed",Russian Federation 1,RUS,False,People's Republic of China 1,CHN,False,People's Republic of China 3,CHN,False
+2006,Figure Skating,"Ice Dance, Mixed",Russian Federation 1,RUS,False,United States 1,USA,False,Ukraine 1,UKR,False
+2006,Freestyle Skiing,"Moguls, Men",Dale Begg-Smith,AUS,False,Mikko Ronkainen,FIN,False,Toby Dawson,USA,False
+2006,Freestyle Skiing,"Aerials, Men",Han Xiaopeng,CHN,False,Dzmitry Dashchynski,BLR,False,Vladimir Lebedev,RUS,False
+2006,Freestyle Skiing,"Moguls, Women",Jennifer Heil,CAN,False,Kari Traa,NOR,False,Sandra Laoura,FRA,False
+2006,Freestyle Skiing,"Aerials, Women",Evelyne Leu,SUI,False,Li Nina,CHN,False,Alisa Camplin,AUS,False
+2006,Ice Hockey,"Ice Hockey, Men",Sweden,SWE,False,Finland,FIN,False,Czech Republic,CZE,False
+2006,Ice Hockey,"Ice Hockey, Women",Canada,CAN,False,Sweden,SWE,False,United States,USA,False
+2006,Luge,"Singles, Men",Armin Zöggeler,ITA,False,Albert Demchenko,RUS,False,Mārtiņš Rubenis,LAT,False
+2006,Luge,"Doubles, Men",Austria 1,AUT,False,Germany 1,GER,False,Italy 1,ITA,False
+2006,Luge,"Singles, Women",Sylke Otto,GER,False,Silke Kraushaar,GER,False,Tatjana Hüfner,GER,False
+2006,Nordic Combined,"Team, Men",Austria,AUT,False,Germany,GER,False,Finland,FIN,False
+2006,Nordic Combined,"Individual, Men",Georg Hettich,GER,False,Felix Gottwald,AUT,False,Magnus Moan,NOR,False
+2006,Nordic Combined,"Sprint, Men",Felix Gottwald,AUT,False,Magnus Moan,NOR,False,Georg Hettich,GER,False
+2006,Short Track Speed Skating,"500 metres, Men",Apolo Anton Ohno,USA,False,François-Louis Tremblay,CAN,False,Hyeon-Su An,KOR,False
+2006,Short Track Speed Skating,"1,000 metres, Men",Hyeon-Su An,KOR,False,Lee Ho-Seok,KOR,False,Apolo Anton Ohno,USA,False
+2006,Short Track Speed Skating,"1,500 metres, Men",Hyeon-Su An,KOR,False,Lee Ho-Seok,KOR,False,Li Jiajun,CHN,False
+2006,Short Track Speed Skating,"Relay, Men",Republic of Korea,KOR,False,Canada,CAN,False,United States,USA,False
+2006,Short Track Speed Skating,"500 metres, Women",Wang Meng,CHN,False,Evgeniya Radanova,BUL,False,Anouk Leblanc-Boucher,CAN,False
+2006,Short Track Speed Skating,"1,000 metres, Women",Jin Seon-Yu,KOR,False,Wang Meng,CHN,False,Yang Yang (A),CHN,False
+2006,Short Track Speed Skating,"1,500 metres, Women",Jin Seon-Yu,KOR,False,Choi Eun-Gyeong,KOR,False,Wang Meng,CHN,False
+2006,Short Track Speed Skating,"Relay, Women",Republic of Korea,KOR,False,Canada,CAN,False,Italy,ITA,False
+2006,Skeleton,"Skeleton, Men",Duff Gibson,CAN,False,Jeff Pain,CAN,False,Gregor Stähli,SUI,False
+2006,Skeleton,"Skeleton, Women",Maya Pedersen,SUI,False,Shelley Rudman,GBR,False,Mellisa Hollingsworth-Richards,CAN,False
+2006,Ski Jumping,"Normal Hill, Individual, Men",Lars Bystøl,NOR,False,Matti Hautamäki,FIN,False,Roar Ljøkelsøy,NOR,False
+2006,Ski Jumping,"Large Hill, Individual, Men",Thomas Morgenstern,AUT,False,Andreas Kofler,AUT,False,Lars Bystøl,NOR,False
+2006,Ski Jumping,"Large Hill, Team, Men",Austria,AUT,False,Finland,FIN,False,Norway,NOR,False
+2006,Snowboarding,"Parallel Giant Slalom, Men",Philipp Schoch,SUI,False,Simon Schoch,SUI,False,Sigi Grabner,AUT,False
+2006,Snowboarding,"Halfpipe, Men",Shaun White,USA,False,Danny Kass,USA,False,Markku Koski,FIN,False
+2006,Snowboarding,"Cross, Men",Seth Wescott,USA,False,Radoslav Židek,SVK,False,Paul-Henri De Le Rue,FRA,False
+2006,Snowboarding,"Parallel Giant Slalom, Women",Daniela Meuli,SUI,False,Amelie Kober,GER,False,Rosey Fletcher,USA,False
+2006,Snowboarding,"Halfpipe, Women",Hannah Teter,USA,False,Gretchen Bleiler,USA,False,Kjersti Buaas,NOR,False
+2006,Snowboarding,"Cross, Women",Tanja Frieden,SUI,False,Lindsey Jacobellis,USA,False,Dominique Maltais,CAN,False
+2006,Speed Skating,"500 metres, Men",Joey Cheek,USA,False,Dmitry Dorofeyev,RUS,False,Lee Gang-Seok,KOR,False
+2006,Speed Skating,"1,000 metres, Men",Shani Davis,USA,False,Joey Cheek,USA,False,Erben Wennemars,NED,False
+2006,Speed Skating,"1,500 metres, Men",Enrico Fabris,ITA,False,Shani Davis,USA,False,Chad Hedrick,USA,False
+2006,Speed Skating,"5,000 metres, Men",Chad Hedrick,USA,False,Sven Kramer,NED,False,Enrico Fabris,ITA,False
+2006,Speed Skating,"10,000 metres, Men",Bob de Jong,NED,False,Chad Hedrick,USA,False,Carl Verheijen,NED,False
+2006,Speed Skating,"Team Pursuit (8 laps), Men",Italy,ITA,False,Canada,CAN,False,Netherlands,NED,False
+2006,Speed Skating,"500 metres, Women",Svetlana Zhurova,RUS,False,Wang Manli,CHN,False,Ren Hui,CHN,False
+2006,Speed Skating,"1,000 metres, Women",Marianne Timmer,NED,False,Cindy Klassen,CAN,False,Anni Friesinger,GER,False
+2006,Speed Skating,"1,500 metres, Women",Cindy Klassen,CAN,False,Kristina Groves,CAN,False,Ireen Wüst,NED,False
+2006,Speed Skating,"3,000 metres, Women",Ireen Wüst,NED,False,Renate Groenewold,NED,False,Cindy Klassen,CAN,False
+2006,Speed Skating,"5,000 metres, Women",Clara Hughes,CAN,False,Claudia Pechstein,GER,False,Cindy Klassen,CAN,False
+2006,Speed Skating,"Team Pursuit (6 laps), Women",Germany,GER,False,Canada,CAN,False,Russian Federation,RUS,False
+2010,Alpine Skiing,"Downhill, Men",Didier Défago,SUI,False,Aksel Lund Svindal,NOR,False,Bode Miller,USA,False
+2010,Alpine Skiing,"Super G, Men",Aksel Lund Svindal,NOR,False,Bode Miller,USA,False,Andrew Weibrecht,USA,False
+2010,Alpine Skiing,"Giant Slalom, Men",Carlo Janka,SUI,False,Kjetil Jansrud,NOR,False,Aksel Lund Svindal,NOR,False
+2010,Alpine Skiing,"Slalom, Men",Giuliano Razzoli,ITA,False,Ivica Kostelić,CRO,False,André Myhrer,SWE,False
+2010,Alpine Skiing,"Combined, Men",Bode Miller,USA,False,Ivica Kostelić,CRO,False,Silvan Zurbriggen,SUI,False
+2010,Alpine Skiing,"Downhill, Women",Lindsey Vonn,USA,False,Julia Mancuso,USA,False,Elisabeth Görgl,AUT,False
+2010,Alpine Skiing,"Super G, Women",Andrea Fischbacher,AUT,False,Tina Maze,SLO,False,Lindsey Vonn,USA,False
+2010,Alpine Skiing,"Giant Slalom, Women",Viktoria Rebensburg,GER,False,Tina Maze,SLO,False,Elisabeth Görgl,AUT,False
+2010,Alpine Skiing,"Slalom, Women",Maria Riesch,GER,False,Marlies Schild,AUT,False,Šárka Záhrobská,CZE,False
+2010,Alpine Skiing,"Combined, Women",Maria Riesch,GER,False,Julia Mancuso,USA,False,Anja Pärson,SWE,False
+2010,Biathlon,"Sprint, Men",Vincent Jay,FRA,False,Emil Hegle Svendsen,NOR,False,Jakov Fak,CRO,False
+2010,Biathlon,"Pursuit, Men",Björn Ferry,SWE,False,Christoph Sumann,AUT,False,Vincent Jay,FRA,False
+2010,Biathlon,"Mass Start, Men",Martin Fourcade,FRA,False,Pavol Hurajt,SVK,False,Christoph Sumann,AUT,False
+2010,Biathlon,"Individual, Men",Emil Hegle Svendsen,NOR,False,Siarhei NovikauOle Einar Bjørndalen,BLRNOR,True,—,—,False
+2010,Biathlon,"Relay, Men",Norway,NOR,False,Austria,AUT,False,Sweden,SWE,False
+2010,Biathlon,"Sprint, Women",Anastasia Kuzmina,SVK,False,Magdalena Neuner,GER,False,Marie Dorin,FRA,False
+2010,Biathlon,"Pursuit, Women",Magdalena Neuner,GER,False,Anastasia Kuzmina,SVK,False,Marie-Laure Brunet,FRA,False
+2010,Biathlon,"Mass Start, Women",Magdalena Neuner,GER,False,Olga Zaytseva,RUS,False,Simone Hauswald,GER,False
+2010,Biathlon,"Individual, Women",Tora Berger,NOR,False,Yelena Khrustalyova,KAZ,False,Daria Domrachava,BLR,False
+2010,Biathlon,"Relay, Women",Russian Federation,RUS,False,France,FRA,False,Germany,GER,False
+2010,Bobsleigh,"Two, Men",Germany 1,GER,False,Germany 2,GER,False,Russian Federation 1,RUS,False
+2010,Bobsleigh,"Four, Men",United States 1,USA,False,Germany 1,GER,False,Canada 1,CAN,False
+2010,Bobsleigh,"Two, Women",Canada 1,CAN,False,Canada 2,CAN,False,United States 2,USA,False
+2010,Cross Country Skiing,"Sprint, Men",Nikita Kryukov,RUS,False,Aleksandr Panzhinsky,RUS,False,Petter Northug,NOR,False
+2010,Cross Country Skiing,"15 kilometres, Men",Dario Cologna,SUI,False,Pietro Piller Cottrer,ITA,False,Lukáš Bauer,CZE,False
+2010,Cross Country Skiing,"50 kilometres, Men",Petter Northug,NOR,False,Axel Teichmann,GER,False,Johan Olsson,SWE,False
+2010,Cross Country Skiing,"Skiathlon, Men",Marcus Hellner,SWE,False,Tobias Angerer,GER,False,Johan Olsson,SWE,False
+2010,Cross Country Skiing,"Relay, Men",Sweden,SWE,False,Norway,NOR,False,Czech Republic,CZE,False
+2010,Cross Country Skiing,"Team Sprint, Men",Norway,NOR,False,Germany,GER,False,Russian Federation,RUS,False
+2010,Cross Country Skiing,"Sprint, Women",Marit Bjørgen,NOR,False,Justyna Kowalczyk,POL,False,Petra Majdič,SLO,False
+2010,Cross Country Skiing,"10 kilometres, Women",Charlotte Kalla,SWE,False,Kristina Šmigun-Vähi,EST,False,Marit Bjørgen,NOR,False
+2010,Cross Country Skiing,"30 kilometres, Women",Justyna Kowalczyk,POL,False,Marit Bjørgen,NOR,False,Aino-Kaisa Saarinen,FIN,False
+2010,Cross Country Skiing,"Skiathlon, Women",Marit Bjørgen,NOR,False,Anna Haag,SWE,False,Justyna Kowalczyk,POL,False
+2010,Cross Country Skiing,"Relay, Women",Norway,NOR,False,Germany,GER,False,Finland,FIN,False
+2010,Cross Country Skiing,"Team Sprint, Women",Germany,GER,False,Sweden,SWE,False,Russian Federation,RUS,False
+2010,Curling,"Team, Men",Canada,CAN,False,Norway,NOR,False,Switzerland,SUI,False
+2010,Curling,"Team, Women",Sweden,SWE,False,Canada,CAN,False,People's Republic of China,CHN,False
+2010,Figure Skating,"Singles, Men",Evan Lysacek,USA,False,Yevgeny Plyushchenko,RUS,False,Daisuke Takahashi,JPN,False
+2010,Figure Skating,"Singles, Women",Yu-Na Kim,KOR,False,Mao Asada,JPN,False,Joannie Rochette,CAN,False
+2010,Figure Skating,"Pairs, Mixed",People's Republic of China 1,CHN,False,People's Republic of China 2,CHN,False,Germany 1,GER,False
+2010,Figure Skating,"Ice Dance, Mixed",Canada 1,CAN,False,United States 1,USA,False,Russian Federation 1,RUS,False
+2010,Freestyle Skiing,"Moguls, Men",Alex Bilodeau,CAN,False,Dale Begg-Smith,AUS,False,Bryon Wilson,USA,False
+2010,Freestyle Skiing,"Aerials, Men",Aliaksei Hryshyn,BLR,False,Jeret Peterson,USA,False,Liu Zhongqing,CHN,False
+2010,Freestyle Skiing,"Ski Cross, Men",Mike Schmid,SUI,False,Andreas Matt,AUT,False,Audun Grønvold,NOR,False
+2010,Freestyle Skiing,"Moguls, Women",Hannah Kearney,USA,False,Jennifer Heil,CAN,False,Shannon Bahrke,USA,False
+2010,Freestyle Skiing,"Aerials, Women",Lydia Lassila,AUS,False,Li Nina,CHN,False,Guo Xinxin,CHN,False
+2010,Freestyle Skiing,"Ski Cross, Women",Ashleigh McIvor,CAN,False,Hedda Berntsen,NOR,False,Marion Josserand,FRA,False
+2010,Ice Hockey,"Ice Hockey, Men",Canada,CAN,False,United States,USA,False,Finland,FIN,False
+2010,Ice Hockey,"Ice Hockey, Women",Canada,CAN,False,United States,USA,False,Finland,FIN,False
+2010,Luge,"Singles, Men",Felix Loch,GER,False,David Möller,GER,False,Armin Zöggeler,ITA,False
+2010,Luge,"Doubles, Men",Austria 1,AUT,False,Latvia 1,LAT,False,Germany 2,GER,False
+2010,Luge,"Singles, Women",Tatjana Hüfner,GER,False,Nina Reithmayer,AUT,False,Natalie Geisenberger,GER,False
+2010,Nordic Combined,"Team, Men",Austria,AUT,False,United States,USA,False,Germany,GER,False
+2010,Nordic Combined,"Individual, Men",Jason Lamy-Chappuis,FRA,False,Johnny Spillane,USA,False,Alessandro Pittin,ITA,False
+2010,Nordic Combined,"Sprint, Men",Bill Demong,USA,False,Johnny Spillane,USA,False,Berni Gruber,AUT,False
+2010,Short Track Speed Skating,"500 metres, Men",Charles Hamelin,CAN,False,Seong Si-Baek,KOR,False,François-Louis Tremblay,CAN,False
+2010,Short Track Speed Skating,"1,000 metres, Men",Lee Jeong-Su,KOR,False,Lee Ho-Seok,KOR,False,Apolo Anton Ohno,USA,False
+2010,Short Track Speed Skating,"1,500 metres, Men",Lee Jeong-Su,KOR,False,Apolo Anton Ohno,USA,False,J. R. Celski,USA,False
+2010,Short Track Speed Skating,"Relay, Men",Canada,CAN,False,Republic of Korea,KOR,False,United States,USA,False
+2010,Short Track Speed Skating,"500 metres, Women",Wang Meng,CHN,False,Marianne St-Gelais,CAN,False,Arianna Fontana,ITA,False
+2010,Short Track Speed Skating,"1,000 metres, Women",Wang Meng,CHN,False,Katherine Reutter,USA,False,Park Seung-Hui,KOR,False
+2010,Short Track Speed Skating,"1,500 metres, Women",Zhou Yang,CHN,False,Lee Eun-Byeol,KOR,False,Park Seung-Hui,KOR,False
+2010,Short Track Speed Skating,"Relay, Women",People's Republic of China,CHN,False,Canada,CAN,False,United States,USA,False
+2010,Skeleton,"Skeleton, Men",Jon Montgomery,CAN,False,Martins Dukurs,LAT,False,Aleksandr Tretyakov,RUS,False
+2010,Skeleton,"Skeleton, Women",Amy Williams,GBR,False,Kerstin Szymkowiak,GER,False,Anja Huber,GER,False
+2010,Ski Jumping,"Normal Hill, Individual, Men",Simon Ammann,SUI,False,Adam Małysz,POL,False,Gregor Schlierenzauer,AUT,False
+2010,Ski Jumping,"Large Hill, Individual, Men",Simon Ammann,SUI,False,Adam Małysz,POL,False,Gregor Schlierenzauer,AUT,False
+2010,Ski Jumping,"Large Hill, Team, Men",Austria,AUT,False,Germany,GER,False,Norway,NOR,False
+2010,Snowboarding,"Parallel Giant Slalom, Men",Jasey-Jay Anderson,CAN,False,Benjamin Karl,AUT,False,Mathieu Bozzetto,FRA,False
+2010,Snowboarding,"Halfpipe, Men",Shaun White,USA,False,Peetu Piiroinen,FIN,False,Scotty Lago,USA,False
+2010,Snowboarding,"Cross, Men",Seth Wescott,USA,False,Mike Robertson,CAN,False,Tony Ramoin,FRA,False
+2010,Snowboarding,"Parallel Giant Slalom, Women",Nicolien Sauerbreij,NED,False,Yekaterina Ilyukhina,RUS,False,Marion Kreiner,AUT,False
+2010,Snowboarding,"Halfpipe, Women",Torah Bright,AUS,False,Hannah Teter,USA,False,Kelly Clark,USA,False
+2010,Snowboarding,"Cross, Women",Maëlle Ricker,CAN,False,Déborah Anthonioz,FRA,False,Olivia Nobs,SUI,False
+2010,Speed Skating,"500 metres, Men",Mo Tae-Beom,KOR,False,Keiichiro Nagashima,JPN,False,Joji Kato,JPN,False
+2010,Speed Skating,"1,000 metres, Men",Shani Davis,USA,False,Mo Tae-Beom,KOR,False,Chad Hedrick,USA,False
+2010,Speed Skating,"1,500 metres, Men",Mark Tuitert,NED,False,Shani Davis,USA,False,Håvard Bøkko,NOR,False
+2010,Speed Skating,"5,000 metres, Men",Sven Kramer,NED,False,Lee Seung-Hun,KOR,False,Ivan Skobrev,RUS,False
+2010,Speed Skating,"10,000 metres, Men",Lee Seung-Hun,KOR,False,Ivan Skobrev,RUS,False,Bob de Jong,NED,False
+2010,Speed Skating,"Team Pursuit (8 laps), Men",Canada,CAN,False,United States,USA,False,Netherlands,NED,False
+2010,Speed Skating,"500 metres, Women",Lee Sang-Hwa,KOR,False,Jenny Wolf,GER,False,Wang Beixing,CHN,False
+2010,Speed Skating,"1,000 metres, Women",Christine Nesbitt,CAN,False,Annette Gerritsen,NED,False,Laurine van Riessen,NED,False
+2010,Speed Skating,"1,500 metres, Women",Ireen Wüst,NED,False,Kristina Groves,CAN,False,Martina Sáblíková,CZE,False
+2010,Speed Skating,"3,000 metres, Women",Martina Sáblíková,CZE,False,Stephanie Beckert,GER,False,Kristina Groves,CAN,False
+2010,Speed Skating,"5,000 metres, Women",Martina Sáblíková,CZE,False,Stephanie Beckert,GER,False,Clara Hughes,CAN,False
+2010,Speed Skating,"Team Pursuit (6 laps), Women",Germany,GER,False,Japan,JPN,False,Poland,POL,False
+2014,Alpine Skiing,"Downhill, Men",Matthias Mayer,AUT,False,Christof Innerhofer,ITA,False,Kjetil Jansrud,NOR,False
+2014,Alpine Skiing,"Super G, Men",Kjetil Jansrud,NOR,False,Andrew Weibrecht,USA,False,Jan HudecBode Miller,CANUSA,True
+2014,Alpine Skiing,"Giant Slalom, Men",Ted Ligety,USA,False,Steve Missillier,FRA,False,Alexis Pinturault,FRA,False
+2014,Alpine Skiing,"Slalom, Men",Mario Matt,AUT,False,Marcel Hirscher,AUT,False,Henrik Kristoffersen,NOR,False
+2014,Alpine Skiing,"Combined, Men",Sandro Viletta,SUI,False,Ivica Kostelić,CRO,False,Christof Innerhofer,ITA,False
+2014,Alpine Skiing,"Downhill, Women",Tina MazeDominique Gisin,SLOSUI,True,—,—,False,Lara Gut,SUI,False
+2014,Alpine Skiing,"Super G, Women",Anna Fenninger,AUT,False,Maria Höfl-Riesch,GER,False,Nicole Hosp,AUT,False
+2014,Alpine Skiing,"Giant Slalom, Women",Tina Maze,SLO,False,Anna Fenninger,AUT,False,Viktoria Rebensburg,GER,False
+2014,Alpine Skiing,"Slalom, Women",Mikaela Shiffrin,USA,False,Marlies Schild,AUT,False,Kathrin Zettel,AUT,False
+2014,Alpine Skiing,"Combined, Women",Maria Höfl-Riesch,GER,False,Nicole Hosp,AUT,False,Julia Mancuso,USA,False
+2014,Biathlon,"Sprint, Men",Ole Einar Bjørndalen,NOR,False,Dominik Landertinger,AUT,False,Jaroslav Soukup,CZE,False
+2014,Biathlon,"Pursuit, Men",Martin Fourcade,FRA,False,Ondřej Moravec,CZE,False,Jean-Guillaume Béatrix,FRA,False
+2014,Biathlon,"Mass Start, Men",Emil Hegle Svendsen,NOR,False,Martin Fourcade,FRA,False,Ondřej Moravec,CZE,False
+2014,Biathlon,"Individual, Men",Martin Fourcade,FRA,False,Erik Lesser,GER,False,Yevgeny Garanichev,RUS,False
+2014,Biathlon,"Relay, Men",Germany,GER,False,Austria,AUT,False,Norway,NOR,False
+2014,Biathlon,"Sprint, Women",Anastasia Kuzmina,SVK,False,Olga Vilukhina,RUS,False,Vita Semerenko,UKR,False
+2014,Biathlon,"Pursuit, Women",Daria Domrachava,BLR,False,Tora Berger,NOR,False,Teja Gregorin,SLO,False
+2014,Biathlon,"Mass Start, Women",Daria Domrachava,BLR,False,Gabriela Soukalová,CZE,False,Tiril Eckhoff,NOR,False
+2014,Biathlon,"Individual, Women",Daria Domrachava,BLR,False,Selina Gasparin,SUI,False,Nadzeya Skardzina,BLR,False
+2014,Biathlon,"Relay, Women",Ukraine,UKR,False,Norway,NOR,False,Czech Republic,CZE,False
+2014,Biathlon,"Relay, Mixed",Norway,NOR,False,Czech Republic,CZE,False,Italy,ITA,False
+2014,Bobsleigh,"Two, Men",Switzerland 1,SUI,False,United States 1,USA,False,Latvia 1,LAT,False
+2014,Bobsleigh,"Four, Men",Latvia 1,LAT,False,United States 1,USA,False,Great Britain 1,GBR,False
+2014,Bobsleigh,"Two, Women",Canada 1,CAN,False,United States 1,USA,False,United States 2,USA,False
+2014,Cross Country Skiing,"Sprint, Men",Ola Vigen Hattestad,NOR,False,Teodor Peterson,SWE,False,Emil Jönsson,SWE,False
+2014,Cross Country Skiing,"15 kilometres, Men",Dario Cologna,SUI,False,Johan Olsson,SWE,False,Daniel Rickardsson,SWE,False
+2014,Cross Country Skiing,"50 kilometres, Men",Aleksandr Legkov,RUS,False,Maksim Vylegzhanin,RUS,False,Ilya Chernousov,RUS,False
+2014,Cross Country Skiing,"Skiathlon, Men",Dario Cologna,SUI,False,Marcus Hellner,SWE,False,Martin Johnsrud Sundby,NOR,False
+2014,Cross Country Skiing,"Relay, Men",Sweden,SWE,False,Russian Federation,RUS,False,France,FRA,False
+2014,Cross Country Skiing,"Team Sprint, Men",Finland,FIN,False,Russian Federation,RUS,False,Sweden,SWE,False
+2014,Cross Country Skiing,"Sprint, Women",Maiken Caspersen Falla,NOR,False,Ingvild Flugstad Østberg,NOR,False,Vesna Fabjan,SLO,False
+2014,Cross Country Skiing,"10 kilometres, Women",Justyna Kowalczyk,POL,False,Charlotte Kalla,SWE,False,Therese Johaug,NOR,False
+2014,Cross Country Skiing,"30 kilometres, Women",Marit Bjørgen,NOR,False,Therese Johaug,NOR,False,Kristin Størmer Steira,NOR,False
+2014,Cross Country Skiing,"Skiathlon, Women",Marit Bjørgen,NOR,False,Charlotte Kalla,SWE,False,Heidi Weng,NOR,False
+2014,Cross Country Skiing,"Relay, Women",Sweden,SWE,False,Finland,FIN,False,Germany,GER,False
+2014,Cross Country Skiing,"Team Sprint, Women",Norway,NOR,False,Finland,FIN,False,Sweden,SWE,False
+2014,Curling,"Team, Men",Canada,CAN,False,Great Britain,GBR,False,Sweden,SWE,False
+2014,Curling,"Team, Women",Canada,CAN,False,Sweden,SWE,False,Great Britain,GBR,False
+2014,Figure Skating,"Singles, Men",Yuzuru Hanyu,JPN,False,Patrick Chan,CAN,False,Denis Ten,KAZ,False
+2014,Figure Skating,"Singles, Women",Adelina Sotnikova,RUS,False,Yu-Na Kim,KOR,False,Carolina Kostner,ITA,False
+2014,Figure Skating,"Pairs, Mixed",Russian Federation 1,RUS,False,Russian Federation 2,RUS,False,Germany 1,GER,False
+2014,Figure Skating,"Ice Dance, Mixed",United States 1,USA,False,Canada 1,CAN,False,Russian Federation 1,RUS,False
+2014,Figure Skating,"Team, Mixed",Russian Federation,RUS,False,Canada,CAN,False,United States,USA,False
+2014,Freestyle Skiing,"Moguls, Men",Alex Bilodeau,CAN,False,Mikaël Kingsbury,CAN,False,Aleksandr Smyshlyayev,RUS,False
+2014,Freestyle Skiing,"Aerials, Men",Anton Kushnir,BLR,False,David Morris,AUS,False,Jia Zongyang,CHN,False
+2014,Freestyle Skiing,"Ski Cross, Men",Jean-Frédéric Chapuis,FRA,False,Arnaud Bovolenta,FRA,False,Jonathan Midol,FRA,False
+2014,Freestyle Skiing,"Halfpipe, Men",David Wise,USA,False,Mike Riddle,CAN,False,Kévin Rolland,FRA,False
+2014,Freestyle Skiing,"Slopestyle, Men",Joss Christensen,USA,False,Gus Kenworthy,USA,False,Nick Goepper,USA,False
+2014,Freestyle Skiing,"Moguls, Women",Justine Dufour-Lapointe,CAN,False,Chloé Dufour-Lapointe,CAN,False,Hannah Kearney,USA,False
+2014,Freestyle Skiing,"Aerials, Women",Ala Tsuper,BLR,False,Xu Mengtao,CHN,False,Lydia Lassila,AUS,False
+2014,Freestyle Skiing,"Ski Cross, Women",Marielle Thompson,CAN,False,Kelsey Serwa,CAN,False,Anna Holmlund,SWE,False
+2014,Freestyle Skiing,"Halfpipe, Women",Maddie Bowman,USA,False,Marie Martinod,FRA,False,Ayana Onozuka,JPN,False
+2014,Freestyle Skiing,"Slopestyle, Women",Dara Howell,CAN,False,Devin Logan,USA,False,Kim Lamarre,CAN,False
+2014,Ice Hockey,"Ice Hockey, Men",Canada,CAN,False,Sweden,SWE,False,Finland,FIN,False
+2014,Ice Hockey,"Ice Hockey, Women",Canada,CAN,False,United States,USA,False,Switzerland,SUI,False
+2014,Luge,"Singles, Men",Felix Loch,GER,False,Albert Demchenko,RUS,False,Armin Zöggeler,ITA,False
+2014,Luge,"Doubles, Men",Germany 1,GER,False,Austria 1,AUT,False,Latvia 1,LAT,False
+2014,Luge,"Singles, Women",Natalie Geisenberger,GER,False,Tatjana Hüfner,GER,False,Erin Hamlin,USA,False
+2014,Luge,"Team Relay, Mixed",Germany,GER,False,Russian Federation,RUS,False,Latvia,LAT,False
+2014,Nordic Combined,"Team, Men",Norway,NOR,False,Germany,GER,False,Austria,AUT,False
+2014,Nordic Combined,"Individual, Men",Eric Frenzel,GER,False,Akito Watabe,JPN,False,Magnus Krog,NOR,False
+2014,Nordic Combined,"Sprint, Men",Jørgen Graabak,NOR,False,Magnus Moan,NOR,False,Fabian Rießle,GER,False
+2014,Short Track Speed Skating,"500 metres, Men",Viktor An,RUS,False,Wu Dajing,CHN,False,Charle Cournoyer,CAN,False
+2014,Short Track Speed Skating,"1,000 metres, Men",Viktor An,RUS,False,Vladimir Grigoryev,RUS,False,Sjinkie Knegt,NED,False
+2014,Short Track Speed Skating,"1,500 metres, Men",Charles Hamelin,CAN,False,Han Tianyu,CHN,False,Viktor An,RUS,False
+2014,Short Track Speed Skating,"Relay, Men",Russian Federation,RUS,False,United States,USA,False,People's Republic of China,CHN,False
+2014,Short Track Speed Skating,"500 metres, Women",Li Jianrou,CHN,False,Arianna Fontana,ITA,False,Park Seung-Hui,KOR,False
+2014,Short Track Speed Skating,"1,000 metres, Women",Park Seung-Hui,KOR,False,Fan Kexin,CHN,False,Sim Seok-Hui,KOR,False
+2014,Short Track Speed Skating,"1,500 metres, Women",Zhou Yang,CHN,False,Sim Seok-Hui,KOR,False,Arianna Fontana,ITA,False
+2014,Short Track Speed Skating,"Relay, Women",Republic of Korea,KOR,False,Canada,CAN,False,Italy,ITA,False
+2014,Skeleton,"Skeleton, Men",Aleksandr Tretyakov,RUS,False,Martins Dukurs,LAT,False,Matt Antoine,USA,False
+2014,Skeleton,"Skeleton, Women",Lizzy Yarnold,GBR,False,Noelle Pikus-Pace,USA,False,Yelena Nikitina,RUS,False
+2014,Ski Jumping,"Normal Hill, Individual, Men",Kamil Stoch,POL,False,Peter Prevc,SLO,False,Anders Bardal,NOR,False
+2014,Ski Jumping,"Large Hill, Individual, Men",Kamil Stoch,POL,False,Noriaki Kasai,JPN,False,Peter Prevc,SLO,False
+2014,Ski Jumping,"Large Hill, Team, Men",Germany,GER,False,Austria,AUT,False,Japan,JPN,False
+2014,Ski Jumping,"Normal Hill, Individual, Women",Carina Vogt,GER,False,Daniela Iraschko-Stolz,AUT,False,Coline Mattel,FRA,False
+2014,Snowboarding,"Parallel Giant Slalom, Men",Vic Wild,RUS,False,Nevin Galmarini,SUI,False,Žan Košir,SLO,False
+2014,Snowboarding,"Parallel Slalom, Men",Vic Wild,RUS,False,Žan Košir,SLO,False,Benjamin Karl,AUT,False
+2014,Snowboarding,"Slopestyle, Men",Sage Kotsenburg,USA,False,Ståle Sandbech,NOR,False,Mark McMorris,CAN,False
+2014,Snowboarding,"Halfpipe, Men",Iouri Podladtchikov,SUI,False,Ayumu Hirano,JPN,False,Taku Hiraoka,JPN,False
+2014,Snowboarding,"Cross, Men",Pierre Vaultier,FRA,False,Nikolay Olyunin,RUS,False,Alex Deibold,USA,False
+2014,Snowboarding,"Parallel Giant Slalom, Women",Patrizia Kummer,SUI,False,Tomoka Takeuchi,JPN,False,Alyona Zavarzina,RUS,False
+2014,Snowboarding,"Parallel Slalom, Women",Julia Dujmovits,AUT,False,Anke Karstens,GER,False,Amelie Kober,GER,False
+2014,Snowboarding,"Slopestyle, Women",Jamie Anderson,USA,False,Enni Rukajärvi,FIN,False,Jenny Jones,GBR,False
+2014,Snowboarding,"Halfpipe, Women",Kaitlyn Farrington,USA,False,Torah Bright,AUS,False,Kelly Clark,USA,False
+2014,Snowboarding,"Cross, Women",Eva Samková,CZE,False,Dominique Maltais,CAN,False,Chloé Trespeuch,FRA,False
+2014,Speed Skating,"500 metres, Men",Michel Mulder,NED,False,Jan Smeekens,NED,False,Ronald Mulder,NED,False
+2014,Speed Skating,"1,000 metres, Men",Stefan Groothuis,NED,False,Denny Morrison,CAN,False,Michel Mulder,NED,False
+2014,Speed Skating,"1,500 metres, Men",Zbigniew Bródka,POL,False,Koen Verweij,NED,False,Denny Morrison,CAN,False
+2014,Speed Skating,"5,000 metres, Men",Sven Kramer,NED,False,Jan Blokhuijsen,NED,False,Jorrit Bergsma,NED,False
+2014,Speed Skating,"10,000 metres, Men",Jorrit Bergsma,NED,False,Sven Kramer,NED,False,Bob de Jong,NED,False
+2014,Speed Skating,"Team Pursuit (8 laps), Men",Netherlands,NED,False,Republic of Korea,KOR,False,Poland,POL,False
+2014,Speed Skating,"500 metres, Women",Lee Sang-Hwa,KOR,False,Olga Fatkulina,RUS,False,Margot Boer,NED,False
+2014,Speed Skating,"1,000 metres, Women",Zhang Hong,CHN,False,Ireen Wüst,NED,False,Margot Boer,NED,False
+2014,Speed Skating,"1,500 metres, Women",Jorien ter Mors,NED,False,Ireen Wüst,NED,False,Lotte van Beek,NED,False
+2014,Speed Skating,"3,000 metres, Women",Ireen Wüst,NED,False,Martina Sáblíková,CZE,False,Olga Graf,RUS,False
+2014,Speed Skating,"5,000 metres, Women",Martina Sáblíková,CZE,False,Ireen Wüst,NED,False,Carien Kleibeuker,NED,False
+2014,Speed Skating,"Team Pursuit (6 laps), Women",Netherlands,NED,False,Poland,POL,False,Russian Federation,RUS,False
+2018,Alpine Skiing,"Downhill, Men",Aksel Lund Svindal,NOR,False,Kjetil Jansrud,NOR,False,Beat Feuz,SUI,False
+2018,Alpine Skiing,"Super G, Men",Matthias Mayer,AUT,False,Beat Feuz,SUI,False,Kjetil Jansrud,NOR,False
+2018,Alpine Skiing,"Giant Slalom, Men",Marcel Hirscher,AUT,False,Henrik Kristoffersen,NOR,False,Alexis Pinturault,FRA,False
+2018,Alpine Skiing,"Slalom, Men",André Myhrer,SWE,False,Ramon Zenhäusern,SUI,False,Michael Matt,AUT,False
+2018,Alpine Skiing,"Combined, Men",Marcel Hirscher,AUT,False,Alexis Pinturault,FRA,False,Victor Muffat-Jeandet,FRA,False
+2018,Alpine Skiing,"Downhill, Women",Sofia Goggia,ITA,False,Ragnhild Mowinckel,NOR,False,Lindsey Vonn,USA,False
+2018,Alpine Skiing,"Super G, Women",Ester Ledecká,CZE,False,Anna Veith,AUT,False,Tina Weirather,LIE,False
+2018,Alpine Skiing,"Giant Slalom, Women",Mikaela Shiffrin,USA,False,Ragnhild Mowinckel,NOR,False,Federica Brignone,ITA,False
+2018,Alpine Skiing,"Slalom, Women",Frida Hansdotter,SWE,False,Wendy Holdener,SUI,False,Katharina Gallhuber,AUT,False
+2018,Alpine Skiing,"Combined, Women",Michelle Gisin,SUI,False,Mikaela Shiffrin,USA,False,Wendy Holdener,SUI,False
+2018,Alpine Skiing,"Team, Mixed",Switzerland,SUI,False,Austria,AUT,False,Norway,NOR,False
+2018,Biathlon,"Sprint, Men",Arnd Peiffer,GER,False,Michal Krčmář,CZE,False,Dominik Windisch,ITA,False
+2018,Biathlon,"Pursuit, Men",Martin Fourcade,FRA,False,Sebastian Samuelsson,SWE,False,Benedikt Doll,GER,False
+2018,Biathlon,"Mass Start, Men",Martin Fourcade,FRA,False,Simon Schempp,GER,False,Emil Hegle Svendsen,NOR,False
+2018,Biathlon,"Individual, Men",Johannes Thingnes Bø,NOR,False,Jakov Fak,SLO,False,Dominik Landertinger,AUT,False
+2018,Biathlon,"Relay, Men",Sweden,SWE,False,Norway,NOR,False,Germany,GER,False
+2018,Biathlon,"Sprint, Women",Laura Dahlmeier,GER,False,Marte Olsbu,NOR,False,Veronika Vítková,CZE,False
+2018,Biathlon,"Pursuit, Women",Laura Dahlmeier,GER,False,Anastasia Kuzmina,SVK,False,Anaïs Bescond,FRA,False
+2018,Biathlon,"Mass Start, Women",Anastasia Kuzmina,SVK,False,Daria Domrachava,BLR,False,Tiril Eckhoff,NOR,False
+2018,Biathlon,"Individual, Women",Hanna Öberg,SWE,False,Anastasia Kuzmina,SVK,False,Laura Dahlmeier,GER,False
+2018,Biathlon,"Relay, Women",Belarus,BLR,False,Sweden,SWE,False,France,FRA,False
+2018,Biathlon,"Relay, Mixed",France,FRA,False,Norway,NOR,False,Italy,ITA,False
+2018,Bobsleigh,"Two, Men",Canada 1Germany 2,CANGER,True,—,—,False,Latvia 2,LAT,False
+2018,Bobsleigh,"Four, Men",Germany 2,GER,False,Germany 3Republic of Korea 1,GERKOR,True,—,—,False
+2018,Bobsleigh,"Two, Women",Germany 1,GER,False,United States 1,USA,False,Canada 1,CAN,False
+2018,Cross Country Skiing,"Sprint, Men",Johannes Høsflot Klæbo,NOR,False,Federico Pellegrino,ITA,False,Aleksandr Bolshunov,ROC,False
+2018,Cross Country Skiing,"15 kilometres, Men",Dario Cologna,SUI,False,Simen Hegstad Krüger,NOR,False,Denis Spitsov,ROC,False
+2018,Cross Country Skiing,"50 kilometres, Men",Iivo Niskanen,FIN,False,Aleksandr Bolshunov,ROC,False,Andrey Larkov,ROC,False
+2018,Cross Country Skiing,"Skiathlon, Men",Simen Hegstad Krüger,NOR,False,Martin Johnsrud Sundby,NOR,False,Hans Christer Holund,NOR,False
+2018,Cross Country Skiing,"Relay, Men",Norway,NOR,False,Olympic Athletes from Russia,ROC,False,France,FRA,False
+2018,Cross Country Skiing,"Team Sprint, Men",Norway,NOR,False,Olympic Athletes from Russia,ROC,False,France,FRA,False
+2018,Cross Country Skiing,"Sprint, Women",Stina Nilsson,SWE,False,Maiken Caspersen Falla,NOR,False,Yuliya Belorukova,ROC,False
+2018,Cross Country Skiing,"10 kilometres, Women",Ragnhild Haga,NOR,False,Charlotte Kalla,SWE,False,Marit BjørgenKrista Pärmäkoski,NORFIN,True
+2018,Cross Country Skiing,"30 kilometres, Women",Marit Bjørgen,NOR,False,Krista Pärmäkoski,FIN,False,Stina Nilsson,SWE,False
+2018,Cross Country Skiing,"Skiathlon, Women",Charlotte Kalla,SWE,False,Marit Bjørgen,NOR,False,Krista Pärmäkoski,FIN,False
+2018,Cross Country Skiing,"Relay, Women",Norway,NOR,False,Sweden,SWE,False,Olympic Athletes from Russia,ROC,False
+2018,Cross Country Skiing,"Team Sprint, Women",United States,USA,False,Sweden,SWE,False,Norway,NOR,False
+2018,Curling,"Team, Men",United States,USA,False,Sweden,SWE,False,Switzerland,SUI,False
+2018,Curling,"Team, Women",Sweden,SWE,False,Republic of Korea,KOR,False,Japan,JPN,False
+2018,Curling,"Doubles, Mixed",Canada,CAN,False,Switzerland,SUI,False,Norway,NOR,False
+2018,Figure Skating,"Singles, Men",Yuzuru Hanyu,JPN,False,Shoma Uno,JPN,False,Javier Fernández,ESP,False
+2018,Figure Skating,"Singles, Women",Alina Zagitova,ROC,False,Yevgeniya Medvedeva,ROC,False,Kaetlyn Osmond,CAN,False
+2018,Figure Skating,"Pairs, Mixed",Germany 1,GER,False,People's Republic of China 1,CHN,False,Canada 1,CAN,False
+2018,Figure Skating,"Ice Dance, Mixed",Canada 1,CAN,False,France 1,FRA,False,United States 2,USA,False
+2018,Figure Skating,"Team, Mixed",Canada,CAN,False,Olympic Athletes from Russia,ROC,False,United States,USA,False
+2018,Freestyle Skiing,"Moguls, Men",Mikaël Kingsbury,CAN,False,Matt Graham,AUS,False,Daichi Hara,JPN,False
+2018,Freestyle Skiing,"Aerials, Men",Oleksandr Abramenko,UKR,False,Jia Zongyang,CHN,False,Ilya Burov,ROC,False
+2018,Freestyle Skiing,"Ski Cross, Men",Brady Leman,CAN,False,Marc Bischofberger,SUI,False,Sergey Ridzik,ROC,False
+2018,Freestyle Skiing,"Halfpipe, Men",David Wise,USA,False,Alex Ferreira,USA,False,Nico Porteous,NZL,False
+2018,Freestyle Skiing,"Slopestyle, Men",Øystein Bråten,NOR,False,Nick Goepper,USA,False,Alex Beaulieu-Marchand,CAN,False
+2018,Freestyle Skiing,"Moguls, Women",Perrine Laffont,FRA,False,Justine Dufour-Lapointe,CAN,False,Yuliya Galysheva,KAZ,False
+2018,Freestyle Skiing,"Aerials, Women",Hanna Huskova,BLR,False,Zhang Xin,CHN,False,Kong Fanyu,CHN,False
+2018,Freestyle Skiing,"Ski Cross, Women",Kelsey Serwa,CAN,False,Britt Phelan,CAN,False,Fanny Smith,SUI,False
+2018,Freestyle Skiing,"Halfpipe, Women",Cassie Sharpe,CAN,False,Marie Martinod,FRA,False,Brita Sigourney,USA,False
+2018,Freestyle Skiing,"Slopestyle, Women",Sarah Höfflin,SUI,False,Mathilde Gremaud,SUI,False,Izzy Atkin,GBR,False
+2018,Ice Hockey,"Ice Hockey, Men",Olympic Athletes from Russia,ROC,False,Germany,GER,False,Canada,CAN,False
+2018,Ice Hockey,"Ice Hockey, Women",United States,USA,False,Canada,CAN,False,Finland,FIN,False
+2018,Luge,"Singles, Men",David Gleirscher,AUT,False,Chris Mazdzer,USA,False,Johannes Ludwig,GER,False
+2018,Luge,"Doubles, Men",Germany 1,GER,False,Austria 1,AUT,False,Germany 2,GER,False
+2018,Luge,"Singles, Women",Natalie Geisenberger,GER,False,Dajana Eitberger,GER,False,Alex Gough,CAN,False
+2018,Luge,"Team Relay, Mixed",Germany,GER,False,Canada,CAN,False,Austria,AUT,False
+2018,Nordic Combined,"Team, Men",Germany,GER,False,Norway,NOR,False,Austria,AUT,False
+2018,Nordic Combined,"Individual, Men",Eric Frenzel,GER,False,Akito Watabe,JPN,False,Lukas Klapfer,AUT,False
+2018,Nordic Combined,"Sprint, Men",Johannes Rydzek,GER,False,Fabian Rießle,GER,False,Eric Frenzel,GER,False
+2018,Short Track Speed Skating,"500 metres, Men",Wu Dajing,CHN,False,Hwang Dae-Heon,KOR,False,Im Hyo-Jun,KOR,False
+2018,Short Track Speed Skating,"1,000 metres, Men",Samuel Girard,CAN,False,John-Henry Krueger,USA,False,Seo Lee-Ra,KOR,False
+2018,Short Track Speed Skating,"1,500 metres, Men",Im Hyo-Jun,KOR,False,Sjinkie Knegt,NED,False,Semyon Yelistratov,ROC,False
+2018,Short Track Speed Skating,"Relay, Men",Hungary,HUN,False,People's Republic of China,CHN,False,Canada,CAN,False
+2018,Short Track Speed Skating,"500 metres, Women",Arianna Fontana,ITA,False,Yara van Kerkhof,NED,False,Kim Boutin,CAN,False
+2018,Short Track Speed Skating,"1,000 metres, Women",Suzanne Schulting,NED,False,Kim Boutin,CAN,False,Arianna Fontana,ITA,False
+2018,Short Track Speed Skating,"1,500 metres, Women",Choi Min-Jeong,KOR,False,Li Jinyu,CHN,False,Kim Boutin,CAN,False
+2018,Short Track Speed Skating,"Relay, Women",Republic of Korea,KOR,False,Italy,ITA,False,Netherlands,NED,False
+2018,Skeleton,"Skeleton, Men",Yun Seong-Bin,KOR,False,Nikita Tregubov,ROC,False,Dom Parsons,GBR,False
+2018,Skeleton,"Skeleton, Women",Lizzy Yarnold,GBR,False,Jacqueline Lölling,GER,False,Laura Deas,GBR,False
+2018,Ski Jumping,"Normal Hill, Individual, Men",Andreas Wellinger,GER,False,Johann André Forfang,NOR,False,Robert Johansson,NOR,False
+2018,Ski Jumping,"Large Hill, Individual, Men",Kamil Stoch,POL,False,Andreas Wellinger,GER,False,Robert Johansson,NOR,False
+2018,Ski Jumping,"Large Hill, Team, Men",Norway,NOR,False,Germany,GER,False,Poland,POL,False
+2018,Ski Jumping,"Normal Hill, Individual, Women",Maren Lundby,NOR,False,Katharina Althaus,GER,False,Sara Takanashi,JPN,False
+2018,Snowboarding,"Parallel Giant Slalom, Men",Nevin Galmarini,SUI,False,Lee Sang-Ho,KOR,False,Žan Košir,SLO,False
+2018,Snowboarding,"Slopestyle, Men",Red Gerard,USA,False,Max Parrot,CAN,False,Mark McMorris,CAN,False
+2018,Snowboarding,"Halfpipe, Men",Shaun White,USA,False,Ayumu Hirano,JPN,False,Scotty James,AUS,False
+2018,Snowboarding,"Cross, Men",Pierre Vaultier,FRA,False,Jarryd Hughes,AUS,False,Regino Hernández,ESP,False
+2018,Snowboarding,"Big Air, Men",Sébastien Toutant,CAN,False,Kyle Mack,USA,False,Billy Morgan,GBR,False
+2018,Snowboarding,"Parallel Giant Slalom, Women",Ester Ledecká,CZE,False,Selina Jörg,GER,False,Ramona Hofmeister,GER,False
+2018,Snowboarding,"Slopestyle, Women",Jamie Anderson,USA,False,Laurie Blouin,CAN,False,Enni Rukajärvi,FIN,False
+2018,Snowboarding,"Halfpipe, Women",Chloe Kim,USA,False,Liu Jiayu,CHN,False,Arielle Gold,USA,False
+2018,Snowboarding,"Cross, Women",Michela Moioli,ITA,False,Julia Pereira,FRA,False,Eva Samková,CZE,False
+2018,Snowboarding,"Big Air, Women",Anna Gasser,AUT,False,Jamie Anderson,USA,False,Zoi Sadowski-Synnott,NZL,False
+2018,Speed Skating,"500 metres, Men",Håvard Lorentzen,NOR,False,Cha Min-Gyu,KOR,False,Gao Tingyu,CHN,False
+2018,Speed Skating,"1,000 metres, Men",Kjeld Nuis,NED,False,Håvard Lorentzen,NOR,False,Kim Tae-Yun,KOR,False
+2018,Speed Skating,"1,500 metres, Men",Kjeld Nuis,NED,False,Patrick Roest,NED,False,Min-Seok Kim,KOR,False
+2018,Speed Skating,"5,000 metres, Men",Sven Kramer,NED,False,Ted-Jan Bloemen,CAN,False,Sverre Lunde Pedersen,NOR,False
+2018,Speed Skating,"10,000 metres, Men",Ted-Jan Bloemen,CAN,False,Jorrit Bergsma,NED,False,Nicola Tumolero,ITA,False
+2018,Speed Skating,"Mass Start, Men",Lee Seung-Hun,KOR,False,Bart Swings,BEL,False,Koen Verweij,NED,False
+2018,Speed Skating,"Team Pursuit (8 laps), Men",Norway,NOR,False,Republic of Korea,KOR,False,Netherlands,NED,False
+2018,Speed Skating,"500 metres, Women",Nao Kodaira,JPN,False,Lee Sang-Hwa,KOR,False,Karolína Erbanová,CZE,False
+2018,Speed Skating,"1,000 metres, Women",Jorien ter Mors,NED,False,Nao Kodaira,JPN,False,Miho Takagi,JPN,False
+2018,Speed Skating,"1,500 metres, Women",Ireen Wüst,NED,False,Miho Takagi,JPN,False,Marrit Leenstra,NED,False
+2018,Speed Skating,"3,000 metres, Women",Carlijn Achtereekte,NED,False,Ireen Wüst,NED,False,Antoinette de Jong,NED,False
+2018,Speed Skating,"5,000 metres, Women",Esmee Visser,NED,False,Martina Sáblíková,CZE,False,Nataliya Voronina,ROC,False
+2018,Speed Skating,"Mass Start, Women",Nana Takagi,JPN,False,Kim Bo-Reum,KOR,False,Irene Schouten,NED,False
+2018,Speed Skating,"Team Pursuit (6 laps), Women",Japan,JPN,False,Netherlands,NED,False,United States,USA,False
+2022,Alpine Skiing,"Downhill, Men",Beat Feuz,SUI,False,Johan Clarey,FRA,False,Matthias Mayer,AUT,False
+2022,Alpine Skiing,"Super G, Men",Matthias Mayer,AUT,False,Ryan Cochran-Siegle,USA,False,Aleksander Aamodt Kilde,NOR,False
+2022,Alpine Skiing,"Giant Slalom, Men",Marco Odermatt,SUI,False,Žan Kranjec,SLO,False,Mathieu Faivre,FRA,False
+2022,Alpine Skiing,"Slalom, Men",Clément Noël,FRA,False,Johannes Strolz,AUT,False,Sebastian Foss Solevaag,NOR,False
+2022,Alpine Skiing,"Combined, Men",Johannes Strolz,AUT,False,Aleksander Aamodt Kilde,NOR,False,Jack Crawford,CAN,False
+2022,Alpine Skiing,"Downhill, Women",Corinne Suter,SUI,False,Sofia Goggia,ITA,False,Nadia Delago,ITA,False
+2022,Alpine Skiing,"Super G, Women",Lara Gut-Behrami,SUI,False,Mirjam Puchner,AUT,False,Michelle Gisin,SUI,False
+2022,Alpine Skiing,"Giant Slalom, Women",Sara Hector,SWE,False,Federica Brignone,ITA,False,Lara Gut-Behrami,SUI,False
+2022,Alpine Skiing,"Slalom, Women",Petra Vlhová,SVK,False,Katharina Liensberger,AUT,False,Wendy Holdener,SUI,False
+2022,Alpine Skiing,"Combined, Women",Michelle Gisin,SUI,False,Wendy Holdener,SUI,False,Federica Brignone,ITA,False
+2022,Alpine Skiing,"Team, Mixed",Austria,AUT,False,Germany,GER,False,Norway,NOR,False
+2022,Biathlon,"Sprint, Men",Johannes Thingnes Bø,NOR,False,Quentin Fillon Maillet,FRA,False,Tarjei Bø,NOR,False
+2022,Biathlon,"Pursuit, Men",Quentin Fillon Maillet,FRA,False,Tarjei Bø,NOR,False,Eduard Latypov,ROC,False
+2022,Biathlon,"Mass Start, Men",Johannes Thingnes Bø,NOR,False,Martin Ponsiluoma,SWE,False,Vetle Sjåstad Christiansen,NOR,False
+2022,Biathlon,"Individual, Men",Quentin Fillon Maillet,FRA,False,Anton Smolski,BLR,False,Johannes Thingnes Bø,NOR,False
+2022,Biathlon,"Relay, Men",Norway,NOR,False,France,FRA,False,ROC,ROC,False
+2022,Biathlon,"Sprint, Women",Marte Olsbu Røiseland,NOR,False,Elvira Öberg,SWE,False,Dorothea Wierer,ITA,False
+2022,Biathlon,"Pursuit, Women",Marte Olsbu Røiseland,NOR,False,Elvira Öberg,SWE,False,Tiril Eckhoff,NOR,False
+2022,Biathlon,"Mass Start, Women",Justine Braisaz-Bouchet,FRA,False,Tiril Eckhoff,NOR,False,Marte Olsbu Røiseland,NOR,False
+2022,Biathlon,"Individual, Women",Denise Herrmann,GER,False,Anaïs Chevalier-Bouchet,FRA,False,Marte Olsbu Røiseland,NOR,False
+2022,Biathlon,"Relay, Women",Sweden,SWE,False,ROC,ROC,False,Germany,GER,False
+2022,Biathlon,"Relay, Mixed",Norway,NOR,False,France,FRA,False,ROC,ROC,False
+2022,Bobsleigh,"Two, Men",Germany 1,GER,False,Germany 2,GER,False,Germany 3,GER,False
+2022,Bobsleigh,"Four, Men",Germany 1,GER,False,Germany 2,GER,False,Canada 1,CAN,False
+2022,Bobsleigh,"Two, Women",Germany 1,GER,False,Germany 2,GER,False,United States 1,USA,False
+2022,Bobsleigh,"Monobob, Women",Kaillie Humphries,USA,False,Elana Meyers Taylor,USA,False,Christine de Bruin,CAN,False
+2022,Cross Country Skiing,"Sprint, Men",Johannes Høsflot Klæbo,NOR,False,Federico Pellegrino,ITA,False,Aleksandr Terentyev,ROC,False
+2022,Cross Country Skiing,"15 kilometres, Men",Iivo Niskanen,FIN,False,Aleksandr Bolshunov,ROC,False,Johannes Høsflot Klæbo,NOR,False
+2022,Cross Country Skiing,"50 kilometres, Men",Aleksandr Bolshunov,ROC,False,Ivan Yakimushkin,ROC,False,Simen Hegstad Krüger,NOR,False
+2022,Cross Country Skiing,"Skiathlon, Men",Aleksandr Bolshunov,ROC,False,Denis Spitsov,ROC,False,Iivo Niskanen,FIN,False
+2022,Cross Country Skiing,"Relay, Men",ROC,ROC,False,Norway,NOR,False,France,FRA,False
+2022,Cross Country Skiing,"Team Sprint, Men",Norway,NOR,False,Finland,FIN,False,ROC,ROC,False
+2022,Cross Country Skiing,"Sprint, Women",Jonna Sundling,SWE,False,Maja Dahlqvist,SWE,False,Jessie Diggins,USA,False
+2022,Cross Country Skiing,"10 kilometres, Women",Therese Johaug,NOR,False,Kerttu Niskanen,FIN,False,Krista Pärmäkoski,FIN,False
+2022,Cross Country Skiing,"30 kilometres, Women",Therese Johaug,NOR,False,Jessie Diggins,USA,False,Kerttu Niskanen,FIN,False
+2022,Cross Country Skiing,"Skiathlon, Women",Therese Johaug,NOR,False,Nataliya Nepryayeva,ROC,False,Teresa Stadlober,AUT,False
+2022,Cross Country Skiing,"Relay, Women",ROC,ROC,False,Germany,GER,False,Sweden,SWE,False
+2022,Cross Country Skiing,"Team Sprint, Women",Germany,GER,False,Sweden,SWE,False,ROC,ROC,False
+2022,Curling,"Team, Men",Sweden,SWE,False,Great Britain,GBR,False,Canada,CAN,False
+2022,Curling,"Team, Women",Great Britain,GBR,False,Japan,JPN,False,Sweden,SWE,False
+2022,Curling,"Doubles, Mixed",Italy,ITA,False,Norway,NOR,False,Sweden,SWE,False
+2022,Figure Skating,"Singles, Men",Nathan Chen,USA,False,Yuma Kagiyama,JPN,False,Shoma Uno,JPN,False
+2022,Figure Skating,"Singles, Women",Anna Shcherbakova,ROC,False,Aleksandra Trusova,ROC,False,Kaori Sakamoto,JPN,False
+2022,Figure Skating,"Pairs, Mixed",People's Republic of China 1,CHN,False,ROC 1,ROC,False,ROC 2,ROC,False
+2022,Figure Skating,"Ice Dance, Mixed",France,FRA,False,ROC 1,ROC,False,United States 1,USA,False
+2022,Figure Skating,"Team, Mixed",United States,USA,False,Japan,JPN,False,ROC,ROC,False
+2022,Freestyle Skiing,"Moguls, Men",Walter Wallberg,SWE,False,Mikaël Kingsbury,CAN,False,Ikuma Horishima,JPN,False
+2022,Freestyle Skiing,"Aerials, Men",Qi Guangpu,CHN,False,Oleksandr Abramenko,UKR,False,Ilya Burov,ROC,False
+2022,Freestyle Skiing,"Ski Cross, Men",Ryan Regez,SUI,False,Alex Fiva,SUI,False,Sergey Ridzik,ROC,False
+2022,Freestyle Skiing,"Halfpipe, Men",Nico Porteous,NZL,False,David Wise,USA,False,Alex Ferreira,USA,False
+2022,Freestyle Skiing,"Slopestyle, Men",Alex Hall,USA,False,Nick Goepper,USA,False,Jesper Tjäder,SWE,False
+2022,Freestyle Skiing,"Big Air, Men",Birk Ruud,NOR,False,Colby Stevenson,USA,False,Henrik Harlaut,SWE,False
+2022,Freestyle Skiing,"Moguls, Women",Jakara Anthony,AUS,False,Jaelin Kauf,USA,False,Anastasiya Smirnova,ROC,False
+2022,Freestyle Skiing,"Aerials, Women",Xu Mengtao,CHN,False,Hanna Huskova,BLR,False,Megan Nick,USA,False
+2022,Freestyle Skiing,"Ski Cross, Women",Sandra Näslund,SWE,False,Marielle Thompson,CAN,False,Fanny SmithDaniela Maier,SUIGER,True
+2022,Freestyle Skiing,"Halfpipe, Women",Eileen Gu,CHN,False,Cassie Sharpe,CAN,False,Rachael Karker,CAN,False
+2022,Freestyle Skiing,"Slopestyle, Women",Mathilde Gremaud,SUI,False,Eileen Gu,CHN,False,Kelly Sildaru,EST,False
+2022,Freestyle Skiing,"Big Air, Women",Eileen Gu,CHN,False,Tess Ledeux,FRA,False,Mathilde Gremaud,SUI,False
+2022,Freestyle Skiing,"Team Aerials, Mixed",United States,USA,False,People's Republic of China,CHN,False,Canada,CAN,False
+2022,Ice Hockey,"Ice Hockey, Men",Finland,FIN,False,ROC,ROC,False,Slovakia,SVK,False
+2022,Ice Hockey,"Ice Hockey, Women",Canada,CAN,False,United States,USA,False,Finland,FIN,False
+2022,Luge,"Singles, Men",Johannes Ludwig,GER,False,Wolfgang Kindl,AUT,False,Dominik Fischnaller,ITA,False
+2022,Luge,"Doubles, Men",Germany,GER,False,Germany,GER,False,Austria,AUT,False
+2022,Luge,"Singles, Women",Natalie Geisenberger,GER,False,Anna Berreiter,GER,False,Tatyana Ivanova,ROC,False
+2022,Luge,"Team Relay, Mixed",Germany,GER,False,Austria,AUT,False,Latvia,LAT,False
+2022,Nordic Combined,"Team, Men",Norway,NOR,False,Germany,GER,False,Japan,JPN,False
+2022,Nordic Combined,"Individual, Men",Vinzenz Geiger,GER,False,Jørgen Graabak,NOR,False,Lukas Greiderer,AUT,False
+2022,Nordic Combined,"Sprint, Men",Jørgen Graabak,NOR,False,Jens Lurås Oftebro,NOR,False,Akito Watabe,JPN,False
+2022,Short Track Speed Skating,"500 metres, Men",Shaoang Liu,HUN,False,Konstantin Ivliyev,ROC,False,Steven Dubois,CAN,False
+2022,Short Track Speed Skating,"1,000 metres, Men",Ren Ziwei,CHN,False,Li Wenlong,CHN,False,Shaoang Liu,HUN,False
+2022,Short Track Speed Skating,"1,500 metres, Men",Hwang Dae-Heon,KOR,False,Steven Dubois,CAN,False,Semyon Yelistratov,ROC,False
+2022,Short Track Speed Skating,"Relay, Men",Canada,CAN,False,Republic of Korea,KOR,False,Italy,ITA,False
+2022,Short Track Speed Skating,"500 metres, Women",Arianna Fontana,ITA,False,Suzanne Schulting,NED,False,Kim Boutin,CAN,False
+2022,Short Track Speed Skating,"1,000 metres, Women",Suzanne Schulting,NED,False,Choi Min-Jeong,KOR,False,Hanne Desmet,BEL,False
+2022,Short Track Speed Skating,"1,500 metres, Women",Choi Min-Jeong,KOR,False,Arianna Fontana,ITA,False,Suzanne Schulting,NED,False
+2022,Short Track Speed Skating,"Relay, Women",Netherlands,NED,False,Republic of Korea,KOR,False,People's Republic of China,CHN,False
+2022,Short Track Speed Skating,"Relay, Mixed",People's Republic of China,CHN,False,Italy,ITA,False,Hungary,HUN,False
+2022,Skeleton,"Skeleton, Men",Christopher Grotheer,GER,False,Axel Jungk,GER,False,Yan Wengang,CHN,False
+2022,Skeleton,"Skeleton, Women",Hannah Neise,GER,False,Jackie Narracott,AUS,False,Kimberley Bos,NED,False
+2022,Ski Jumping,"Normal Hill, Individual, Men",Ryoyu Kobayashi,JPN,False,Manuel Fettner,AUT,False,Dawid Kubacki,POL,False
+2022,Ski Jumping,"Large Hill, Individual, Men",Marius Lindvik,NOR,False,Ryoyu Kobayashi,JPN,False,Karl Geiger,GER,False
+2022,Ski Jumping,"Large Hill, Team, Men",Austria,AUT,False,Slovenia,SLO,False,Germany,GER,False
+2022,Ski Jumping,"Normal Hill, Individual, Women",Urša Bogataj,SLO,False,Katharina Althaus,GER,False,Nika Križnar,SLO,False
+2022,Ski Jumping,"Normal Hill, Team, Mixed",Slovenia,SLO,False,ROC,ROC,False,Canada,CAN,False
+2022,Snowboarding,"Parallel Giant Slalom, Men",Benjamin Karl,AUT,False,Tim Mastnak,SLO,False,Vic Wild,ROC,False
+2022,Snowboarding,"Slopestyle, Men",Max Parrot,CAN,False,Su Yiming,CHN,False,Mark McMorris,CAN,False
+2022,Snowboarding,"Halfpipe, Men",Ayumu Hirano,JPN,False,Scotty James,AUS,False,Jan Scherrer,SUI,False
+2022,Snowboarding,"Cross, Men",Alessandro Hämmerle,AUT,False,Éliot Grondin,CAN,False,Omar Visintin,ITA,False
+2022,Snowboarding,"Big Air, Men",Su Yiming,CHN,False,Mons Røisland,NOR,False,Max Parrot,CAN,False
+2022,Snowboarding,"Parallel Giant Slalom, Women",Ester Ledecká,CZE,False,Daniela Ulbing,AUT,False,Gloria Kotnik,SLO,False
+2022,Snowboarding,"Slopestyle, Women",Zoi Sadowski-Synnott,NZL,False,Julia Marino,USA,False,Tess Coady,AUS,False
+2022,Snowboarding,"Halfpipe, Women",Chloe Kim,USA,False,Queralt Castellet,ESP,False,Sena Tomita,JPN,False
+2022,Snowboarding,"Cross, Women",Lindsey Jacobellis,USA,False,Chloé Trespeuch,FRA,False,Meryeta O'Dine,CAN,False
+2022,Snowboarding,"Big Air, Women",Anna Gasser,AUT,False,Zoi Sadowski-Synnott,NZL,False,Kokomo Murase,JPN,False
+2022,Snowboarding,"Team Cross, Mixed",United States 1,USA,False,Italy 1,ITA,False,Canada 1,CAN,False
+2022,Speed Skating,"500 metres, Men",Gao Tingyu,CHN,False,Cha Min-Gyu,KOR,False,Wataru Morishige,JPN,False
+2022,Speed Skating,"1,000 metres, Men",Thomas Krol,NED,False,Laurent Dubreuil,CAN,False,Håvard Lorentzen,NOR,False
+2022,Speed Skating,"1,500 metres, Men",Kjeld Nuis,NED,False,Thomas Krol,NED,False,Min-Seok Kim,KOR,False
+2022,Speed Skating,"5,000 metres, Men",Nils van der Poel,SWE,False,Patrick Roest,NED,False,Hallgeir Engebråten,NOR,False
+2022,Speed Skating,"10,000 metres, Men",Nils van der Poel,SWE,False,Patrick Roest,NED,False,Davide Ghiotto,ITA,False
+2022,Speed Skating,"Mass Start, Men",Bart Swings,BEL,False,Jeong Jae-Won,KOR,False,Lee Seung-Hun,KOR,False
+2022,Speed Skating,"Team Pursuit (8 laps), Men",Norway,NOR,False,ROC,ROC,False,United States,USA,False
+2022,Speed Skating,"500 metres, Women",Erin Jackson,USA,False,Miho Takagi,JPN,False,Angelina Golikova,ROC,False
+2022,Speed Skating,"1,000 metres, Women",Miho Takagi,JPN,False,Jutta Leerdam,NED,False,Brittany Bowe,USA,False
+2022,Speed Skating,"1,500 metres, Women",Ireen Wüst,NED,False,Miho Takagi,JPN,False,Antoinette de Jong,NED,False
+2022,Speed Skating,"3,000 metres, Women",Irene Schouten,NED,False,Francesca Lollobrigida,ITA,False,Isabelle Weidemann,CAN,False
+2022,Speed Skating,"5,000 metres, Women",Irene Schouten,NED,False,Isabelle Weidemann,CAN,False,Martina Sáblíková,CZE,False
+2022,Speed Skating,"Mass Start, Women",Irene Schouten,NED,False,Ivanie Blondin,CAN,False,Francesca Lollobrigida,ITA,False
+2022,Speed Skating,"Team Pursuit (6 laps), Women",Canada,CAN,False,Japan,JPN,False,Netherlands,NED,False
