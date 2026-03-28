@@ -1,4 +1,4 @@
-"""fetch_worldbank.py
+"""world_bank_medals.py
 enriches the cleaned olympic medal data with the world bank indicators, using all medal types
 This should provide more data for the analysis later on
 """
