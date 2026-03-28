@@ -42,9 +42,7 @@ def load_data():
     wb = pd.read_csv(WORLD_BANK_PATH)
     tied = pd.read_csv(TIED_PATH)
 
-    print(f"Loaded worldbank.csv: {len(wb)} rows")
-    print(f"Loaded tied_noc.csv:  {len(tied)} rows")
-    print(f"Dash placeholder rows: {(wb['noc'] == '—').sum()}")
+    print(f"Loaded data")
  
     return wb, tied
  
@@ -52,7 +50,6 @@ def load_data():
 def remove_placeholders(wb): # remove placeholder rows left from world_bank_medals.py
     
     wb_clean = wb[wb['noc'] != '—'].copy()
-    print(f"\nAfter removing '—' rows: {len(wb_clean)} rows remaining")
     return wb_clean
  
  
@@ -81,12 +78,8 @@ def complete_tied(tied, gdp_lookup):
     # Merge GDP and population from the worldbank data
     tied_completed = pd.merge(tied_completed, gdp_lookup, on=['year', 'noc'], how='left')
  
-    print(f"\nTied rows completed: {len(tied_completed)}")
-    print(f"Tied rows missing GDP (pre-1960 expected): "
-          f"{tied_completed['gdp_per_capita'].isna().sum()}")
- 
     return tied_completed
- 
+ # GDP missing for early years is expected
  
 def combine_and_save(wb_clean, tied_completed):
     # Stack the cleaned worldbank rows and the completed tied rows, sort by year, and save to worldbank_final.csv.
@@ -96,12 +89,7 @@ def combine_and_save(wb_clean, tied_completed):
     combined = combined.sort_values(['year', 'noc', 'medal']).reset_index(drop=True)
  
     # Sanity checks before saving
-    print(f"\nFinal dataset: {len(combined)} rows")
-    print(f"Years covered: {combined['year'].min()} to {combined['year'].max()}")
-    print(f"Unique NOCs:   {combined['noc'].nunique()}")
-    print(f"Null GDP rows: {combined['gdp_per_capita'].isna().sum()} "
-          f"(pre-1960 Games have no World Bank data — expected)")
-    print(f"is_host rows:  {combined['is_host'].sum()}")
+    print(f"Saved: {OUTPUT_PATH}")
  
     os.makedirs(os.path.join(PROJECT_ROOT, "data", "clean"), exist_ok=True)
     combined.to_csv(OUTPUT_PATH, index=False)
