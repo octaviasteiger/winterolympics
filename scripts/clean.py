@@ -79,7 +79,7 @@ def clean(df):
     df["tie_bronze"] = df["bronze_noc"].apply(is_double_noc)
 
     tied_count = (df["tie_gold"].sum(), df["tie_silver"].sum(), df["tie_bronze"].sum())
-    print(f"Tied medals found — gold: {tied_count[0]}, silver: {tied_count[1]}, bronze: {tied_count[2]}")
+    print(f"Tied medals found:  gold: {tied_count[0]}, silver: {tied_count[1]}, bronze: {tied_count[2]}")
 
     # Reorder columns
     df = df[["year", "sport", "event",

@@ -6,7 +6,7 @@ and do host countries experience a measurable performance advantage?
 
 ## Project Structure
 
-```
+``` 
 winterolympics/
 ├── data/
 │   ├── raw/               # Scraped data — gitignored, regenerate with scrape.py

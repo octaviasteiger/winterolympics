@@ -1,6 +1,6 @@
 """
 scrape.py
-=========
+=================================================
 Scrapes Winter Olympic medal tables from olympedia.org for every
 edition from 1924 to 2022 and saves the raw data as a CSV.
 
