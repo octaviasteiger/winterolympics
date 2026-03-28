@@ -15,6 +15,7 @@ winterolympics/
 │   ├── scrape.py          # Scrapes medal tables from olympedia.org
 │   └── clean.py           # Cleans raw data and saves to data/clean/
 │   └── world_bank_medals.py  # Adds world bank data onto the medals data
+├── analysis/               # Analysis of data
 ├── figures/               # Saved plots
 ├── outputs/               # Final outputs
 ├── requirements.txt
@@ -29,19 +30,29 @@ winterolympics/
    cd winterolympics
    ```
 
-2. Install:
+2. Install dependencies:
    ```
    pip install -r requirements.txt
    ```
 
-3. Scrape raw data (saves to data/raw/):
+3. Scrape raw data from Olympedia:
    ```
    python scripts/scrape.py
    ```
 
-4. Clean the data (saves to data/clean/):
+4. Fetch World Bank GDP and population data:
+   ```
+   python scripts/world_bank_medals.py
+   ```
+
+5. Clean and merge all data sources
    ```
    python scripts/clean.py
+   ```
+
+6. Run the analysis which aggregates data using SQL......
+   ```
+   python scripts/analysis.py
    ```
 
 ## Data Sources
