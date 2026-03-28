@@ -14,6 +14,7 @@ winterolympics/
 ├── scripts/
 │   ├── scrape.py          # Scrapes medal tables from olympedia.org
 │   └── clean.py           # Cleans raw data and saves to data/clean/
+│   └── world_bank_medals.py  # Adds world bank data onto the medals data
 ├── figures/               # Saved plots
 ├── outputs/               # Final outputs
 ├── requirements.txt
