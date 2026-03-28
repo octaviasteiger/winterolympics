@@ -97,13 +97,13 @@ def main():
     medals_long = pd.concat([gold, silver, bronze], ignore_index=True)
 
 # Seperate the relay rows from the individual event rows
-    relay_mask = (medals_long['noc'].str.len() > 3) | (medals_long['noc'].isin(['MIX', '-', '---'])))
+    relay_mask = (medals_long['noc'].str.len() > 3) | (medals_long['noc'].isin(['MIX', '-', '']))
     relay_rows = medals_long[relay_mask].copy() 
     medals_long = medals_long[~relay_mask].copy() 
 
 # Parse relay rows into individual country entries and save seperately
     relay_expanded = []
-    for _, row in relay_rows.interrows():
+    for _, row in relay_rows.iterrows():
         nocs = parse_relay_noc(row['noc'])
         for noc in nocs:
             if noc in NOC_TO_ISO:
