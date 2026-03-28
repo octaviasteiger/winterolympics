@@ -14,6 +14,8 @@ PROJECT_ROOT = os.path.join(SCRIPT_DIR, "..")
 
 MEDALS_PATH = os.path.join(PROJECT_ROOT, "data", "clean", "medals_clean.csv")
 WORLD_BANK_PATH = os.path.join(PROJECT_ROOT, "data", "clean", "worldbank.csv")
+RELAY_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'relay_noc.csv')
+
 
 # The winter olympic years
 YEARS = [
@@ -46,6 +48,14 @@ HOST_NOC = {
     1994: 'NOR', 1998: 'JPN', 2002: 'USA', 2006: 'ITA',
     2010: 'CAN', 2014: 'RUS', 2018: 'KOR', 2022: 'CHN'
 }
+# adding in the relay function
+# splitting the joined NOC codes into seperate NOCs
+def parse_relay_noc(noc_string):
+    noc_string = str(noc_string).strip()
+    if len(noc_string) % 3 != 0: # check if the string length can be divided by 3
+        return []
+    return list({noc_string[i : i+3] for i in range(0, len(noc_string), 3)}) # splits the string into 3 letter NOC codes and returns 
+
 
 def main(): 
 # Pulling the GDP per capita 
@@ -86,14 +96,30 @@ def main():
 # Combine all medals into one dataframe
     medals_long = pd.concat([gold, silver, bronze], ignore_index=True)
 
-# Map NOC to ISO code in medals data, keeping only rows where NOC is a known country in our mapping
-# COME BACK TO THIS: we are filtering out relays and so this might be important, as this is real data so come back
-# and add in another seperate file, parse_relay_noc 
-    medals_long['iso_code'] = medals_long['noc'].map(NOC_TO_ISO) # mapping NOC to ISO code for merging with worldbank data
+# Seperate the relay rows from the individual event rows
+    relay_mask = (medals_long['noc'].str.len() > 3) | (medals_long['noc'].isin(['MIX', '-', '---'])))
+    relay_rows = medals_long[relay_mask].copy() 
+    medals_long = medals_long[~relay_mask].copy() 
 
-    unmapped = medals_long[medals_long['iso_code'].isna()]['noc'].unique()
-    if len(unmapped) > 0:
-        print(f"WARNING: unmapped NOCs found: {unmapped}")
+# Parse relay rows into individual country entries and save seperately
+    relay_expanded = []
+    for _, row in relay_rows.interrows():
+        nocs = parse_relay_noc(row['noc'])
+        for noc in nocs:
+            if noc in NOC_TO_ISO:
+                new_row = row.copy()
+                new_row['noc'] = noc 
+                new_row['iso_code'] = NOC_TO_ISO[noc]
+                new_row['relay'] = True
+                relay_expanded.append(new_row)
+
+    relay_clean = pd.DataFrame(relay_expanded) if relay_expanded else pd.DataFrame()
+    os.makedirs(os.path.join(PROJECT_ROOT, 'data', 'clean'), exist_ok=True)
+    relay_clean.to_csv(RELAY_PATH, index=False)
+    print(f"Relay medals saved: {len(relay_clean)} rows to relay_medals.csv")
+
+# mapping NOC to ISO code for merging with worldbank data   
+    medals_long['iso_code'] = medals_long['noc'].map(NOC_TO_ISO) 
 
 # Merge with worldbank data
     final = pd.merge(medals_long, worldbank[['iso_code', 'year', 'gdp_per_capita', 'population']], on=['iso_code', 'year'], how='left', indicator=True)
