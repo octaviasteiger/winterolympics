@@ -22,45 +22,8 @@ YEARS = [
     1994, 1998, 2002, 2006, 2010, 2014, 2018, 2022
 ] 
 
-# Pulling the GDP per capita 
-gdp_raw = wb.data.DataFrame('NY.GDP.PCAP.CD', time=YEARS, labels=True)
-gdp = (gdp_raw.reset_index().melt(id_vars=['economy', 'Country'], var_name='year', value_name='gdp_per_capita'))
-gdp['year'] = gdp['year'].str.replace('YR', '').astype(int)
-
-# Pulling the population data
-pop_raw = wb.data.DataFrame('SP.POP.TOTL', time=YEARS, labels=True)
-pop = (pop_raw.reset_index().melt(id_vars=['economy', 'Country'], var_name='year', value_name='population'))
-pop['year'] = pop['year'].str.replace('YR', '').astype(int)
-
-# Merge GDP and population data
-worldbank = pd.merge(gdp, pop, on=['economy', 'Country', 'year'], how='outer')
-worldbank = worldbank.rename(columns={'economy': 'iso_code'}) 
-
-# Adding in medals data
-medals = pd.read_csv(MEDALS_PATH)
-
-# Reshaping the medals from wide to long format
-# Gold medals
-gold = medals[['year', 'event', 'gold_noc']].rename(columns={'gold_noc': 'noc'})
-gold['medal'] = 'gold'
-
-# Silver medals
-silver = medals[['year', 'event', 'silver_noc']].rename(columns={'silver_noc': 'noc'})
-silver['medal'] = 'silver'
-
-# Bronze medals
-bronze = medals[['year', 'event', 'bronze_noc']].rename(columns={'bronze_noc': 'noc'})
-bronze['medal'] = 'bronze'
-
-# Combine all medals into one dataframe
-medals_long = pd.concat([gold, silver, bronze], ignore_index=True)
-
-# Drop the invalid codes
-INVALID_NOCS = {'MIX', '-', ''}
-medals_long = medals_long[~(medals_long['noc'].isin(INVALID_NOCS) & (medals_long['noc'].str.len() <= 3))]
-
 # NOC to ISO code mapping
-noc_to_iso = { 
+NOC_TO_ISO = { 
     'USA': 'USA', 'GER': 'DEU', 'NOR': 'NOR', 'AUT': 'AUT',
     'CAN': 'CAN', 'FIN': 'FIN', 'SWE': 'SWE', 'SUI': 'CHE',
     'FRA': 'FRA', 'ITA': 'ITA', 'GBR': 'GBR', 'NED': 'NLD',
@@ -69,7 +32,7 @@ noc_to_iso = {
     'JPN': 'JPN', 'KOR': 'KOR', 'CHN': 'CHN', 'BLR': 'BLR',
     'POL': 'POL', 'CRO': 'HRV', 'SLO': 'SVN', 'SVK': 'SVK',
     'LAT': 'LVA', 'EST': 'EST', 'LIE': 'LIE', 'BEL': 'BEL',
-    'ESP' : 'ESP', 'EUN': 'RUS', 'KAZ' : 'KAZ', 'UKR': 'UKR',
+    'ESP': 'ESP', 'EUN': 'RUS', 'KAZ': 'KAZ', 'UKR': 'UKR',
     'UZB': 'UZB', 'BUL': 'BGR', 'ROC': 'RUS', 'HUN': 'HUN',
     'NZL': 'NZL', 'YUG': 'SRB', 'LUX': 'LUX', 'DEN': 'DNK',
     'ROU': 'ROU', 'PRK': 'PRK',
@@ -84,34 +47,79 @@ HOST_NOC = {
     2010: 'CAN', 2014: 'RUS', 2018: 'KOR', 2022: 'CHN'
 }
 
-# Map NOC to ISO code in medals data
-medals_long['iso_code'] = medals_long['noc'].map(noc_to_iso)
+def main(): 
+# Pulling the GDP per capita 
+    gdp_raw = wb.data.DataFrame('NY.GDP.PCAP.CD', time=YEARS, labels=True)
+    gdp = (gdp_raw.reset_index().melt(id_vars=['economy', 'Country'], var_name='year', value_name='gdp_per_capita'))
+    gdp['year'] = gdp['year'].astype(str).str.replace('YR', '').astype(int)
 
-#Check for any unmapped NOCs and log them, this will help identify any missing data or errors in the mapping
-unmapped = medals_long[medals_long['iso_code'].isna()]['noc'].unique()
-if len(unmapped) > 0:
-    print(f"WARNING: unmapped NOCs codes: {unmapped}")
+# Pulling the population data
+    pop_raw = wb.data.DataFrame('SP.POP.TOTL', time=YEARS, labels=True)
+    pop = (pop_raw.reset_index().melt(id_vars=['economy', 'Country'], var_name='year', value_name='population'))
+    pop['year'] = pop['year'].astype(str).str.replace('YR', '').astype(int)
+
+# Merge GDP and population data
+    worldbank = pd.merge(gdp, pop, on=['economy', 'Country', 'year'], how='outer')
+    worldbank = worldbank.rename(columns={'economy': 'iso_code'}) 
+
+# Load medals and check file exists
+    if not os.path.exists(MEDALS_PATH):
+        print(f"ERROR: medals_clean.csv not found at {MEDALS_PATH}")
+        print("Run scripts/clean_medals.py first")
+        return
+    
+# Adding in medals data
+    medals = pd.read_csv(MEDALS_PATH)
+
+# Reshaping the medals from wide to long format
+# Gold medals
+    gold = medals[['year', 'event', 'gold_noc']].rename(columns={'gold_noc': 'noc'})
+    gold['medal'] = 'gold'
+
+# Silver medals
+    silver = medals[['year', 'event', 'silver_noc']].rename(columns={'silver_noc': 'noc'})
+    silver['medal'] = 'silver'
+# Bronze medals
+    bronze = medals[['year', 'event', 'bronze_noc']].rename(columns={'bronze_noc': 'noc'})
+    bronze['medal'] = 'bronze'
+
+# Combine all medals into one dataframe
+    medals_long = pd.concat([gold, silver, bronze], ignore_index=True)
+
+# Map NOC to ISO code in medals data, keeping only rows where NOC is a known country in our mapping
+# COME BACK TO THIS: we are filtering out relays and so this might be important, as this is real data so come back
+# and add in another seperate file, parse_relay_noc 
+    medals_long['iso_code'] = medals_long['noc'].map(NOC_TO_ISO) # mapping NOC to ISO code for merging with worldbank data
+
+    unmapped = medals_long[medals_long['iso_code'].isna()]['noc'].unique()
+    if len(unmapped) > 0:
+        print(f"WARNING: unmapped NOCs found: {unmapped}")
 
 # Merge with worldbank data
-final = pd.merge(medals_long, worldbank[['iso_code', 'year', 'gdp_per_capita', 'population']], on=['iso_code', 'year'], how='left', indicator=True)
-final['host_noc'] = final['year'].map(HOST_NOC)
-final['is_host'] = (final['noc'] == final['host_noc']).astype(int)
-
+    final = pd.merge(medals_long, worldbank[['iso_code', 'year', 'gdp_per_capita', 'population']], on=['iso_code', 'year'], how='left', indicator=True)
 # Check for merge quality, check for missing rows/ dropped rows
-print("\nMerge results:")
-print(final['_merge'].value_counts())
+    print("\nMerge results:")
+    print(final['_merge'].value_counts())
+
+# Add host country columns
+    final['host_noc'] = final['year'].map(HOST_NOC)
+    final['is_host'] = (final['noc'] == final['host_noc']).astype(int)
 
 # Log any missing data, so instead of 0 it is NaN to avoid errors
-final['log_gdp_per_capita'] = np.log(final['gdp_per_capita'].replace(0, np.nan))
-final['log_population'] = np.log(final['population'].replace(0, np.nan))
+    final['log_gdp_per_capita'] = np.log(final['gdp_per_capita'].replace(0, np.nan))
+    final['log_population'] = np.log(final['population'].replace(0, np.nan))
 
 # Drop the indicator column before saving
-final = final.drop(columns=['_merge'])
+    final = final.drop(columns=['_merge'])
 
 # Save the final merged dataset
-os.makedirs(os.path.join(PROJECT_ROOT, "data", "clean"), exist_ok=True)
-final.to_csv(WORLD_BANK_PATH, index=False)
+    os.makedirs(os.path.join(PROJECT_ROOT, "data", "clean"), exist_ok=True)
+    final.to_csv(WORLD_BANK_PATH, index=False)
 
-print(f"\nSaved {len(final)} rows to {WORLD_BANK_PATH}")
-print(f"Missing GDP values: {final['gdp_per_capita'].isna().sum()}")
-print(f"Missing population values: {final['population'].isna().sum()}")
+    print(f"\nSaved {len(final)} rows to {WORLD_BANK_PATH}")
+    print(f"Missing GDP values: {final['gdp_per_capita'].isna().sum()}")
+    print(f"Missing population values: {final['population'].isna().sum()}")
+    print(f"Host year medal rows: {final['is_host'].sum()}")
+
+if __name__ == "__main__":
+    main()
