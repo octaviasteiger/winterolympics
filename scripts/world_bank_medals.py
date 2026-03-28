@@ -1,5 +1,5 @@
 """world_bank_medals.py
-enriches the cleaned olympic medal data with the world bank indicators, using all medal types
+completes the cleaned olympic medal data with the world bank indicators, using all medal types
 This should provide more data for the analysis later on
 """
 
@@ -14,7 +14,7 @@ PROJECT_ROOT = os.path.join(SCRIPT_DIR, "..")
 
 MEDALS_PATH = os.path.join(PROJECT_ROOT, "data", "clean", "medals_clean.csv")
 WORLD_BANK_PATH = os.path.join(PROJECT_ROOT, "data", "clean", "worldbank.csv")
-RELAY_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'relay_noc.csv')
+TIED_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'tied_noc.csv')
 
 
 # The winter olympic years
@@ -48,9 +48,9 @@ HOST_NOC = {
     1994: 'NOR', 1998: 'JPN', 2002: 'USA', 2006: 'ITA',
     2010: 'CAN', 2014: 'RUS', 2018: 'KOR', 2022: 'CHN'
 }
-# adding in the relay function
+# adding in the tied function
 # splitting the joined NOC codes into seperate NOCs
-def parse_relay_noc(noc_string):
+def parse_tied_noc(noc_string):
     noc_string = str(noc_string).strip()
     if len(noc_string) % 3 != 0: # check if the string length can be divided by 3
         return []
@@ -96,27 +96,27 @@ def main():
 # Combine all medals into one dataframe
     medals_long = pd.concat([gold, silver, bronze], ignore_index=True)
 
-# Seperate the relay rows from the individual event rows
-    relay_mask = (medals_long['noc'].str.len() > 3) | (medals_long['noc'].isin(['MIX', '-', '']))
-    relay_rows = medals_long[relay_mask].copy() 
-    medals_long = medals_long[~relay_mask].copy() 
+# Seperate the tied rows from the individual event rows
+    tied_mask = (medals_long['noc'].str.len() > 3) | (medals_long['noc'].isin(['MIX', '-', '']))
+    tied_rows = medals_long[tied_mask].copy() 
+    medals_long = medals_long[~tied_mask].copy() 
 
-# Parse relay rows into individual country entries and save seperately
-    relay_expanded = []
-    for _, row in relay_rows.iterrows():
-        nocs = parse_relay_noc(row['noc'])
+# Parse tied rows into individual country entries and save seperately
+    tied_expanded = []
+    for _, row in tied_rows.iterrows():
+        nocs = parse_tied_noc(row['noc'])
         for noc in nocs:
             if noc in NOC_TO_ISO:
                 new_row = row.copy()
                 new_row['noc'] = noc 
                 new_row['iso_code'] = NOC_TO_ISO[noc]
-                new_row['relay'] = True
-                relay_expanded.append(new_row)
+                new_row['tied'] = True
+                tied_expanded.append(new_row)
 
-    relay_clean = pd.DataFrame(relay_expanded) if relay_expanded else pd.DataFrame()
+    tied_clean = pd.DataFrame(tied_expanded) if tied_expanded else pd.DataFrame()
     os.makedirs(os.path.join(PROJECT_ROOT, 'data', 'clean'), exist_ok=True)
-    relay_clean.to_csv(RELAY_PATH, index=False)
-    print(f"Relay medals saved: {len(relay_clean)} rows to relay_medals.csv")
+    tied_clean.to_csv(TIED_PATH, index=False)
+    print(f"Tied medals saved: {len(tied_clean)} rows to tied_medals.csv")
 
 # mapping NOC to ISO code for merging with worldbank data   
     medals_long['iso_code'] = medals_long['noc'].map(NOC_TO_ISO) 
