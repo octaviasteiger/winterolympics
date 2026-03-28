@@ -15,8 +15,12 @@ PROJECT_ROOT = os.path.join(SCRIPT_DIR, "..")
 MEDALS_PATH = os.path.join(PROJECT_ROOT, "data", "clean", "medals_clean.csv")
 WORLD_BANK_PATH = os.path.join(PROJECT_ROOT, "data", "clean", "worldbank.csv")
 
-
-YEARS = list(range(1924, 2024, 4))  # Winter Olympics years
+# The winter olympic years
+YEARS = [
+    1924, 1928, 1932, 1936, 1948, 1952, 1956, 1960,
+    1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992,
+    1994, 1998, 2002, 2006, 2010, 2014, 2018, 2022
+] 
 
 # Pulling the GDP per capita 
 gdp_raw = wb.data.DataFrame('NY.GDP.PCAP.CD', time=YEARS, labels=True)
@@ -51,6 +55,10 @@ bronze['medal'] = 'bronze'
 # Combine all medals into one dataframe
 medals_long = pd.concat([gold, silver, bronze], ignore_index=True)
 
+# Drop the invalid codes
+INVALID_NOCS = {'MIX', '-', ''}
+medals_long = medals_long[~(medals_long['noc'].isin(INVALID_NOCS) & (medals_long['noc'].str.len() <= 3))]
+
 # NOC to ISO code mapping
 noc_to_iso = { 
     'USA': 'USA', 'GER': 'DEU', 'NOR': 'NOR', 'AUT': 'AUT',
@@ -61,6 +69,19 @@ noc_to_iso = {
     'JPN': 'JPN', 'KOR': 'KOR', 'CHN': 'CHN', 'BLR': 'BLR',
     'POL': 'POL', 'CRO': 'HRV', 'SLO': 'SVN', 'SVK': 'SVK',
     'LAT': 'LVA', 'EST': 'EST', 'LIE': 'LIE', 'BEL': 'BEL',
+    'ESP' : 'ESP', 'EUN': 'RUS', 'KAZ' : 'KAZ', 'UKR': 'UKR',
+    'UZB': 'UZB', 'BUL': 'BGR', 'ROC': 'RUS', 'HUN': 'HUN',
+    'NZL': 'NZL', 'YUG': 'SRB', 'LUX': 'LUX', 'DEN': 'DNK',
+    'ROU': 'ROU', 'PRK': 'PRK',
+}
+# Adding in host dictionary 
+HOST_NOC = {
+    1924: 'FRA', 1928: 'SUI', 1932: 'USA', 1936: 'GER',
+    1948: 'SUI', 1952: 'NOR', 1956: 'ITA', 1960: 'USA',
+    1964: 'AUT', 1968: 'FRA', 1972: 'JPN', 1976: 'AUT',
+    1980: 'USA', 1984: 'YUG', 1988: 'CAN', 1992: 'FRA',
+    1994: 'NOR', 1998: 'JPN', 2002: 'USA', 2006: 'ITA',
+    2010: 'CAN', 2014: 'RUS', 2018: 'KOR', 2022: 'CHN'
 }
 
 # Map NOC to ISO code in medals data
@@ -72,8 +93,9 @@ if len(unmapped) > 0:
     print(f"WARNING: unmapped NOCs codes: {unmapped}")
 
 # Merge with worldbank data
-final = pd.merge(medals_long, worldbank[['iso_code', 'year', 'gdp_per_capita', 'population']], 
-                 on=['iso_code', 'year'], how='left', indicator=True)
+final = pd.merge(medals_long, worldbank[['iso_code', 'year', 'gdp_per_capita', 'population']], on=['iso_code', 'year'], how='left', indicator=True)
+final['host_noc'] = final['year'].map(HOST_NOC)
+final['is_host'] = (final['noc'] == final['host_noc']).astype(int)
 
 # Check for merge quality, check for missing rows/ dropped rows
 print("\nMerge results:")
