@@ -146,9 +146,9 @@ def fig5_regression(reg):
     # Dashed line at zero as bars crossing this are not statistically significant
     plt.axvline(0)
 
-    plt.set_title("What predicts Winter Olympic Success?", fontsize=14, pad=12)
-    plt.set_xlabel("Regression Coefficient (extra medals per unit increase)")
-    plt.set_ylabel('')
+    plt.title("What predicts Winter Olympic Success?", fontsize=14, pad=12)
+    plt.xlabel("Regression Coefficient (extra medals per unit increase)")
+    plt.ylabel('')
 
     plt.savefig(os.path.join(FIGURES_DIR, 'fig5_regression.png'))
     plt.close()
