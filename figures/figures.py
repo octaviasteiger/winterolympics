@@ -128,15 +128,43 @@ def fig4_host_compare(cy):
     plt.close()
     print("Saved fig4_host_compare.png")
 
+# Function 5 - Regression coefficients
+def fig5_regression(reg):
+
+    # Filtering to just the key variables 
+    key_vars = ['is_host', 'log_gdp_per_capita', 'log_population']
+    reg = reg[reg['variable'].isin(key_vars)].copy()
+
+    # Labeling the axis 
+    labels = {'is_host': 'Host Country', 'log_gdp_per_capita': 'Log GDP per Capita', 'log_population': 'Log Population'}
+    reg['variable'] = reg['variable'].map(labels)
+
+    # Creating horizontal bar chart
+    plt.figure(figsize=(9, 4))
+    plt.barh(reg['variable'], reg['Coef.'])
+    
+    # Dashed line at zero as bars crossing this are not statistically significant
+    plt.axvline(0)
+
+    plt.set_title("What predicts Winter Olympic Success?", fontsize=14, pad=12)
+    plt.set_xlabel("Regression Coefficient (extra medals per unit increase)")
+    plt.set_ylabel('')
+
+    plt.savefig(os.path.join(FIGURES_DIR, 'fig5_regression.png'))
+    plt.close()
+    print("Saved fig5_regression.png")
+
 
 def main():
     alltime = pd.read_csv(ALLTIME_PATH)
     cy = pd.read_csv(COUNTRY_YEAR_PATH)
+    reg = pd.read_csv(REGRESSION_PATH)
 
     fig1_alltime(alltime)
     fig2_trends(cy)
     fig3_gdp_medals(cy)
     fig4_host_compare(cy)
+    fig5_regression(reg)
 
     print("Figures created")
 
