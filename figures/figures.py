@@ -46,9 +46,9 @@ def fig1_alltime(alltime):
     ax.legend(loc='lower right')
 
     fig.tight_layout()
-    fig.savefig(os.path.join(FIGURES_DIR, 'fig1_alltime.pdf'))
+    fig.savefig(os.path.join(FIGURES_DIR, 'fig1_alltime.png'))
     plt.close()
-    print("Saved fig1_alltime.pdf")
+    print("Saved fig1_alltime.png")
 
 # Function 2 - Medals trends over time, line chart
 def fig2_trends(cy):
@@ -92,10 +92,10 @@ def fig3_gdp_medals(cy):
     ax.set_xlabel("Log GDP per Capita")
     ax.set_ylabel("Total Medals Won")
 
-    fig.tight_layout
-    fig.savefig(os.path.join(FIGURES_DIR, 'fig3_gdp_medals.pdf'))
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIGURES_DIR, 'fig3_gdp_medals.png'))
     plt.close()
-    print("Saved fig3_gdp_medals.pdf")
+    print("Saved fig3_gdp_medals.png")
 
 # Function 4 - Host vs non-host, comparing a country medals when it was the host vs when it was not 
 def fig4_host_compare(cy):
@@ -107,12 +107,12 @@ def fig4_host_compare(cy):
     # For all the host nations, i get the average of their medals when they were not hosting
     non_host_avg = (cy[cy['is_host'] == 0].groupby('noc')['total_medals'].mean().reset_index().rename(columns={'total_medals': 'avg_non_host'}))
 
-    compare = compare.merge(hosts, non_host_avg, on='noc', how='inner')
+    compare = pd.merge(hosts, non_host_avg, on='noc', how='inner')
     compare = compare.sort_values('host_medals', ascending=False).head(15)
 
     # Reshaping the data for plotting
     long = compare.melt(id_vars=['noc'], value_vars=['host_medals', 'avg_non_host'], var_name='type', value_name='medals')
-    long['type'] = long['type'].map({'host_medals': 'Host Year', 'avg_non_host': 'Avgerage Non-Host Year'})
+    long['type'] = long['type'].map({'host_medals': 'Host Year', 'avg_non_host': 'Average Non-Host Year'})
 
     fig, ax = plt.subplots(figsize=(12, 7))
     sns.barplot(data=long, x='noc', y='medals', hue='type', ax=ax)
@@ -123,11 +123,10 @@ def fig4_host_compare(cy):
     ax.legend()
     ax.tick_params(axis='x', rotation=45)
 
-    fig.tight_layout
-    fig.savefig(os.path.join(FIGURES_DIR, 'fig4_host_compare.pdf'))
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIGURES_DIR, 'fig4_host_compare.png'))
     plt.close()
-    print("Saved fig4_host_compare.pdf")
-
+    print("Saved fig4_host_compare.png")
 
 
 def main():
