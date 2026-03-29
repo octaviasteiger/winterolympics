@@ -116,16 +116,13 @@ def main():
     tied_clean = pd.DataFrame(tied_expanded) if tied_expanded else pd.DataFrame()
     os.makedirs(os.path.join(PROJECT_ROOT, 'data', 'clean'), exist_ok=True)
     tied_clean.to_csv(TIED_PATH, index=False)
-    print(f"Tied medals saved: {len(tied_clean)} rows to tied_medals.csv")
+    print("Saved tied medals to tied_noc.csv")
 
 # mapping NOC to ISO code for merging with worldbank data   
     medals_long['iso_code'] = medals_long['noc'].map(NOC_TO_ISO) 
 
 # Merge with worldbank data
     final = pd.merge(medals_long, worldbank[['iso_code', 'year', 'gdp_per_capita', 'population']], on=['iso_code', 'year'], how='left', indicator=True)
-# Check for merge quality, check for missing rows/ dropped rows
-    print("\nMerge results:")
-    print(final['_merge'].value_counts())
 
 # Add host country columns
     final['host_noc'] = final['year'].map(HOST_NOC)
