@@ -4,6 +4,19 @@ scrape.py
 Scrapes Winter Olympic medal tables from olympedia.org for every
 edition from 1924 to 2022 and saves the raw data as a CSV.
 
+Variables:
+WINTER_EDITIONS: A dictionary mapping each Olympic year --> Olympedia edition ID
+HEADERS: A dictionary of HTTP request headers to identify my script when making requests and avoids being blocked
+SCRIPT_DIR: The directory where the script is located, helps to build file paths relative to the project root
+PROJECT_ROOT: The parent directory of the script, and is used as the base directory for saving data
+RAW_PATH: Full path to the output CSV file where the scraped data will be saved
+year: The year of the Winter Olympics being scraped
+all_rows: A list containing all scraped rows
+seen_years: A list which tracks which years were successfully scraped, and helps to detect missing data
+edition_id: Olympedias edition ID
+missing: list of any years that were not successfully scraped
+raw_df: A pandas DataFrame which is a structured version of all_rows and is ready for saving to csv
+
 Requirements:
     pip install requests beautifulsoup4 pandas
 """

@@ -3,6 +3,22 @@ merge_tied.py
 
 merges the tied medal rows back into the worldbank dataset
 run after world_bank_medals.py
+
+Variables:
+SCRIPT_DIR: The directory where the script is located, helps to build file paths relative to the project root
+PROJECT_ROOT: The parent directory of the script, and is used as the base directory for saving data
+WORLD_BANK_PATH: The path to dataset created in world_bank_medals.py, it is the main dataset containing medals and world bank data
+TIED_PATH: The path to the tied medal dataset created in world_bank_medals.py, it contains the expanded tied medal rows with world bank data
+OUTPUT_PATH: The final output file path, saves fully combined dataset
+HOST_NOC: A dictionary mapping Olympic years to the host country's NOC code, so I can identify host country for each Olympics
+KEEP_COLS: The required columns for final dataset, so that there is a consistent structure when i combine datasets
+wb: Main world bank dataset 
+tied: tied medal dataset
+wb_clean: cleaned dataset with placeholder rows removed
+gdp_lookup: Country-year lookup table for GDP and population
+tied_completed: The fully complete tied medal dataset 
+combined: The final combined dataset of comtaining both of my sources
+
 requirements:
     pip install pandas
 

@@ -1,6 +1,28 @@
 """world_bank_medals.py
 completes the cleaned olympic medal data with the world bank indicators, using all medal types
 This should provide more data for the analysis later on
+
+Variables:
+SCRIPT_DIR: The directory where the script is located, helps to build file paths relative to the project root
+PROJECT_ROOT: The parent directory of the script, and is used as the base directory for saving data
+MEDALS_PATH: Path to cleaned medals dataset, used to load the medal data for merging with world bank indicators
+WORLD_BANK_PATH: The output path for final merged dataset, used for saving the final complete data
+TIED_PATH: The output path for processed tied medal data, it stores expanded tied medal rows seperately
+NOC_TO_ISO: A dictionary mapping NOC codes to ISO country codes, used for merging with world bank data
+HOST_NOC: A dictionary mapping Olympic years to the host country's NOC code, so I can identify host country for each Olympics
+noc_string: Combined NOC string from tied medals, used to split into individual NOCs
+gdp_raw: Raw GDP per capita data from world bank API
+gdp: is a dataframe, it is cleaned GDP data in long format 
+pop_raw: Raw population data
+pop: cleaned population data in long format
+worldbank: Combined GDP and population dataset
+medals: The cleaned medals dataset loaded from medals_clean.csv
+medals_long: The medals dataset reshaped from wide to long format
+tied_mask: A boolean mask so i can indentify problem rows 
+tied_rows: A subset of tied or invalid medal rows
+medals_long: after filtering out the tied rows, this now contains onyl valid single-country medal rows
+tied_clean: It is the expanded dataset where each tied country gets its own row
+
 """
 
 import wbgapi as wb
