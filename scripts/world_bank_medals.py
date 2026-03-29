@@ -97,16 +97,14 @@ def main():
 
 # Expand the tied rows into one row per country u
     tied_rows['noc_list'] = tied_rows['noc'].apply(parse_tied_noc)
-    tied_expanded = tied_rows.explode('noc_list')  # one row per country
-    tied_expanded = tied_expanded.rename(columns={'noc_list': 'noc'})
-    
-    # Keep only rows where the NOC has a known ISO code
-    tied_expanded = tied_expanded[tied_expanded['noc'].isin(NOC_TO_ISO)]
-    tied_expanded['iso_code'] = tied_expanded['noc'].map(NOC_TO_ISO)
-    tied_expanded['tied'] = True
+    tied_clean = tied_rows.explode('noc_list').copy()
+    tied_clean = tied_clean.dropna(subset=['noc_list'])                         
+    tied_clean = tied_clean.drop(columns=['noc']).rename(columns={'noc_list': 'noc'})
+    tied_clean = tied_clean[tied_clean['noc'].isin(NOC_TO_ISO)].copy()        
+    tied_clean['iso_code'] = tied_clean['noc'].map(NOC_TO_ISO)
+    tied_clean['tied'] = True
 
     os.makedirs(os.path.join(PROJECT_ROOT, 'data', 'clean'), exist_ok=True)
-    tied_clean.to_csv(TIED_PATH, index=False)
     print("Saved tied medals to tied_noc.csv")
 
 # mapping NOC to ISO code for merging with worldbank data   
