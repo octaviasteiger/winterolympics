@@ -82,38 +82,29 @@ def main():
     medals = pd.read_csv(MEDALS_PATH)
 
 # Reshaping the medals from wide to long format
-# Gold medals
-    gold = medals[['year', 'event', 'gold_noc']].rename(columns={'gold_noc': 'noc'})
-    gold['medal'] = 'gold'
-
-# Silver medals
-    silver = medals[['year', 'event', 'silver_noc']].rename(columns={'silver_noc': 'noc'})
-    silver['medal'] = 'silver'
-# Bronze medals
-    bronze = medals[['year', 'event', 'bronze_noc']].rename(columns={'bronze_noc': 'noc'})
-    bronze['medal'] = 'bronze'
-
-# Combine all medals into one dataframe
-    medals_long = pd.concat([gold, silver, bronze], ignore_index=True)
+    medals_long = pd.melt(medals[['year', 'event', 'gold_noc', 'silver_noc', 'bronze_noc']],
+        id_vars=['year', 'event'],
+        value_vars=['gold_noc', 'silver_noc', 'bronze_noc'],
+        var_name='medal',
+        value_name='noc')
+    
+    medals_long['medal'] = medals_long['medal'].str.replace('_noc', '') 
 
 # Seperate the tied rows from the individual event rows
     tied_mask = (medals_long['noc'].str.len() > 3) | (medals_long['noc'].isin(['MIX', '-', '']))
     tied_rows = medals_long[tied_mask].copy() 
     medals_long = medals_long[~tied_mask].copy() 
 
-# Parse tied rows into individual country entries and save seperately
-    tied_expanded = []
-    for _, row in tied_rows.iterrows():
-        nocs = parse_tied_noc(row['noc'])
-        for noc in nocs:
-            if noc in NOC_TO_ISO:
-                new_row = row.copy()
-                new_row['noc'] = noc 
-                new_row['iso_code'] = NOC_TO_ISO[noc]
-                new_row['tied'] = True
-                tied_expanded.append(new_row)
+# Expand the tied rows into one row per country u
+    tied_rows['noc_list'] = tied_rows['noc'].apply(parse_tied_noc)
+    tied_expanded = tied_rows.explode('noc_list')  # one row per country
+    tied_expanded = tied_expanded.rename(columns={'noc_list': 'noc'})
+    
+    # Keep only rows where the NOC has a known ISO code
+    tied_expanded = tied_expanded[tied_expanded['noc'].isin(NOC_TO_ISO)]
+    tied_expanded['iso_code'] = tied_expanded['noc'].map(NOC_TO_ISO)
+    tied_expanded['tied'] = True
 
-    tied_clean = pd.DataFrame(tied_expanded) if tied_expanded else pd.DataFrame()
     os.makedirs(os.path.join(PROJECT_ROOT, 'data', 'clean'), exist_ok=True)
     tied_clean.to_csv(TIED_PATH, index=False)
     print("Saved tied medals to tied_noc.csv")
