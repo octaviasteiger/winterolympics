@@ -105,6 +105,7 @@ def main():
     tied_clean['tied'] = True
 
     os.makedirs(os.path.join(PROJECT_ROOT, 'data', 'clean'), exist_ok=True)
+    tied_clean.to_csv(TIED_PATH, index=False)
     print("Saved tied medals to tied_noc.csv")
 
 # mapping NOC to ISO code for merging with worldbank data   
