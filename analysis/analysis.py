@@ -39,6 +39,8 @@ INPUT_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'worldbank_final.csv')
 COUNTRY_YEAR_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'medals_country_year.csv')
 ALLTIME_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'alltime_table.csv') 
 REGRESSION_PATH = os.path.join(PROJECT_ROOT, 'outputs', 'regression_results.csv')
+
+
 def main():
     # Load the final merged dataset
     if not os.path.exists(INPUT_PATH):
@@ -46,10 +48,11 @@ def main():
         return
     
     df = pd.read_csv(INPUT_PATH)
+    
     # SQL aggregation to country-year level
     conn = sqlite3.connect(':memory:')
     df.to_sql('medals_raw', conn, index=False, if_exists='replace')
-    # One row per country per Games but only where GDP data exists
+   
     medals_agg = pd.read_sql_query("""
          SELECT
             year, noc, iso_code, host_noc, is_host,
@@ -63,12 +66,14 @@ def main():
         GROUP BY year, noc, iso_code, host_noc, is_host
         ORDER BY year ASC, total_medals DESC
     """, conn)
+
     # Total medals awarded per year so that I can calulcate the medal share
     totals_per_year = pd.read_sql_query("""
         SELECT year, COUNT(*) AS medals_awarded
         FROM medals_raw
         GROUP BY year
     """, conn)
+
     # The all time medal table, but only looking at the top 20 nations so that it is more readable
     alltime_table = pd.read_sql_query("""
         SELECT
@@ -84,17 +89,16 @@ def main():
         LIMIT 20
     """, conn)
     conn.close()
-    print(f"Aggregated to {len(medals_agg)} country-year rows")
+    
     # Medal share
     medals_agg = pd.merge(medals_agg, totals_per_year, on='year', how='left')
     medals_agg['medal_share'] = medals_agg['total_medals'] / medals_agg['medals_awarded']
-    # Lagged medal count to control for past performance
-    medals_agg = medals_agg.sort_values(['noc', 'year']).reset_index(drop=True)
-    medals_agg['medals_lag1'] = medals_agg.groupby('noc')['total_medals'].shift(1)
+    
     #OLS regression to test for host advantage
-    reg_data = medals_agg.dropna(subset=['log_gdp_per_capita', 'log_population', 'medals_lag1']).copy()
-    model = smf.ols('total_medals ~ is_host + log_gdp_per_capita + log_population + medals_lag1 + C(year)', data=reg_data).fit()
+    reg_data = medals_agg.dropna(subset=['log_gdp_per_capita', 'log_population']).copy()
+    model = smf.ols('total_medals ~ is_host + log_gdp_per_capita + log_population', data=reg_data).fit()
     print(model.summary())
+
     # Save the four key coefficients for the figures 
     key_vars = ['is_host', 'log_gdp_per_capita', 'log_population', 'medals_lag1']
     results_df = pd.concat([
@@ -106,6 +110,7 @@ def main():
     # Save the outputs
     os.makedirs(os.path.join(PROJECT_ROOT, 'data', 'clean'), exist_ok=True)
     os.makedirs(os.path.join(PROJECT_ROOT, 'outputs'), exist_ok=True)
+    
     medals_agg.to_csv(COUNTRY_YEAR_PATH, index=False)
     alltime_table.to_csv(ALLTIME_PATH,   index=False)
     results_df.to_csv(REGRESSION_PATH, index=False)
