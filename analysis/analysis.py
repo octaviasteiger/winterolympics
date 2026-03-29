@@ -19,8 +19,6 @@ totals_per_year: A dataset containing the total number of medals awarded each ye
 alltime_table: A dataset containing the top 20 countries of all time by medal count, used for summary statistics and visualisations 
 reg_data: The filtered dataset used in regression, and it drops rows with missing data for the key variables
 model: The fitted OLS regression model 
-medals_lag1: The lagged medal count variable, which controls for past performance
-key_vars: The list of key variables of interest
 results_df: The structured regression output
 
 """
@@ -100,12 +98,8 @@ def main():
     print(model.summary())
 
     # Save the four key coefficients for the figures 
-    key_vars = ['is_host', 'log_gdp_per_capita', 'log_population', 'medals_lag1']
-    results_df = pd.concat([
-        model.params[key_vars].rename('coefficient'),
-        model.bse[key_vars].rename('std_error'),
-        model.pvalues[key_vars].rename('p_value'),
-        model.conf_int().loc[key_vars].rename(columns={0: 'ci_lower', 1: 'ci_upper'})], axis=1).reset_index(names='variable')
+    results_df = model.summary2().tables[1].reset_index()
+    results_df = results_df.rename(columns={'index': 'variable'})
     
     # Save the outputs
     os.makedirs(os.path.join(PROJECT_ROOT, 'data', 'clean'), exist_ok=True)
