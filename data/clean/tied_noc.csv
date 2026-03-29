@@ -1,60 +1,60 @@
-year,event,noc,medal,iso_code,relay
-1928,"500 metres, Men",FIN,gold,FIN,True
-1928,"500 metres, Men",NOR,gold,NOR,True
-1956,"1,500 metres, Men",URS,gold,RUS,True
-1960,"1,500 metres, Men",URS,gold,RUS,True
-1960,"1,500 metres, Men",NOR,gold,NOR,True
-1972,"Doubles, Men",GDR,gold,DEU,True
-1972,"Doubles, Men",ITA,gold,ITA,True
-1998,"Two, Men",CAN,gold,CAN,True
-1998,"Two, Men",ITA,gold,ITA,True
-2002,"Skiathlon, Men",NOR,gold,NOR,True
-2002,"Pairs, Mixed",CAN,gold,CAN,True
-2002,"Pairs, Mixed",RUS,gold,RUS,True
-2014,"Downhill, Women",SLO,gold,SVN,True
-2014,"Downhill, Women",SUI,gold,CHE,True
-2018,"Two, Men",CAN,gold,CAN,True
-2018,"Two, Men",GER,gold,DEU,True
-1948,"500 metres, Men",NOR,silver,NOR,True
-1948,"500 metres, Men",USA,silver,USA,True
-1964,"Giant Slalom, Women",USA,silver,USA,True
-1964,"Giant Slalom, Women",FRA,silver,FRA,True
-1964,"Pairs, Mixed",CAN,silver,CAN,True
-1964,"Pairs, Mixed",GER,silver,DEU,True
-1964,"500 metres, Men",URS,silver,RUS,True
-1964,"500 metres, Men",NOR,silver,NOR,True
-1964,"3,000 metres, Women",URS,silver,RUS,True
-1964,"3,000 metres, Women",PRK,silver,PRK,True
-1968,"500 metres, Men",NOR,silver,NOR,True
-1968,"500 metres, Men",USA,silver,USA,True
-1968,"1,500 metres, Men",NED,silver,NLD,True
-1968,"1,500 metres, Men",NOR,silver,NOR,True
-1968,"500 metres, Women",USA,silver,USA,True
-1980,"Normal Hill, Individual, Men",JPN,silver,JPN,True
-1980,"Normal Hill, Individual, Men",GDR,silver,DEU,True
-1992,"Giant Slalom, Women",AUT,silver,AUT,True
-1992,"Giant Slalom, Women",USA,silver,USA,True
-1998,"Super G, Men",SUI,silver,CHE,True
-1998,"Super G, Men",AUT,silver,AUT,True
-2010,"Individual, Men",BLR,silver,BLR,True
-2010,"Individual, Men",NOR,silver,NOR,True
-2018,"Four, Men",GER,silver,DEU,True
-2018,"Four, Men",KOR,silver,KOR,True
-1924,"500 metres, Men",FIN,bronze,FIN,True
-1924,"500 metres, Men",NOR,bronze,NOR,True
-1928,"500 metres, Men",FIN,bronze,FIN,True
-1928,"500 metres, Men",NOR,bronze,NOR,True
-1928,"500 metres, Men",USA,bronze,USA,True
-1948,"Downhill, Men",SUI,bronze,CHE,True
-1952,"500 metres, Men",NOR,bronze,NOR,True
-1952,"500 metres, Men",CAN,bronze,CAN,True
-1980,"1,000 metres, Men",URS,bronze,RUS,True
-1980,"1,000 metres, Men",NOR,bronze,NOR,True
-1998,"Four, Men",GBR,bronze,GBR,True
-1998,"Four, Men",FRA,bronze,FRA,True
-2014,"Super G, Men",CAN,bronze,CAN,True
-2014,"Super G, Men",USA,bronze,USA,True
-2018,"10 kilometres, Women",FIN,bronze,FIN,True
-2018,"10 kilometres, Women",NOR,bronze,NOR,True
-2022,"Ski Cross, Women",SUI,bronze,CHE,True
-2022,"Ski Cross, Women",GER,bronze,DEU,True
+year,event,medal,noc,iso_code,tied
+1928,"500 metres, Men",gold,NOR,NOR,True
+1928,"500 metres, Men",gold,FIN,FIN,True
+1956,"1,500 metres, Men",gold,URS,RUS,True
+1960,"1,500 metres, Men",gold,NOR,NOR,True
+1960,"1,500 metres, Men",gold,URS,RUS,True
+1972,"Doubles, Men",gold,ITA,ITA,True
+1972,"Doubles, Men",gold,GDR,DEU,True
+1998,"Two, Men",gold,CAN,CAN,True
+1998,"Two, Men",gold,ITA,ITA,True
+2002,"Skiathlon, Men",gold,NOR,NOR,True
+2002,"Pairs, Mixed",gold,CAN,CAN,True
+2002,"Pairs, Mixed",gold,RUS,RUS,True
+2014,"Downhill, Women",gold,SLO,SVN,True
+2014,"Downhill, Women",gold,SUI,CHE,True
+2018,"Two, Men",gold,GER,DEU,True
+2018,"Two, Men",gold,CAN,CAN,True
+1948,"500 metres, Men",silver,NOR,NOR,True
+1948,"500 metres, Men",silver,USA,USA,True
+1964,"Giant Slalom, Women",silver,USA,USA,True
+1964,"Giant Slalom, Women",silver,FRA,FRA,True
+1964,"Pairs, Mixed",silver,GER,DEU,True
+1964,"Pairs, Mixed",silver,CAN,CAN,True
+1964,"500 metres, Men",silver,NOR,NOR,True
+1964,"500 metres, Men",silver,URS,RUS,True
+1964,"3,000 metres, Women",silver,PRK,PRK,True
+1964,"3,000 metres, Women",silver,URS,RUS,True
+1968,"500 metres, Men",silver,NOR,NOR,True
+1968,"500 metres, Men",silver,USA,USA,True
+1968,"1,500 metres, Men",silver,NOR,NOR,True
+1968,"1,500 metres, Men",silver,NED,NLD,True
+1968,"500 metres, Women",silver,USA,USA,True
+1980,"Normal Hill, Individual, Men",silver,JPN,JPN,True
+1980,"Normal Hill, Individual, Men",silver,GDR,DEU,True
+1992,"Giant Slalom, Women",silver,USA,USA,True
+1992,"Giant Slalom, Women",silver,AUT,AUT,True
+1998,"Super G, Men",silver,SUI,CHE,True
+1998,"Super G, Men",silver,AUT,AUT,True
+2010,"Individual, Men",silver,NOR,NOR,True
+2010,"Individual, Men",silver,BLR,BLR,True
+2018,"Four, Men",silver,KOR,KOR,True
+2018,"Four, Men",silver,GER,DEU,True
+1924,"500 metres, Men",bronze,NOR,NOR,True
+1924,"500 metres, Men",bronze,FIN,FIN,True
+1928,"500 metres, Men",bronze,NOR,NOR,True
+1928,"500 metres, Men",bronze,FIN,FIN,True
+1928,"500 metres, Men",bronze,USA,USA,True
+1948,"Downhill, Men",bronze,SUI,CHE,True
+1952,"500 metres, Men",bronze,NOR,NOR,True
+1952,"500 metres, Men",bronze,CAN,CAN,True
+1980,"1,000 metres, Men",bronze,NOR,NOR,True
+1980,"1,000 metres, Men",bronze,URS,RUS,True
+1998,"Four, Men",bronze,GBR,GBR,True
+1998,"Four, Men",bronze,FRA,FRA,True
+2014,"Super G, Men",bronze,CAN,CAN,True
+2014,"Super G, Men",bronze,USA,USA,True
+2018,"10 kilometres, Women",bronze,NOR,NOR,True
+2018,"10 kilometres, Women",bronze,FIN,FIN,True
+2022,"Ski Cross, Women",bronze,GER,DEU,True
+2022,"Ski Cross, Women",bronze,SUI,CHE,True
