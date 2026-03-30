@@ -102,7 +102,7 @@ The plot shows that both GDP per capita and population have a strong positive ef
 
 ---
 ## 6. Conclusions
-This analsyis set out to understand what drives Winter Olympic medal success. I tested three factors: wealth, population size and home advantage. The results show that all three factors have a significant impact on medal counts:
+This analsyis set out to understand what drives Winter Olympic medal success. I tested three factors: wealth, population size and home advantage. The results show that all three factors have a significant impact on medal counts
 
 ---
 

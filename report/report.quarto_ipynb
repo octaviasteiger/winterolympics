@@ -18,7 +18,7 @@
         "  message: false\n",
         "---"
       ],
-      "id": "b6674c5a"
+      "id": "c4bb4c1a"
     },
     {
       "cell_type": "markdown",
@@ -77,10 +77,32 @@
         "The chart shows cumulative medals since 1924. Norwary leads confortably, reflecting its deep winter sports culture and consistent investment in training. The US and Germany follow, benefitting from both size and sustained investment in winter sport.\n",
         "\n",
         "### 5.2 How medal dominance has changed over time\n",
+        "The all-time medal table masks important changes over time. The chart shows the medal counts per Games for the top 6 nations. \n",
+        "\n",
+        "### 5.3 The Wealth effects\n",
+        "The scatter plot shows the relationship between GDP per capita and medals won, across all country-year observations. The upward trend is clear, showing that wealthier countries tend to win more medals. This is consistent with the idea that richer countries have more resources to invest in training and facilities, which tend to lead to better performance in the Olympics. However, there are some outliers......\n",
+        "\n",
+        "### 5.4 Home Advantage\n",
+        "To visualise the home advantage effect, I created a bar chart comparing each host nations medal count in its home Games against its average performance in non-host years. Most host nations perform notably better at home, suggesting that familiarity with venues, crowd support and reduced travel fatigue may all contribute to improved performance. However, the size of the home advantage effect varies widely between countries, with some hosts seeing a much bigger boost than others.\n",
+        "\n",
+        "### 5.5 What the regression tells us\n",
+        "The coefficient plot summeraises the regression results, showing how many additional medals a country can expect to win for each unit increase in that variable, holding the others constant. Bars to the right of the zero line have a positive effect on medal counts, while bars to the left have a negative effect. \n",
+        "\n",
+        "The plot shows that both GDP per capita and population have a strong positive effect on medal success, confirming that wealth and size are important drivers of Olympic performance. "
+      ],
+      "id": "4f49c083"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "## 6. Conclusions\n",
+        "This analsyis set out to understand what drives Winter Olympic medal success. I tested three factors: wealth, population size and home advantage. The results show that all three factors have a significant impact on medal counts\n",
         "\n",
         "---\n"
       ],
-      "id": "bb058bfe"
+      "id": "292e920c"
     }
   ],
   "metadata": {
