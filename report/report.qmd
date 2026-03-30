@@ -26,3 +26,18 @@ scrape --> clean --> merge with World Bank data --> analyse --> visualise
 
 ---
 
+## 1. Collecting the Medal Data
+The first step was to collect the medal data for each of the Winter Olympic Games all the way back to 1924. Offical Olympic datawas not available as a download, so the data had to be scraped directly from Olmpedia (https://www.olympedia.org). 
+
+I built a web scraper (`scrape.py`) that fetched the medal table for each of the 24 Winter Olympic Games, making sure that I paused between requests to avoid overwhelming the server. Each page returned an HTML table listing every event alongside gold, silver and bronze medalists and their countries. 
+
+The raw data came back in a wide format, with seperate columns for gold, silver and bronze medalists. At this point the data was still quite messy, with country names in different formats, sports categories mixed in as heading rows and some NOC fields had combined codes for when medals were tied. This all needed fixing before I could start with any analysis.
+
+---
+## 2. Cleaning the Data
+### 2.1 Sorting out the sport categories
+The scraped HTML table included two types of rows: actual event results and section headings that just said the sport name. These headings were not real results, they had no medalists data or NOC codes, however they did have the sport name of each event which is information I still needed. 
+
+To fix this, within the cleaning script (`clean.py`) I identified the heading rows which was any row where all medal columns were empty and then extracted the sport name. Allowing me to forward fill the sport name down to all the event rows below it until reaching the next heading. Then I could drop the original heading rows as they were no longer needed.
+
+### 2.2 Dealing with tied medals

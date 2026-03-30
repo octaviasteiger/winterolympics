@@ -51,7 +51,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#cleaning-the-data" id="toc-cleaning-the-data" class="nav-link active" data-scroll-target="#cleaning-the-data">2. Cleaning the Data</a>
+  <ul class="collapse">
+  <li><a href="#sorting-out-the-sport-categories" id="toc-sorting-out-the-sport-categories" class="nav-link" data-scroll-target="#sorting-out-the-sport-categories">2.1 Sorting out the sport categories</a></li>
+  <li><a href="#dealing-with-tied-medals" id="toc-dealing-with-tied-medals" class="nav-link" data-scroll-target="#dealing-with-tied-medals">2.2 Dealing with tied medals</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -88,11 +92,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This report analyses Winter Olympic medal data from 1924 to 2022, I wanted to look into the Winter Olympics as I have always been interested in the winter games sports and wanted to see how the medal counts have changed over time and whether there are any trends within the data. I started by scrapping the medal data from Olympedia and combining it with World Bank economic indicators. With the aim to understand what drives medal success, particularly whether hosting the Games gives a country an advantage.</p>
-<p>The data pipeline: scrape –&gt; clean –&gt; merge with World Bank data –&gt; analyse –&gt; visualise</p>
-<hr>
+<section id="cleaning-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-the-data">2. Cleaning the Data</h2>
+<section id="sorting-out-the-sport-categories" class="level3">
+<h3 class="anchored" data-anchor-id="sorting-out-the-sport-categories">2.1 Sorting out the sport categories</h3>
+<p>The scraped HTML table included two types of rows: actual event results and section headings that just said the sport name. These headings were not real results, they had no medalists data or NOC codes, however they did have the sport name of each event which is information I still needed.</p>
+<p>To fix this, within the cleaning script (<code>clean.py</code>) I identified the heading rows which was any row where all medal columns were empty and then extracted the sport name. Allowing me to forward fill the sport name down to all the event rows below it until reaching the next heading. Then I could drop the original heading rows as they were no longer needed.</p>
+</section>
+<section id="dealing-with-tied-medals" class="level3">
+<h3 class="anchored" data-anchor-id="dealing-with-tied-medals">2.2 Dealing with tied medals</h3>
+</section>
 </section>
 
 </main>
