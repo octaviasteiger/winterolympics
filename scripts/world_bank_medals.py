@@ -78,19 +78,25 @@ def parse_tied_noc(noc_string):
         return []
     return list({noc_string[i : i+3] for i in range(0, len(noc_string), 3)}) # splits the string into 3 letter NOC codes and returns 
 
-
-def main(): 
-# Pulling the GDP per capita 
-    gdp_raw = wb.data.DataFrame('NY.GDP.PCAP.CD', time=YEARS, labels=True)
+# Adding in helper function, pulling the GDP per capita data
+def fetch_gdp(years):
+    gdp_raw = wb.data.DataFrame('NY.GDP.PCAP.CD', time=years, labels=True)
     gdp = (gdp_raw.reset_index().melt(id_vars=['economy', 'Country'], var_name='year', value_name='gdp_per_capita'))
     gdp['year'] = gdp['year'].astype(str).str.replace('YR', '').astype(int)
+    return gdp
 
-# Pulling the population data
-    pop_raw = wb.data.DataFrame('SP.POP.TOTL', time=YEARS, labels=True)
+# Fetch and reshaping the population data
+def fetch_population(years):
+    pop_raw = wb.data.DataFrame('SP.POP.TOTL', time=years, labels=True)
     pop = (pop_raw.reset_index().melt(id_vars=['economy', 'Country'], var_name='year', value_name='population'))
     pop['year'] = pop['year'].astype(str).str.replace('YR', '').astype(int)
+    return pop
 
-# Merge GDP and population data
+def main(): 
+# Call the helper functions to fetch the data
+    gdp = fetch_gdp(YEARS)
+    pop = fetch_population(YEARS)
+
     worldbank = pd.merge(gdp, pop, on=['economy', 'Country', 'year'], how='outer')
     worldbank = worldbank.rename(columns={'economy': 'iso_code'}) 
 
