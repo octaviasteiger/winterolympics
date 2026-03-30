@@ -1,0 +1,17 @@
+---
+title: "Winter Olympics Medal Analysis"
+author: "Octavia Steiger"
+date: today
+
+format:
+    html:
+        toc: true
+        theme: cosmo
+        code-fold: true
+
+execute:
+    warning: false
+    message: false
+
+jupyter: python3
+---
