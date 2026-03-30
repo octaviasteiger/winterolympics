@@ -140,7 +140,7 @@ def fig5_regression(reg):
     reg['variable'] = reg['variable'].map(labels)
 
     # Creating horizontal bar chart
-    plt.figure(figsize=(9, 4))
+    plt.figure(figsize=(14, 7))
     plt.barh(reg['variable'], reg['Coef.'])
     
     # Dashed line at zero as bars crossing this are not statistically significant
