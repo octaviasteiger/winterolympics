@@ -12,7 +12,7 @@ PROJECT_ROOT: The parent directory of the script, and is used as the base direct
 RAW_PATH: Full path to the output CSV file where the scraped data will be saved
 year: The year of the Winter Olympics being scraped
 all_rows: A list containing all scraped rows
-seen_years: A list which tracks which years were successfully scraped, and helps to detect missing data
+seen_years: A list of years that were successfully scraped and parsed
 edition_id: Olympedias edition ID
 missing: list of any years that were not successfully scraped
 raw_df: A pandas DataFrame which is a structured version of all_rows and is ready for saving to csv

@@ -13,11 +13,16 @@ OUTPUT_PATH: The final output file path, saves fully combined dataset
 HOST_NOC: A dictionary mapping Olympic years to the host country's NOC code, so I can identify host country for each Olympics
 KEEP_COLS: The required columns for final dataset, so that there is a consistent structure when i combine datasets
 wb: Main world bank dataset 
-tied: tied medal dataset
+tied: the expanded tied medal dataset containing one row per country for tied events, without GDP/pop data
 wb_clean: cleaned dataset with placeholder rows removed
-gdp_lookup: Country-year lookup table for GDP and population
+gdp_lookup: Country-year lookup table for GDP and population and log transformations
 tied_completed: The fully complete tied medal dataset 
 combined: The final combined dataset of comtaining both of my sources
+load_data: a helper function to load the world bank and tied medal datasets from CSV files
+remove_placeholders: a helper function to remove placeholder rows left from world_bank_medals.py
+build_gdp_lookup: a helper function to build a lookup table of GDP/population variables by country-year
+complete_tied: a helper function to add to tied medal dataset by adding host country indicators and merging in GDP/population data
+combine_and_save: a helper function to stack the cleaned worldbank rows and the completed tied rows, sort by year, and save to worldbank_final.csv.
 
 requirements:
     pip install pandas

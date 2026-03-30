@@ -6,13 +6,15 @@ Cleans raw Olympic medal data and saves a structured CSV for analysis.
 Variables:
 SCRIPT_DIR: The directory where the script is located, helps to build file paths relative to the project root
 PROJECT_ROOT: The parent directory of the script, and is used as the base directory for saving data
-RAW_PATH: Full path to the output CSV file where the scraped data will be saved
+RAW_PATH: The file path to the raw scrapped medal datset
 CLEAN_PATH: The location where cleaned data will be saved
 COL_NAMES: The column names assigned to raw CSV, and it gives structure to raw data when loading into pandas
-MEDAL_COLS: Is a list, and subset of columns containing medal data, used for identifying rows that are not actual events
+MEDAL_COLS: Is a list, and subset of columns containing medal data, used for identifying sport heading rows
 is_sport_row: A boolean mask which identifies rows that are sport section headings, so i can seperate sports labels from actual event rows
-tie_gold/silver/bronze: Boolean columns which are flags to indicate tied medals
+tie_gold/silver/bronze: Boolean columns indicating whether a medal is shared 
 tied_count: counts of tied medals
+df: the main pandas Dataframe used
+clean: a helper function that processes the raw medal data by removing headers, identifying sport sections, cleaning text, flagging tied medals, retuning a structured dataframe
 
 Raw CSV has no header and 8 columns:
     0: year

@@ -22,7 +22,7 @@ tied_mask: A boolean mask so i can indentify problem rows
 tied_rows: A subset of tied or invalid medal rows
 medals_long: after filtering out the tied rows, this now contains onyl valid single-country medal rows
 tied_clean: It is the expanded dataset where each tied country gets its own row
-
+final: fully merged dataset combining medal data with world bank indicators, and host country information and log transformations for GDP and population
 """
 
 import wbgapi as wb
