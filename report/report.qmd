@@ -87,6 +87,22 @@ A statistically significant positive coefficient for `is_host` would confirm tha
 The chart shows cumulative medals since 1924. Norwary leads confortably, reflecting its deep winter sports culture and consistent investment in training. The US and Germany follow, benefitting from both size and sustained investment in winter sport.
 
 ### 5.2 How medal dominance has changed over time
+The all-time medal table masks important changes over time. The chart shows the medal counts per Games for the top 6 nations. 
+
+### 5.3 The Wealth effects
+The scatter plot shows the relationship between GDP per capita and medals won, across all country-year observations. The upward trend is clear, showing that wealthier countries tend to win more medals. This is consistent with the idea that richer countries have more resources to invest in training and facilities, which tend to lead to better performance in the Olympics. However, there are some outliers......
+
+### 5.4 Home Advantage
+To visualise the home advantage effect, I created a bar chart comparing each host nations medal count in its home Games against its average performance in non-host years. Most host nations perform notably better at home, suggesting that familiarity with venues, crowd support and reduced travel fatigue may all contribute to improved performance. However, the size of the home advantage effect varies widely between countries, with some hosts seeing a much bigger boost than others.
+
+### 5.5 What the regression tells us
+The coefficient plot summeraises the regression results, showing how many additional medals a country can expect to win for each unit increase in that variable, holding the others constant. Bars to the right of the zero line have a positive effect on medal counts, while bars to the left have a negative effect. 
+
+The plot shows that both GDP per capita and population have a strong positive effect on medal success, confirming that wealth and size are important drivers of Olympic performance. 
+
+---
+## 6. Conclusions
+This analsyis set out to understand what drives Winter Olympic medal success. I tested three factors: wealth, population size and home advantage. The results show that all three factors have a significant impact on medal counts:
 
 ---
 
