@@ -13,13 +13,14 @@ COUNTRY_YEAR_PATH: The output path for aggregated country-year dataset, and it s
 ALLTIME_PATH: The output path for all-time medal data, it is a summary table for top countries
 REGRESSION_PATH: The output path for regression tables
 df: The final merged dataset
-medals_raw; SQL table name, temporary table created from df and is used for SQL queries
 medals_agg: The aggregated country-year level dataset, which is the core dataset used for the regression analysis
 totals_per_year: A dataset containing the total number of medals awarded each year, so i can work out medal shares
 alltime_table: A dataset containing the top 20 countries of all time by medal count, used for summary statistics and visualisations 
 reg_data: The filtered dataset used in regression, and it drops rows with missing data for the key variables
 model: The fitted OLS regression model 
 results_df: The structured regression output
+clean: a filtered version of the main dataset with rows containing missing data removed
+medal_share: a calulated variable representing the share of total medals won by each country in a given year
 
 """
 
