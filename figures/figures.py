@@ -3,6 +3,28 @@ figures.py generates all the figures for my final report
 
 Run it after running analysis.py, as it needs the output from that script
 
+Variables:
+SCRIPT_DIR: The directory where the script is located, helps to build file paths relative to the
+PROJECT_ROOT: The parent directory of the script, and is used as the base directory for saving data
+COUNTRY_YEAR_PATH: The output path for aggregated country-year dataset, and it stores the regression
+ALLTIME_PATH: The output path for all-time medal data, it is a summary table for top countries
+REGRESSION_PATH: The output path for regression tables
+FIGURES_DIR: The directory where the generated figures will be saved
+alltime: the dataset containing the top 20 countries by total medal count, used for the all-time medal table figure
+cy: the country-year level dataset, which is used for multiple figures including trends over time,GDP comparison and host analysis
+reg: the regression results dataset, which contains the coefficients and statistics, used for regression visualisation
+GOLD, SILVER, BRONZE, BLUE: Hex color codes for consistent styling of the figures across the report
+top6: the list of the top 6 countries by total medal count, used to filter the dataset for the trends over time figure
+subset: the filtered dataset containing only the top 6 countries, used for the trends over time
+plot_data: the dataset used for the GDP vs medals scatter plot, which drops rows with missing data for the key variables
+hosts: a dataset containing the medal counts for each country in the years they hosted, used for the host vs non-host comparison figure
+non_host_avg: a dataset containing the average medal counts for each country in the years they did not host, used for the host vs non-host comparison figure
+compare: a merged dataset combining the host and non-host medal counts, used for the host vs non-host comparison figure
+long: a reshaped version of the compare dataset, which is in long format for easier plotting
+key_vars: a list of the key variables of interest from the regression results, used to filter the regression dataset for visualisation
+labels: a mapping of the variable names to more readable labels for the regression figure
+
+
 Requirements: 
 pip install pandas matplotlib seaborn
 
