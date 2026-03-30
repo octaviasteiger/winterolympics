@@ -24,8 +24,6 @@ results_df: The structured regression output
 """
 
 import pandas as pd
-import numpy as np
-import sqlite3
 import statsmodels.formula.api as smf
 import os
 
@@ -47,47 +45,26 @@ def main():
     
     df = pd.read_csv(INPUT_PATH)
     
-    # SQL aggregation to country-year level
-    conn = sqlite3.connect(':memory:')
-    df.to_sql('medals_raw', conn, index=False, if_exists='replace')
-   
-    medals_agg = pd.read_sql_query("""
-         SELECT
-            year, noc, iso_code, host_noc, is_host,
-            AVG(log_gdp_per_capita) AS log_gdp_per_capita,
-            AVG(log_population)     AS log_population,
-            COUNT(*)                AS total_medals
-        
-        FROM medals_raw
-        WHERE log_gdp_per_capita IS NOT NULL
-          AND log_population     IS NOT NULL
-        GROUP BY year, noc, iso_code, host_noc, is_host
-        ORDER BY year ASC, total_medals DESC
-    """, conn)
+    # Drop rows missing economic data, then group to country-year level
+    clean = df.dropna(subset=['log_gdp_per_capita', 'log_population'])
+    medals_agg = clean.groupby(['year', 'noc', 'iso_code', 'is_host'], as_index=False).agg(
+        log_gdp_per_capita=('log_gdp_per_capita', 'mean'), log_population=('log_population', 'mean'), 
+        total_medals=('noc', 'count')).sort_values(['year', 'total_medals'], ascending=[True, False]).reset_index(drop=True)
+
 
     # Total medals awarded per year so that I can calulcate the medal share
-    totals_per_year = pd.read_sql_query("""
-        SELECT year, COUNT(*) AS medals_awarded
-        FROM medals_raw
-        GROUP BY year
-    """, conn)
+    totals_per_year = (df.groupby('year', as_index=False).agg(medals_awarded=('noc', 'count')))
 
     # The all time medal table, but only looking at the top 20 nations so that it is more readable
-    alltime_table = pd.read_sql_query("""
-        SELECT
-            noc, iso_code,
-            COUNT(*)                                           AS total_medals,
-            SUM(CASE WHEN medal = 'gold' THEN 1 ELSE 0 END)    AS gold_medals,
-            SUM(CASE WHEN medal = 'silver' THEN 1 ELSE 0 END)  AS silver_medals,
-            SUM(CASE WHEN medal = 'bronze' THEN 1 ELSE 0 END)  AS bronze_medals,
-            COUNT(DISTINCT year)                               AS games_participated
-        FROM medals_raw
-        GROUP BY noc, iso_code
-        ORDER BY total_medals DESC
-        LIMIT 20
-    """, conn)
-    conn.close()
-    
+    alltime_table = (df.assign(gold_medals=df['medal'].eq('gold').astype(int),
+                               silver_medals=df['medal'].eq('silver').astype(int),
+                                 bronze_medals=df['medal'].eq('bronze').astype(int),).groupby(['noc', 'iso_code'], 
+                                                                                            as_index=False).agg(total_medals=('medal', 'count'), 
+                                                                                            gold_medals=('gold_medals', 'sum'), 
+                                                                                            silver_medals=('silver_medals', 'sum'), 
+                                                                                            bronze_medals=('bronze_medals', 'sum'), 
+                                                                                            games_participated=('year', 'nunique')).sort_values('total_medals', ascending=False).head(20).reset_index(drop=True))
+
     # Medal share
     medals_agg = pd.merge(medals_agg, totals_per_year, on='year', how='left')
     medals_agg['medal_share'] = medals_agg['total_medals'] / medals_agg['medals_awarded']
