@@ -140,17 +140,15 @@ def fig5_regression(reg):
     reg['variable'] = reg['variable'].map(labels)
 
     # Creating horizontal bar chart
-    plt.figure(figsize=(14, 7))
-    plt.barh(reg['variable'], reg['Coef.'])
-    
-    # Dashed line at zero as bars crossing this are not statistically significant
-    plt.axvline(0)
+    fig, ax = plt.subplots(figsize=(14, 7))
+    ax.barh(reg['variable'], reg['Coef.']) 
+    ax.axvline(0, color='black', linewidth=0.8)
+    ax.set_title("What predicts Winter Olympic Success?", fontsize=14, pad=12)
+    ax.set_xlabel("Regression Coefficient (extra medals per unit increase)")
+    ax.set_ylabel('')
 
-    plt.title("What predicts Winter Olympic Success?", fontsize=14, pad=12)
-    plt.xlabel("Regression Coefficient (extra medals per unit increase)")
-    plt.ylabel('')
-
-    plt.savefig(os.path.join(FIGURES_DIR, 'fig5_regression.png'))
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIGURES_DIR, 'fig5_regression.png'))
     plt.close()
     print("Saved fig5_regression.png")
 
