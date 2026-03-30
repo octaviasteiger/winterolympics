@@ -110,8 +110,8 @@ def main():
     medals = pd.read_csv(MEDALS_PATH)
 
 # Reshaping the medals from wide to long format
-    medals_long = pd.melt(medals[['year', 'event', 'gold_noc', 'silver_noc', 'bronze_noc']],
-        id_vars=['year', 'event'],
+    medals_long = pd.melt(medals[['year', 'sport', 'event', 'gold_noc', 'silver_noc', 'bronze_noc']],
+        id_vars=['year', 'sport', 'event'],
         value_vars=['gold_noc', 'silver_noc', 'bronze_noc'],
         var_name='medal',
         value_name='noc')
