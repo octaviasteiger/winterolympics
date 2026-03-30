@@ -18,7 +18,7 @@
         "  message: false\n",
         "---"
       ],
-      "id": "6451f04f"
+      "id": "51799e9c"
     },
     {
       "cell_type": "markdown",
@@ -57,15 +57,10 @@
         "- **`is_host`** : a flag marking whether the winning country was hosting the games that year, to test the impact of home advantage \n",
         "- **`log_gdp_per_capita`** and **`log_population`**: I took the log of both GDP per Capita and population to make the data more normally distributed, as the difference between a very poor and a moderately poor country is much more significant than the difference between a moderately rich and a very rich country, so taking the log allows for a more meaningful analysis of the relationship between wealth and medal success.\n",
         "\n",
-        "The missing GDP rows are expected and unavoidable, as many of the older NOCs no longer exist and therefore do not have corresponding economic data in the World Bank dataset. Therefore, these rows are excluded from the regression but kept in the raw medal count so the all-time table remains accurate."
-      ],
-      "id": "beb8f795"
-    },
-    {
-      "cell_type": "markdown",
-      "metadata": {},
-      "source": [
+        "The missing GDP rows are expected and unavoidable, as many of the older NOCs no longer exist and therefore do not have corresponding economic data in the World Bank dataset. Therefore, these rows are excluded from the regression but kept in the raw medal count so the all-time table remains accurate.\n",
+        "\n",
         "---\n",
+        "\n",
         "## 4. The Analysis\n",
         "### 4.1 Aggregating to country-year level \n",
         "The merged dataset currently has one row per medal won by a country. However for the regression analysis I need to have one row per country per Olympic year. So that for each country-year combination I have the total number of medals won and I keep the GDP per capita and population data for that country and year. \n",
@@ -74,7 +69,7 @@
         "With the data in this shape, an OLS regression was run to directly answer the research question: after controlling for GDP per capita and population size, does hosting the games have a significant impact on medal success?\n",
         "\n",
         "A statistically significant positive coefficient for `is_host` would confirm that home advantage is real, above and beyond the effects of wealth and population size.\n",
-        "---\n",
+        "\n",
         "\n",
         "## 5. Visualising the Results\n",
         "\n",
@@ -83,10 +78,9 @@
         "\n",
         "### 5.2 How medal dominance has changed over time\n",
         "\n",
-        "\n",
         "---\n"
       ],
-      "id": "21d6b8cc"
+      "id": "33540c0e"
     }
   ],
   "metadata": {

@@ -56,6 +56,22 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sorting-out-the-sport-categories" id="toc-sorting-out-the-sport-categories" class="nav-link" data-scroll-target="#sorting-out-the-sport-categories">2.1 Sorting out the sport categories</a></li>
   <li><a href="#dealing-with-tied-medals" id="toc-dealing-with-tied-medals" class="nav-link" data-scroll-target="#dealing-with-tied-medals">2.2 Dealing with tied medals</a></li>
   </ul></li>
+  <li><a href="#adding-economic-context" id="toc-adding-economic-context" class="nav-link" data-scroll-target="#adding-economic-context">3. Adding Economic Context</a>
+  <ul class="collapse">
+  <li><a href="#why-i-used-the-world-bank-api" id="toc-why-i-used-the-world-bank-api" class="nav-link" data-scroll-target="#why-i-used-the-world-bank-api">3.1 Why I used the World Bank API</a></li>
+  <li><a href="#the-noc-to-isc-problem" id="toc-the-noc-to-isc-problem" class="nav-link" data-scroll-target="#the-noc-to-isc-problem">3.2 The NOC to ISC problem</a></li>
+  <li><a href="#merging-the-datasets" id="toc-merging-the-datasets" class="nav-link" data-scroll-target="#merging-the-datasets">3.3 Merging the datasets</a></li>
+  </ul></li>
+  <li><a href="#the-analysis" id="toc-the-analysis" class="nav-link" data-scroll-target="#the-analysis">4. The Analysis</a>
+  <ul class="collapse">
+  <li><a href="#aggregating-to-country-year-level" id="toc-aggregating-to-country-year-level" class="nav-link" data-scroll-target="#aggregating-to-country-year-level">4.1 Aggregating to country-year level</a></li>
+  <li><a href="#ols-regression" id="toc-ols-regression" class="nav-link" data-scroll-target="#ols-regression">4.2 OLS regression</a></li>
+  </ul></li>
+  <li><a href="#visualising-the-results" id="toc-visualising-the-results" class="nav-link" data-scroll-target="#visualising-the-results">5. Visualising the Results</a>
+  <ul class="collapse">
+  <li><a href="#all-time-medal-table" id="toc-all-time-medal-table" class="nav-link" data-scroll-target="#all-time-medal-table">5.1 All-time Medal table</a></li>
+  <li><a href="#how-medal-dominance-has-changed-over-time" id="toc-how-medal-dominance-has-changed-over-time" class="nav-link" data-scroll-target="#how-medal-dominance-has-changed-over-time">5.2 How medal dominance has changed over time</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -101,6 +117,56 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="dealing-with-tied-medals" class="level3">
 <h3 class="anchored" data-anchor-id="dealing-with-tied-medals">2.2 Dealing with tied medals</h3>
+<p>Occasionally there were two countries that shared a podium position, for example two gold medalists and no silver. In the raw data these appear as a single combined entry in the NOC column rather than as two seperate rows.</p>
+<p>These needed to be detected and split into two rows, otherwise any country-level analysis would be inaccurate. Within the cleaning step these are flagged using the <code>tie</code> columns and then are split into seperate rows in a later step in the pipeline, so that both countries get the credit for the medal in the analysis.</p>
+<p>There are relatively few tied medals within the data however just ignoring them would mean undercounting the total medals for the countries involved and would lead to skewed results from the analysis.</p>
+<hr>
+</section>
+</section>
+<section id="adding-economic-context" class="level2">
+<h2 class="anchored" data-anchor-id="adding-economic-context">3. Adding Economic Context</h2>
+<p>This is all great, but to answer the research question I also need to add some economic context to the medal data. To test if wealth or population drives success, each medal row needs to be merged with the GDP and population data for the corresponding country and year.</p>
+<section id="why-i-used-the-world-bank-api" class="level3">
+<h3 class="anchored" data-anchor-id="why-i-used-the-world-bank-api">3.1 Why I used the World Bank API</h3>
+<p>I needed two indicators for each country and year: GDP per capita and population size. The World Bank API provided a convinent way to access this data for all the countries and years in my medal dataset. The advantage of using the World Bank for both is that the data is already cleaned and standardised, meaning I didn’t have to worry about different country name formats or different structures for the data.</p>
+<p>They were both fetched directly from the World Bank API (https://data.worldbank.org/) using the <code>wbgapi</code> Python package, allowing for easy integration into the data pipeline.</p>
+</section>
+<section id="the-noc-to-isc-problem" class="level3">
+<h3 class="anchored" data-anchor-id="the-noc-to-isc-problem">3.2 The NOC to ISC problem</h3>
+<p>There was however a problem with merging the medal data with the World Bank data, as the medal data uses NOC codes to identify countries, whereas the World Bank data uses ISO country codes. This meant that I needed to find a way to map between the two code systems in order to merge the datasets together as well as the problem of some NOCs no longer existing or being split into multiple countries over time. So I had to create a lookup table to map each NOC to its cloests modern equivalent, so that historical medals can still be joined to economic data where possible.</p>
+</section>
+<section id="merging-the-datasets" class="level3">
+<h3 class="anchored" data-anchor-id="merging-the-datasets">3.3 Merging the datasets</h3>
+<p>Once both datasets used the same country codes, they were joined on country and year. This allowed me to have a single dataset that included the medal information alongside the economic indicators for each country and year which I could then use for analysis. Alongside this I created two additional columns:</p>
+<ul>
+<li><strong><code>is_host</code></strong> : a flag marking whether the winning country was hosting the games that year, to test the impact of home advantage</li>
+<li><strong><code>log_gdp_per_capita</code></strong> and <strong><code>log_population</code></strong>: I took the log of both GDP per Capita and population to make the data more normally distributed, as the difference between a very poor and a moderately poor country is much more significant than the difference between a moderately rich and a very rich country, so taking the log allows for a more meaningful analysis of the relationship between wealth and medal success.</li>
+</ul>
+<p>The missing GDP rows are expected and unavoidable, as many of the older NOCs no longer exist and therefore do not have corresponding economic data in the World Bank dataset. Therefore, these rows are excluded from the regression but kept in the raw medal count so the all-time table remains accurate.</p>
+<hr>
+</section>
+</section>
+<section id="the-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="the-analysis">4. The Analysis</h2>
+<section id="aggregating-to-country-year-level" class="level3">
+<h3 class="anchored" data-anchor-id="aggregating-to-country-year-level">4.1 Aggregating to country-year level</h3>
+<p>The merged dataset currently has one row per medal won by a country. However for the regression analysis I need to have one row per country per Olympic year. So that for each country-year combination I have the total number of medals won and I keep the GDP per capita and population data for that country and year.</p>
+</section>
+<section id="ols-regression" class="level3">
+<h3 class="anchored" data-anchor-id="ols-regression">4.2 OLS regression</h3>
+<p>With the data in this shape, an OLS regression was run to directly answer the research question: after controlling for GDP per capita and population size, does hosting the games have a significant impact on medal success?</p>
+<p>A statistically significant positive coefficient for <code>is_host</code> would confirm that home advantage is real, above and beyond the effects of wealth and population size.</p>
+</section>
+</section>
+<section id="visualising-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="visualising-the-results">5. Visualising the Results</h2>
+<section id="all-time-medal-table" class="level3">
+<h3 class="anchored" data-anchor-id="all-time-medal-table">5.1 All-time Medal table</h3>
+<p>The chart shows cumulative medals since 1924. Norwary leads confortably, reflecting its deep winter sports culture and consistent investment in training. The US and Germany follow, benefitting from both size and sustained investment in winter sport.</p>
+</section>
+<section id="how-medal-dominance-has-changed-over-time" class="level3">
+<h3 class="anchored" data-anchor-id="how-medal-dominance-has-changed-over-time">5.2 How medal dominance has changed over time</h3>
+<hr>
 </section>
 </section>
 
