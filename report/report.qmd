@@ -16,10 +16,13 @@ execute:
 jupyter: python3
 ---
 
-## Introduction
-This report analyses Winter Olympic medal data from 1924 to 2022, I wanted to look into the Winter Olympics as I have always been interested in the winter games sports and wanted to see how the medal counts have changed over time and whether there are any trends within the data. I started by scrapping the medal data from Olympedia and combining it with World Bank economic indicators. With the aim to understand what drives medal success, particularly whether hosting the Games gives a country an advantage. 
+## Research Question
+What actually drives medal succes in the Winter Olympics? Is it just the wealth of a country, ie richer countries have more resources to invest in training and facilities or population size, ie more people means more potential athletes? Or does hosting the Games give a country an advantage?
+
+To answer this, I needed to look at the medal counts over time, the economic data of each country competing and the hosting history of the Winter Olympics. In the sections below I walk through the data pipeline I used to answer this question and the steps I took to get to the final result. 
 
 The data pipeline: 
 scrape --> clean --> merge with World Bank data --> analyse --> visualise 
 
 ---
+
