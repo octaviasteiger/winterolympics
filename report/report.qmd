@@ -150,8 +150,7 @@ final   = pd.read_csv("../data/clean/worldbank_final.csv")
 ### 5.1 All-time Medal table
 The chart shows cumulative medals since 1924 across the top 20 nations. Norway leads comfortably, which makes sense given how deeply embedded winter sport is in Norwegain culture, skiing is almost a national pastime. What's also interesting is how much of Norway's bar is gold rather than silver or bronze, showing it doesnt just compete by consistently wins. The US and Germany follow, both benefitting from their size and long-term investment in winter sport. Looking at the stacked bars, some countries accumulate big totals but through silver and bronze rather than gold, which tells a slightly different story about dominance vs participation.
 ```{python}
-#| out-width: 80%
-fig, ax = plt.subplots(figsize=(10, 8))
+fig, ax = plt.subplots(figsize=(7, 5))
 ax.barh(alltime['noc'], alltime['gold_medals'], label='Gold', color=GOLD, height=0.6)
 ax.barh(alltime['noc'], alltime['silver_medals'], label='Silver', color=SILVER, height=0.6, left=alltime['gold_medals'])
 ax.barh(alltime['noc'], alltime['bronze_medals'], label='Bronze', color=BRONZE, height=0.6, left=alltime['gold_medals'] + alltime['silver_medals'])
@@ -168,7 +167,6 @@ plt.show()
 Not every nation that dominated the early era has kept that up. The chart compares the average medals per Games for the top 10 early-era nations looking at results up to and including the 1980 verus their average since 1994. Countries are sorted left to right by the size of their drop off. 
 The biggest declines are URS (The Soviet Union) and GDR (East Germany), which may have been as a result of political and economic disruptions following the Cold War which had lasting impacts on state funded sports programmes. Norway and the US on the other hand have held their ground or improved, which probably comes down to continued investment in winter sport at a national level.
 ```{python}
-#| out-width: 85%
 cy_all = final.groupby(['year', 'noc'], as_index=False).agg(total_medals=('noc', 'count'))
 
 early = cy_all[cy_all['year'] <= 1980]
@@ -184,7 +182,7 @@ compare = compare.sort_values('decline', ascending=False)
 long = compare.melt(id_vars=['noc'], value_vars=['early_avg', 'modern_avg'], var_name='era', value_name='avg_medals')
 long['era'] = long['era'].map({'early_avg': 'Pre-1980 average', 'modern_avg': 'Post-1992 average'})
 
-fig, ax = plt.subplots(figsize=(12, 6))
+fig, ax = plt.subplots(figsize=(7, 4))
 sns.barplot(data=long, x='noc', y='avg_medals', hue='era', ax=ax)
 ax.set_title('Early Dominance vs Modern Performance\n(Top 10 Pre-1980 Nations)', fontsize=14, pad=12)
 ax.set_xlabel('Country')
@@ -199,10 +197,9 @@ plt.show()
 ### 5.3 How medal dominance has changed over time
 The all-time totals hide a lot of movement at the Games level, so this chart tracks medals per Games for the top 6 nations by all-time count. A few things stand out, Norway is consistently near the top throughout, with very few poor Games. Russia (URS before 1992) came on strong from the mid-1950s and dominated throught the 1980s but then dropped off sharply after the Soviet Union dissolved. You can also see a clear spike for the US in 2002, when they were hosting the Salt Lake City Games, which provides a nice visual of the home advantage effect. The gap between 1936 and 1948 is where thr 1940 and 1944 Games would have been but they were both cancelled because of World War II.
 ```{python}
-#| out-width: 85%
 top6   = cy.groupby('noc')['total_medals'].sum().nlargest(6).index.tolist()
 subset = cy[cy['noc'].isin(top6)]
-fig, ax = plt.subplots(figsize=(11, 6))
+fig, ax = plt.subplots(figsize=(7, 4))
 sns.lineplot(data=subset, x='year', y='total_medals',
              hue='noc', marker='o', ax=ax)
 ax.set_title('Winter Olympic Medal Count per Games (Top 6 Nations)',
@@ -220,9 +217,8 @@ plt.show()
 ### 5.4 The Wealth effects
 The scatter plot shows the relationship between GDP per capita and total medals won, across all country-year observations. The upward trend is clear, wealthier countries tend to win more medals, consistent with the idea that richer nations ahve more resources to invest in training, facilities and athlete development. However, there are notable outliers in both directions, some high income nations with no winter sports traditions win very few medals despite their wealth. 
 ```{python}
-#| out-width: 75%
 plot_data = cy.dropna(subset=['log_gdp_per_capita', 'total_medals'])
-fig, ax = plt.subplots(figsize=(10, 6))
+fig, ax = plt.subplots(figsize=(7, 4))
 sns.regplot(data=plot_data, x='log_gdp_per_capita', y='total_medals',
             scatter_kws={'alpha': 0.4, 's': 25, 'color': BLUE},
             line_kws={'color': 'red'}, ax=ax)
@@ -236,13 +232,12 @@ plt.show()
 ### 5.5 Home Advantage
 To look at home advantage more directly, I compared each host nations medal count in the year they hosted against their average in all other Games, keeping the 15 nations that won the most medals whilst hosting. Most of them sit noticeably higher in the host year than their non-host average, the USA in 2002 and Norway in 1994 are both good examples of this. One thing to note is the chart orders by how many medals they won while hosting not by the size of the boost, so the nations on the left aren't necessarily the ones who benefitted most.
 ```{python}
-#| out-width: 85%
 hosts = (cy[cy['is_host'] == 1][['noc', 'year', 'total_medals']].rename(columns={'total_medals': 'host_medals'}))
 non_host_avg = (cy[cy['is_host'] == 0].groupby('noc')['total_medals'].mean().reset_index().rename(columns={'total_medals': 'avg_non_host'}))
 compare = (pd.merge(hosts, non_host_avg, on='noc', how='inner').sort_values('host_medals', ascending=False).head(15))
 long = compare.melt(id_vars=['noc'],value_vars=['host_medals', 'avg_non_host'], var_name='type', value_name='medals')
 long['type'] = long['type'].map({'host_medals':  'Host Year','avg_non_host': 'Average Non-Host Year'})
-fig, ax = plt.subplots(figsize=(12, 7))
+fig, ax = plt.subplots(figsize=(7, 5))
 sns.barplot(data=long, x='noc', y='medals', hue='type', ax=ax)
 ax.set_title('Medals when Hosting vs Not Hosting (Top 15 Host Nations)',fontsize=14, pad=12)
 ax.set_xlabel('Country')
@@ -256,11 +251,10 @@ plt.show()
 The coefficient plot pulls together the regression results, all three bars are to the right of zero, which means hosting, wealth and population all increase expected medal counts. The host status bar is actually the longest, with a coefficient of 4.6, though as I explain later that doesn't mean it's the most important factor overall, it just has the biggest per-unit jump. The black error bars show the 95% confidence intervals, so the shorter the error bar, the more precisely that effect has been estimated. GDP per capita has the tightest interval of the three, indicating it is the most reliably estimated of the three.
 
 ```{python}
-#| out-width: 65%
 key_vars = ['is_host', 'log_gdp_per_capita', 'log_population']
 reg_plot = reg[reg['variable'].isin(key_vars)].copy()
 reg_plot['variable'] = reg_plot['variable'].map({'is_host': 'Host Country', 'log_gdp_per_capita': 'Log GDP per Capita', 'log_population': 'Log Population'})
-fig, ax = plt.subplots(figsize=(10, 4))
+fig, ax = plt.subplots(figsize=(7, 3))
 ax.barh(reg_plot['variable'], reg_plot['Coef.'])
 ax.errorbar(reg_plot['Coef.'], reg_plot['variable'], xerr=[
         reg_plot['Coef.'] - reg_plot['[0.025'],
