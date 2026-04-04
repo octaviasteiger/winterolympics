@@ -116,6 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#home-advantage" id="toc-home-advantage" class="nav-link" data-scroll-target="#home-advantage">5.5 Home Advantage</a></li>
   <li><a href="#what-the-regression-tells-us" id="toc-what-the-regression-tells-us" class="nav-link" data-scroll-target="#what-the-regression-tells-us">5.6 What the regression tells us</a></li>
   </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">6. Conclusions</a></li>
   </ul>
 </nav>
 </div>
@@ -165,7 +166,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The first step was to collect the medal data for each of the Winter Olympic Games all the way back to 1924. Offical Olympic datawas not available as a download, so the data had to be scraped directly from Olmpedia (https://www.olympedia.org).</p>
 <p>I built a web scraper (<code>scrape.py</code>) that fetched the medal table for each of the 24 Winter Olympic Games, making sure that I paused between requests to avoid overwhelming the server. Each page returned an HTML table listing every event alongside gold, silver and bronze medalists and their countries.</p>
 <p>The raw data came back in a wide format, with seperate columns for gold, silver and bronze medalists. At this point the data was still quite messy, with country names in different formats, sports categories mixed in as heading rows and some NOC fields had combined codes for when medals were tied. This all needed fixing before I could start with any analysis.</p>
-<div id="6cc9abda" class="cell" data-execution_count="1">
+<p>The dataset spans 24 Games from Chamonix 1924 to Beijing 2022, covering 1163 unique events. Not all NOCs appear in each Games, the number of competiting nations has grown over time, from around 19 nations in 1924 to over 90 today.</p>
+<div id="58c36cdc" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -363,7 +365,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="sorting-out-the-sport-categories">2.1 Sorting out the sport categories</h3>
 <p>The scraped HTML table included two types of rows: actual event results and section headings that just said the sport name. These headings were not real results, they had no medalists data or NOC codes, however they did have the sport name of each event which is information I still needed.</p>
 <p>To fix this, within the cleaning script (<code>clean.py</code>) I identified the heading rows which was any row where all medal columns were empty and then extracted the sport name. Allowing me to forward fill the sport name down to all the event rows below it until reaching the next heading. Then I could drop the original heading rows as they were no longer needed.</p>
-<div id="8076df04" class="cell" data-execution_count="2">
+<div id="e7286e68" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sports present in the dataset:"</span>)</span>
@@ -379,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="dealing-with-tied-medals">2.2 Dealing with tied medals</h3>
 <p>Occasionally there were two countries that shared a podium position, for example two gold medalists and no silver. In the raw data these appear as a single combined entry in the NOC column rather than as two seperate rows.</p>
 <p>These needed to be detected and split into two rows, otherwise any country-level analysis would be inaccurate. Within the cleaning step these are flagged using the <code>tie</code> columns and then are split into seperate rows in a later step in the pipeline, so that both countries get the credit for the medal in the analysis.</p>
-<div id="47698f9b" class="cell" data-execution_count="3">
+<div id="1c17b048" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tied <span class="op">=</span> medals[medals[<span class="st">'tie_gold'</span>] <span class="op">|</span> medals[<span class="st">'tie_silver'</span>] <span class="op">|</span> medals[<span class="st">'tie_bronze'</span>]]</span>
@@ -508,7 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong><code>is_host</code></strong> : a flag marking whether the winning country was hosting the games that year, to test the impact of home advantage</li>
 <li><strong><code>log_gdp_per_capita</code></strong> and <strong><code>log_population</code></strong>: I took the log of both GDP per Capita and population to make the data more normally distributed, as the difference between a very poor and a moderately poor country is much more significant than the difference between a moderately rich and a very rich country, so taking the log allows for a more meaningful analysis of the relationship between wealth and medal success.</li>
 </ul>
-<div id="d9793bce" class="cell" data-execution_count="4">
+<div id="b98388d9" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>final <span class="op">=</span> pd.read_csv(<span class="st">"../data/clean/worldbank_final.csv"</span>)</span>
@@ -658,7 +660,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="a4ce2a4d" class="cell" data-execution_count="5">
+<div id="db98dff8" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>missing <span class="op">=</span> final[<span class="st">'gdp_per_capita'</span>].isna().<span class="bu">sum</span>()</span>
@@ -684,22 +686,38 @@ These are mostly historic NOCs</code></pre>
 <section id="ols-regression" class="level3">
 <h3 class="anchored" data-anchor-id="ols-regression">4.2 OLS regression</h3>
 <p>With the data in this shape, an OLS regression was run to directly answer the research question: after controlling for GDP per capita and population size, does hosting the games have a significant impact on medal success? The model is: &gt;<strong>Total Medals = beta0 + beta1(is_host) + beta2(log GDP per capita) + beta3(log population) + epsilon</strong></p>
-<div id="2ac4e41c" class="cell" data-execution_count="6">
+<div id="71ca5652" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>reg_data <span class="op">=</span> (pd.read_csv(<span class="st">'../data/clean/medals_country_year.csv'</span>).dropna(subset<span class="op">=</span>[<span class="st">'log_gdp_per_capita'</span>, <span class="st">'log_population'</span>]))</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">'total_medals ~ is_host + log_gdp_per_capita + log_population'</span>, data<span class="op">=</span>reg_data).fit()</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>reg_data <span class="op">=</span> (pd.read_csv(<span class="st">'../data/clean/medals_country_year.csv'</span>))</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>results_df <span class="op">=</span> (pd.read_csv(<span class="st">'../outputs/regression_results.csv'</span>))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Rows in regression dataset: </span><span class="sc">{</span><span class="bu">len</span>(reg_data)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Countries represented: </span><span class="sc">{</span>reg_data[<span class="st">'noc'</span>]<span class="sc">.</span>nunique()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Host-country observations: </span><span class="sc">{</span>reg_data[<span class="st">'is_host'</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_df.to_string(index<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">'total_medals ~ is_host + log_gdp_per_capita + log_population'</span>, data<span class="op">=</span>reg_data).fit()</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>                            OLS Regression Results                            
+<pre><code>Rows in regression dataset: 332
+Countries represented: 42
+Host-country observations: 16
+
+          variable      Coef.  Std.Err.         t        P&gt;|t|     [0.025     0.975]
+         Intercept -40.866057  5.524349 -7.397443 1.171844e-12 -51.733683 -29.998431
+           is_host   4.618627  1.889718  2.444083 1.504838e-02   0.901131   8.336123
+log_gdp_per_capita   2.663723  0.332520  8.010721 2.011258e-14   2.009583   3.317864
+    log_population   1.433589  0.243437  5.888950 9.621035e-09   0.954694   1.912484
+                            OLS Regression Results                            
 ==============================================================================
 Dep. Variable:           total_medals   R-squared:                       0.230
 Model:                            OLS   Adj. R-squared:                  0.223
 Method:                 Least Squares   F-statistic:                     32.65
 Date:                Sat, 04 Apr 2026   Prob (F-statistic):           1.72e-18
-Time:                        11:08:56   Log-Likelihood:                -1128.8
+Time:                        11:59:36   Log-Likelihood:                -1128.8
 No. Observations:                 332   AIC:                             2266.
 Df Residuals:                     328   BIC:                             2281.
 Df Model:                           3                                         
@@ -722,12 +740,12 @@ Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
 </div>
-<p>A statistically significant positive coefficient for <code>is_host</code> would confirm that home advantage is real, above and beyond the effects of wealth and population size.</p>
+<p>The key result, is_host, has a coefficient of approximately 4.6, meaning a host nation wins around 4.6 more medals than it otherwise would, holding GDP and population constant. Both log_gdp_per_capita and log_population are highly significant (p &lt; 0.001), confirming that wealth and size independently drive performance.</p>
 </section>
 </section>
 <section id="visualising-the-results" class="level2">
 <h2 class="anchored" data-anchor-id="visualising-the-results">5. Visualising the Results</h2>
-<div id="cc65ebec" class="cell" data-execution_count="7">
+<div id="3819196f" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -747,7 +765,7 @@ Notes:
 <section id="all-time-medal-table" class="level3">
 <h3 class="anchored" data-anchor-id="all-time-medal-table">5.1 All-time Medal table</h3>
 <p>The chart shows cumulative medals since 1924. Norwary leads confortably, reflecting its deep winter sports culture and consistent investment in training. The US and Germany follow, benefitting from both size and sustained investment in winter sport.</p>
-<div id="ce83f37e" class="cell" data-execution_count="8">
+<div id="704a1831" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
@@ -775,7 +793,7 @@ Notes:
 <section id="the-fallen-powers" class="level3">
 <h3 class="anchored" data-anchor-id="the-fallen-powers">5.2 The Fallen Powers</h3>
 <p>The all-time table is dominated by nations that were strong in the early era of the Winter Olympics, but not all of them maintained that dominance. The chart below compares each countries average medals per Games before 1980 against their average since 1994, for the top 10 nations of the early era. The most striking decline is the Soviet Union’s successor states and East Germany, which could be as a result of political and economic disruptions after the Cold War. Norway and the United States however have maintained or even grown their medal counts, reflecting sustained long-term investment in Winter sports.</p>
-<div id="b0a89401" class="cell" data-execution_count="9">
+<div id="767356db" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cy_all <span class="op">=</span> final.groupby([<span class="st">'year'</span>, <span class="st">'noc'</span>], as_index<span class="op">=</span><span class="va">False</span>).agg(total_medals<span class="op">=</span>(<span class="st">'noc'</span>, <span class="st">'count'</span>))</span>
@@ -815,7 +833,7 @@ Notes:
 <section id="how-medal-dominance-has-changed-over-time" class="level3">
 <h3 class="anchored" data-anchor-id="how-medal-dominance-has-changed-over-time">5.3 How medal dominance has changed over time</h3>
 <p>The all-time medal table masks important changes over time. The chart shows the medal counts per Games for the top 6 nations.</p>
-<div id="6e4bac7d" class="cell" data-execution_count="10">
+<div id="9f941df9" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>top6   <span class="op">=</span> cy.groupby(<span class="st">'noc'</span>)[<span class="st">'total_medals'</span>].<span class="bu">sum</span>().nlargest(<span class="dv">6</span>).index.tolist()</span>
@@ -846,7 +864,7 @@ Notes:
 <section id="the-wealth-effects" class="level3">
 <h3 class="anchored" data-anchor-id="the-wealth-effects">5.4 The Wealth effects</h3>
 <p>The scatter plot shows the relationship between GDP per capita and medals won, across all country-year observations. The upward trend is clear, showing that wealthier countries tend to win more medals. This is consistent with the idea that richer countries have more resources to invest in training and facilities, which tend to lead to better performance in the Olympics. However, there are some outliers……</p>
-<div id="be019a98" class="cell" data-execution_count="11">
+<div id="24684890" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plot_data <span class="op">=</span> cy.dropna(subset<span class="op">=</span>[<span class="st">'log_gdp_per_capita'</span>, <span class="st">'total_medals'</span>])</span>
@@ -872,7 +890,7 @@ Notes:
 <section id="home-advantage" class="level3">
 <h3 class="anchored" data-anchor-id="home-advantage">5.5 Home Advantage</h3>
 <p>To visualise the home advantage effect, I created a bar chart comparing each host nations medal count in its home Games against its average performance in non-host years. Most host nations perform notably better at home, suggesting that familiarity with venues, crowd support and reduced travel fatigue may all contribute to improved performance. However, the size of the home advantage effect varies widely between countries, with some hosts seeing a much bigger boost than others.</p>
-<div id="78bfe527" class="cell" data-execution_count="12">
+<div id="5791759e" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>hosts <span class="op">=</span> (cy[cy[<span class="st">'is_host'</span>] <span class="op">==</span> <span class="dv">1</span>][[<span class="st">'noc'</span>, <span class="st">'year'</span>, <span class="st">'total_medals'</span>]].rename(columns<span class="op">=</span>{<span class="st">'total_medals'</span>: <span class="st">'host_medals'</span>}))</span>
@@ -900,8 +918,8 @@ Notes:
 </section>
 <section id="what-the-regression-tells-us" class="level3">
 <h3 class="anchored" data-anchor-id="what-the-regression-tells-us">5.6 What the regression tells us</h3>
-<p>The coefficient plot summeraises the regression results, showing how many additional medals a country can expect to win for each unit increase in that variable, holding the others constant. Bars to the right of the zero line have a positive effect on medal counts, while bars to the left have a negative effect.</p>
-<div id="67983dc6" class="cell" data-execution_count="13">
+<p>All three predictors show positive coefficients, each bar sits completely on the right of the zero line. The size of each bar shows the predicted extra medals per unit increase in that variable. GDP per capita has the largest effect, followed by host status and then population.</p>
+<div id="e180f83a" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>key_vars <span class="op">=</span> [<span class="st">'is_host'</span>, <span class="st">'log_gdp_per_capita'</span>, <span class="st">'log_population'</span>]</span>
@@ -909,11 +927,15 @@ Notes:
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>reg_plot[<span class="st">'variable'</span>] <span class="op">=</span> reg_plot[<span class="st">'variable'</span>].<span class="bu">map</span>({<span class="st">'is_host'</span>: <span class="st">'Host Country'</span>, <span class="st">'log_gdp_per_capita'</span>: <span class="st">'Log GDP per Capita'</span>, <span class="st">'log_population'</span>: <span class="st">'Log Population'</span>})</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">4</span>))</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>ax.barh(reg_plot[<span class="st">'variable'</span>], reg_plot[<span class="st">'Coef.'</span>])</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"What Predicts Winter Olympic Success?"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Regression Coefficient (extra medals per unit increase)"</span>)</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>ax.errorbar(reg_plot[<span class="st">'Coef.'</span>], reg_plot[<span class="st">'variable'</span>], xerr<span class="op">=</span>[</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        reg_plot[<span class="st">'Coef.'</span>] <span class="op">-</span> reg_plot[<span class="st">'[0.025'</span>],</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>        reg_plot[<span class="st">'0.975]'</span>] <span class="op">-</span> reg_plot[<span class="st">'Coef.'</span>]],fmt<span class="op">=</span><span class="st">'none'</span>,color<span class="op">=</span><span class="st">'black'</span>,capsize<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"What Predicts Winter Olympic Success?"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Regression Coefficient (extra medals per unit increase)"</span>)</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -923,7 +945,28 @@ Notes:
 </div>
 </div>
 </div>
-<p>The plot shows that both GDP per capita and population have a strong positive effect on medal success, confirming that wealth and size are important drivers of Olympic performance.</p>
+<hr>
+</section>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">6. Conclusions</h2>
+<p>Three factors were tested: wealth, population size and hosting the Games. All three are statistically significant predictors of medal count.</p>
+<section id="host-advantage-is-real-but-limited" class="level4">
+<h4 class="anchored" data-anchor-id="host-advantage-is-real-but-limited">Host advantage is real but limited</h4>
+<p>There is definitely a home advantage, on average, host countries win about 4.6 more medals than we would expect based on their wealth and population alone (p=0.015). So this is a genuine effect, you can see it in cases such as USA in 2002 (34 medals) and Norway in 1994 (26 medals). That said, this effect is quite limited, a country only hosts once in a while, so even though the boost is real, it only applies to a single Olympic Games at a time.</p>
+</section>
+<section id="gdp-per-capita-is-the-strongest-overall-predictor" class="level4">
+<h4 class="anchored" data-anchor-id="gdp-per-capita-is-the-strongest-overall-predictor">GDP per capita is the strongest overall predictor</h4>
+<p>From the regression, a 1 unit increase in log GDP per capita is associated with about 2.7 model medals (p &lt; 0.001). Which might not sound very large, however across the full range of countries in the dataset, it adds up to around a 16 medal difference between poorer and richer nations. This reflects the resources wealthy nations invest in training infrastructure, coaching and athlete development.</p>
+</section>
+<section id="why-the-host-bar-looks-largest-on-the-chart-but-isnt-the-strongest-predictor" class="level4">
+<h4 class="anchored" data-anchor-id="why-the-host-bar-looks-largest-on-the-chart-but-isnt-the-strongest-predictor">Why the host bar looks largest on the chart but isn’t the strongest predictor</h4>
+<p>On the coefficient plot, the host effect looks larger than GDP, which is misleading. The host coefficient (4.6) represents a one-time jump from not hosting to hosting. GDP on the other hand, applies to a variable that spans 6 units in the data, meaning its total real world effect (around 16 medals) is more than three times larger. The t-statistic for GDP (8.01) is also more than three times that of host status (2.44), confirming it is the more consistent and reliable predictor across the dataset</p>
+</section>
+<section id="population-matters-independently-of-wealth" class="level4">
+<h4 class="anchored" data-anchor-id="population-matters-independently-of-wealth">Population matters independently of wealth</h4>
+Population also plays an important role, even after accounting for wealth. A 1 unit increase in log population leads to about 1.4 additional medals (p &lt; 0.001). Across the full range of countries, this again adds up to roughly a 16 medal difference. So even though the effect per unit is smaller than GDP, the overall impact is similar due to population varying so much between countries.
+<hr>
 </section>
 </section>
 

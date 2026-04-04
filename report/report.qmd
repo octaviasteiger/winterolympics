@@ -26,7 +26,7 @@ The short answer: yes to all three, but not equally. Wealth and population size 
 The data pipeline: 
 scrape --> clean --> merge with World Bank data --> analyse --> visualise 
 
----
+<hr>
 
 ## 1. Collecting the Medal Data
 The first step was to collect the medal data for each of the Winter Olympic Games all the way back to 1924. Offical Olympic datawas not available as a download, so the data had to be scraped directly from Olmpedia (https://www.olympedia.org). 
@@ -44,7 +44,7 @@ print(f"{len(medals)} events scraped across {medals['year'].nunique()} Games")
 medals.head(10)
 ```
 
----
+<hr>
 ## 2. Cleaning the Data
 ### 2.1 Sorting out the sport categories
 The scraped HTML table included two types of rows: actual event results and section headings that just said the sport name. These headings were not real results, they had no medalists data or NOC codes, however they did have the sport name of each event which is information I still needed. 
@@ -69,7 +69,7 @@ tied[['year', 'sport', 'event', 'tie_gold', 'tie_silver', 'tie_bronze']].head(8)
 
 There are relatively few tied medals within the data however just ignoring them would mean undercounting the total medals for the countries involved and would lead to skewed results from the analysis.
 
----
+<hr>
 
 ## 3. Adding Economic Context
 This is all great, but to answer the research question I also need to add some economic context to the medal data. To test if wealth or population drives success, each medal row needs to be merged with the GDP and population data for the corresponding country and year.
@@ -105,7 +105,7 @@ print('These are mostly historic NOCs')
 
 The missing GDP rows are expected and unavoidable, as many of the older NOCs no longer exist and therefore do not have corresponding economic data in the World Bank dataset. Therefore, these rows are excluded from the regression but kept in the raw medal count so the all-time table remains accurate.
 
----
+<hr>
 
 ## 4. The Analysis
 ### 4.1 Aggregating to country-year level 
@@ -268,23 +268,21 @@ fig.tight_layout()
 plt.show()
 ```
 
----
+<hr>
 ## 6. Conclusions
 Three factors were tested: wealth, population size and hosting the Games. All three are statistically significant predictors of medal count.
 
-**Host advantage is real but limited**
+#### Host advantage is real but limited
 There is definitely a home advantage, on average, host countries win about 4.6 more medals than we would expect based on their wealth and population alone (p=0.015). So this is a genuine effect, you can see it in cases such as USA in 2002 (34 medals) and Norway in 1994 (26 medals). That said, this effect is quite limited, a country only hosts once in a while, so even though the boost is real, it only applies to a single Olympic Games at a time.
 
-**GDP per capita is the strongest overall predictor**
+#### GDP per capita is the strongest overall predictor
 From the regression, a 1 unit increase in log GDP per capita is associated with about 2.7 model medals (p < 0.001). Which might not sound very large, however across the full range of countries in the dataset, it adds up to around a 16 medal difference between poorer and richer nations. This reflects the resources wealthy nations invest in training infrastructure, coaching and athlete development.
 
-**Why the host bar looks largest on the chart but isn't the strongest predictor**
+#### Why the host bar looks largest on the chart but isn't the strongest predictor
 On the coefficient plot, the host effect looks larger than GDP, which is misleading. The host coefficient (4.6) represents a one-time jump from not hosting to hosting. GDP on the other hand, applies to a variable that spans 6 units in the data, meaning its total real world effect (around 16 medals) is more than three times larger. The t-statistic for GDP (8.01) is also more than three times that of host status (2.44), confirming it is the more consistent and reliable predictor across the dataset
 
-**Population matters independently of wealth**
+#### Population matters independently of wealth
 Population also plays an important role, even after accounting for wealth. A 1 unit increase in log population leads to about 1.4 additional medals (p < 0.001). Across the full range of countries, this again adds up to roughly a 16 medal difference. So even though the effect per unit is smaller than GDP, the overall impact is similar due to population varying so much between countries. 
-
-
----
+<hr>
 
 
