@@ -6,7 +6,7 @@ date: today
 format:
     html:
         toc: true
-        theme: cosmo
+        theme: flatly
         code-fold: true
         fig-align: center
 
