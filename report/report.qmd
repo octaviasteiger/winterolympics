@@ -34,6 +34,9 @@ The first step was to collect the medal data for each of the Winter Olympic Game
 I built a web scraper (`scrape.py`) that fetched the medal table for each of the 24 Winter Olympic Games, making sure that I paused between requests to avoid overwhelming the server. Each page returned an HTML table listing every event alongside gold, silver and bronze medalists and their countries. 
 
 The raw data came back in a wide format, with seperate columns for gold, silver and bronze medalists. At this point the data was still quite messy, with country names in different formats, sports categories mixed in as heading rows and some NOC fields had combined codes for when medals were tied. This all needed fixing before I could start with any analysis.
+
+The dataset spans 24 Games from Chamonix 1924 to Beijing 2022, covering 1163 unique events. Not all NOCs appear in each Games, the number of competiting nations has grown over time, from around 19 nations in 1924 to over 90 today. 
+
 ```{python}
 import pandas as pd
 medals = pd.read_csv('../data/clean/medals_clean.csv')
@@ -115,13 +118,18 @@ The model is:
 
 ```{python}
 import statsmodels.formula.api as smf
-reg_data = (pd.read_csv('../data/clean/medals_country_year.csv').dropna(subset=['log_gdp_per_capita', 'log_population']))
+reg_data = (pd.read_csv('../data/clean/medals_country_year.csv'))
+results_df = (pd.read_csv('../outputs/regression_results.csv'))
+print(f"Rows in regression dataset: {len(reg_data)}")
+print(f"Countries represented: {reg_data['noc'].nunique()}")
+print(f"Host-country observations: {reg_data['is_host'].sum()}")
+print()
+print(results_df.to_string(index=False))
+
 model = smf.ols('total_medals ~ is_host + log_gdp_per_capita + log_population', data=reg_data).fit()
 print(model.summary())
 ```
-
-A statistically significant positive coefficient for `is_host` would confirm that home advantage is real, above and beyond the effects of wealth and population size.
-
+The key result, is_host, has a coefficient of approximately 4.6, meaning a host nation wins around 4.6 more medals than it otherwise would, holding GDP and population constant. Both log_gdp_per_capita and log_population are highly significant (p < 0.001), confirming that wealth and size independently drive performance. 
 
 ## 5. Visualising the Results
 ```{python}
@@ -241,13 +249,18 @@ plt.show()
 ```
 
 ### 5.6 What the regression tells us
-The coefficient plot summeraises the regression results, showing how many additional medals a country can expect to win for each unit increase in that variable, holding the others constant. Bars to the right of the zero line have a positive effect on medal counts, while bars to the left have a negative effect. 
+All three predictors show positive coefficients, each bar sits completely on the right of the zero line. The size of each bar shows the predicted extra medals per unit increase in that variable. GDP per capita has the largest effect, followed by host status and then population.
+
 ```{python}
 key_vars = ['is_host', 'log_gdp_per_capita', 'log_population']
 reg_plot = reg[reg['variable'].isin(key_vars)].copy()
 reg_plot['variable'] = reg_plot['variable'].map({'is_host': 'Host Country', 'log_gdp_per_capita': 'Log GDP per Capita', 'log_population': 'Log Population'})
 fig, ax = plt.subplots(figsize=(10, 4))
 ax.barh(reg_plot['variable'], reg_plot['Coef.'])
+ax.errorbar(reg_plot['Coef.'], reg_plot['variable'], xerr=[
+        reg_plot['Coef.'] - reg_plot['[0.025'],
+        reg_plot['0.975]'] - reg_plot['Coef.']],fmt='none',color='black',capsize=4)
+
 ax.axvline(0, color='black', linewidth=0.8)
 ax.set_title("What Predicts Winter Olympic Success?", fontsize=14, pad=12)
 ax.set_xlabel("Regression Coefficient (extra medals per unit increase)")
@@ -255,11 +268,22 @@ fig.tight_layout()
 plt.show()
 ```
 
-The plot shows that both GDP per capita and population have a strong positive effect on medal success, confirming that wealth and size are important drivers of Olympic performance. 
-
 ---
 ## 6. Conclusions
-This analsyis set out to understand what drives Winter Olympic medal success. I tested three factors: wealth, population size and home advantage. The results show that all three factors have a significant impact on medal counts
+Three factors were tested: wealth, population size and hosting the Games. All three are statistically significant predictors of medal count.
+
+**Host advantage is real but limited**
+There is definitely a home advantage, on average, host countries win about 4.6 more medals than we would expect based on their wealth and population alone (p=0.015). So this is a genuine effect, you can see it in cases such as USA in 2002 (34 medals) and Norway in 1994 (26 medals). That said, this effect is quite limited, a country only hosts once in a while, so even though the boost is real, it only applies to a single Olympic Games at a time.
+
+**GDP per capita is the strongest overall predictor**
+From the regression, a 1 unit increase in log GDP per capita is associated with about 2.7 model medals (p < 0.001). Which might not sound very large, however across the full range of countries in the dataset, it adds up to around a 16 medal difference between poorer and richer nations. This reflects the resources wealthy nations invest in training infrastructure, coaching and athlete development.
+
+**Why the host bar looks largest on the chart but isn't the strongest predictor**
+On the coefficient plot, the host effect looks larger than GDP, which is misleading. The host coefficient (4.6) represents a one-time jump from not hosting to hosting. GDP on the other hand, applies to a variable that spans 6 units in the data, meaning its total real world effect (around 16 medals) is more than three times larger. The t-statistic for GDP (8.01) is also more than three times that of host status (2.44), confirming it is the more consistent and reliable predictor across the dataset
+
+**Population matters independently of wealth**
+Population also plays an important role, even after accounting for wealth. A 1 unit increase in log population leads to about 1.4 additional medals (p < 0.001). Across the full range of countries, this again adds up to roughly a 16 medal difference. So even though the effect per unit is smaller than GDP, the overall impact is similar due to population varying so much between countries. 
+
 
 ---
 
