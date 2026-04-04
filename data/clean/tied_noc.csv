@@ -4,10 +4,10 @@ year,sport,event,medal,noc,iso_code,tied
 1956,Speed Skating,"1,500 metres, Men",gold,URS,RUS,True
 1960,Speed Skating,"1,500 metres, Men",gold,NOR,NOR,True
 1960,Speed Skating,"1,500 metres, Men",gold,URS,RUS,True
-1972,Luge,"Doubles, Men",gold,ITA,ITA,True
 1972,Luge,"Doubles, Men",gold,GDR,DEU,True
-1998,Bobsleigh,"Two, Men",gold,ITA,ITA,True
+1972,Luge,"Doubles, Men",gold,ITA,ITA,True
 1998,Bobsleigh,"Two, Men",gold,CAN,CAN,True
+1998,Bobsleigh,"Two, Men",gold,ITA,ITA,True
 2002,Cross Country Skiing,"Skiathlon, Men",gold,NOR,NOR,True
 2002,Figure Skating,"Pairs, Mixed",gold,RUS,RUS,True
 2002,Figure Skating,"Pairs, Mixed",gold,CAN,CAN,True
@@ -15,8 +15,8 @@ year,sport,event,medal,noc,iso_code,tied
 2014,Alpine Skiing,"Downhill, Women",gold,SLO,SVN,True
 2018,Bobsleigh,"Two, Men",gold,CAN,CAN,True
 2018,Bobsleigh,"Two, Men",gold,GER,DEU,True
-1948,Speed Skating,"500 metres, Men",silver,NOR,NOR,True
 1948,Speed Skating,"500 metres, Men",silver,USA,USA,True
+1948,Speed Skating,"500 metres, Men",silver,NOR,NOR,True
 1964,Alpine Skiing,"Giant Slalom, Women",silver,USA,USA,True
 1964,Alpine Skiing,"Giant Slalom, Women",silver,FRA,FRA,True
 1964,Figure Skating,"Pairs, Mixed",silver,CAN,CAN,True
@@ -25,15 +25,15 @@ year,sport,event,medal,noc,iso_code,tied
 1964,Speed Skating,"500 metres, Men",silver,URS,RUS,True
 1964,Speed Skating,"3,000 metres, Women",silver,PRK,PRK,True
 1964,Speed Skating,"3,000 metres, Women",silver,URS,RUS,True
-1968,Speed Skating,"500 metres, Men",silver,NOR,NOR,True
 1968,Speed Skating,"500 metres, Men",silver,USA,USA,True
-1968,Speed Skating,"1,500 metres, Men",silver,NED,NLD,True
+1968,Speed Skating,"500 metres, Men",silver,NOR,NOR,True
 1968,Speed Skating,"1,500 metres, Men",silver,NOR,NOR,True
+1968,Speed Skating,"1,500 metres, Men",silver,NED,NLD,True
 1968,Speed Skating,"500 metres, Women",silver,USA,USA,True
-1980,Ski Jumping,"Normal Hill, Individual, Men",silver,JPN,JPN,True
 1980,Ski Jumping,"Normal Hill, Individual, Men",silver,GDR,DEU,True
-1992,Alpine Skiing,"Giant Slalom, Women",silver,USA,USA,True
+1980,Ski Jumping,"Normal Hill, Individual, Men",silver,JPN,JPN,True
 1992,Alpine Skiing,"Giant Slalom, Women",silver,AUT,AUT,True
+1992,Alpine Skiing,"Giant Slalom, Women",silver,USA,USA,True
 1998,Alpine Skiing,"Super G, Men",silver,SUI,CHE,True
 1998,Alpine Skiing,"Super G, Men",silver,AUT,AUT,True
 2010,Biathlon,"Individual, Men",silver,NOR,NOR,True
@@ -42,18 +42,18 @@ year,sport,event,medal,noc,iso_code,tied
 2018,Bobsleigh,"Four, Men",silver,GER,DEU,True
 1924,Speed Skating,"500 metres, Men",bronze,NOR,NOR,True
 1924,Speed Skating,"500 metres, Men",bronze,FIN,FIN,True
-1928,Speed Skating,"500 metres, Men",bronze,NOR,NOR,True
 1928,Speed Skating,"500 metres, Men",bronze,USA,USA,True
+1928,Speed Skating,"500 metres, Men",bronze,NOR,NOR,True
 1928,Speed Skating,"500 metres, Men",bronze,FIN,FIN,True
 1948,Alpine Skiing,"Downhill, Men",bronze,SUI,CHE,True
-1952,Speed Skating,"500 metres, Men",bronze,CAN,CAN,True
 1952,Speed Skating,"500 metres, Men",bronze,NOR,NOR,True
+1952,Speed Skating,"500 metres, Men",bronze,CAN,CAN,True
 1980,Speed Skating,"1,000 metres, Men",bronze,NOR,NOR,True
 1980,Speed Skating,"1,000 metres, Men",bronze,URS,RUS,True
 1998,Bobsleigh,"Four, Men",bronze,FRA,FRA,True
 1998,Bobsleigh,"Four, Men",bronze,GBR,GBR,True
-2014,Alpine Skiing,"Super G, Men",bronze,CAN,CAN,True
 2014,Alpine Skiing,"Super G, Men",bronze,USA,USA,True
+2014,Alpine Skiing,"Super G, Men",bronze,CAN,CAN,True
 2018,Cross Country Skiing,"10 kilometres, Women",bronze,NOR,NOR,True
 2018,Cross Country Skiing,"10 kilometres, Women",bronze,FIN,FIN,True
 2022,Freestyle Skiing,"Ski Cross, Women",bronze,SUI,CHE,True
