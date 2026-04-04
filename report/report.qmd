@@ -21,6 +21,8 @@ What actually drives medal succes in the Winter Olympics? Is it just the wealth 
 
 To answer this, I needed to look at the medal counts over time, the economic data of each country competing and the hosting history of the Winter Olympics. In the sections below I walk through the data pipeline I used to answer this question and the steps I took to get to the final result. 
 
+The short answer: yes to all three, but not equally. Wealth and population size are the strongest predictors of medal success, while hosting provides a measurable but smaller boost above and beyond those factors.
+
 The data pipeline: 
 scrape --> clean --> merge with World Bank data --> analyse --> visualise 
 
@@ -76,6 +78,8 @@ They were both fetched directly from the World Bank API (https://data.worldbank.
 
 ### 3.2 The NOC to ISC problem
 There was however a problem with merging the medal data with the World Bank data, as the medal data uses NOC codes to identify countries, whereas the World Bank data uses ISO country codes. This meant that I needed to find a way to map between the two code systems in order to merge the datasets together as well as the problem of some NOCs no longer existing or being split into multiple countries over time. So I had to create a lookup table to map each NOC to its cloests modern equivalent, so that historical medals can still be joined to economic data where possible. 
+
+The trickest cases were the Soviet Union (URS), East Germany (GDR) and Yugoslavia (YUG) which are all heavy medal winners that no longer exists. For these I mapped to their largest successor state (Russia, Germany and Serbia) where economic data was available and excluded rows where I could not make a reasonable match. 
 
 ### 3.3 Merging the datasets
 Once both datasets used the same country codes, they were joined on country and year. This allowed me to have a single dataset that included the medal information alongside the economic indicators for each country and year which I could then use for analysis. Alongside this I created two additional columns: 
@@ -151,7 +155,39 @@ fig.tight_layout()
 plt.show()
 ```
 
-### 5.2 How medal dominance has changed over time
+### 5.2 The Fallen Powers
+The all-time table is dominated by nations that were strong in the early era of the Winter Olympics, but not all of them maintained that dominance.
+The chart below compares each countries average medals per Games before 1980 against their average since 1994, for the top 10 nations of the early era.
+The most striking decline is the Soviet Union's successor states and East Germany, which could be as a result of political and economic disruptions after the Cold War. Norway and the United States however have maintained or even grown their medal counts, reflecting sustained long-term investment in Winter sports. 
+```{python}
+cy_all = final.groupby(['year', 'noc'], as_index=False).agg(total_medals=('noc', 'count'))
+
+early = cy_all[cy_all['year'] <= 1980]
+modern = cy_all[cy_all['year'] >= 1994]
+early_avg = early.groupby('noc')['total_medals'].mean().rename('early_avg').reset_index()
+modern_avg = modern.groupby('noc')['total_medals'].mean().rename('modern_avg').reset_index()
+
+top_early = early_avg.nlargest(10, 'early_avg')['noc']
+compare = pd.merge(early_avg[early_avg['noc'].isin(top_early)], modern_avg, on='noc', how='left').fillna(0)
+compare['decline'] = compare['early_avg'] - compare['modern_avg']
+compare = compare.sort_values('decline', ascending=False)
+
+long = compare.melt(id_vars=['noc'], value_vars=['early_avg', 'modern_avg'], var_name='era', value_name='avg_medals')
+long['era'] = long['era'].map({'early_avg': 'Pre-1980 average', 'modern_avg': 'Post-1992 average'})
+
+fig, ax = plt.subplots(figsize=(12, 6))
+sns.barplot(data=long, x='noc', y='avg_medals', hue='era', ax=ax)
+ax.set_title('Early Dominance vs Modern Performance\n(Top 10 Pre-1980 Nations)', fontsize=14, pad=12)
+ax.set_xlabel('Country')
+ax.set_ylabel('Average Medals per Games')
+ax.legend(title='Era')
+ax.tick_params(axis='x', rotation=45)
+fig.tight_layout()
+plt.show()
+```
+
+
+### 5.3 How medal dominance has changed over time
 The all-time medal table masks important changes over time. The chart shows the medal counts per Games for the top 6 nations. 
 ```{python}
 top6   = cy.groupby('noc')['total_medals'].sum().nlargest(6).index.tolist()
@@ -171,7 +207,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-### 5.3 The Wealth effects
+### 5.4 The Wealth effects
 The scatter plot shows the relationship between GDP per capita and medals won, across all country-year observations. The upward trend is clear, showing that wealthier countries tend to win more medals. This is consistent with the idea that richer countries have more resources to invest in training and facilities, which tend to lead to better performance in the Olympics. However, there are some outliers......
 ```{python}
 plot_data = cy.dropna(subset=['log_gdp_per_capita', 'total_medals'])
@@ -186,7 +222,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-### 5.4 Home Advantage
+### 5.5 Home Advantage
 To visualise the home advantage effect, I created a bar chart comparing each host nations medal count in its home Games against its average performance in non-host years. Most host nations perform notably better at home, suggesting that familiarity with venues, crowd support and reduced travel fatigue may all contribute to improved performance. However, the size of the home advantage effect varies widely between countries, with some hosts seeing a much bigger boost than others.
 ```{python}
 hosts = (cy[cy['is_host'] == 1][['noc', 'year', 'total_medals']].rename(columns={'total_medals': 'host_medals'}))
@@ -204,7 +240,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-### 5.5 What the regression tells us
+### 5.6 What the regression tells us
 The coefficient plot summeraises the regression results, showing how many additional medals a country can expect to win for each unit increase in that variable, holding the others constant. Bars to the right of the zero line have a positive effect on medal counts, while bars to the left have a negative effect. 
 ```{python}
 key_vars = ['is_host', 'log_gdp_per_capita', 'log_population']
