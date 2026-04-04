@@ -15,5 +15,5 @@ data/raw/*.xlsx
 .DS_Store
 
 # Quarto files
-*.quarto_ipynb
+*.quarto_ipynb*
 /.quarto/
