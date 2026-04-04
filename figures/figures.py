@@ -41,6 +41,7 @@ PROJECT_ROOT = os.path.join(SCRIPT_DIR, "..")
 COUNTRY_YEAR_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'medals_country_year.csv')
 ALLTIME_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'alltime_table.csv') 
 REGRESSION_PATH = os.path.join(PROJECT_ROOT, 'outputs', 'regression_results.csv')
+WORLDBANK_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'worldbank_final.csv')
 FIGURES_DIR = os.path.join(PROJECT_ROOT, 'figures')
 
 # Setting the style for all the plots, so that it is consistent across all of them 
@@ -174,17 +175,52 @@ def fig5_regression(reg):
     plt.close()
     print("Saved fig5_regression.png")
 
+# Function 6 - Fallen powers
+def fig6_fallen_powers(final):
+    cy_all = (final.groupby(['year', 'noc'], as_index=False).agg(total_medals=('noc', 'count')))
+
+# average medals per games in each era
+    early = cy_all[cy_all['year'] <= 1980]
+    modern = cy_all[cy_all['year'] >= 1994]
+    early_avg = (early.groupby('noc')['total_medals'].mean().rename('early_avg').reset_index())
+    modern_avg = (modern.groupby('noc')['total_medals'].mean().rename('modern_avg').reset_index())
+
+    # Keep only countries that were top 10 in the early era, sort by biggest decline
+    top_early = early_avg.nlargest(10, 'early_avg')['noc']
+    compare = pd.merge(early_avg[early_avg['noc'].isin(top_early)], modern_avg, on='noc', how='left').fillna(0)
+    compare['decline'] = compare['early_avg'] - compare['modern_avg']
+    compare = compare.sort_values('decline', ascending=False)
+
+    # reshape and then create bar graph
+    long = compare.melt(id_vars=['noc'], value_vars =['early_avg', 'modern_avg'], var_name ='era', value_name='avg_medals')
+    long['era'] = long['era'].map({'early_avg': 'Pre-1980 average', 'modern_avg': 'Post-1992 average'})
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+    sns.barplot(data=long, x='noc', y='avg_medals', hue='era', ax=ax)
+    ax.set_title('Early Dominance vs Modern Performance\n(Top 10 Pre-1980 Nations)',fontsize=14, pad=12)
+    ax.set_xlabel('Country')
+    ax.set_ylabel('Average Medals per Games')
+    ax.legend(title='Era')
+    ax.tick_params(axis='x', rotation=45)
+
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIGURES_DIR, 'fig6_fallen_powers.png'))
+    plt.close()
+    print("Saved fig6_fallen_powers.png") 
+        
 
 def main():
     alltime = pd.read_csv(ALLTIME_PATH)
     cy = pd.read_csv(COUNTRY_YEAR_PATH)
     reg = pd.read_csv(REGRESSION_PATH)
+    final = pd.read_csv(WORLDBANK_PATH)
 
     fig1_alltime(alltime)
     fig2_trends(cy)
     fig3_gdp_medals(cy)
     fig4_host_compare(cy)
     fig5_regression(reg)
+    fig6_fallen_powers(final)
 
     print("Figures created")
 
