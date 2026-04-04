@@ -32,6 +32,12 @@ The first step was to collect the medal data for each of the Winter Olympic Game
 I built a web scraper (`scrape.py`) that fetched the medal table for each of the 24 Winter Olympic Games, making sure that I paused between requests to avoid overwhelming the server. Each page returned an HTML table listing every event alongside gold, silver and bronze medalists and their countries. 
 
 The raw data came back in a wide format, with seperate columns for gold, silver and bronze medalists. At this point the data was still quite messy, with country names in different formats, sports categories mixed in as heading rows and some NOC fields had combined codes for when medals were tied. This all needed fixing before I could start with any analysis.
+```{python}
+import pandas as pd
+medals = pd.read_csv('../data/clean/medals_clean.csv')
+print(f"{len(medals)} events scraped across {medals['year'].nunique()} Games")
+medals.head(10)
+```
 
 ---
 ## 2. Cleaning the Data
@@ -39,11 +45,21 @@ The raw data came back in a wide format, with seperate columns for gold, silver 
 The scraped HTML table included two types of rows: actual event results and section headings that just said the sport name. These headings were not real results, they had no medalists data or NOC codes, however they did have the sport name of each event which is information I still needed. 
 
 To fix this, within the cleaning script (`clean.py`) I identified the heading rows which was any row where all medal columns were empty and then extracted the sport name. Allowing me to forward fill the sport name down to all the event rows below it until reaching the next heading. Then I could drop the original heading rows as they were no longer needed.
+```{python}
+print("Sports present in the dataset:")
+print(sorted(medals['sport'].dropna().unique().tolist()))
+```
 
 ### 2.2 Dealing with tied medals
 Occasionally there were two countries that shared a podium position, for example two gold medalists and no silver. In the raw data these appear as a single combined entry in the NOC column rather than as two seperate rows. 
 
 These needed to be detected and split into two rows, otherwise any country-level analysis would be inaccurate. Within the cleaning step these are flagged using the `tie` columns and then are split into seperate rows in a later step in the pipeline, so that both countries get the credit for the medal in the analysis.
+
+```{python}
+tied = medals[medals['tie_gold'] | medals['tie_silver'] | medals['tie_bronze']]
+print(f"Events with at least one tied medal: {len(tied)}")
+tied[['year', 'sport', 'event', 'tie_gold', 'tie_silver', 'tie_bronze']].head(8)
+```
 
 
 There are relatively few tied medals within the data however just ignoring them would mean undercounting the total medals for the countries involved and would lead to skewed results from the analysis.
@@ -67,6 +83,19 @@ Once both datasets used the same country codes, they were joined on country and 
 - **`is_host`** : a flag marking whether the winning country was hosting the games that year, to test the impact of home advantage 
 - **`log_gdp_per_capita`** and **`log_population`**: I took the log of both GDP per Capita and population to make the data more normally distributed, as the difference between a very poor and a moderately poor country is much more significant than the difference between a moderately rich and a very rich country, so taking the log allows for a more meaningful analysis of the relationship between wealth and medal success.
 
+```{python}
+final = pd.read_csv("../data/clean/worldbank_final.csv")
+print(f"Final merged dataset: {len(final)} medal rows")
+final.head(8)
+```
+```{python}
+missing = final['gdp_per_capita'].isna().sum()
+total = len(final)
+print(f'Rows with missing GDP per capita: {missing} ({100 * missing / total:.1f}%)')
+print('These are mostly historic NOCs')
+```
+
+
 The missing GDP rows are expected and unavoidable, as many of the older NOCs no longer exist and therefore do not have corresponding economic data in the World Bank dataset. Therefore, these rows are excluded from the regression but kept in the raw medal count so the all-time table remains accurate.
 
 ---
@@ -77,26 +106,118 @@ The merged dataset currently has one row per medal won by a country. However for
 
 ### 4.2 OLS regression
 With the data in this shape, an OLS regression was run to directly answer the research question: after controlling for GDP per capita and population size, does hosting the games have a significant impact on medal success?
+The model is: 
+>**Total Medals = beta0 + beta1(is_host) + beta2(log GDP per capita) + beta3(log population) + epsilon**
+
+```{python}
+import statsmodels.formula.api as smf
+reg_data = (pd.read_csv('../data/clean/medals_country_year.csv').dropna(subset=['log_gdp_per_capita', 'log_population']))
+model = smf.ols('total_medals ~ is_host + log_gdp_per_capita + log_population', data=reg_data).fit()
+print(model.summary())
+```
 
 A statistically significant positive coefficient for `is_host` would confirm that home advantage is real, above and beyond the effects of wealth and population size.
 
 
 ## 5. Visualising the Results
+```{python}
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+sns.set_theme(style='whitegrid', font_scale=1.1)
+GOLD   = "#FFD700"
+SILVER = "#C0C0C0"
+BRONZE = "#CD7F32"
+BLUE   = "#1f77b4"
+alltime = pd.read_csv("../data/clean/alltime_table.csv")
+cy      = pd.read_csv("../data/clean/medals_country_year.csv")
+reg     = pd.read_csv("../outputs/regression_results.csv")
+final   = pd.read_csv("../data/clean/worldbank_final.csv")
+```
 ### 5.1 All-time Medal table
 The chart shows cumulative medals since 1924. Norwary leads confortably, reflecting its deep winter sports culture and consistent investment in training. The US and Germany follow, benefitting from both size and sustained investment in winter sport.
+```{python}
+fig, ax = plt.subplots(figsize=(10, 8))
+
+ax.barh(alltime['noc'], alltime['gold_medals'], label='Gold', color=GOLD, height=0.6)
+ax.barh(alltime['noc'], alltime['silver_medals'], label='Silver', color=SILVER, height=0.6, left=alltime['gold_medals'])
+ax.barh(alltime['noc'], alltime['bronze_medals'], label='Bronze', color=BRONZE, height=0.6, left=alltime['gold_medals'] + alltime['silver_medals'])
+ax.invert_yaxis()
+ax.set_title("All time Winter Olympics Medal Table (top 20)", fontsize=14, pad=12)
+ax.set_xlabel("Total Medals Won")
+ax.set_ylabel("Country")
+ax.legend(loc='lower right')
+fig.tight_layout()
+plt.show()
+```
 
 ### 5.2 How medal dominance has changed over time
 The all-time medal table masks important changes over time. The chart shows the medal counts per Games for the top 6 nations. 
+```{python}
+top6   = cy.groupby('noc')['total_medals'].sum().nlargest(6).index.tolist()
+subset = cy[cy['noc'].isin(top6)]
+fig, ax = plt.subplots(figsize=(11, 6))
+sns.lineplot(data=subset, x='year', y='total_medals',
+             hue='noc', marker='o', ax=ax)
+ax.set_title('Winter Olympic Medal Count per Games (Top 6 Nations)',
+             fontsize=14, pad=12)
+ax.set_xlabel('Year')
+ax.set_ylabel('Medals Won')
+ax.legend(title='Country', bbox_to_anchor=(1.01, 1),
+          loc='upper left', borderaxespad=0.)
+ax.set_xticks(sorted(cy['year'].unique()))
+ax.tick_params(axis='x', rotation=45)
+fig.tight_layout()
+plt.show()
+```
 
 ### 5.3 The Wealth effects
 The scatter plot shows the relationship between GDP per capita and medals won, across all country-year observations. The upward trend is clear, showing that wealthier countries tend to win more medals. This is consistent with the idea that richer countries have more resources to invest in training and facilities, which tend to lead to better performance in the Olympics. However, there are some outliers......
+```{python}
+plot_data = cy.dropna(subset=['log_gdp_per_capita', 'total_medals'])
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.regplot(data=plot_data, x='log_gdp_per_capita', y='total_medals',
+            scatter_kws={'alpha': 0.4, 's': 25, 'color': BLUE},
+            line_kws={'color': 'red'}, ax=ax)
+ax.set_title("Wealthier Countries Win More Medals", fontsize=14, pad=12)
+ax.set_xlabel("Log GDP per Capita")
+ax.set_ylabel("Total Medals Won")
+fig.tight_layout()
+plt.show()
+```
 
 ### 5.4 Home Advantage
 To visualise the home advantage effect, I created a bar chart comparing each host nations medal count in its home Games against its average performance in non-host years. Most host nations perform notably better at home, suggesting that familiarity with venues, crowd support and reduced travel fatigue may all contribute to improved performance. However, the size of the home advantage effect varies widely between countries, with some hosts seeing a much bigger boost than others.
+```{python}
+hosts = (cy[cy['is_host'] == 1][['noc', 'year', 'total_medals']].rename(columns={'total_medals': 'host_medals'}))
+non_host_avg = (cy[cy['is_host'] == 0].groupby('noc')['total_medals'].mean().reset_index().rename(columns={'total_medals': 'avg_non_host'}))
+compare = (pd.merge(hosts, non_host_avg, on='noc', how='inner').sort_values('host_medals', ascending=False).head(15))
+long = compare.melt(id_vars=['noc'],value_vars=['host_medals', 'avg_non_host'], var_name='type', value_name='medals')
+long['type'] = long['type'].map({'host_medals':  'Host Year','avg_non_host': 'Average Non-Host Year'})
+fig, ax = plt.subplots(figsize=(12, 7))
+sns.barplot(data=long, x='noc', y='medals', hue='type', ax=ax)
+ax.set_title('Medals when Hosting vs Not Hosting (Top 15 Host Nations)',fontsize=14, pad=12)
+ax.set_xlabel('Country')
+ax.set_ylabel('Total Medals')
+ax.tick_params(axis='x', rotation=45)
+fig.tight_layout()
+plt.show()
+```
 
 ### 5.5 What the regression tells us
 The coefficient plot summeraises the regression results, showing how many additional medals a country can expect to win for each unit increase in that variable, holding the others constant. Bars to the right of the zero line have a positive effect on medal counts, while bars to the left have a negative effect. 
+```{python}
+key_vars = ['is_host', 'log_gdp_per_capita', 'log_population']
+reg_plot = reg[reg['variable'].isin(key_vars)].copy()
+reg_plot['variable'] = reg_plot['variable'].map({'is_host': 'Host Country', 'log_gdp_per_capita': 'Log GDP per Capita', 'log_population': 'Log Population'})
+fig, ax = plt.subplots(figsize=(10, 4))
+ax.barh(reg_plot['variable'], reg_plot['Coef.'])
+ax.axvline(0, color='black', linewidth=0.8)
+ax.set_title("What Predicts Winter Olympic Success?", fontsize=14, pad=12)
+ax.set_xlabel("Regression Coefficient (extra medals per unit increase)")
+fig.tight_layout()
+plt.show()
+```
 
 The plot shows that both GDP per capita and population have a strong positive effect on medal success, confirming that wealth and size are important drivers of Olympic performance. 
 
