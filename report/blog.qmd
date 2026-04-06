@@ -153,6 +153,16 @@ print(model.summary())
 ```
 The key result, is_host, has a coefficient of approximately 4.6, meaning a host nation wins around 4.6 more medals than it otherwise would, holding GDP and population constant. Both log_gdp_per_capita and log_population are highly significant (p < 0.001), confirming that wealth and size independently drive performance. 
 
+### 5.3 Analysis Summary statistics
+To get a sense of the data before diving into the analysis, the table below shows the 15 most decorated nations in Winter Olympic history, ranked by total medals won across all Games they attended
+
+```{python}
+import pandas as pd
+summary = pd.read_csv('../outputs/summary_stats.csv', index_col=0)
+summary.style.set_caption('Table 1: Top 15 nations by total Winter Olympic Medals')
+```
+Norway and the United States lead on total medals, both attending all 17 Games in the dataset. What's more striking though is Germany's average of 24.4 medals per Games across just 11 appearance, the highest rate in the table. Russia and East Germany (GDR) tell a similar story, they both averaged close to 18-20 medals per Games, but across only 6 Games each, reflecting their limited participation window during the Cold War era. The average medals per Games column matters here as it adjusts for how long a nation has been competing, as total medals alone would unfairly favour countries that have simply shown up to more Games.
+
 ## 6. Visualising the Results
 ```{python}
 import matplotlib.pyplot as plt
