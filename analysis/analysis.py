@@ -73,7 +73,7 @@ def main():
     # Summary statistics table
     summary = (medals_agg.groupby('noc')['total_medals'].agg(['mean', 'sum', 'count']).round(1)
                .rename(columns={'mean': 'Avg Medals/games', 'sum': 'Total medals', 'count': 'Games Attended'})
-               .sort_values('Total Medals', ascending=False).head(15))
+               .sort_values('Total medals', ascending=False).head(15))
     
     #OLS regression to test for host advantage
     reg_data = medals_agg.dropna(subset=['log_gdp_per_capita', 'log_population']).copy()
