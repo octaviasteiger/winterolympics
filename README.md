@@ -37,7 +37,9 @@ winterolympics/
 │   ├── fig5_regression.png            # Regression coefficient plot
 │   └── fig6_fallen_powers.png         # Early era dominance vs modern performance
 ├── outputs/                           
-|   └── regression_results.csv         # OLS regression coefficients and statistics
+|   ├── regression_results.csv         # OLS regression coefficients and statistics
+|   ├── summary_stats.csv              # Top 15 nations summary table
+|   └── model_comparison.csv           # Basic OLS vs country fixed effects comparison
 ├── report/
 │   ├── blog.qmd                       # Quarto report source file
 │   ├── blog.html                      # Rendered HTML report
