@@ -110,11 +110,30 @@ The missing GDP rows are expected and unavoidable, as many of the older NOCs no 
 
 <hr>
 
-## 4. The Analysis
-### 4.1 Aggregating to country-year level 
+## 4. The data
+This project draws on two datasets
+#### Olympic Medals (Olympedia): 
+Scrapped from [Olympedia](https://www.olympedia.org/), covering all 24 Winter Games from Chamonis 1924 to Beijing 2022. Each row represents one country's performance in a single Games (1,163 country-year observations in total).
+| Variable | Description |
+| --- | --- |
+| `NOC` | National Olympic Committee country code |
+| `Year` | Olympic Year (1924 - 2022) |
+| `Gold / Silver / Bronze` | Medal counts for that Games |
+| `Total` | Sum of all medals won |
+| `Host` | 1 if the country hosted that year, 0 otherwise |
+
+#### Economic Indicators (World Bank):
+GDP per capita (Current USD, indicator `NY.GDP.PCAP.CD`) and population (`SP.POP.TOTL`) fetched via the World Bank API, then matched to each country-year in the medals dataset.
+
+> **A note on tied medals:** In 27 events where multiple athletes tied for the same medal position, each tied nation recieved full medal credit, consistent with how the IOC handles ties in official records.
+
+<hr> 
+
+## 5. The Analysis
+### 5.1 Aggregating to country-year level 
 The merged dataset currently has one row per medal won by a country. However for the regression analysis I need to have one row per country per Olympic year. So that for each country-year combination I have the total number of medals won and I keep the GDP per capita and population data for that country and year. 
 
-### 4.2 OLS regression
+### 5.2 OLS regression
 With the data in this shape, an OLS regression was run to directly answer the research question: after controlling for GDP per capita and population size, does hosting the games have a significant impact on medal success?
 The model is: 
 >**Total Medals = beta0 + beta1(is_host) + beta2(log GDP per capita) + beta3(log population) + epsilon**
@@ -134,7 +153,7 @@ print(model.summary())
 ```
 The key result, is_host, has a coefficient of approximately 4.6, meaning a host nation wins around 4.6 more medals than it otherwise would, holding GDP and population constant. Both log_gdp_per_capita and log_population are highly significant (p < 0.001), confirming that wealth and size independently drive performance. 
 
-## 5. Visualising the Results
+## 6. Visualising the Results
 ```{python}
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -149,7 +168,7 @@ cy      = pd.read_csv("../data/clean/medals_country_year.csv")
 reg     = pd.read_csv("../outputs/regression_results.csv")
 final   = pd.read_csv("../data/clean/worldbank_final.csv")
 ```
-### 5.1 All-time Medal table
+### 6.1 All-time Medal table
 The chart shows cumulative medals since 1924 across the top 20 nations. Norway leads comfortably, which makes sense given how deeply embedded winter sport is in Norwegain culture, skiing is almost a national pastime. What's also interesting is how much of Norway's bar is gold rather than silver or bronze, showing it doesnt just compete by consistently wins. The US and Germany follow, both benefitting from their size and long-term investment in winter sport. Looking at the stacked bars, some countries accumulate big totals but through silver and bronze rather than gold, which tells a slightly different story about dominance vs participation.
 ```{python}
 fig, ax = plt.subplots(figsize=(7, 5))
@@ -165,7 +184,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-### 5.2 The Fallen Powers
+### 6.2 The Fallen Powers
 Not every nation that dominated the early era has kept that up. The chart compares the average medals per Games for the top 10 early-era nations looking at results up to and including the 1980 verus their average since 1994. Countries are sorted left to right by the size of their drop off. 
 The biggest declines are URS (The Soviet Union) and GDR (East Germany), which may have been as a result of political and economic disruptions following the Cold War which had lasting impacts on state funded sports programmes. Norway and the US on the other hand have held their ground or improved, which probably comes down to continued investment in winter sport at a national level.
 ```{python}
@@ -196,7 +215,7 @@ plt.show()
 ```
 
 
-### 5.3 How medal dominance has changed over time
+### 6.3 How medal dominance has changed over time
 The all-time totals hide a lot of movement at the Games level, so this chart tracks medals per Games for the top 6 nations by all-time count. A few things stand out, Norway is consistently near the top throughout, with very few poor Games. Russia (URS before 1992) came on strong from the mid-1950s and dominated throught the 1980s but then dropped off sharply after the Soviet Union dissolved. You can also see a clear spike for the US in 2002, when they were hosting the Salt Lake City Games, which provides a nice visual of the home advantage effect. The gap between 1936 and 1948 is where thr 1940 and 1944 Games would have been but they were both cancelled because of World War II.
 ```{python}
 top6   = cy.groupby('noc')['total_medals'].sum().nlargest(6).index.tolist()
@@ -216,7 +235,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-### 5.4 The Wealth effects
+### 6.4 The Wealth effects
 The scatter plot shows the relationship between GDP per capita and total medals won, across all country-year observations. The upward trend is clear, wealthier countries tend to win more medals, consistent with the idea that richer nations ahve more resources to invest in training, facilities and athlete development. However, there are notable outliers in both directions, some high income nations with no winter sports traditions win very few medals despite their wealth. 
 ```{python}
 plot_data = cy.dropna(subset=['log_gdp_per_capita', 'total_medals'])
@@ -231,7 +250,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-### 5.5 Home Advantage
+### 6.5 Home Advantage
 To look at home advantage more directly, I compared each host nations medal count in the year they hosted against their average in all other Games, keeping the 15 nations that won the most medals whilst hosting. Most of them sit noticeably higher in the host year than their non-host average, the USA in 2002 and Norway in 1994 are both good examples of this. One thing to note is the chart orders by how many medals they won while hosting not by the size of the boost, so the nations on the left aren't necessarily the ones who benefitted most.
 ```{python}
 hosts = (cy[cy['is_host'] == 1][['noc', 'year', 'total_medals']].rename(columns={'total_medals': 'host_medals'}))
@@ -249,7 +268,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-### 5.6 What the regression tells us
+### 6.6 What the regression tells us
 The coefficient plot pulls together the regression results, all three bars are to the right of zero, which means hosting, wealth and population all increase expected medal counts. The host status bar is actually the longest, with a coefficient of 4.6, though as I explain later that doesn't mean it's the most important factor overall, it just has the biggest per-unit jump. The black error bars show the 95% confidence intervals, so the shorter the error bar, the more precisely that effect has been estimated. GDP per capita has the tightest interval of the three, indicating it is the most reliably estimated of the three.
 
 ```{python}
@@ -270,7 +289,8 @@ plt.show()
 ```
 
 <hr>
-## 6. Conclusions
+
+## 7. Conclusions
 Three factors were tested: wealth, population size and hosting the Games. All three are statistically significant predictors of medal count.
 
 #### Host advantage is real but limited
