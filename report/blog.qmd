@@ -9,6 +9,8 @@ format:
         theme: flatly
         code-fold: true
         fig-align: center
+    pdf:
+        toc: true
 
 execute:
     warning: false
