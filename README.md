@@ -33,8 +33,9 @@ winterolympics/
 ├── outputs/                           
 |   └── regression_results.csv         # OLS regression coefficients and statistics
 ├── report/
-│   ├── report.qmd                     # Quarto report source file
-│   └── report.html                    # Rendered HTML report
+│   ├── blog.qmd                       # Quarto report source file
+│   ├── blog.html                      # Rendered HTML report
+│   └── blog_files/                    
 ├── scripts/
 │   ├── clean.py                       # Cleans raw scraped data
 │   ├── merge_tied.py                  # Reintegrates tied medal rows with economic data
@@ -47,18 +48,20 @@ winterolympics/
 
 ## How to Replicate
 ### Using Make
-1. Clone the repository:
+1. Install Quarto: https://quarto.org/docs/get-started/
+   
+2. Clone the repository:
    ```
    git clone https://github.com/octaviasteiger/winterolympics.git
    cd winterolympics
    ```
 
-2. Install dependencies:
+3. Install dependencies:
    ```
    pip install -r requirements.txt
    ```
 
-3. Run the full pipeline:
+4. Run the full pipeline:
    ```
    make
    ```
