@@ -4,7 +4,7 @@
 PYTHON = python3
 
 # Main output
-all: report/report.html 
+all: report/blog.html 
 
 # Step 1: Scrape data
 data/raw/medals_raw.csv : scripts/scrape.py 
@@ -31,8 +31,8 @@ figures/fig1_alltime.png figures/fig2_trends.png figures/fig3_gdp_medals.png fig
 	$(PYTHON) figures/figures.py
 
 # Step 7: Report
-report/report.html: report/report.qmd figures/fig1_alltime.png figures/fig2_trends.png figures/fig3_gdp_medals.png figures/fig4_host_compare.png figures/fig5_regression.png figures/fig6_fallen_powers.png data/clean/medals_country_year.csv outputs/regression_results.csv
-	quarto render report/report.qmd
+report/blog.html: report/blog.qmd figures/fig1_alltime.png figures/fig2_trends.png figures/fig3_gdp_medals.png figures/fig4_host_compare.png figures/fig5_regression.png figures/fig6_fallen_powers.png data/clean/medals_country_year.csv outputs/regression_results.csv
+	quarto render report/blog.qmd
 
 # Clean outputs
 clean:
