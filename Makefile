@@ -23,15 +23,15 @@ data/clean/worldbank_final.csv: scripts/merge_tied.py data/clean/worldbank.csv d
 	$(PYTHON) scripts/merge_tied.py
 
 # Step 5: Analysis
-data/clean/medals_country_year.csv data/clean/alltime_table.csv outputs/regression_results.csv: analysis/analysis.py data/clean/worldbank_final.csv
+data/clean/medals_country_year.csv data/clean/alltime_table.csv outputs/regression_results.csv outputs/summary_stats.csv outputs/model_comparison.csv: analysis/analysis.py data/clean/worldbank_final.csv
 	$(PYTHON) analysis/analysis.py
 
 # Step 6: Figures
-figures/fig1_alltime.png figures/fig2_trends.png figures/fig3_gdp_medals.png figures/fig4_host_compare.png figures/fig5_regression.png figures/fig6_fallen_powers.png: figures/figures.py data/clean/medals_country_year.csv data/clean/alltime_table.csv data/clean/worldbank_final.csv outputs/regression_results.csv
+figures/fig1_alltime.png figures/fig2_trends.png figures/fig3_gdp_medals.png figures/fig4_host_compare.png figures/fig6_regression.png figures/fig5_fallen_powers.png: figures/figures.py data/clean/medals_country_year.csv data/clean/alltime_table.csv data/clean/worldbank_final.csv outputs/regression_results.csv
 	$(PYTHON) figures/figures.py
 
 # Step 7: Report
-report/blog.html: report/blog.qmd figures/fig1_alltime.png figures/fig2_trends.png figures/fig3_gdp_medals.png figures/fig4_host_compare.png figures/fig5_regression.png figures/fig6_fallen_powers.png data/clean/medals_country_year.csv outputs/regression_results.csv
+report/blog.html: report/blog.qmd figures/fig1_alltime.png figures/fig2_trends.png figures/fig3_gdp_medals.png figures/fig4_host_compare.png figures/fig5_regression.png figures/fig6_fallen_powers.png data/clean/medals_country_year.csv outputs/regression_results.csv outputs/summary_stats.csv outputs/model_comparison.csv
 	quarto render report/blog.qmd
 
 # Clean outputs
@@ -40,5 +40,5 @@ clean:
 	rm -f data/clean/*.csv
 	rm -f outputs/*.csv
 	rm -f figures/*.png
-	rm -f report/report.html
+	rm -f report/blog.html
 
