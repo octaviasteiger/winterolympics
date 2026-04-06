@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Octavia Steiger">
-<meta name="dcterms.date" content="2026-04-04">
+<meta name="dcterms.date" content="2026-04-06">
 
 <title>Winter Olympics Medal Analysis</title>
 <style>
@@ -63,17 +63,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="report_files/libs/clipboard/clipboard.min.js"></script>
-<script src="report_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="report_files/libs/quarto-html/popper.min.js"></script>
-<script src="report_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="report_files/libs/quarto-html/anchor.min.js"></script>
-<link href="report_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="report_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="report_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="report_files/libs/bootstrap/bootstrap-1a9011c99ff3470dca5095ea45ed0705.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="blog_files/libs/clipboard/clipboard.min.js"></script>
+<script src="blog_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="blog_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="blog_files/libs/quarto-html/popper.min.js"></script>
+<script src="blog_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="blog_files/libs/quarto-html/anchor.min.js"></script>
+<link href="blog_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="blog_files/libs/quarto-html/quarto-syntax-highlighting-a06763021a52c43c40a351ac8b799b8f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="blog_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="blog_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="blog_files/libs/bootstrap/bootstrap-f93d581b41f20e53031fef139986cb6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -86,39 +86,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
   <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Contents</h2>
    
-  <ul>
-  <li><a href="#research-question" id="toc-research-question" class="nav-link active" data-scroll-target="#research-question">Research Question</a></li>
-  <li><a href="#collecting-the-medal-data" id="toc-collecting-the-medal-data" class="nav-link" data-scroll-target="#collecting-the-medal-data">1. Collecting the Medal Data</a></li>
-  <li><a href="#cleaning-the-data" id="toc-cleaning-the-data" class="nav-link" data-scroll-target="#cleaning-the-data">2. Cleaning the Data</a>
   <ul class="collapse">
-  <li><a href="#sorting-out-the-sport-categories" id="toc-sorting-out-the-sport-categories" class="nav-link" data-scroll-target="#sorting-out-the-sport-categories">2.1 Sorting out the sport categories</a></li>
-  <li><a href="#dealing-with-tied-medals" id="toc-dealing-with-tied-medals" class="nav-link" data-scroll-target="#dealing-with-tied-medals">2.2 Dealing with tied medals</a></li>
-  </ul></li>
-  <li><a href="#adding-economic-context" id="toc-adding-economic-context" class="nav-link" data-scroll-target="#adding-economic-context">3. Adding Economic Context</a>
-  <ul class="collapse">
-  <li><a href="#why-i-used-the-world-bank-api" id="toc-why-i-used-the-world-bank-api" class="nav-link" data-scroll-target="#why-i-used-the-world-bank-api">3.1 Why I used the World Bank API</a></li>
-  <li><a href="#the-noc-to-isc-problem" id="toc-the-noc-to-isc-problem" class="nav-link" data-scroll-target="#the-noc-to-isc-problem">3.2 The NOC to ISC problem</a></li>
-  <li><a href="#merging-the-datasets" id="toc-merging-the-datasets" class="nav-link" data-scroll-target="#merging-the-datasets">3.3 Merging the datasets</a></li>
-  </ul></li>
-  <li><a href="#the-analysis" id="toc-the-analysis" class="nav-link" data-scroll-target="#the-analysis">4. The Analysis</a>
-  <ul class="collapse">
-  <li><a href="#aggregating-to-country-year-level" id="toc-aggregating-to-country-year-level" class="nav-link" data-scroll-target="#aggregating-to-country-year-level">4.1 Aggregating to country-year level</a></li>
-  <li><a href="#ols-regression" id="toc-ols-regression" class="nav-link" data-scroll-target="#ols-regression">4.2 OLS regression</a></li>
-  </ul></li>
-  <li><a href="#visualising-the-results" id="toc-visualising-the-results" class="nav-link" data-scroll-target="#visualising-the-results">5. Visualising the Results</a>
-  <ul class="collapse">
-  <li><a href="#all-time-medal-table" id="toc-all-time-medal-table" class="nav-link" data-scroll-target="#all-time-medal-table">5.1 All-time Medal table</a></li>
-  <li><a href="#the-fallen-powers" id="toc-the-fallen-powers" class="nav-link" data-scroll-target="#the-fallen-powers">5.2 The Fallen Powers</a></li>
-  <li><a href="#how-medal-dominance-has-changed-over-time" id="toc-how-medal-dominance-has-changed-over-time" class="nav-link" data-scroll-target="#how-medal-dominance-has-changed-over-time">5.3 How medal dominance has changed over time</a></li>
-  <li><a href="#the-wealth-effects" id="toc-the-wealth-effects" class="nav-link" data-scroll-target="#the-wealth-effects">5.4 The Wealth effects</a></li>
-  <li><a href="#home-advantage" id="toc-home-advantage" class="nav-link" data-scroll-target="#home-advantage">5.5 Home Advantage</a></li>
-  <li><a href="#what-the-regression-tells-us" id="toc-what-the-regression-tells-us" class="nav-link" data-scroll-target="#what-the-regression-tells-us">5.6 What the regression tells us</a></li>
-  </ul></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">6. Conclusions</a></li>
+  <li><a href="#why-does-norway-win-so-much" id="toc-why-does-norway-win-so-much" class="nav-link active" data-scroll-target="#why-does-norway-win-so-much">Why does Norway win so much?</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">1. The data</a></li>
+  <li><a href="#building-the-dataset" id="toc-building-the-dataset" class="nav-link" data-scroll-target="#building-the-dataset">2. Building the dataset</a></li>
+  <li><a href="#a-century-of-domiance" id="toc-a-century-of-domiance" class="nav-link" data-scroll-target="#a-century-of-domiance">3. A century of domiance</a></li>
+  <li><a href="#does-money-buy-medals" id="toc-does-money-buy-medals" class="nav-link" data-scroll-target="#does-money-buy-medals">4. Does money buy medals?</a></li>
+  <li><a href="#the-home-advantage" id="toc-the-home-advantage" class="nav-link" data-scroll-target="#the-home-advantage">5. The home advantage</a></li>
+  <li><a href="#the-fallen-powers" id="toc-the-fallen-powers" class="nav-link" data-scroll-target="#the-fallen-powers">6. The fallen powers</a></li>
+  <li><a href="#the-full-picture-regression-results" id="toc-the-full-picture-regression-results" class="nav-link" data-scroll-target="#the-full-picture-regression-results">7. The full picture: regression results</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">8. Conclusions</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../blog.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -141,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 4, 2026</p>
+      <p class="date">April 6, 2026</p>
     </div>
   </div>
   
@@ -153,23 +134,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="research-question" class="level2">
-<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
-<p>What actually drives medal succes in the Winter Olympics? Is it just the wealth of a country, ie richer countries have more resources to invest in training and facilities or population size, ie more people means more potential athletes? Or does hosting the Games give a country an advantage?</p>
-<p>To answer this, I needed to look at the medal counts over time, the economic data of each country competing and the hosting history of the Winter Olympics. In the sections below I walk through the data pipeline I used to answer this question and the steps I took to get to the final result.</p>
-<p>The short answer: yes to all three, but not equally. Wealth and population size are the strongest predictors of medal success, while hosting provides a measurable but smaller boost above and beyond those factors.</p>
+<section id="why-does-norway-win-so-much" class="level2">
+<h2 class="anchored" data-anchor-id="why-does-norway-win-so-much">Why does Norway win so much?</h2>
+<p>Norway has a population of just 5 million people, yet it sits at the top of the all-time Winter Olympic medal table with 318 medals, more than 40 ahead of the United States desipte the US having around 60 times the population. So what is actually happening?</p>
+<p>This project sets out to answer that question using the data from every Winter Olympic Games since Chamonix 1924. The analysis tests three possible explanations, wealth (richer countries invest more in training and facilities), population size (more people means more potential athletes) and home advantage (hosting the Games gives a measurable boost). The answer turns out to be yes to all three but not equally.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The short answer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Yes to all three, but not equally. Wealth and population size are the strongest predictors of medal success, while hosting provides a measurable but smaller boost above and beyond those factors.</p>
+</div>
+</div>
+<p>Before diving into the results, it helps to understand exactly what data sits behind this analysis.</p>
 <p>The data pipeline: scrape –&gt; clean –&gt; merge with World Bank data –&gt; analyse –&gt; visualise</p>
 <hr>
 </section>
-<section id="collecting-the-medal-data" class="level2">
-<h2 class="anchored" data-anchor-id="collecting-the-medal-data">1. Collecting the Medal Data</h2>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">1. The data</h2>
+<p>This project draws on two datasets, one tracking Olympic medal outcomes going back a century, and one capturing the economic context behind each competing nation.</p>
+<section id="olympic-medals-olympedia" class="level4">
+<h4 class="anchored" data-anchor-id="olympic-medals-olympedia">Olympic Medals (Olympedia):</h4>
+<p>Scrapped from <a href="https://www.olympedia.org/">Olympedia</a>, covering all 24 Winter Games from Chamonix 1924 to Beijing 2022. Each row represents one country’s performance in a single Games (1,163 country-year observations in total).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>NOC</code></td>
+<td>National Olympic Committee country code</td>
+</tr>
+<tr class="even">
+<td><code>Year</code></td>
+<td>Olympic Year (1924 - 2022)</td>
+</tr>
+<tr class="odd">
+<td><code>Gold / Silver / Bronze</code></td>
+<td>Medal counts for that Games</td>
+</tr>
+<tr class="even">
+<td><code>Total</code></td>
+<td>Sum of all medals won</td>
+</tr>
+<tr class="odd">
+<td><code>Host</code></td>
+<td>1 if the country hosted that year, 0 otherwise</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="economic-indicators-world-bank" class="level4">
+<h4 class="anchored" data-anchor-id="economic-indicators-world-bank">Economic Indicators (World Bank):</h4>
+<p>GDP per capita (Current USD, indicator <code>NY.GDP.PCAP.CD</code>) and population (<code>SP.POP.TOTL</code>) fetched via the World Bank API, then matched to each country-year in the medals dataset.</p>
+<blockquote class="blockquote">
+<p><strong>A note on tied medals:</strong> In 27 events where multiple athletes tied for the same medal position, each tied nation recieved full medal credit, consistent with how the IOC handles ties in official records.</p>
+</blockquote>
+<p>With the dataset defined, the next section explains how it was built, from raw web pages through to a clean, merged file ready for analysis.</p>
+<hr>
+</section>
+</section>
+<section id="building-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="building-the-dataset">2. Building the dataset</h2>
+<section id="collecting-the-medal-data" class="level3">
+<h3 class="anchored" data-anchor-id="collecting-the-medal-data">2.1 Collecting the Medal Data</h3>
 <p>The first step was to collect the medal data for each of the Winter Olympic Games all the way back to 1924. Offical Olympic datawas not available as a download, so the data had to be scraped directly from Olmpedia (https://www.olympedia.org).</p>
 <p>I built a web scraper (<code>scrape.py</code>) that fetched the medal table for each of the 24 Winter Olympic Games, making sure that I paused between requests to avoid overwhelming the server. Each page returned an HTML table listing every event alongside gold, silver and bronze medalists and their countries.</p>
 <p>The raw data came back in a wide format, with seperate columns for gold, silver and bronze medalists. At this point the data was still quite messy, with country names in different formats, sports categories mixed in as heading rows and some NOC fields had combined codes for when medals were tied. This all needed fixing before I could start with any analysis.</p>
 <p>The dataset spans 24 Games from Chamonix 1924 to Beijing 2022, covering 1163 unique events. Not all NOCs appear in each Games, the number of competiting nations has grown over time, from around 19 nations in 1924 to over 90 today.</p>
-<div id="090f3799" class="cell" data-execution_count="1">
+<div id="043d4f03" class="cell" data-execution_count="1">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>medals <span class="op">=</span> pd.read_csv(<span class="st">'../data/clean/medals_clean.csv'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="bu">len</span>(medals)<span class="sc">}</span><span class="ss"> events scraped across </span><span class="sc">{</span>medals[<span class="st">'year'</span>]<span class="sc">.</span>nunique()<span class="sc">}</span><span class="ss"> Games"</span>)</span>
@@ -357,17 +400,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<hr>
 </section>
-<section id="cleaning-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="cleaning-the-data">2. Cleaning the Data</h2>
-<section id="sorting-out-the-sport-categories" class="level3">
-<h3 class="anchored" data-anchor-id="sorting-out-the-sport-categories">2.1 Sorting out the sport categories</h3>
+<section id="cleaning-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-the-data">2.2 Cleaning the Data</h3>
+<section id="sorting-out-the-sport-categories" class="level4">
+<h4 class="anchored" data-anchor-id="sorting-out-the-sport-categories">Sorting out the sport categories</h4>
 <p>The scraped HTML table included two types of rows: actual event results and section headings that just said the sport name. These headings were not real results, they had no medalists data or NOC codes, however they did have the sport name of each event which is information I still needed.</p>
 <p>To fix this, within the cleaning script (<code>clean.py</code>) I identified the heading rows which was any row where all medal columns were empty and then extracted the sport name. Allowing me to forward fill the sport name down to all the event rows below it until reaching the next heading. Then I could drop the original heading rows as they were no longer needed.</p>
-<div id="1390b390" class="cell" data-execution_count="2">
+<div id="7ec00568" class="cell" data-execution_count="2">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sports present in the dataset:"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(medals[<span class="st">'sport'</span>].dropna().unique().tolist()))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
@@ -377,13 +419,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="dealing-with-tied-medals" class="level3">
-<h3 class="anchored" data-anchor-id="dealing-with-tied-medals">2.2 Dealing with tied medals</h3>
+<section id="dealing-with-tied-medals" class="level4">
+<h4 class="anchored" data-anchor-id="dealing-with-tied-medals">Dealing with tied medals</h4>
 <p>Occasionally there were two countries that shared a podium position, for example two gold medalists and no silver. In the raw data these appear as a single combined entry in the NOC column rather than as two seperate rows.</p>
 <p>These needed to be detected and split into two rows, otherwise any country-level analysis would be inaccurate. Within the cleaning step these are flagged using the <code>tie</code> columns and then are split into seperate rows in a later step in the pipeline, so that both countries get the credit for the medal in the analysis.</p>
-<div id="dfe773f3" class="cell" data-execution_count="3">
+<div id="a54c266c" class="cell" data-execution_count="3">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tied <span class="op">=</span> medals[medals[<span class="st">'tie_gold'</span>] <span class="op">|</span> medals[<span class="st">'tie_silver'</span>] <span class="op">|</span> medals[<span class="st">'tie_bronze'</span>]]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Events with at least one tied medal: </span><span class="sc">{</span><span class="bu">len</span>(tied)<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>tied[[<span class="st">'year'</span>, <span class="st">'sport'</span>, <span class="st">'event'</span>, <span class="st">'tie_gold'</span>, <span class="st">'tie_silver'</span>, <span class="st">'tie_bronze'</span>]].head(<span class="dv">8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -486,33 +528,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>There are relatively few tied medals within the data however just ignoring them would mean undercounting the total medals for the countries involved and would lead to skewed results from the analysis.</p>
-<hr>
+<p>There are relatively few tied medals within the data however just ignoring them would mean undercounting the total medals for the countries involved and would lead to skewed results from the analysis. :::{.callout-tip} ## Why this matters Ignoring ties would undercount medals for countries involved. Splitting them into seperate rows ensures every nation gets full credit which is consistent with how the IOC handles tied in offical records. :::</p>
 </section>
 </section>
-<section id="adding-economic-context" class="level2">
-<h2 class="anchored" data-anchor-id="adding-economic-context">3. Adding Economic Context</h2>
+<section id="adding-economic-context" class="level3">
+<h3 class="anchored" data-anchor-id="adding-economic-context">2.3 Adding Economic Context</h3>
 <p>This is all great, but to answer the research question I also need to add some economic context to the medal data. To test if wealth or population drives success, each medal row needs to be merged with the GDP and population data for the corresponding country and year.</p>
-<section id="why-i-used-the-world-bank-api" class="level3">
-<h3 class="anchored" data-anchor-id="why-i-used-the-world-bank-api">3.1 Why I used the World Bank API</h3>
+<section id="why-i-used-the-world-bank-api" class="level4">
+<h4 class="anchored" data-anchor-id="why-i-used-the-world-bank-api">Why I used the World Bank API</h4>
 <p>I needed two indicators for each country and year: GDP per capita and population size. The World Bank API provided a convinent way to access this data for all the countries and years in my medal dataset. The advantage of using the World Bank for both is that the data is already cleaned and standardised, meaning I didn’t have to worry about different country name formats or different structures for the data.</p>
 <p>They were both fetched directly from the World Bank API (https://data.worldbank.org/) using the <code>wbgapi</code> Python package, allowing for easy integration into the data pipeline.</p>
 </section>
-<section id="the-noc-to-isc-problem" class="level3">
-<h3 class="anchored" data-anchor-id="the-noc-to-isc-problem">3.2 The NOC to ISC problem</h3>
+<section id="the-noc-to-isc-problem" class="level4">
+<h4 class="anchored" data-anchor-id="the-noc-to-isc-problem">The NOC to ISC problem</h4>
 <p>There was however a problem with merging the medal data with the World Bank data, as the medal data uses NOC codes to identify countries, whereas the World Bank data uses ISO country codes. This meant that I needed to find a way to map between the two code systems in order to merge the datasets together as well as the problem of some NOCs no longer existing or being split into multiple countries over time. So I had to create a lookup table to map each NOC to its cloests modern equivalent, so that historical medals can still be joined to economic data where possible.</p>
 <p>The trickest cases were the Soviet Union (URS), East Germany (GDR) and Yugoslavia (YUG) which are all heavy medal winners that no longer exists. For these I mapped to their largest successor state (Russia, Germany and Serbia) where economic data was available and excluded rows where I could not make a reasonable match.</p>
 </section>
-<section id="merging-the-datasets" class="level3">
-<h3 class="anchored" data-anchor-id="merging-the-datasets">3.3 Merging the datasets</h3>
+<section id="merging-the-datasets" class="level4">
+<h4 class="anchored" data-anchor-id="merging-the-datasets">Merging the datasets</h4>
 <p>Once both datasets used the same country codes, they were joined on country and year. This allowed me to have a single dataset that included the medal information alongside the economic indicators for each country and year which I could then use for analysis. Alongside this I created two additional columns:</p>
 <ul>
 <li><strong><code>is_host</code></strong> : a flag marking whether the winning country was hosting the games that year, to test the impact of home advantage</li>
 <li><strong><code>log_gdp_per_capita</code></strong> and <strong><code>log_population</code></strong>: I took the log of both GDP per Capita and population to make the data more normally distributed, as the difference between a very poor and a moderately poor country is much more significant than the difference between a moderately rich and a very rich country, so taking the log allows for a more meaningful analysis of the relationship between wealth and medal success.</li>
 </ul>
-<div id="8e4f7702" class="cell" data-execution_count="4">
+<div id="fbc8b825" class="cell" data-execution_count="4">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>final <span class="op">=</span> pd.read_csv(<span class="st">"../data/clean/worldbank_final.csv"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Final merged dataset: </span><span class="sc">{</span><span class="bu">len</span>(final)<span class="sc">}</span><span class="ss"> medal rows"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>final.head(<span class="dv">8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -660,9 +701,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="5122bcae" class="cell" data-execution_count="5">
+<div id="5a9b3439" class="cell" data-execution_count="5">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>missing <span class="op">=</span> final[<span class="st">'gdp_per_capita'</span>].isna().<span class="bu">sum</span>()</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="bu">len</span>(final)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Rows with missing GDP per capita: </span><span class="sc">{</span>missing<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span> <span class="op">*</span> missing <span class="op">/</span> total<span class="sc">:.1f}</span><span class="ss">%)'</span>)</span>
@@ -673,33 +714,381 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 These are mostly historic NOCs</code></pre>
 </div>
 </div>
-<p>The missing GDP rows are expected and unavoidable, as many of the older NOCs no longer exist and therefore do not have corresponding economic data in the World Bank dataset. Therefore, these rows are excluded from the regression but kept in the raw medal count so the all-time table remains accurate.</p>
+<p>The missing GDP rows are expected and unavoidable, as many of the older NOCs no longer exist and therefore do not have corresponding economic data in the World Bank dataset. Therefore, these rows are excluded from the regression but kept in the raw medal count so the all-time table remains accurate. :::{.callout-warning} ## Data limitation Around 16% of medal rows are missing GDP data, mostly from historical NOCs that no longer exist (URS, GDR, YUG). These are excluded from the regression but kept in the all-time medal counts so historical totals remain accurate. :::</p>
+<p>With a clean, merged dataset in hand, the first question is simply: Who has dominanted the Winter Olympics over the past century, and has that changed over time?</p>
 <hr>
 </section>
 </section>
-<section id="the-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="the-analysis">4. The Analysis</h2>
-<section id="aggregating-to-country-year-level" class="level3">
-<h3 class="anchored" data-anchor-id="aggregating-to-country-year-level">4.1 Aggregating to country-year level</h3>
-<p>The merged dataset currently has one row per medal won by a country. However for the regression analysis I need to have one row per country per Olympic year. So that for each country-year combination I have the total number of medals won and I keep the GDP per capita and population data for that country and year.</p>
 </section>
-<section id="ols-regression" class="level3">
-<h3 class="anchored" data-anchor-id="ols-regression">4.2 OLS regression</h3>
-<p>With the data in this shape, an OLS regression was run to directly answer the research question: after controlling for GDP per capita and population size, does hosting the games have a significant impact on medal success? The model is: &gt;<strong>Total Medals = beta0 + beta1(is_host) + beta2(log GDP per capita) + beta3(log population) + epsilon</strong></p>
-<div id="4d611dd6" class="cell" data-execution_count="6">
+<section id="a-century-of-domiance" class="level2">
+<h2 class="anchored" data-anchor-id="a-century-of-domiance">3. A century of domiance</h2>
+<div id="5e04443e" class="cell" data-execution_count="6">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>reg_data <span class="op">=</span> (pd.read_csv(<span class="st">'../data/clean/medals_country_year.csv'</span>))</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>results_df <span class="op">=</span> (pd.read_csv(<span class="st">'../outputs/regression_results.csv'</span>))</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Rows in regression dataset: </span><span class="sc">{</span><span class="bu">len</span>(reg_data)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Countries represented: </span><span class="sc">{</span>reg_data[<span class="st">'noc'</span>]<span class="sc">.</span>nunique()<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Host-country observations: </span><span class="sc">{</span>reg_data[<span class="st">'is_host'</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_df.to_string(index<span class="op">=</span><span class="va">False</span>))</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">'total_medals ~ is_host + log_gdp_per_capita + log_population'</span>, data<span class="op">=</span>reg_data).fit()</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">'whitegrid'</span>, font_scale<span class="op">=</span><span class="fl">1.1</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>GOLD   <span class="op">=</span> <span class="st">"#FFD700"</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>SILVER <span class="op">=</span> <span class="st">"#C0C0C0"</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>BRONZE <span class="op">=</span> <span class="st">"#CD7F32"</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>BLUE   <span class="op">=</span> <span class="st">"#1f77b4"</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>alltime <span class="op">=</span> pd.read_csv(<span class="st">"../data/clean/alltime_table.csv"</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>cy      <span class="op">=</span> pd.read_csv(<span class="st">"../data/clean/medals_country_year.csv"</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>reg     <span class="op">=</span> pd.read_csv(<span class="st">"../outputs/regression_results.csv"</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>final   <span class="op">=</span> pd.read_csv(<span class="st">"../data/clean/worldbank_final.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>To get a sense of the scale of dominance before looking at the charts, the table below shows the 15 most decorated nations in Winter Olympic history, ranked by total medals won.</p>
+<div id="f5165443" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> pd.read_csv(<span class="st">'../outputs/summary_stats.csv'</span>, index_col<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>summary.style.set_caption(<span class="st">'Table 1: Top 15 nations by total Winter Olympic Medals'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<style type="text/css">
+</style>
+
+<div id="T_e5700" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_e5700-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Table 1: Top 15 nations by total Winter Olympic Medals
+</figcaption>
+<div aria-describedby="T_e5700-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_e5700" class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_e5700_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Avg Medals/games</th>
+<th id="T_e5700_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Total medals</th>
+<th id="T_e5700_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Games Attended</th>
+</tr>
+<tr class="even">
+<th class="index_name level0" data-quarto-table-cell-role="th">noc</th>
+<th class="blank col0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col1" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col2" data-quarto-table-cell-role="th">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th id="T_e5700_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">NOR</th>
+<td id="T_e5700_row0_col0" class="data row0 col0">18.700000</td>
+<td id="T_e5700_row0_col1" class="data row0 col1">318</td>
+<td id="T_e5700_row0_col2" class="data row0 col2">17</td>
+</tr>
+<tr class="even">
+<th id="T_e5700_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">USA</th>
+<td id="T_e5700_row1_col0" class="data row1 col0">16.200000</td>
+<td id="T_e5700_row1_col1" class="data row1 col1">275</td>
+<td id="T_e5700_row1_col2" class="data row1 col2">17</td>
+</tr>
+<tr class="odd">
+<th id="T_e5700_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">GER</th>
+<td id="T_e5700_row2_col0" class="data row2 col0">24.400000</td>
+<td id="T_e5700_row2_col1" class="data row2 col1">268</td>
+<td id="T_e5700_row2_col2" class="data row2 col2">11</td>
+</tr>
+<tr class="even">
+<th id="T_e5700_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">AUT</th>
+<td id="T_e5700_row3_col0" class="data row3 col0">12.400000</td>
+<td id="T_e5700_row3_col1" class="data row3 col1">211</td>
+<td id="T_e5700_row3_col2" class="data row3 col2">17</td>
+</tr>
+<tr class="odd">
+<th id="T_e5700_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">CAN</th>
+<td id="T_e5700_row4_col0" class="data row4 col0">12.200000</td>
+<td id="T_e5700_row4_col1" class="data row4 col1">207</td>
+<td id="T_e5700_row4_col2" class="data row4 col2">17</td>
+</tr>
+<tr class="even">
+<th id="T_e5700_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">NED</th>
+<td id="T_e5700_row5_col0" class="data row5 col0">9.000000</td>
+<td id="T_e5700_row5_col1" class="data row5 col1">144</td>
+<td id="T_e5700_row5_col2" class="data row5 col2">16</td>
+</tr>
+<tr class="odd">
+<th id="T_e5700_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">SUI</th>
+<td id="T_e5700_row6_col0" class="data row6 col0">8.900000</td>
+<td id="T_e5700_row6_col1" class="data row6 col1">142</td>
+<td id="T_e5700_row6_col2" class="data row6 col2">16</td>
+</tr>
+<tr class="even">
+<th id="T_e5700_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">SWE</th>
+<td id="T_e5700_row7_col0" class="data row7 col0">8.000000</td>
+<td id="T_e5700_row7_col1" class="data row7 col1">136</td>
+<td id="T_e5700_row7_col2" class="data row7 col2">17</td>
+</tr>
+<tr class="odd">
+<th id="T_e5700_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">ITA</th>
+<td id="T_e5700_row8_col0" class="data row8 col0">7.900000</td>
+<td id="T_e5700_row8_col1" class="data row8 col1">135</td>
+<td id="T_e5700_row8_col2" class="data row8 col2">17</td>
+</tr>
+<tr class="even">
+<th id="T_e5700_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">FIN</th>
+<td id="T_e5700_row9_col0" class="data row9 col0">7.600000</td>
+<td id="T_e5700_row9_col1" class="data row9 col1">129</td>
+<td id="T_e5700_row9_col2" class="data row9 col2">17</td>
+</tr>
+<tr class="odd">
+<th id="T_e5700_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">FRA</th>
+<td id="T_e5700_row10_col0" class="data row10 col0">7.400000</td>
+<td id="T_e5700_row10_col1" class="data row10 col1">126</td>
+<td id="T_e5700_row10_col2" class="data row10 col2">17</td>
+</tr>
+<tr class="even">
+<th id="T_e5700_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">RUS</th>
+<td id="T_e5700_row11_col0" class="data row11 col0">19.700000</td>
+<td id="T_e5700_row11_col1" class="data row11 col1">118</td>
+<td id="T_e5700_row11_col2" class="data row11 col2">6</td>
+</tr>
+<tr class="odd">
+<th id="T_e5700_level0_row12" class="row_heading level0 row12" data-quarto-table-cell-role="th">GDR</th>
+<td id="T_e5700_row12_col0" class="data row12 col0">18.300000</td>
+<td id="T_e5700_row12_col1" class="data row12 col1">110</td>
+<td id="T_e5700_row12_col2" class="data row12 col2">6</td>
+</tr>
+<tr class="even">
+<th id="T_e5700_level0_row13" class="row_heading level0 row13" data-quarto-table-cell-role="th">KOR</th>
+<td id="T_e5700_row13_col0" class="data row13 col0">8.800000</td>
+<td id="T_e5700_row13_col1" class="data row13 col1">79</td>
+<td id="T_e5700_row13_col2" class="data row13 col2">9</td>
+</tr>
+<tr class="odd">
+<th id="T_e5700_level0_row14" class="row_heading level0 row14" data-quarto-table-cell-role="th">CHN</th>
+<td id="T_e5700_row14_col0" class="data row14 col0">8.600000</td>
+<td id="T_e5700_row14_col1" class="data row14 col1">77</td>
+<td id="T_e5700_row14_col2" class="data row14 col2">9</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>Norway and the United States lead on total medals, both attending all 17 Games in the dataset. What’s more striking though is Germany’s average of 24.4 medals per Games across just 11 appearance, the highest rate in the table. Russia and East Germany (GDR) tell a similar story, they both averaged close to 18-20 medals per Games, but across only 6 Games each.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Germany and the Cold War nations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Germany’s average of 24.4 medals per Games is the highest in the table desipte having only 11 appearances. This highlights how dominant West Germany and later reunified Germany have been when they competed. Russia (6 Games, 19.7 avg) and East Germany (6 Games, 18.3 avg) show even higher rates, however both stop competing after the Soviet era ended.</p>
+</div>
+</div>
+<p>The chart below shows cumulative medals since 1924 across the top 20 nations. Norway leads comfortably, which makes sense given how deeply embedded winter sport is in Norwegain culture, skiing is almost a national pastime. What’s also interesting is how much of Norway’s bar is gold rather than silver or bronze, showing it doesnt just compete but consistently wins. The US and Germany follow, both benefitting from their size and long-term investment in winter sport.</p>
+<div id="cell-fig-alltime" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ax.barh(alltime[<span class="st">'noc'</span>], alltime[<span class="st">'gold_medals'</span>], label<span class="op">=</span><span class="st">'Gold'</span>, color<span class="op">=</span>GOLD, height<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>ax.barh(alltime[<span class="st">'noc'</span>], alltime[<span class="st">'silver_medals'</span>], label<span class="op">=</span><span class="st">'Silver'</span>, color<span class="op">=</span>SILVER, height<span class="op">=</span><span class="fl">0.6</span>, left<span class="op">=</span>alltime[<span class="st">'gold_medals'</span>])</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>ax.barh(alltime[<span class="st">'noc'</span>], alltime[<span class="st">'bronze_medals'</span>], label<span class="op">=</span><span class="st">'Bronze'</span>, color<span class="op">=</span>BRONZE, height<span class="op">=</span><span class="fl">0.6</span>, left<span class="op">=</span>alltime[<span class="st">'gold_medals'</span>] <span class="op">+</span> alltime[<span class="st">'silver_medals'</span>])</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"All time Winter Olympics Medal Table (top 20)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Total Medals Won"</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Country"</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-alltime" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-alltime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="blog_files/figure-html/fig-alltime-output-1.png" width="655" height="462" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alltime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Figure 1: Cummulative Winter Olympic medals for the top 20 nations since 1924. Norway’s gold-heavy bar reflects not just volume but consistent dominance across disciplines.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The all-time total hides a lot of movement at the individual Games level, so this chart tracks medals per Games for the top 6 nations, and the picture is far less static than the bar chart above suggests.</p>
+<div id="cell-fig-overtime" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>top6   <span class="op">=</span> cy.groupby(<span class="st">'noc'</span>)[<span class="st">'total_medals'</span>].<span class="bu">sum</span>().nlargest(<span class="dv">6</span>).index.tolist()</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> cy[cy[<span class="st">'noc'</span>].isin(top6)]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>subset, x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'total_medals'</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>             hue<span class="op">=</span><span class="st">'noc'</span>, marker<span class="op">=</span><span class="st">'o'</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Winter Olympic Medal Count per Games (Top 6 Nations)'</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>             fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Medals Won'</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>ax.legend(title<span class="op">=</span><span class="st">'Country'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.01</span>, <span class="dv">1</span>),</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>          loc<span class="op">=</span><span class="st">'upper left'</span>, borderaxespad<span class="op">=</span><span class="fl">0.</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">sorted</span>(cy[<span class="st">'year'</span>].unique()))</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-overtime" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-overtime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="blog_files/figure-html/fig-overtime-output-1.png" width="654" height="366" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-overtime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Figure 2: Medals won per Games for the top 6 nations by all-time count. The gap between 1936 and 1948 reflects the cancellation of the 1940 and 1944 Games due to World War II. You’ll also notice a clear spike for the United States in 2002, which lines up with the Salt Lake City Games being held on home soil.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Norway is consistently near the top throughout, with very few poor Games. Russia (URS before 1992) came on strong from the mid-1950s and dominated throught the 1980s but then dropped off sharply after the Soviet Union dissolved. The dominance of wealthy nations raises the obvious next question: Is it just money?</p>
+<hr>
+</section>
+<section id="does-money-buy-medals" class="level2">
+<h2 class="anchored" data-anchor-id="does-money-buy-medals">4. Does money buy medals?</h2>
+<p>The scatter plot below tests the wealth hypothesis directly, plotting log GDP per capita against total medals won across all country-year observations. The upward trend is clear, wealthier countries tend to win more medals, consistent with the idea that richer nations have more resources to invest in training, facilities and athlete development. :::{.callout-tip} ## Wealth isn’t everything Some of the richest countries in the world, such as the Guld states and Singapore, haven’t won any Winter Olympic medals. It’s a good reminder that success in winter sports depends on more than just money, factors such as climate and sporting culture play a big role as well. The regression shows the overall trend across countries, but it doesn’t explain every single case. :::</p>
+<div id="cell-fig-wealth" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plot_data <span class="op">=</span> cy.dropna(subset<span class="op">=</span>[<span class="st">'log_gdp_per_capita'</span>, <span class="st">'total_medals'</span>])</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>sns.regplot(data<span class="op">=</span>plot_data, x<span class="op">=</span><span class="st">'log_gdp_per_capita'</span>, y<span class="op">=</span><span class="st">'total_medals'</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>            scatter_kws<span class="op">=</span>{<span class="st">'alpha'</span>: <span class="fl">0.4</span>, <span class="st">'s'</span>: <span class="dv">25</span>, <span class="st">'color'</span>: BLUE},</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>            line_kws<span class="op">=</span>{<span class="st">'color'</span>: <span class="st">'red'</span>}, ax<span class="op">=</span>ax)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Wealthier Countries Win More Medals"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Log GDP per Capita"</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Total Medals Won"</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-wealth" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wealth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="blog_files/figure-html/fig-wealth-output-1.png" width="655" height="366" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wealth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Figure 3: Relationship between log GDP per capita and total medals won across all country-year observations. The overall upward trend makes it clear that richer countries tend to win more medals. That said, the spread of points around the line is a reminder that wealth isn’t the whole story, other factors still matter.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Wealth is clearly a part of the story. But one factor that money cannot buy is the advantage of competing on home soil. The next section tests whether hosting the Games makes a measurable difference.</p>
+<hr>
+</section>
+<section id="the-home-advantage" class="level2">
+<h2 class="anchored" data-anchor-id="the-home-advantage">5. The home advantage</h2>
+<p>To look at home advantage more directly, I compared each host nations medal count in the year they hosted against their average in all other Games, keeping the 15 nations that won the most medals whilst hosting.</p>
+<div id="cell-fig-host" class="cell" data-execution_count="11">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>hosts <span class="op">=</span> (cy[cy[<span class="st">'is_host'</span>] <span class="op">==</span> <span class="dv">1</span>][[<span class="st">'noc'</span>, <span class="st">'year'</span>, <span class="st">'total_medals'</span>]].rename(columns<span class="op">=</span>{<span class="st">'total_medals'</span>: <span class="st">'host_medals'</span>}))</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>non_host_avg <span class="op">=</span> (cy[cy[<span class="st">'is_host'</span>] <span class="op">==</span> <span class="dv">0</span>].groupby(<span class="st">'noc'</span>)[<span class="st">'total_medals'</span>].mean().reset_index().rename(columns<span class="op">=</span>{<span class="st">'total_medals'</span>: <span class="st">'avg_non_host'</span>}))</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>compare <span class="op">=</span> (pd.merge(hosts, non_host_avg, on<span class="op">=</span><span class="st">'noc'</span>, how<span class="op">=</span><span class="st">'inner'</span>).sort_values(<span class="st">'host_medals'</span>, ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">15</span>))</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">long</span> <span class="op">=</span> compare.melt(id_vars<span class="op">=</span>[<span class="st">'noc'</span>],value_vars<span class="op">=</span>[<span class="st">'host_medals'</span>, <span class="st">'avg_non_host'</span>], var_name<span class="op">=</span><span class="st">'type'</span>, value_name<span class="op">=</span><span class="st">'medals'</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">long</span>[<span class="st">'type'</span>] <span class="op">=</span> <span class="bu">long</span>[<span class="st">'type'</span>].<span class="bu">map</span>({<span class="st">'host_medals'</span>:  <span class="st">'Host Year'</span>,<span class="st">'avg_non_host'</span>: <span class="st">'Average Non-Host Year'</span>})</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>))</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span><span class="bu">long</span>, x<span class="op">=</span><span class="st">'noc'</span>, y<span class="op">=</span><span class="st">'medals'</span>, hue<span class="op">=</span><span class="st">'type'</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Medals when Hosting vs Not Hosting (Top 15 Host Nations)'</span>,fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Country'</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Total Medals'</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-host" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-host-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="blog_files/figure-html/fig-host-output-1.png" width="655" height="462" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-host-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Figure 4: Medal counts in host years versus average non-host performance for the 15 most successful host nations. Most sit noticeably higher in their host year, for example the USA in 2002 (34 medals) and Norway in 1994 (26 medals).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Most of them sit noticeably higher in the host year than their non-host average, the USA in 2002 and Norway in 1994 are both good examples of this. One thing to note is the chart orders by how many medals they won while hosting not by the size of the boost, so the nations on the left aren’t necessarily the ones who benefitted most.</p>
+<p>Home advantage shows up clearly in the data, but it is a one time boost. What it cannot explain is the dramatic collapse in performance of nations like the Soviet Union and East Germany. that requires looking at the political and historical context.</p>
+<hr>
+</section>
+<section id="the-fallen-powers" class="level2">
+<h2 class="anchored" data-anchor-id="the-fallen-powers">6. The fallen powers</h2>
+<p>Not every nation that dominated the early era has kept that up. The chart compares the average medals per Games for the top 10 early-era nations looking at results up to and including the 1980 verus their average since 1994. Countries are sorted left to right by the size of their drop off.</p>
+<div id="cell-fig-fallen" class="cell" data-execution_count="12">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>cy_all <span class="op">=</span> final.groupby([<span class="st">'year'</span>, <span class="st">'noc'</span>], as_index<span class="op">=</span><span class="va">False</span>).agg(total_medals<span class="op">=</span>(<span class="st">'noc'</span>, <span class="st">'count'</span>))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>early <span class="op">=</span> cy_all[cy_all[<span class="st">'year'</span>] <span class="op">&lt;=</span> <span class="dv">1980</span>]</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>modern <span class="op">=</span> cy_all[cy_all[<span class="st">'year'</span>] <span class="op">&gt;=</span> <span class="dv">1994</span>]</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>early_avg <span class="op">=</span> early.groupby(<span class="st">'noc'</span>)[<span class="st">'total_medals'</span>].mean().rename(<span class="st">'early_avg'</span>).reset_index()</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>modern_avg <span class="op">=</span> modern.groupby(<span class="st">'noc'</span>)[<span class="st">'total_medals'</span>].mean().rename(<span class="st">'modern_avg'</span>).reset_index()</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>top_early <span class="op">=</span> early_avg.nlargest(<span class="dv">10</span>, <span class="st">'early_avg'</span>)[<span class="st">'noc'</span>]</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>compare <span class="op">=</span> pd.merge(early_avg[early_avg[<span class="st">'noc'</span>].isin(top_early)], modern_avg, on<span class="op">=</span><span class="st">'noc'</span>, how<span class="op">=</span><span class="st">'left'</span>).fillna(<span class="dv">0</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>compare[<span class="st">'decline'</span>] <span class="op">=</span> compare[<span class="st">'early_avg'</span>] <span class="op">-</span> compare[<span class="st">'modern_avg'</span>]</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>compare <span class="op">=</span> compare.sort_values(<span class="st">'decline'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="bu">long</span> <span class="op">=</span> compare.melt(id_vars<span class="op">=</span>[<span class="st">'noc'</span>], value_vars<span class="op">=</span>[<span class="st">'early_avg'</span>, <span class="st">'modern_avg'</span>], var_name<span class="op">=</span><span class="st">'era'</span>, value_name<span class="op">=</span><span class="st">'avg_medals'</span>)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="bu">long</span>[<span class="st">'era'</span>] <span class="op">=</span> <span class="bu">long</span>[<span class="st">'era'</span>].<span class="bu">map</span>({<span class="st">'early_avg'</span>: <span class="st">'Pre-1980 average'</span>, <span class="st">'modern_avg'</span>: <span class="st">'Post-1992 average'</span>})</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span><span class="bu">long</span>, x<span class="op">=</span><span class="st">'noc'</span>, y<span class="op">=</span><span class="st">'avg_medals'</span>, hue<span class="op">=</span><span class="st">'era'</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Early Dominance vs Modern Performance</span><span class="ch">\n</span><span class="st">(Top 10 Pre-1980 Nations)'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Country'</span>)</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Average Medals per Games'</span>)</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>ax.legend(title<span class="op">=</span><span class="st">'Era'</span>)</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-fallen" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fallen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="blog_files/figure-html/fig-fallen-output-1.png" width="655" height="365" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fallen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Figure 5: Average medals per Games for the top 10 pre-1980 nations, comparing their early era performance against the modern era. The collapse of URS and GDR after the Cold War is the most striking feature.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The biggest declines are URS (The Soviet Union) and GDR (East Germany), which may have been as a result of political and economic disruptions following the Cold War which had lasting impacts on state funded sports programmes. Norway and the US on the other hand have held their ground or improved, which probably comes down to continued investment in winter sport at a national level. This political context is something a simple GDP regression cannot capture, and it is worth keeping in mind when interpreting the model results in the next section.</p>
+<p>With wealth, home advantage and historical era all explored individually, the final step is combining them in a single model to estimate their effects simultaneously.</p>
+<hr>
+</section>
+<section id="the-full-picture-regression-results" class="level2">
+<h2 class="anchored" data-anchor-id="the-full-picture-regression-results">7. The full picture: regression results</h2>
+<section id="the-model" class="level3">
+<h3 class="anchored" data-anchor-id="the-model">7.1 The model</h3>
+<p>With the data aggregated to country-year level, an OLS regression was run to directly answer the research question: after controlling for GDP per capita and population size, does hosting the Games have a significant impact on medal success? The model is:</p>
+<blockquote class="blockquote">
+<p><strong>Total Medals = β₀ + β₁(is_host) + β₂(log GDP per capita) + β₃(log population) + ε</strong></p>
+</blockquote>
+<div id="f0fa93a6" class="cell" data-execution_count="13">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>reg_data <span class="op">=</span> (pd.read_csv(<span class="st">'../data/clean/medals_country_year.csv'</span>))</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>results_df <span class="op">=</span> (pd.read_csv(<span class="st">'../outputs/regression_results.csv'</span>))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Rows in regression dataset: </span><span class="sc">{</span><span class="bu">len</span>(reg_data)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Countries represented: </span><span class="sc">{</span>reg_data[<span class="st">'noc'</span>]<span class="sc">.</span>nunique()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Host-country observations: </span><span class="sc">{</span>reg_data[<span class="st">'is_host'</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_df.to_string(index<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">'total_medals ~ is_host + log_gdp_per_capita + log_population'</span>, data<span class="op">=</span>reg_data).fit()</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows in regression dataset: 332
@@ -716,8 +1105,8 @@ log_gdp_per_capita   2.663723  0.332520  8.010721 2.011258e-14   2.009583   3.31
 Dep. Variable:           total_medals   R-squared:                       0.230
 Model:                            OLS   Adj. R-squared:                  0.223
 Method:                 Least Squares   F-statistic:                     32.65
-Date:                Sat, 04 Apr 2026   Prob (F-statistic):           1.72e-18
-Time:                        15:40:57   Log-Likelihood:                -1128.8
+Date:                Mon, 06 Apr 2026   Prob (F-statistic):           1.72e-18
+Time:                        14:36:00   Log-Likelihood:                -1128.8
 No. Observations:                 332   AIC:                             2266.
 Df Residuals:                     328   BIC:                             2281.
 Df Model:                           3                                         
@@ -740,215 +1129,62 @@ Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
 </div>
-<p>The key result, is_host, has a coefficient of approximately 4.6, meaning a host nation wins around 4.6 more medals than it otherwise would, holding GDP and population constant. Both log_gdp_per_capita and log_population are highly significant (p &lt; 0.001), confirming that wealth and size independently drive performance.</p>
-</section>
-</section>
-<section id="visualising-the-results" class="level2">
-<h2 class="anchored" data-anchor-id="visualising-the-results">5. Visualising the Results</h2>
-<div id="161d7b6d" class="cell" data-execution_count="7">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">'whitegrid'</span>, font_scale<span class="op">=</span><span class="fl">1.1</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>GOLD   <span class="op">=</span> <span class="st">"#FFD700"</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>SILVER <span class="op">=</span> <span class="st">"#C0C0C0"</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>BRONZE <span class="op">=</span> <span class="st">"#CD7F32"</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>BLUE   <span class="op">=</span> <span class="st">"#1f77b4"</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>alltime <span class="op">=</span> pd.read_csv(<span class="st">"../data/clean/alltime_table.csv"</span>)</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>cy      <span class="op">=</span> pd.read_csv(<span class="st">"../data/clean/medals_country_year.csv"</span>)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>reg     <span class="op">=</span> pd.read_csv(<span class="st">"../outputs/regression_results.csv"</span>)</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>final   <span class="op">=</span> pd.read_csv(<span class="st">"../data/clean/worldbank_final.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<section id="all-time-medal-table" class="level3">
-<h3 class="anchored" data-anchor-id="all-time-medal-table">5.1 All-time Medal table</h3>
-<p>The chart shows cumulative medals since 1924 across the top 20 nations. Norway leads comfortably, which makes sense given how deeply embedded winter sport is in Norwegain culture, skiing is almost a national pastime. What’s also interesting is how much of Norway’s bar is gold rather than silver or bronze, showing it doesnt just compete by consistently wins. The US and Germany follow, both benefitting from their size and long-term investment in winter sport. Looking at the stacked bars, some countries accumulate big totals but through silver and bronze rather than gold, which tells a slightly different story about dominance vs participation.</p>
-<div id="052168b4" class="cell" data-execution_count="8">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Hosting advantage is real
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After controlling for wealth and population, host nations win on average <strong>4.6 more medals</strong> than expected, a statistically significant boost (p = 0.015). GDP per capita and population are both highly significant ( p &lt; 0.001), confirming that economic resources and size are the dominant drivers of success.</p>
+</div>
+</div>
+</section>
+<section id="what-the-coefficients-show" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-coefficients-show">7.2 What the coefficients show</h3>
+<p>The coefficient plot below pulls together all three results in one view. All three bars fall to the right of zero, meaning hosting, wealth and population all increase expected medal counts. The host status bar is actually the longest, with a coefficient of 4.6, though as I explain later that doesn’t mean it’s the most important factor overall, it just has the biggest per-unit jump.</p>
+<div id="cell-fig-regression" class="cell" data-execution_count="14">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>))</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>ax.barh(alltime[<span class="st">'noc'</span>], alltime[<span class="st">'gold_medals'</span>], label<span class="op">=</span><span class="st">'Gold'</span>, color<span class="op">=</span>GOLD, height<span class="op">=</span><span class="fl">0.6</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>ax.barh(alltime[<span class="st">'noc'</span>], alltime[<span class="st">'silver_medals'</span>], label<span class="op">=</span><span class="st">'Silver'</span>, color<span class="op">=</span>SILVER, height<span class="op">=</span><span class="fl">0.6</span>, left<span class="op">=</span>alltime[<span class="st">'gold_medals'</span>])</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>ax.barh(alltime[<span class="st">'noc'</span>], alltime[<span class="st">'bronze_medals'</span>], label<span class="op">=</span><span class="st">'Bronze'</span>, color<span class="op">=</span>BRONZE, height<span class="op">=</span><span class="fl">0.6</span>, left<span class="op">=</span>alltime[<span class="st">'gold_medals'</span>] <span class="op">+</span> alltime[<span class="st">'silver_medals'</span>])</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"All time Winter Olympics Medal Table (top 20)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Total Medals Won"</span>)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Country"</span>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>key_vars <span class="op">=</span> [<span class="st">'is_host'</span>, <span class="st">'log_gdp_per_capita'</span>, <span class="st">'log_population'</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>reg_plot <span class="op">=</span> reg[reg[<span class="st">'variable'</span>].isin(key_vars)].copy()</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>reg_plot[<span class="st">'variable'</span>] <span class="op">=</span> reg_plot[<span class="st">'variable'</span>].<span class="bu">map</span>({<span class="st">'is_host'</span>: <span class="st">'Host Country'</span>, <span class="st">'log_gdp_per_capita'</span>: <span class="st">'Log GDP per Capita'</span>, <span class="st">'log_population'</span>: <span class="st">'Log Population'</span>})</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">3</span>))</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>ax.barh(reg_plot[<span class="st">'variable'</span>], reg_plot[<span class="st">'Coef.'</span>])</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>ax.errorbar(reg_plot[<span class="st">'Coef.'</span>], reg_plot[<span class="st">'variable'</span>], xerr<span class="op">=</span>[</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        reg_plot[<span class="st">'Coef.'</span>] <span class="op">-</span> reg_plot[<span class="st">'[0.025'</span>],</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        reg_plot[<span class="st">'0.975]'</span>] <span class="op">-</span> reg_plot[<span class="st">'Coef.'</span>]],fmt<span class="op">=</span><span class="st">'none'</span>,color<span class="op">=</span><span class="st">'black'</span>,capsize<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"What Predicts Winter Olympic Success?"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Regression Coefficient (extra medals per unit increase)"</span>)</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="report_files/figure-html/cell-9-output-1.png" width="655" height="462" class="figure-img"></p>
+<div id="fig-regression" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="blog_files/figure-html/fig-regression-output-1.png" width="653" height="270" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Figure 6: OLS regression coefficients for the three predictors of Winter Olympic medal success. All bars fall to the right of zero, confirming each factor has a positive impact on medal counts. The error bars show the uncertainty around each estimate, and GDP per capita stands out as the most consistent and reliable predictor due to it having the tightest interval.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="the-fallen-powers" class="level3">
-<h3 class="anchored" data-anchor-id="the-fallen-powers">5.2 The Fallen Powers</h3>
-<p>Not every nation that dominated the early era has kept that up. The chart compares the average medals per Games for the top 10 early-era nations looking at results up to and including the 1980 verus their average since 1994. Countries are sorted left to right by the size of their drop off. The biggest declines are URS (The Soviet Union) and GDR (East Germany), which may have been as a result of political and economic disruptions following the Cold War which had lasting impacts on state funded sports programmes. Norway and the US on the other hand have held their ground or improved, which probably comes down to continued investment in winter sport at a national level.</p>
-<div id="442ae4d5" class="cell" data-execution_count="9">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cy_all <span class="op">=</span> final.groupby([<span class="st">'year'</span>, <span class="st">'noc'</span>], as_index<span class="op">=</span><span class="va">False</span>).agg(total_medals<span class="op">=</span>(<span class="st">'noc'</span>, <span class="st">'count'</span>))</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>early <span class="op">=</span> cy_all[cy_all[<span class="st">'year'</span>] <span class="op">&lt;=</span> <span class="dv">1980</span>]</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>modern <span class="op">=</span> cy_all[cy_all[<span class="st">'year'</span>] <span class="op">&gt;=</span> <span class="dv">1994</span>]</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>early_avg <span class="op">=</span> early.groupby(<span class="st">'noc'</span>)[<span class="st">'total_medals'</span>].mean().rename(<span class="st">'early_avg'</span>).reset_index()</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>modern_avg <span class="op">=</span> modern.groupby(<span class="st">'noc'</span>)[<span class="st">'total_medals'</span>].mean().rename(<span class="st">'modern_avg'</span>).reset_index()</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>top_early <span class="op">=</span> early_avg.nlargest(<span class="dv">10</span>, <span class="st">'early_avg'</span>)[<span class="st">'noc'</span>]</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>compare <span class="op">=</span> pd.merge(early_avg[early_avg[<span class="st">'noc'</span>].isin(top_early)], modern_avg, on<span class="op">=</span><span class="st">'noc'</span>, how<span class="op">=</span><span class="st">'left'</span>).fillna(<span class="dv">0</span>)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>compare[<span class="st">'decline'</span>] <span class="op">=</span> compare[<span class="st">'early_avg'</span>] <span class="op">-</span> compare[<span class="st">'modern_avg'</span>]</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>compare <span class="op">=</span> compare.sort_values(<span class="st">'decline'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="bu">long</span> <span class="op">=</span> compare.melt(id_vars<span class="op">=</span>[<span class="st">'noc'</span>], value_vars<span class="op">=</span>[<span class="st">'early_avg'</span>, <span class="st">'modern_avg'</span>], var_name<span class="op">=</span><span class="st">'era'</span>, value_name<span class="op">=</span><span class="st">'avg_medals'</span>)</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="bu">long</span>[<span class="st">'era'</span>] <span class="op">=</span> <span class="bu">long</span>[<span class="st">'era'</span>].<span class="bu">map</span>({<span class="st">'early_avg'</span>: <span class="st">'Pre-1980 average'</span>, <span class="st">'modern_avg'</span>: <span class="st">'Post-1992 average'</span>})</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span><span class="bu">long</span>, x<span class="op">=</span><span class="st">'noc'</span>, y<span class="op">=</span><span class="st">'avg_medals'</span>, hue<span class="op">=</span><span class="st">'era'</span>, ax<span class="op">=</span>ax)</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Early Dominance vs Modern Performance</span><span class="ch">\n</span><span class="st">(Top 10 Pre-1980 Nations)'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Country'</span>)</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Average Medals per Games'</span>)</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>ax.legend(title<span class="op">=</span><span class="st">'Era'</span>)</span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="report_files/figure-html/cell-10-output-1.png" width="655" height="365" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="how-medal-dominance-has-changed-over-time" class="level3">
-<h3 class="anchored" data-anchor-id="how-medal-dominance-has-changed-over-time">5.3 How medal dominance has changed over time</h3>
-<p>The all-time totals hide a lot of movement at the Games level, so this chart tracks medals per Games for the top 6 nations by all-time count. A few things stand out, Norway is consistently near the top throughout, with very few poor Games. Russia (URS before 1992) came on strong from the mid-1950s and dominated throught the 1980s but then dropped off sharply after the Soviet Union dissolved. You can also see a clear spike for the US in 2002, when they were hosting the Salt Lake City Games, which provides a nice visual of the home advantage effect. The gap between 1936 and 1948 is where thr 1940 and 1944 Games would have been but they were both cancelled because of World War II.</p>
-<div id="1794943a" class="cell" data-execution_count="10">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>top6   <span class="op">=</span> cy.groupby(<span class="st">'noc'</span>)[<span class="st">'total_medals'</span>].<span class="bu">sum</span>().nlargest(<span class="dv">6</span>).index.tolist()</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> cy[cy[<span class="st">'noc'</span>].isin(top6)]</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>subset, x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'total_medals'</span>,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>             hue<span class="op">=</span><span class="st">'noc'</span>, marker<span class="op">=</span><span class="st">'o'</span>, ax<span class="op">=</span>ax)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Winter Olympic Medal Count per Games (Top 6 Nations)'</span>,</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>             fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Year'</span>)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Medals Won'</span>)</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>ax.legend(title<span class="op">=</span><span class="st">'Country'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.01</span>, <span class="dv">1</span>),</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>          loc<span class="op">=</span><span class="st">'upper left'</span>, borderaxespad<span class="op">=</span><span class="fl">0.</span>)</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(<span class="bu">sorted</span>(cy[<span class="st">'year'</span>].unique()))</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="report_files/figure-html/cell-11-output-1.png" width="654" height="366" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="the-wealth-effects" class="level3">
-<h3 class="anchored" data-anchor-id="the-wealth-effects">5.4 The Wealth effects</h3>
-<p>The scatter plot shows the relationship between GDP per capita and total medals won, across all country-year observations. The upward trend is clear, wealthier countries tend to win more medals, consistent with the idea that richer nations ahve more resources to invest in training, facilities and athlete development. However, there are notable outliers in both directions, some high income nations with no winter sports traditions win very few medals despite their wealth.</p>
-<div id="293bfa40" class="cell" data-execution_count="11">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plot_data <span class="op">=</span> cy.dropna(subset<span class="op">=</span>[<span class="st">'log_gdp_per_capita'</span>, <span class="st">'total_medals'</span>])</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>sns.regplot(data<span class="op">=</span>plot_data, x<span class="op">=</span><span class="st">'log_gdp_per_capita'</span>, y<span class="op">=</span><span class="st">'total_medals'</span>,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>            scatter_kws<span class="op">=</span>{<span class="st">'alpha'</span>: <span class="fl">0.4</span>, <span class="st">'s'</span>: <span class="dv">25</span>, <span class="st">'color'</span>: BLUE},</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>            line_kws<span class="op">=</span>{<span class="st">'color'</span>: <span class="st">'red'</span>}, ax<span class="op">=</span>ax)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Wealthier Countries Win More Medals"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Log GDP per Capita"</span>)</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Total Medals Won"</span>)</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="report_files/figure-html/cell-12-output-1.png" width="655" height="366" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="home-advantage" class="level3">
-<h3 class="anchored" data-anchor-id="home-advantage">5.5 Home Advantage</h3>
-<p>To look at home advantage more directly, I compared each host nations medal count in the year they hosted against their average in all other Games, keeping the 15 nations that won the most medals whilst hosting. Most of them sit noticeably higher in the host year than their non-host average, the USA in 2002 and Norway in 1994 are both good examples of this. One thing to note is the chart orders by how many medals they won while hosting not by the size of the boost, so the nations on the left aren’t necessarily the ones who benefitted most.</p>
-<div id="89b8993d" class="cell" data-execution_count="12">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>hosts <span class="op">=</span> (cy[cy[<span class="st">'is_host'</span>] <span class="op">==</span> <span class="dv">1</span>][[<span class="st">'noc'</span>, <span class="st">'year'</span>, <span class="st">'total_medals'</span>]].rename(columns<span class="op">=</span>{<span class="st">'total_medals'</span>: <span class="st">'host_medals'</span>}))</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>non_host_avg <span class="op">=</span> (cy[cy[<span class="st">'is_host'</span>] <span class="op">==</span> <span class="dv">0</span>].groupby(<span class="st">'noc'</span>)[<span class="st">'total_medals'</span>].mean().reset_index().rename(columns<span class="op">=</span>{<span class="st">'total_medals'</span>: <span class="st">'avg_non_host'</span>}))</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>compare <span class="op">=</span> (pd.merge(hosts, non_host_avg, on<span class="op">=</span><span class="st">'noc'</span>, how<span class="op">=</span><span class="st">'inner'</span>).sort_values(<span class="st">'host_medals'</span>, ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">15</span>))</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">long</span> <span class="op">=</span> compare.melt(id_vars<span class="op">=</span>[<span class="st">'noc'</span>],value_vars<span class="op">=</span>[<span class="st">'host_medals'</span>, <span class="st">'avg_non_host'</span>], var_name<span class="op">=</span><span class="st">'type'</span>, value_name<span class="op">=</span><span class="st">'medals'</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">long</span>[<span class="st">'type'</span>] <span class="op">=</span> <span class="bu">long</span>[<span class="st">'type'</span>].<span class="bu">map</span>({<span class="st">'host_medals'</span>:  <span class="st">'Host Year'</span>,<span class="st">'avg_non_host'</span>: <span class="st">'Average Non-Host Year'</span>})</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>))</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span><span class="bu">long</span>, x<span class="op">=</span><span class="st">'noc'</span>, y<span class="op">=</span><span class="st">'medals'</span>, hue<span class="op">=</span><span class="st">'type'</span>, ax<span class="op">=</span>ax)</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Medals when Hosting vs Not Hosting (Top 15 Host Nations)'</span>,fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Country'</span>)</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Total Medals'</span>)</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="report_files/figure-html/cell-13-output-1.png" width="655" height="462" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="what-the-regression-tells-us" class="level3">
-<h3 class="anchored" data-anchor-id="what-the-regression-tells-us">5.6 What the regression tells us</h3>
-<p>The coefficient plot pulls together the regression results, all three bars are to the right of zero, which means hosting, wealth and population all increase expected medal counts. The host status bar is actually the longest, with a coefficient of 4.6, though as I explain later that doesn’t mean it’s the most important factor overall, it just has the biggest per-unit jump. The black error bars show the 95% confidence intervals, so the shorter the error bar, the more precisely that effect has been estimated. GDP per capita has the tightest interval of the three, indicating it is the most reliably estimated of the three.</p>
-<div id="ff917adb" class="cell" data-execution_count="13">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>key_vars <span class="op">=</span> [<span class="st">'is_host'</span>, <span class="st">'log_gdp_per_capita'</span>, <span class="st">'log_population'</span>]</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>reg_plot <span class="op">=</span> reg[reg[<span class="st">'variable'</span>].isin(key_vars)].copy()</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>reg_plot[<span class="st">'variable'</span>] <span class="op">=</span> reg_plot[<span class="st">'variable'</span>].<span class="bu">map</span>({<span class="st">'is_host'</span>: <span class="st">'Host Country'</span>, <span class="st">'log_gdp_per_capita'</span>: <span class="st">'Log GDP per Capita'</span>, <span class="st">'log_population'</span>: <span class="st">'Log Population'</span>})</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">3</span>))</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>ax.barh(reg_plot[<span class="st">'variable'</span>], reg_plot[<span class="st">'Coef.'</span>])</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>ax.errorbar(reg_plot[<span class="st">'Coef.'</span>], reg_plot[<span class="st">'variable'</span>], xerr<span class="op">=</span>[</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        reg_plot[<span class="st">'Coef.'</span>] <span class="op">-</span> reg_plot[<span class="st">'[0.025'</span>],</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>        reg_plot[<span class="st">'0.975]'</span>] <span class="op">-</span> reg_plot[<span class="st">'Coef.'</span>]],fmt<span class="op">=</span><span class="st">'none'</span>,color<span class="op">=</span><span class="st">'black'</span>,capsize<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"What Predicts Winter Olympic Success?"</span>, fontsize<span class="op">=</span><span class="dv">14</span>, pad<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Regression Coefficient (extra medals per unit increase)"</span>)</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="report_files/figure-html/cell-14-output-1.png" width="653" height="270" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
+<p>The black error bars show the 95% confidence intervals, so the shorter the error bar, the more precisely that effect has been estimated. GDP per capita has the tightest interval of the three, indicating it is the most reliably estimated of the three. The host status bar is wider, reflecting the smaller number of hosting observations in the data.</p>
+<p>With all three effects estimated together, we can now return to the question we started with.</p>
 <hr>
 </section>
 </section>
 <section id="conclusions" class="level2">
-<h2 class="anchored" data-anchor-id="conclusions">6. Conclusions</h2>
+<h2 class="anchored" data-anchor-id="conclusions">8. Conclusions</h2>
+<p>So why does Norwar win so much? The regression suggests the answer is not simply wealth, Norway’s GDP per capita is high but not uniquely so. It is the combination of a strong winter sports culture built over a century of competition, consistent national investment and a geography that produces competitive athletes across almost every discipline. The model captures the economic and population factors, but Norway’s outlier status reflects something the regression along cannot fully explain.</p>
 <p>Three factors were tested: wealth, population size and hosting the Games. All three are statistically significant predictors of medal count.</p>
 <section id="host-advantage-is-real-but-limited" class="level4">
 <h4 class="anchored" data-anchor-id="host-advantage-is-real-but-limited">Host advantage is real but limited</h4>
@@ -960,11 +1196,24 @@ Notes:
 </section>
 <section id="why-the-host-bar-looks-largest-on-the-chart-but-isnt-the-strongest-predictor" class="level4">
 <h4 class="anchored" data-anchor-id="why-the-host-bar-looks-largest-on-the-chart-but-isnt-the-strongest-predictor">Why the host bar looks largest on the chart but isn’t the strongest predictor</h4>
-<p>On the coefficient plot, the host effect looks larger than GDP, which is misleading. The host coefficient (4.6) represents a one-time jump from not hosting to hosting. GDP on the other hand, applies to a variable that spans 6 units in the data, meaning its total real world effect (around 16 medals) is more than three times larger. The t-statistic for GDP (8.01) is also more than three times that of host status (2.44), confirming it is the more consistent and reliable predictor across the dataset</p>
+<p>On the coefficient plot, the host effect looks larger than GDP, which is misleading. The host coefficient (4.6) represents a one-time jump from not hosting to hosting. GDP on the other hand, applies to a variable that spans 6 units in the data, meaning its total real world effect (around 16 medals) is more than three times larger. The t-statistic for GDP (8.01) is also more than three times that of host status (2.44), confirming it is the more consistent and reliable predictor across the dataset.</p>
 </section>
 <section id="population-matters-independently-of-wealth" class="level4">
 <h4 class="anchored" data-anchor-id="population-matters-independently-of-wealth">Population matters independently of wealth</h4>
-Population also plays an important role, even after accounting for wealth. A 1 unit increase in log population leads to about 1.4 additional medals (p &lt; 0.001). Across the full range of countries, this again adds up to roughly a 16 medal difference. So even though the effect per unit is smaller than GDP, the overall impact is similar due to population varying so much between countries.
+<p>Population also plays an important role, even after accounting for wealth. A 1 unit increase in log population leads to about 1.4 additional medals (p &lt; 0.001). Across the full range of countries, this again adds up to roughly a 16 medal difference. So even though the effect per unit is smaller than GDP, the overall impact is similar due to population varying so much between countries.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Bottom line
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Three things really shape how well a country does at the Winter Olympics: <strong>wealth</strong>, <strong>population</strong> and whether it is <strong>hosting</strong>. Wealth and population each account for roughly a 16 medal swing from the lowest to highest end, while hosting gives a one-time boost of about 4-5 medals. If you’re trying to predict how many medals a country might win, GDP per capita on its own gets you most of the way there.</p>
+</div>
+</div>
 <hr>
 </section>
 </section>
