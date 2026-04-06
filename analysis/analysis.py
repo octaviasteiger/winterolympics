@@ -75,13 +75,40 @@ def main():
                .rename(columns={'mean': 'Avg Medals/games', 'sum': 'Total medals', 'count': 'Games Attended'})
                .sort_values('Total medals', ascending=False).head(15))
     
-    #OLS regression to test for host advantage
+    #Regression
     reg_data = medals_agg.dropna(subset=['log_gdp_per_capita', 'log_population']).copy()
-    model = smf.ols('total_medals ~ is_host + log_gdp_per_capita + log_population', data=reg_data).fit()
-    print(model.summary())
 
-    # Save the four key coefficients for the figures 
-    results_df = model.summary2().tables[1].reset_index()
+    # Model 1: basic OLS 
+    model_basic = smf.ols('total_medals ~ is_host + log_gdp_per_capita + log_population', data=reg_data).fit()
+    print(model_basic.summary())
+
+    # Model 2: same but with dummy for each country
+    model_fe = smf.ols('total_medals ~ is_host + log_gdp_per_capita + log_population + C(noc)', data=reg_data).fit()
+    print(model_fe.summary())
+
+    # The three variables I need from each model
+    keep = ['is_host', 'log_gdp_per_capita', 'log_population']
+
+    # Extract and rename the key columns from basic
+    basic_coefs = model_basic.summary2().tables[1].reset_index()
+    basic_coefs = basic_coefs.rename(columns={'index': 'variable', 'Coef.': 'OLS_coef', 'P>|t|': 'OLS_pval'})
+    basic_coefs = basic_coefs[basic_coefs['variable'].isin(keep)][['variable', 'OLS_coef', 'OLS_pval']]
+
+    # Extract and rename the key columns from fixed effects
+    fe_coefs = model_fe.summary2().tables[1].reset_index()
+    fe_coefs = fe_coefs.rename(columns={'index': 'variable', 'Coef.': 'FE_coef', 'P>|t|': 'FE_pval'})
+    fe_coefs = fe_coefs[fe_coefs['variable'].isin(keep)][['variable', 'FE_coef', 'FE_pval']]
+
+    # Merge the two sets of coefficients into one comparison table
+    comparison = pd.merge(basic_coefs, fe_coefs, on='variable').round(3)
+
+    # Add significance stars to each model based on the p-value
+    comparison['OLS_stars'] = comparison['OLS_pval'].apply(lambda p: '***' if p < 0.001 else ('**' if p < 0.01 else ('*' if p < 0.05 else '')))
+    comparison['FE_stars'] = comparison['FE_pval'].apply(lambda p: '***' if p < 0.001 else ('**' if p < 0.01 else ('*' if p < 0.05 else '')))
+    print(comparison)
+
+    # Save the basic OLS coefficients for current figures
+    results_df = model_basic.summary2().tables[1].reset_index()
     results_df = results_df.rename(columns={'index': 'variable'})
     
     # Save the outputs
@@ -92,6 +119,7 @@ def main():
     alltime_table.to_csv(ALLTIME_PATH,   index=False)
     results_df.to_csv(REGRESSION_PATH, index=False)
     summary.to_csv(SUMMARY_PATH)
+    comparison.to_csv(os.path.join(PROJECT_ROOT, 'outputs', 'model_comparison.csv'), index=False)
     print("Saved outputs. Run figures.py to generate the figures.")
 
 if __name__ == "__main__":

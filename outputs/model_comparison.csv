@@ -1,0 +1,4 @@
+variable,OLS_coef,OLS_pval,FE_coef,FE_pval,OLS_stars,FE_stars
+is_host,4.619,0.015,3.985,0.001,*,**
+log_gdp_per_capita,2.664,0.0,1.015,0.007,***,**
+log_population,1.434,0.0,26.724,0.0,***,***
