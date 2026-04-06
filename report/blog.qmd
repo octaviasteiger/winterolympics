@@ -13,6 +13,7 @@ format:
         code-fold: true
         code-summary: 'Show code'
         fig-cap-location: bottom
+        page-layout: full
     pdf:
         toc: true
 
@@ -24,14 +25,9 @@ jupyter: python3
 ---
 
 ## Why does Norway win so much?
-Norway has a population of just 5 million people, yet it sits at the top of the all-time Winter Olympic medal table with 318 medals, more than 40 ahead of the United States despite the US having around 60 times the population. So what is actually happening?
+Norway has a population of just 5 million people, yet it sits at the top of the all-time Winter Olympic medal table with 318 medals, more than 40 ahead of the United States despite the US having around 60 times the population. So what's going on?
 
-This project sets out to answer that question using the data from every Winter Olympic Games since Chamonix 1924. The analysis tests three possible explanations, wealth (richer countries invest more in training and facilities), population size (more people means more potential athletes) and home advantage (hosting the Games gives a measurable boost). The answer turns out to be yes to all three but not equally.
-
-:::{.callout-note}
-## The short answer
-Yes to all three, but not equally. Wealth and population size are the strongest predictors of medal success, while hosting provides a measurable but smaller boost above and beyond those factors.
-:::
+To find out, I looked at data from every Winter Olympic Games since Chamonix 1924, testing three possible explanations: wealth, population size and home advantage. The short answer: all three matter just not equally.
 
 Before diving into the results, it helps to understand exactly what data sits behind this analysis and how it was built.
 
@@ -40,7 +36,7 @@ Before diving into the results, it helps to understand exactly what data sits be
 <hr>
 
 ## 1. The data
-This project draws on two datasets, one tracking Olympic medal outcomes going back a century, and one capturing the economic context behind each competing nation. 
+I used two main datasets for this, one tracking Olympic medal outcomes going back a century, and one capturing the economic context behind each competing nation. 
 
 #### Olympic Medals (Olympedia): 
 Scraped from [Olympedia](https://www.olympedia.org/), covering all 24 Winter Games from Chamonix 1924 to Beijing 2022. Each row represents one country's performance in a single Games (1,163 country-year observations in total).
@@ -58,19 +54,17 @@ GDP per capita (Current USD, indicator `NY.GDP.PCAP.CD`) and population (`SP.POP
 
 > **A note on tied medals:** In 27 events where multiple athletes tied for the same medal position, each tied nation received full medal credit, consistent with how the IOC handles ties in official records.
 
-With the dataset defined, the next section explains how it was built, from raw web pages through to a clean, merged file ready for analysis.
-
 <hr>
 
 ## 2. Building the dataset
 ### 2.1 Collecting the Medal Data
-The first step was to collect the medal data for each of the Winter Olympic Games all the way back to 1924. Official Olympic data was not available as a download, so the data had to be scraped directly from Olympedia (https://www.olympedia.org). 
+Official Olympic data was not available as a download, so the data had to be scraped directly from Olympedia (https://www.olympedia.org). 
 
-I built a web scraper (`scrape.py`) that fetched the medal table for each of the 24 Winter Olympic Games, making sure that I paused between requests to avoid overwhelming the server. Each page returned an HTML table listing every event alongside gold, silver and bronze medalists and their countries. 
+I built a web scraper (`scrape.py`) that fetched the medal table for each of the 24 Winter Olympic Games. Each page returned an HTML table listing every event alongside gold, silver and bronze medalists and their countries. 
 
-The raw data came back in a wide format, with separate columns for gold, silver and bronze medalists. At this point the data was still quite messy, with country names in different formats, sports categories mixed in as heading rows and some NOC fields had combined codes for when medals were tied. All of this needed cleaning up before any meaningful analysis could start.
+The raw data came back wide, with separate columns per medal, country names in inconsistent formats, sports category headings mixed into the results rows and combined NOC codes where medals were tied.
 
-The dataset spans 24 Games from Chamonix 1924 to Beijing 2022, covering 1163 unique events. Not all NOCs appear in each Games, the number of competing nations has grown over time, from around 19 nations in 1924 to over 90 today. 
+Not all NOCs appear in each Games, the number of competing nations has grown over time, from around 19 nations in 1924 to over 90 today. 
 
 ```{python}
 import pandas as pd
@@ -84,7 +78,7 @@ medals.head(10)
 #### Sorting out the sport categories
 The scraped HTML table included two types of rows: actual event results and section headings that just said the sport name. These headings were not real results, they had no medalists data or NOC codes, however they did have the sport name of each event which is information I still needed. 
 
-To fix this, within the cleaning script (`clean.py`) I identified the heading rows which was any row where all medal columns were empty and then extracted the sport name. Allowing me to forward fill the sport name down to all the event rows below it until reaching the next heading. Then I could drop the original heading rows as they were no longer needed.
+In `clean.py`, I identified the heading rows (any row where all medal columns were empty), extracted the sport name, forward filled it down to all the event rows below, then dropped the headings. 
 ```{python}
 print("Sports present in the dataset:")
 print(sorted(medals['sport'].dropna().unique().tolist()))
@@ -101,30 +95,28 @@ print(f"Events with at least one tied medal: {len(tied)}")
 tied[['year', 'sport', 'event', 'tie_gold', 'tie_silver', 'tie_bronze']].head(8)
 ```
 
-There are relatively few tied medals within the data however just ignoring them would mean undercounting the total medals for the countries involved and would lead to skewed results from the analysis.
+There are relatively few, but they matter.
 :::{.callout-tip}
 ## Why this matters
 Ignoring ties would undercount medals for countries involved. Splitting them into seperate rows ensures every nation gets full credit which is consistent with how the IOC handles ties in official records.
 :::
 
 ### 2.3 Adding Economic Context
-Medal counts alone only tell part of the story, I also need to add some economic context to the medal data. To test whether wealth or population drives success, each medal row needed to be merged with GDP and population data for the corresponding year.
+To test whether wealth or population drives success, each medal row needed to be merged with GDP and population data for the corresponding year.
 
 #### Why I used the World Bank API
-I needed two indicators for each country and year: GDP per capita and population size. The World Bank API provided a convenient way to access this data for all the countries and years in my medal dataset. The advantage of using the World Bank for both is that the data is already cleaned and standardised, meaning I didn't have to worry about different country name formats or different structures for the data. 
-
-They were both fetched directly from the World Bank API (https://data.worldbank.org/) using the `wbgapi` Python package, allowing for easy integration into the data pipeline.
+I needed two indicators for each country and year: GDP per capita and population size. Both indicators were fetched from the World Bank API (https://data.worldbank.org/) using the `wbgapi` package, which gave clean, standardised data without additional formating work. 
 
 #### The NOC to ISC problem
-There was however a problem with merging the medal data with the World Bank data, as the medal data uses NOC codes to identify countries, whereas the World Bank data uses ISO country codes. This meant that I needed to find a way to map between the two code systems in order to merge the datasets together as well as the problem of some NOCs no longer existing or being split into multiple countries over time. So I had to create a lookup table to map each NOC to its closest modern equivalent, so that historical medals can still be joined to economic data where possible. 
+There was however a problem with merging the medal data with the World Bank data, as the medal data uses NOC codes to identify countries, whereas the World Bank data uses ISO country codes. This required a lookup table mapping each NOC to its closest modern equivalent, since some NOCs no longer exist or have since split into multiple countries.
 
 The trickiest cases were the Soviet Union (URS), East Germany (GDR) and Yugoslavia (YUG) which are all heavy medal winners that no longer exist. For these I mapped to their largest successor state (Russia, Germany and Serbia) where economic data was available and excluded rows where I could not make a reasonable match. 
 
 #### Merging the datasets
-Once both datasets used the same country codes, they were joined on country and year. The result was a single dataset combining medal outcomes with economic indicators for every country-year, which is the foundation for the regression analysis. Alongside this I created two additional columns: 
+Once both datasets used the same country codes, they were joined on country and year, giving a single dataset with two additional columns: 
 
 - **`is_host`** : a flag marking whether the winning country was hosting the games that year, to test the impact of home advantage 
-- **`log_gdp_per_capita`** and **`log_population`**: I took the log of both GDP per Capita and population to make the data more normally distributed, as the difference between a very poor and a moderately poor country is much more significant than the difference between a moderately rich and a very rich country, so taking the log allows for a more meaningful analysis of the relationship between wealth and medal success.
+- **`log_gdp_per_capita`** and **`log_population`**: I took the log of both to account for diminishing returns, the gap between a poor and a morderately wealthy country matters more than the same gap at the top end of the scale.
 
 ```{python}
 final = pd.read_csv("../data/clean/worldbank_final.csv")
@@ -138,14 +130,12 @@ print(f'Rows with missing GDP per capita: {missing} ({100 * missing / total:.1f}
 print('These are mostly historic NOCs')
 ```
 
-The missing GDP rows are expected and unavoidable, as many of the older NOCs no longer exist and therefore do not have corresponding economic data in the World Bank dataset. Therefore, these rows are excluded from the regression but kept in the raw medal count so the all-time table remains accurate.
+The missing GDP rows are expected and unavoidable, as many of the older NOCs no longer exist and therefore do not have corresponding economic data in the World Bank dataset. Therefore, I excluded these rows from the regression but kept in the raw medal count so the all-time table remains accurate.
 
 :::{.callout-warning}
 ## Data limitation
 Around 16% of medal rows are missing GDP data, mostly from historical NOCs that no longer exist (URS, GDR, YUG). These are excluded from the regression but kept in the all-time medal counts so historical totals remain accurate.
 :::
-
-With a clean, merged dataset in hand, the first question is simply: Who has dominanted the Winter Olympics over the past century, and has that changed over time?
 
 <hr> 
 
@@ -176,7 +166,7 @@ NOC_NAMES = {
 }
 ```
 
-To get a sense of the scale of dominance before looking at the charts, the table below shows the 15 most decorated nations in Winter Olympic history, ranked by total medals won.
+The table below shows the 15 most decorated nations, ranked by total medals.
 
 ```{python}
 import pandas as pd
@@ -191,7 +181,7 @@ Norway and the United States lead on total medals, both attending all 17 Games i
 Germany's average of 24.4 medals per Games is the highest in the table desipte having only 11 appearances. This highlights how dominant West Germany and later reunified Germany have been when they competed. Russia (6 Games, 19.7 avg) and East Germany (6 Games, 18.3 avg) show even higher rates, however both stop competing after the Soviet era ended.
 :::
 
-The chart below shows cumulative medals since 1924 across the top 20 nations. Norway leads comfortably, which makes sense given how deeply embedded winter sport is in Norwegian culture, skiing is almost a national pastime. What's also interesting is how much of Norway's bar is gold rather than silver or bronze, showing it doesn't just compete but consistently wins. The US and Germany follow, both benefiting from their size and long-term investment in winter sport. 
+The chart below shows cumulative medals since 1924 across the top 20 nations. Norway's bar is noteably gold, showing it doesn't just compete but consistently wins. The US and Germany follow, both benefiting from size and long-term investment in winter sport. 
 ```{python}
 #| fig-cap: "Figure 1: Cumulative Winter Olympic medals for the top 20 nations since 1924. Norway's gold-heavy bar reflects not just volume but consistent dominance across disciplines."
 #| label: fig-alltime
@@ -211,7 +201,8 @@ fig.tight_layout()
 plt.show()
 ```
 
-The all-time totals hides a lot of movement at the individual Games level, so this chart tracks medals per Games for the top 6 nations, and the picture is far less static than the bar chart above suggests. 
+The all-time totals hides a lot of movement, so this chart tracks medals per Games for the top 6 nations.
+
 ```{python}
 #| fig-cap: "Figure 2: Medals won per Games for the top 6 nations by all-time count. The gap between 1936 and 1948 reflects the cancellation of the 1940 and 1944 Games due to World War II. You’ll also notice a clear spike for the United States in 2002, which lines up with the Salt Lake City Games being held on home soil."
 #| label: fig-overtime
@@ -241,11 +232,11 @@ Norway is consistently near the top throughout, with very few poor Games. Russia
 <hr>
 
 ## 4. Does money buy medals?
-The scatter plot below tests the wealth hypothesis directly, plotting log GDP per capita against total medals won across all country-year observations. The upward trend is clear, wealthier countries tend to win more medals, consistent with the idea that richer nations have more resources to invest in training, facilities and athlete development. 
+The scatter plot below plots log GDP per capita against total medals. The upward trend is clear, wealthier countries tend to invest more in training and facilities and it shows.
 
 :::{.callout-tip}
 ## Wealth isn't everything
-Qatar and Singapore rank among the world's wealthiest nations but have never won a Winter Olympic medal, so climate and sporting culture clearly matter alongside money. The regression captures the average relationship across all nations, but it doesn't explain every single case.
+Qatar and Singapore rank among the world's wealthiest nations but have never won a Winter Olympic medal, so climate and sporting culture clearly matter alongside money.
 :::
 
 ```{python}
@@ -263,7 +254,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-Wealth clearly plays a role, however, there is one advantage no amount of investment can buy and that is competing on home soil. The next section tests whether that actually shows up in the data.
+Wealth clearly plays a role but there is one advantage no investment can buy and that is competing on home soil.
 
 <hr>
 
@@ -289,9 +280,9 @@ fig.tight_layout()
 plt.show()
 ```
 
-Most nations sit noticeably higher in the host year than their non-host average. The USA in 2002 and Norway in 1994 are both good examples of this. One thing to note is the chart orders by how many medals they won while hosting not by the size of the boost, so the nations on the left aren't necessarily the ones who benefitted most.
+One thing to note is the chart orders by how many medals they won while hosting not by the size of the boost, so the nations on the left aren't necessarily the ones who benefitted most.
 
-Home advantage shows up clearly in the data, but it is a one time boost. It cannot explain the dramatic collapse in performance of nations like the Soviet Union and East Germany, for that we need to look at the political and historical context.
+Home advantage is a one time boost. It cannot explain the collapse of nations like the Soviet Union and East Germany, for that political and historical context matters.
 
 <hr>
 
@@ -329,9 +320,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-The biggest declines are URS (The Soviet Union) and GDR (East Germany), which may have been as a result of political and economic disruptions following the Cold War which had lasting impacts on state funded sports programmes. Norway and the US on the other hand have held their ground or improved, which probably comes down to continued investment in winter sport at a national level. This political context is something a simple GDP regression cannot capture, and it is worth keeping in mind when interpreting the model results in the next section. 
-
-With wealth, home advantage and historical era all explored individually, the final step is combining them in a single model to estimate their effects simultaneously.
+The Soviet Union and East Germnay show the sharpest drops, likely reflecting the collapse of state-funded sports programmes after the Cold War, which is something a GDP regression cannot capture. Norway and the US have held their ground or improved.
 
 <hr>
 
@@ -363,11 +352,11 @@ comparison = pd.read_csv('../outputs/model_comparison.csv')
 comparison.style.set_caption('Table 2: Basic OLS vs Country Fixed Effects')
 ```
 
-The table above puts the two models next to each other. The basic OLS shows the raw associations between each predictor and medal counts. The fixed effects version asks a harder question, not "whether host countries win more overall" but rather "whether a country wins more than it normally would when it hosts". 
+The basic OLS shows the raw associations between each predictor and medal counts. The fixed effects version asks a harder question, not "whether host countries win more overall" but "whether a country wins more than it normally would when hosting". 
 
-The `is_host` coefficient drops from 4.6 in the basic OLS to 4.0 in the fixed effects model, a small decrease, but importantly it remains positive and significant ( p = 0.001, stronger than the basic OLS p = 0.015). This means the hosting boost is not just because strong countries tend to host. Even after comparing each country to its own typical performance, there's still a real boost from being on home soil.
+The `is_host` coefficient drops from 4.6 in the basic OLS to 4.0 in the fixed effects model, a small decrease, but importantly it remains positive and significant ( p = 0.001, stronger than the basic OLS p = 0.015). Strong countries tend to host, so you would expect them to do well regardless, but the advantage survives even when comparing a country against its own baseline.
 
-The `log_gdp_per_capita` coefficient drops more substantially, from 2.664 to 1.015, which makes sense as once we control for country-specific differences, a lot of the gap in wealth between countries is already accounted for. The `log_population` coefficient in the fixed effects model is unusually large and should be interpreted with caution, as population doesn't change much within a country over time, so the model doesn't have much variation to work with. The basic OLS estimate of 1.434 is the more reliable figure for population in this case.
+The `log_gdp_per_capita` coefficient drops, from 2.664 to 1.015, which makes sense as once I control for country-specific differences, a lot of the gap in wealth between countries is already absorbed. The `log_population` coefficient in the fixed effects model is unusually large and should be interpreted with caution, as population doesn't change much within a country over time, so the model doesn't have much variation to work with. The basic OLS estimate of 1.434 is the more reliable figure for population in this case.
 
 :::{.callout-note}
 ## What fixed effects adds
@@ -401,28 +390,18 @@ fig.tight_layout()
 plt.show()
 ```
 
-The black error bars show the 95% confidence intervals, so the shorter the error bar, the more precisely that effect has been estimated. GDP per capita has the tightest interval of the three, indicating it is the most reliably estimated of the three. The host status bar is wider, reflecting the smaller number of hosting observations in the data. 
-
-With all three effects estimated together, we can now return to the question we started with.
+The black error bars show the 95% confidence intervals. GDP per capita has the tightest interval of the three, indicating it is the most reliably estimated of the three. The host status bar is wider, reflecting the smaller number of hosting observations in the data. 
 
 <hr>
 
 ## 8. Conclusions
-So why does Norway win so much? The regression suggests the answer is not simply wealth, Norway's GDP per capita is high but not uniquely so. It is the combination of a strong winter sports culture built over a century of competition, consistent national investment and a geography that produces competitive athletes across almost every discipline. The model captures the economic and population factors, but Norway's outlier status reflects something the regression alone cannot fully explain. 
-
-Three factors were tested: wealth, population size and hosting the Games. All three are statistically significant predictors of medal count.
+Norway's GDP per capita is high but not uniquely so. What the regression cannot capture is a century of winter sports culture and the geography that produces competitive athletes across almost every discipline. The model explains the economic and population factors, but Norway's outlier status sits above them. All three are statistically significant predictors of medal count.
 
 #### Host advantage is real but limited
-There is definitely a home advantage, the basic OLS model estimates around 4.6 more medals (p = 0.015) and the country fixed effects model puts it at 4.0 extra medals ( p = 0.001). The fixed effects result is slightly smaller but is actually stronger statistically, as it controls for each countries own baseline rather than comparing all host nations against all non-host nations. You can see the effect clearly in the USA in 2002 (34 medals) and Norway in 1994 (26 medals). That said, this effect is quite limited, a country only hosts once in a while, so even though the boost is real, it only applies to a single Olympic Games at a time.
-
-#### The fixed effects model confirms the result
-Adding country fixed effects reduces the `is_host` coefficient from 4.6 to 4.0, but as I said above the result becomes more statistically significant (p = 0.001 vs p = 0.015). The GDP per capita coefficient falls from 2.664 to 1.015 in the fixed effects model, as much of the between-country variation in wealth is absorbed by the country dummies themselves. The population coefficient in the fixed effects model should be treated with caution, as population changes very little within a country over time, leaving the model with limited information to estimate it reliably.
+The OLS model estimates a boost of 4.6 medals (p = 0.015), tightening to 4.0 under fixed effects ( p = 0.001). The fixed effects result is slightly smaller but more credible, it compares each country against its own baseline rather than against all other nations. The boost is real, but since a country only hosts once every few decades, it explains very little of the long-run medal success. The GDP coefficient falls from 2.664 to 1.015 under fixed effects, as between country wealth differences are absorbed by the country dummies. The population coefficient should be treated with caution in the fixed effects model, as population barely changes within a country over time.
 
 #### GDP per capita is the strongest overall predictor
-From the regression, a 1 unit increase in log GDP per capita is associated with about 2.7 extra medals (p < 0.001). Across the full range of countries in the dataset, this adds up to roughly a 16-medal difference between the poorest and richest nations, reflecting the investment wealthy nations make in training infrastructure, coaching and athlete development.
-
-#### Why the host bar looks largest on the chart but isn't the strongest predictor
-On the coefficient plot, the host effect looks larger than GDP, which is misleading. The host coefficient (4.6) represents a one-time jump from not hosting to hosting. GDP on the other hand, applies to a variable that spans 6 units in the data, meaning its total real world effect (around 16 medals) is more than three times larger. The t-statistic for GDP (8.01) is also more than three times that of host status (2.44), confirming it is the more consistent and reliable predictor across the dataset.
+From the regression, a 1 unit increase in log GDP per capita is associated with about 2.7 extra medals (p < 0.001), adding up to roughly a 16-medal difference across the full range of countries. Despite the host bar looking longest on the coefficient plot, it only represents a one-time jump, whereas GDP applies continuously across every Games, as well as having more than three times the t-statistic (8.01 vs 2.44) confirming it is the more consistent and reliable predictor across the dataset.
 
 #### Population matters independently of wealth
 Population also plays an important role, even after accounting for wealth. A 1 unit increase in log population leads to about 1.4 additional medals (p < 0.001). Across the full range of countries, this again adds up to roughly a 16 medal difference, which is comparable in scale to the GDP effect.
