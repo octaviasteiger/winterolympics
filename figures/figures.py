@@ -219,8 +219,8 @@ def fig6_regression(reg):
     labels = {'is_host': 'Host Country', 'log_gdp_per_capita': 'Log GDP per Capita', 'log_population': 'Log Population'}
     reg['variable'] = reg['variable'].map(labels)
 
-    reg['ci_lower'] = reg['Coef.'] - reg['[0.025]']
-    reg['ci_upper'] = reg['[0.0975]'] - reg['Coef.']
+    reg['ci_lower'] = reg['Coef.'] - reg['[0.025']
+    reg['ci_upper'] = reg['0.975]'] - reg['Coef.']
     xerr = [reg['ci_lower'].values, reg['ci_upper'].values]
 
     # Creating horizontal bar chart

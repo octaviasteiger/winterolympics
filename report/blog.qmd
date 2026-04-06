@@ -391,8 +391,8 @@ reg_plot['variable'] = reg_plot['variable'].map({'is_host': 'Host Country', 'log
 fig, ax = plt.subplots(figsize=(14, 7))
 ax.barh(reg_plot['variable'], reg_plot['Coef.'])
 ax.errorbar(reg_plot['Coef.'], reg_plot['variable'], xerr=[
-        reg_plot['Coef.'] - reg_plot['[0.025]'],
-        reg_plot['[0.975]'] - reg_plot['Coef.']],fmt='none',color='black',capsize=4)
+        reg_plot['Coef.'] - reg_plot['[0.025'],
+        reg_plot['0.975]'] - reg_plot['Coef.']],fmt='none',color='black',capsize=4)
 
 ax.axvline(0, color='black', linewidth=0.8)
 ax.set_title("What Predicts Winter Olympic Success?", fontsize=14, pad=12)
