@@ -36,7 +36,7 @@ INPUT_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'worldbank_final.csv')
 COUNTRY_YEAR_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'medals_country_year.csv')
 ALLTIME_PATH = os.path.join(PROJECT_ROOT, 'data', 'clean', 'alltime_table.csv') 
 REGRESSION_PATH = os.path.join(PROJECT_ROOT, 'outputs', 'regression_results.csv')
-
+SUMMARY_PATH = os.path.join(PROJECT_ROOT, 'outputs', 'summary_stats.csv')
 
 def main():
     # Load the final merged dataset
@@ -69,6 +69,11 @@ def main():
     # Medal share
     medals_agg = pd.merge(medals_agg, totals_per_year, on='year', how='left')
     medals_agg['medal_share'] = medals_agg['total_medals'] / medals_agg['medals_awarded']
+
+    # Summary statistics table
+    summary = (medals_agg.groupby('noc')['total_medals'].agg(['mean', 'sum', 'count']).round(1)
+               .rename(columns={'mean': 'Avg Medals/games', 'sum': 'Total medals', 'count': 'Games Attended'})
+               .sort_values('Total Medals', ascending=False).head(15))
     
     #OLS regression to test for host advantage
     reg_data = medals_agg.dropna(subset=['log_gdp_per_capita', 'log_population']).copy()
@@ -86,6 +91,7 @@ def main():
     medals_agg.to_csv(COUNTRY_YEAR_PATH, index=False)
     alltime_table.to_csv(ALLTIME_PATH,   index=False)
     results_df.to_csv(REGRESSION_PATH, index=False)
+    summary.to_csv(SUMMARY_PATH)
     print("Saved outputs. Run figures.py to generate the figures.")
 
 if __name__ == "__main__":
