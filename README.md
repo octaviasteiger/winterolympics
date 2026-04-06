@@ -1,6 +1,6 @@
 # Winter Olympics Medal Analysis
 
-**Live report:** [View the blog post](.....)
+**Live report:** [View the blog post](https://octaviasteiger.github.io/winterolympics/report/blog.html)
 
 ## Research Question
 What drive medal success in the Winter Olympics? This project tests three factors: national wealth (GDP per capita), population size and whether hosting the Games gives a country a measurable advantage. An OLS regression is used to estimate each effect independently, alongside visualisation of historical trends and era comparisons.
