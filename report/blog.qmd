@@ -163,6 +163,17 @@ alltime = pd.read_csv("../data/clean/alltime_table.csv")
 cy      = pd.read_csv("../data/clean/medals_country_year.csv")
 reg     = pd.read_csv("../outputs/regression_results.csv")
 final   = pd.read_csv("../data/clean/worldbank_final.csv")
+
+NOC_NAMES = {
+    'NOR': 'Norway',    'USA': 'United States', 'AUT': 'Austria',
+    'GER': 'Germany',   'FIN': 'Finland',       'SWE': 'Sweden',
+    'SUI': 'Switzerland','RUS': 'Russia',        'CAN': 'Canada',
+    'ITA': 'Italy',     'FRA': 'France',         'NED': 'Netherlands',
+    'GDR': 'East Germany','URS': 'Soviet Union', 'TCH': 'Czechoslovakia',
+    'EUN': 'Unified Team','JPN': 'Japan',        'KOR': 'South Korea',
+    'CZE': 'Czech Republic','POL': 'Poland',     'GBR': 'Great Britain',
+    'BEL': 'Belgium',   'YUG': 'Yugoslavia',    'LIE': 'Liechtenstein',
+}
 ```
 
 To get a sense of the scale of dominance before looking at the charts, the table below shows the 15 most decorated nations in Winter Olympic history, ranked by total medals won.
@@ -184,10 +195,13 @@ The chart below shows cumulative medals since 1924 across the top 20 nations. No
 ```{python}
 #| fig-cap: "Figure 1: Cumulative Winter Olympic medals for the top 20 nations since 1924. Norway's gold-heavy bar reflects not just volume but consistent dominance across disciplines."
 #| label: fig-alltime
-fig, ax = plt.subplots(figsize=(7, 5))
-ax.barh(alltime['noc'], alltime['gold_medals'], label='Gold', color=GOLD, height=0.6)
-ax.barh(alltime['noc'], alltime['silver_medals'], label='Silver', color=SILVER, height=0.6, left=alltime['gold_medals'])
-ax.barh(alltime['noc'], alltime['bronze_medals'], label='Bronze', color=BRONZE, height=0.6, left=alltime['gold_medals'] + alltime['silver_medals'])
+alltime['country'] = alltime['noc'].map(NOC_NAMES).fillna(alltime['noc'])
+fig, ax = plt.subplots(figsize=(12, 9))
+
+ax.barh(alltime['country'], alltime['gold_medals'], label='Gold', color=GOLD, height=0.6)
+ax.barh(alltime['country'], alltime['silver_medals'], label='Silver', color=SILVER, height=0.6, left=alltime['gold_medals'])
+ax.barh(alltime['country'], alltime['bronze_medals'], label='Bronze', color=BRONZE, height=0.6, left=alltime['gold_medals'] + alltime['silver_medals'])
+
 ax.invert_yaxis()
 ax.set_title("All time Winter Olympics Medal Table (top 20)", fontsize=14, pad=12)
 ax.set_xlabel("Total Medals Won")
@@ -203,16 +217,19 @@ The all-time totals hides a lot of movement at the individual Games level, so th
 #| label: fig-overtime
 
 top6   = cy.groupby('noc')['total_medals'].sum().nlargest(6).index.tolist()
-subset = cy[cy['noc'].isin(top6)]
-fig, ax = plt.subplots(figsize=(7, 4))
-sns.lineplot(data=subset, x='year', y='total_medals',
-             hue='noc', marker='o', ax=ax)
-ax.set_title('Winter Olympic Medal Count per Games (Top 6 Nations)',
-             fontsize=14, pad=12)
-ax.set_xlabel('Year')
-ax.set_ylabel('Medals Won')
-ax.legend(title='Country', bbox_to_anchor=(1.01, 1),
-          loc='upper left', borderaxespad=0.)
+subset = cy[cy['noc'].isin(top6)].copy()
+subset['country'] = subset['noc'].map(NOC_NAMES).fillna(subset['noc'])
+
+fig, ax = plt.subplots(figsize=(11, 6))
+sns.lineplot(data=subset, x='year', y='total_medals', hue='country', marker='o', ax=ax)
+
+ax.set_title('Winter Olympic Medal Count per Games (Top 6 Nations)', fontsize=14, pad=12)
+ax.set_xlabel('Year', fontsize=12)
+ax.set_ylabel('Medals Won', fontsize=12)
+ax.tick_params(axis='both', labelsize=10)
+
+ax.legend(title='Country', bbox_to_anchor=(1.01, 1), loc='upper left', borderaxespad=0.)
+
 ax.set_xticks(sorted(cy['year'].unique()))
 ax.tick_params(axis='x', rotation=45)
 fig.tight_layout()
@@ -235,12 +252,12 @@ Qatar and Singapore rank among the world's wealthiest nations but have never won
 #| fig-cap: "Figure 3: Relationship between log GDP per capita and total medals won across all country-year observations. The overall upward trend makes it clear that richer countries tend to win more medals. That said, the spread of points around the line is a reminder that wealth isn't the whole story, other factors still matter."
 #| label: fig-wealth
 plot_data = cy.dropna(subset=['log_gdp_per_capita', 'total_medals'])
-fig, ax = plt.subplots(figsize=(7, 4))
+fig, ax = plt.subplots(figsize=(10, 6))
 sns.regplot(data=plot_data, x='log_gdp_per_capita', y='total_medals',
             scatter_kws={'alpha': 0.4, 's': 25, 'color': BLUE},
             line_kws={'color': 'red'}, ax=ax)
 ax.set_title("Wealthier Countries Win More Medals", fontsize=14, pad=12)
-ax.set_xlabel("Log GDP per Capita")
+ax.set_xlabel("Log GDP per Capita (current USD)")
 ax.set_ylabel("Total Medals Won")
 fig.tight_layout()
 plt.show()
@@ -260,8 +277,10 @@ non_host_avg = (cy[cy['is_host'] == 0].groupby('noc')['total_medals'].mean().res
 compare = (pd.merge(hosts, non_host_avg, on='noc', how='inner').sort_values('host_medals', ascending=False).head(15))
 long = compare.melt(id_vars=['noc'],value_vars=['host_medals', 'avg_non_host'], var_name='type', value_name='medals')
 long['type'] = long['type'].map({'host_medals':  'Host Year','avg_non_host': 'Average Non-Host Year'})
-fig, ax = plt.subplots(figsize=(7, 5))
-sns.barplot(data=long, x='noc', y='medals', hue='type', ax=ax)
+long['country'] = long['noc'].map(NOC_NAMES).fillna(long['noc'])
+fig, ax = plt.subplots(figsize=(12, 7))
+sns.barplot(data=long, x='country', y='medals', hue='type', ax=ax)
+
 ax.set_title('Medals when Hosting vs Not Hosting (Top 15 Host Nations)',fontsize=14, pad=12)
 ax.set_xlabel('Country')
 ax.set_ylabel('Total Medals')
@@ -296,9 +315,11 @@ compare = compare.sort_values('decline', ascending=False)
 
 long = compare.melt(id_vars=['noc'], value_vars=['early_avg', 'modern_avg'], var_name='era', value_name='avg_medals')
 long['era'] = long['era'].map({'early_avg': 'Pre-1980 average', 'modern_avg': 'Post-1992 average'})
+long['country'] = long['noc'].map(NOC_NAMES).fillna(long['noc'])
 
-fig, ax = plt.subplots(figsize=(7, 4))
-sns.barplot(data=long, x='noc', y='avg_medals', hue='era', ax=ax)
+fig, ax = plt.subplots(figsize=(12, 6))
+sns.barplot(data=long, x='country', y='avg_medals', hue='era', ax=ax)
+
 ax.set_title('Early Dominance vs Modern Performance\n(Top 10 Pre-1980 Nations)', fontsize=14, pad=12)
 ax.set_xlabel('Country')
 ax.set_ylabel('Average Medals per Games')
@@ -367,11 +388,11 @@ The coefficient plot below pulls together all three results in one view. All thr
 key_vars = ['is_host', 'log_gdp_per_capita', 'log_population']
 reg_plot = reg[reg['variable'].isin(key_vars)].copy()
 reg_plot['variable'] = reg_plot['variable'].map({'is_host': 'Host Country', 'log_gdp_per_capita': 'Log GDP per Capita', 'log_population': 'Log Population'})
-fig, ax = plt.subplots(figsize=(7, 3))
+fig, ax = plt.subplots(figsize=(14, 7))
 ax.barh(reg_plot['variable'], reg_plot['Coef.'])
 ax.errorbar(reg_plot['Coef.'], reg_plot['variable'], xerr=[
-        reg_plot['Coef.'] - reg_plot['[0.025'],
-        reg_plot['0.975]'] - reg_plot['Coef.']],fmt='none',color='black',capsize=4)
+        reg_plot['Coef.'] - reg_plot['[0.025]'],
+        reg_plot['[0.975]'] - reg_plot['Coef.']],fmt='none',color='black',capsize=4)
 
 ax.axvline(0, color='black', linewidth=0.8)
 ax.set_title("What Predicts Winter Olympic Success?", fontsize=14, pad=12)

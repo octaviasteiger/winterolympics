@@ -51,21 +51,37 @@ SILVER = "#C0C0C0"
 BRONZE = "#CD7F32"
 BLUE = "#1f77b4"
 
+# Maping NOC to country names
+NOC_NAMES = {
+    'NOR': 'Norway',    'USA': 'United States', 'AUT': 'Austria',
+    'GER': 'Germany',   'FIN': 'Finland',       'SWE': 'Sweden',
+    'SUI': 'Switzerland','RUS': 'Russia',        'CAN': 'Canada',
+    'ITA': 'Italy',     'FRA': 'France',         'NED': 'Netherlands',
+    'GDR': 'East Germany','URS': 'Soviet Union', 'TCH': 'Czechoslovakia',
+    'EUN': 'Unified Team','JPN': 'Japan',        'KOR': 'South Korea',
+    'CZE': 'Czech Republic','POL': 'Poland',     'GBR': 'Great Britain',
+    'BEL': 'Belgium',   'YUG': 'Yugoslavia',    'LIE': 'Liechtenstein',
+}
+
+
 # Function 1 - All time medals, horizontal bar chart 
 def fig1_alltime(alltime):
-    fig, ax = plt.subplots(figsize=(10, 8))
 
 # Drawing the three medals as stacked horizontal bars
-    ax.barh(alltime['noc'], alltime['gold_medals'], label='Gold', color=GOLD, height=0.6)
-    ax.barh(alltime['noc'], alltime['silver_medals'], label='Silver', color=SILVER, height=0.6, left=alltime['gold_medals'])
-    ax.barh(alltime['noc'], alltime['bronze_medals'], label='Bronze', color=BRONZE, height=0.6, left=alltime['gold_medals'] + alltime['silver_medals'])
+    alltime['country'] = alltime['noc'].map(NOC_NAMES).fillna(alltime['noc'])
+    fig, ax = plt.subplots(figsize=(12, 9))
+
+    ax.barh(alltime['country'], alltime['gold_medals'], label='Gold', color=GOLD, height=0.6)
+    ax.barh(alltime['country'], alltime['silver_medals'], label='Silver', color=SILVER, height=0.6, left=alltime['gold_medals'])
+    ax.barh(alltime['country'], alltime['bronze_medals'], label='Bronze', color=BRONZE, height=0.6, left=alltime['gold_medals'] + alltime['silver_medals'])
 
 # Inverting so that the nation with the most medals is at the top
     ax.invert_yaxis()
     
     ax.set_title("All time Winter Olympics Medal Table (top 20)", fontsize=14, pad=12)
-    ax.set_xlabel("Total Medals Won")
-    ax.set_ylabel("Country")
+    ax.set_xlabel("Total Medals Won", fontsize=12)
+    ax.set_ylabel("Country", fontsize=12)
+    ax.tick_params(axis='both', labelsize=10)
     ax.legend(loc='lower right')
 
     fig.tight_layout()
@@ -73,21 +89,24 @@ def fig1_alltime(alltime):
     plt.close()
     print("Saved fig1_alltime.png")
 
+
 # Function 2 - Medals trends over time, line chart
 def fig2_trends(cy):
 
     top6 = (cy.groupby('noc')['total_medals'].sum().nlargest(6).index.tolist())
     # Filtering to just the top 6 countries, to make the plot clearer 
-    subset = cy[cy['noc'].isin(top6)]
+    subset = cy[cy['noc'].isin(top6)].copy()
+    subset['country'] = subset['noc'].map(NOC_NAMES).fillna(subset['noc'])
 
     fig, ax = plt.subplots(figsize=(11, 6))
 
     # Plot one line per country, and hue by country for clarity
-    sns.lineplot(data=subset, x='year', y='total_medals', hue='noc', marker='o', ax=ax)
+    sns.lineplot(data=subset, x='year', y='total_medals', hue='country', marker='o', ax=ax)
 
     ax.set_title('Winter Olympic Medal Count per Games (Top 6 Nations)', fontsize=14, pad=12)
-    ax.set_xlabel('Year')
-    ax.set_ylabel('Medals Won')
+    ax.set_xlabel('Year', fontsize=12)
+    ax.set_ylabel('Medals Won', fontsize=12)
+    ax.tick_params(axis='both', labelsize=10)
 
     # Adding the legend outside of the plot so no overlapping with the lines
     ax.legend(title='Country', bbox_to_anchor=(1.01, 1), loc='upper left', borderaxespad=0.)
@@ -112,8 +131,9 @@ def fig3_gdp_medals(cy):
                 line_kws={'color': 'red'}, ax=ax)
     
     ax.set_title("Wealthier Countries Win More Medals", fontsize=14, pad=12)
-    ax.set_xlabel("Log GDP per Capita")
-    ax.set_ylabel("Total Medals Won")
+    ax.set_xlabel("Log GDP per Capita (current USD)", fontsize=12)
+    ax.set_ylabel("Total Medals Won", fontsize=12)
+    ax.tick_params(axis='both', labelsize=10)
 
     fig.tight_layout()
     fig.savefig(os.path.join(FIGURES_DIR, 'fig3_gdp_medals.png'))
@@ -136,14 +156,16 @@ def fig4_host_compare(cy):
     # Reshaping the data for plotting
     long = compare.melt(id_vars=['noc'], value_vars=['host_medals', 'avg_non_host'], var_name='type', value_name='medals')
     long['type'] = long['type'].map({'host_medals': 'Host Year', 'avg_non_host': 'Average Non-Host Year'})
+    long['country'] = long['noc'].map(NOC_NAMES).fillna(long['noc'])
 
     fig, ax = plt.subplots(figsize=(12, 7))
-    sns.barplot(data=long, x='noc', y='medals', hue='type', ax=ax)
+    sns.barplot(data=long, x='country', y='medals', hue='type', ax=ax)
 
     ax.set_title('Medals when Hosting vs Not Hosting (Top 15 Host Nations)', fontsize=14, pad=12)
-    ax.set_xlabel('Country')
-    ax.set_ylabel('Total Medals')
-    ax.legend()
+    ax.set_xlabel('Country', fontsize=12)
+    ax.set_ylabel('Total Medals', fontsize=12)
+    ax.tick_params(axis='both', labelsize=10)
+    ax.legend(title='Year Type')
     ax.tick_params(axis='x', rotation=45)
 
     fig.tight_layout()
@@ -151,32 +173,8 @@ def fig4_host_compare(cy):
     plt.close()
     print("Saved fig4_host_compare.png")
 
-# Function 5 - Regression coefficients
-def fig5_regression(reg):
-
-    # Filtering to just the key variables 
-    key_vars = ['is_host', 'log_gdp_per_capita', 'log_population']
-    reg = reg[reg['variable'].isin(key_vars)].copy()
-
-    # Labeling the axis 
-    labels = {'is_host': 'Host Country', 'log_gdp_per_capita': 'Log GDP per Capita', 'log_population': 'Log Population'}
-    reg['variable'] = reg['variable'].map(labels)
-
-    # Creating horizontal bar chart
-    fig, ax = plt.subplots(figsize=(14, 7))
-    ax.barh(reg['variable'], reg['Coef.']) 
-    ax.axvline(0, color='black', linewidth=0.8)
-    ax.set_title("What predicts Winter Olympic Success?", fontsize=14, pad=12)
-    ax.set_xlabel("Regression Coefficient (extra medals per unit increase)")
-    ax.set_ylabel('')
-
-    fig.tight_layout()
-    fig.savefig(os.path.join(FIGURES_DIR, 'fig5_regression.png'))
-    plt.close()
-    print("Saved fig5_regression.png")
-
-# Function 6 - Fallen powers
-def fig6_fallen_powers(final):
+# Function 5 - Fallen powers
+def fig5_fallen_powers(final):
     cy_all = (final.groupby(['year', 'noc'], as_index=False).agg(total_medals=('noc', 'count')))
 
 # average medals per games in each era
@@ -194,19 +192,52 @@ def fig6_fallen_powers(final):
     # reshape and then create bar graph
     long = compare.melt(id_vars=['noc'], value_vars =['early_avg', 'modern_avg'], var_name ='era', value_name='avg_medals')
     long['era'] = long['era'].map({'early_avg': 'Pre-1980 average', 'modern_avg': 'Post-1992 average'})
+    long['country'] = long['noc'].map(NOC_NAMES).fillna(long['noc'])
 
     fig, ax = plt.subplots(figsize=(12, 6))
-    sns.barplot(data=long, x='noc', y='avg_medals', hue='era', ax=ax)
+    sns.barplot(data=long, x='country', y='avg_medals', hue='era', ax=ax)
     ax.set_title('Early Dominance vs Modern Performance\n(Top 10 Pre-1980 Nations)',fontsize=14, pad=12)
-    ax.set_xlabel('Country')
-    ax.set_ylabel('Average Medals per Games')
+    ax.set_xlabel('Country', fontsize=12)
+    ax.set_ylabel('Average Medals per Games', fontsize=12)
+    ax.tick_params(axis='both', labelsize=10)
     ax.legend(title='Era')
     ax.tick_params(axis='x', rotation=45)
 
     fig.tight_layout()
-    fig.savefig(os.path.join(FIGURES_DIR, 'fig6_fallen_powers.png'))
+    fig.savefig(os.path.join(FIGURES_DIR, 'fig5_fallen_powers.png'))
     plt.close()
-    print("Saved fig6_fallen_powers.png") 
+    print("Saved fig5_fallen_powers.png") 
+
+# Function 6 - Regression
+def fig6_regression(reg):
+
+    # Filtering to just the key variables 
+    key_vars = ['is_host', 'log_gdp_per_capita', 'log_population']
+    reg = reg[reg['variable'].isin(key_vars)].copy()
+
+    # Labeling the axis 
+    labels = {'is_host': 'Host Country', 'log_gdp_per_capita': 'Log GDP per Capita', 'log_population': 'Log Population'}
+    reg['variable'] = reg['variable'].map(labels)
+
+    reg['ci_lower'] = reg['Coef.'] - reg['[0.025]']
+    reg['ci_upper'] = reg['[0.0975]'] - reg['Coef.']
+    xerr = [reg['ci_lower'].values, reg['ci_upper'].values]
+
+    # Creating horizontal bar chart
+    fig, ax = plt.subplots(figsize=(14, 7))
+    ax.barh(reg['variable'], reg['Coef.'], xerr=xerr, capsize=5, error_kw={'linewidth': 1.5, 'ecolor': 'black'}) 
+    ax.axvline(0, color='black', linewidth=0.8)
+    ax.set_title("What predicts Winter Olympic Success?", fontsize=14, pad=12)
+    ax.set_xlabel("Regression Coefficient (extra medals per unit increase)", fontsize=12)
+    ax.set_ylabel('')
+    ax.tick_params(axis='both', labelsize=10)
+
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIGURES_DIR, 'fig6_regression.png'))
+    plt.close()
+    print("Saved fig6_regression.png")
+
+
         
 
 def main():
@@ -219,8 +250,9 @@ def main():
     fig2_trends(cy)
     fig3_gdp_medals(cy)
     fig4_host_compare(cy)
-    fig5_regression(reg)
-    fig6_fallen_powers(final)
+    fig5_fallen_powers(final)
+    fig6_regression(reg)
+    
 
     print("Figures created")
 
