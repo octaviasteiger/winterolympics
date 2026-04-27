@@ -1,9 +1,9 @@
 # Winter Olympics Medal Analysis
 
-**Live report:** [View the blog post](https://octaviasteiger.github.io/winterolympics/report/blog.html)
+**Blog post:** [View the blog post](https://octaviasteiger.github.io/winterolympics/report/blog.html)
 
 ## Research Question
-What drives medal success in the Winter Olympics? This project tests three factors: national wealth (GDP per capita), population size and whether hosting the Games gives a country a measurable advantage. An OLS regression is used to estimate each effect independently, alongside visualisation of historical trends and era comparisons.
+What drives medal success in the Winter Olympics? I tested three three factors: national wealth (GDP per capita), population size and whether hosting the Games gives a country a measurable advantage. An OLS regression is used to estimate each effect independently, alongside visualisation of historical trends and era comparisons.
 
 ## Data Sources
 - **Olympedia** (https://www.olympedia.org) - Every medal, event and country code for all 24 Winter Olympic Games was scraped using Python
@@ -60,22 +60,27 @@ winterolympics/
 - **scripts/** - Data collection and cleaning scripts (scrape, clean, merge, World Bank fetch)
 
 ## How to Replicate
+Requirements: Python 3.10+, [Quarto](https://quarto.org) installed, internet connection (scraping and Work Bank API calls need it).
 ### Using Make
-1. Install Quarto: https://quarto.org/docs/get-started/
-   
-2. Clone the repository:
+1. Clone the repository:
    ```bash
    git clone https://github.com/octaviasteiger/winterolympics.git
    cd winterolympics
    ```
-
-3. Install dependencies:
+   
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Run the full pipeline:
+3. Run the full pipeline:
    ```bash
    make
    ```
-   This runs every step in order automatically: scrape --> clean --> fetch World Bank data --> merge --> analyse --> generate figures --> render report
+   This runs every step in order automatically: scrape --> clean --> fetch World Bank data --> merge --> analyse --> generate figures --> render report.
+   Note: the scraping step takes around 5 minutes.
+   To skip scraping (the cleaned data is already committed in data/clean/), run:
+   ```bash
+   make data/clean/workbank_final.csv
+   make
+   ```
