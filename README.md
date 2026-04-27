@@ -3,11 +3,7 @@
 **Live report:** [View the blog post](https://octaviasteiger.github.io/winterolympics/report/blog.html)
 
 ## Research Question
-What drive medal success in the Winter Olympics? This project tests three factors: national wealth (GDP per capita), population size and whether hosting the Games gives a country a measurable advantage. An OLS regression is used to estimate each effect independently, alongside visualisation of historical trends and era comparisons.
-
-## About this project
-The project examines what makes countries succeed at the Winter Olympics, focusing on three factors: national wealth (GDP per capita), population size and home country advantage.
-Using data scraped from Olympedia and economic indicators from the World Bank, I build an OLS regression model and a series of visualisations covering all 24 Winter Games.
+What drives medal success in the Winter Olympics? This project tests three factors: national wealth (GDP per capita), population size and whether hosting the Games gives a country a measurable advantage. An OLS regression is used to estimate each effect independently, alongside visualisation of historical trends and era comparisons.
 
 ## Data Sources
 - **Olympedia** (https://www.olympedia.org) - Every medal, event and country code for all 24 Winter Olympic Games was scraped using Python
@@ -18,13 +14,13 @@ Using data scraped from Olympedia and economic indicators from the World Bank, I
 ``` 
 winterolympics/
 ├── analysis/
-|   ├── analysis.py/                   # Aggregates data to country-year level and runs OLS regression
+|   ├── analysis.py                    # Aggregates data to country-year level and runs OLS regression
 ├── data/
 │   ├── clean/                         # Cleaned data — committed to GitHub
 │   │   ├── alltime_table.csv          # All-time medal totals by country
 │   │   ├── medals_clean.csv           # Cleaned raw medal data
 │   │   ├── medals_country_year.csv    # Aggregated country-year dataset for regression
-│   │   ├── tied_noc.csv               # Seperated tied medal rows
+│   │   ├── tied_noc.csv               # Separated tied medal rows
 │   │   ├── worldbank.csv              # Medals merged with World Bank indicators
 │   │   ├── worldbank_final.csv        # Final merged dataset including tied medals
 │   └── raw/                           # Scraped data — gitignored, regenerate with scrape.py
@@ -34,8 +30,8 @@ winterolympics/
 │   ├── fig2_trends.png                # Medal trends over time (top 6 nations)
 │   ├── fig3_gdp_medals.png            # GDP per capita vs medals scatter plot
 │   ├── fig4_host_compare.png          # Host year vs non-host year comparison
-│   ├── fig5_regression.png            # Regression coefficient plot
-│   └── fig6_fallen_powers.png         # Early era dominance vs modern performance
+│   ├── fig5_fallen_powers.png         # Early era domiance vs modern performance
+│   └── fig6_regression.png            # Regression coefficient plot
 ├── outputs/                           
 |   ├── regression_results.csv         # OLS regression coefficients and statistics
 |   ├── summary_stats.csv              # Top 15 nations summary table
