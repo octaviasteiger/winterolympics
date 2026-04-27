@@ -31,7 +31,7 @@ figures/fig1_alltime.png figures/fig2_trends.png figures/fig3_gdp_medals.png fig
 	$(PYTHON) figures/figures.py
 
 # Step 7: Report
-report/blog.html: report/blog.qmd figures/fig1_alltime.png figures/fig2_trends.png figures/fig3_gdp_medals.png figures/fig4_host_compare.png figures/fig5_regression.png figures/fig6_fallen_powers.png data/clean/medals_country_year.csv outputs/regression_results.csv outputs/summary_stats.csv outputs/model_comparison.csv
+report/blog.html: report/blog.qmd figures/fig1_alltime.png figures/fig2_trends.png figures/fig3_gdp_medals.png figures/fig4_host_compare.png figures/fig5_fallen_powers.png figures/fig6_regression.png data/clean/medals_country_year.csv outputs/regression_results.csv outputs/summary_stats.csv outputs/model_comparison.csv
 	quarto render report/blog.qmd
 
 # Clean outputs
