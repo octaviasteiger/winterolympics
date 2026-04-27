@@ -36,7 +36,7 @@ Before diving into the results, it helps to understand exactly what data sits be
 <hr>
 
 ## 1. The data
-I used two main datasets for this, one tracking Olympic medal outcomes going back a century, and one capturing the economic context behind each competing nation. 
+I used two main datasets for this, one tracking Olympic medal outcomes going back a century, and one with GDP and population figures for the countries involved. 
 
 #### Olympic Medals (Olympedia): 
 Scraped from [Olympedia](https://www.olympedia.org/), covering all 24 Winter Games from Chamonix 1924 to Beijing 2022. Each row represents one country's performance in a single Games (1,163 country-year observations in total).
@@ -105,7 +105,7 @@ Ignoring ties would undercount medals for countries involved. Splitting them int
 To test whether wealth or population drives success, each medal row needed to be merged with GDP and population data for the corresponding year.
 
 #### Why I used the World Bank API
-I needed two indicators for each country and year: GDP per capita and population size. Both indicators were fetched from the World Bank API (https://data.worldbank.org/) using the `wbgapi` package, which gave clean, standardised data without additional formating work. 
+I needed two indicators for each country and year: GDP per capita and population size. Both indicators were fetched from the World Bank API (https://data.worldbank.org/) using the `wbgapi` package,it returns the data already in a clean format, which saved a lot of manual tidying. 
 
 #### The NOC to ISC problem
 There was however a problem with merging the medal data with the World Bank data, as the medal data uses NOC codes to identify countries, whereas the World Bank data uses ISO country codes. This required a lookup table mapping each NOC to its closest modern equivalent, since some NOCs no longer exist or have since split into multiple countries.
@@ -178,7 +178,7 @@ Norway and the United States lead on total medals, both attending all 17 Games i
 
 :::{.callout-note}
 ## Germany and the Cold War nations
-Germany's average of 24.4 medals per Games is the highest in the table desipte having only 11 appearances. This highlights how dominant West Germany and later reunified Germany have been when they competed. Russia (6 Games, 19.7 avg) and East Germany (6 Games, 18.3 avg) show even higher rates, however both stop competing after the Soviet era ended.
+Germany's average of 24.4 medals per Games is the highest in the table desipte having only 11 appearances. That says a lot about how consistently strong West Germany and reunified Germany have been on the rare occasions they competed. Russia (6 Games, 19.7 avg) and East Germany (6 Games, 18.3 avg) show even higher rates, however both stop competing after the Soviet era ended.
 :::
 
 The chart below shows cumulative medals since 1924 across the top 20 nations. Norway's bar is noteably gold, showing it doesn't just compete but consistently wins. The US and Germany follow, both benefiting from size and long-term investment in winter sport. 
@@ -232,7 +232,7 @@ Norway is consistently near the top throughout, with very few poor Games. Russia
 <hr>
 
 ## 4. Does money buy medals?
-The scatter plot below plots log GDP per capita against total medals. The upward trend is clear, wealthier countries tend to invest more in training and facilities and it shows.
+The scatter plot below plots log GDP per capita against total medals. The upward trend is clear, wealthier countries win more, whether that's down to better facilities, more full time althetes or just more money in the system the pattern is clear.
 
 :::{.callout-tip}
 ## Wealth isn't everything
@@ -254,7 +254,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-Wealth clearly plays a role but there is one advantage no investment can buy and that is competing on home soil.
+Wealth matters, but there's one thing money can't buy: a home crowd.
 
 <hr>
 
@@ -327,7 +327,7 @@ The Soviet Union and East Germnay show the sharpest drops, likely reflecting the
 ## 7. The full picture: regression results
 
 ### 7.1 The model
-With the data aggregated to country-year level, an OLS regression was run to directly answer the research question: after controlling for GDP per capita and population size, does hosting the Games have a significant impact on medal success? The model is:
+Once the data was aggregated to country-year levell, I ran an OLS regression to test the main question directly: after controlling for GDP per capita and population size, does hosting the Games have a significant impact on medal success? The model is:
 
 >**Total Medals = β₀ + β₁(is_host) + β₂(log GDP per capita) + β₃(log population) + ε**
 ```{python}
